@@ -1,0 +1,7 @@
+/* Editor Stylesheet */
+@import url( 'style.css' );
+
+body {
+	background-color: #FFFFFF !important;
+	padding: 5px;
+}

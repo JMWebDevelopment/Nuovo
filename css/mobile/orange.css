@@ -1,0 +1,123 @@
+/* Default stylesheet for mobile blue design */
+
+/* General Styles */
+#mobile-branding-background{
+	background-color: #A04300;
+}
+
+#mobile-footer{
+	background: #B24A00;
+}
+
+/* Main Menu */
+#mobile-main-menu {
+	background: #B24A00;
+}
+
+.mobile-main-menu-area{
+	background-color: #B24A00;
+	color: #FFFFFF;
+}
+
+/* Featured Post Slider */
+.mobile-slide-panel{
+	background-color: rgba(178,74,0,.85) !important;
+}
+
+/* Homepage Styles */
+.mobile-home-title-bg{
+	background: #B24A00;
+}
+
+.mobile-photo-post-details{
+	color: #FFFFFF;
+	background-color: rgba(178,74,0,.85) !important;
+}
+
+.mobile-home-view-all{
+	background: #B24A00;
+}
+
+.mobile-home-next{
+	background: #B24A00;
+	color: #FFFFFF;
+}
+
+.mobile-latest-posts-title-bg{
+	background: #B24A00;
+}
+
+.mobile-latest-posts-photo{
+	border: 1px solid #C86B00;
+}
+
+h5.mobile-latest-posts-headline, h5.mobile-latest-posts-headline a, h5.mobile-latest-posts-headline a:link, h5.mobile-latest-posts-headline a:visited, h5.mobile-latest-posts-headline a:hover{
+	color: #C86B00;
+}
+
+/* Single Post */
+h3.mobile-single-headline{
+	color: #C86B00;
+}
+
+.mobile-single-meta-table{
+	background-color: #C86B00;
+}
+
+/* Archive, Author, Category, Search & Tag Styles */
+h1.mobile-archive-title{
+	color: #C86B00;
+}
+
+.mobile-archive-separator{
+	background: #B24A00;
+}
+
+.mobile-archive-comments{
+	color: #FFFFFF;
+	background-color: rgba(178,74,0,.85);
+}
+
+h3.mobile-archive-headline, h3.mobile-archive-headline a, h3.mobile-archive-headline a:link, h3.mobile-archive-headline a:hover, h3.mobile-archive-headline a:visited{
+	color: #C86B00;
+}
+
+p.mobile-archive-meta-text, p.mobile-archive-meta-text a, p.mobile-archive-meta-text a:link, p.mobile-archive-meta-text a:hover, p.mobile-archive-meta-text a:visited{
+	color: #C86B00;
+}
+
+.mobile-archive-continue{
+	width: 140px;
+	height: 20px;
+	background: #B24A00;
+	color: #FFFFFF;
+	float: right;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	font-size: 14px;
+}
+
+.mobile-archive-previous-posts{
+	width: 120px;
+	height: 25px;
+	float: left;
+	position: relative;
+	background: #B24A00;
+	color: #FFFFFF;
+	margin-bottom: 3px;
+	margin-left: 3px;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	font-size: 18px;
+}
+
+.mobile-archive-next-posts{
+	width: 120px;
+	height: 25px;
+	float: right;
+	position: relative;
+	background: #B24A00;
+	color: #FFFFFF;
+	margin-bottom: 3px;
+	margin-right: 3px;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	font-size: 18px;
+}

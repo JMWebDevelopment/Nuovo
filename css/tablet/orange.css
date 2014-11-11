@@ -1,0 +1,9 @@
+/* Style Sheet for Orange Tablet Theme */
+.tablet-slide{
+	border: 1px solid #000000 !important;
+	border-right: 1px solid #000000 !important;
+}
+
+.tablet-slide-panel{
+	background-color: rgba(178,74,0,.85) !important;
+}

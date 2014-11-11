@@ -1,0 +1,10 @@
+/* Style Sheet for Yellow Tablet Theme */
+.tablet-slide{
+	border: 1px solid #000000 !important;
+	border-right: 1px solid #000000 !important;
+}
+
+.tablet-slide-panel{
+	width: 568px !important;
+	background-color: rgba(159,149,0,.85) !important;
+}

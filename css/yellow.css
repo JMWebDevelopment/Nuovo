@@ -1,0 +1,228 @@
+/* Style for the Yellow colored theme */
+
+a, a:link, a:visited, a:hover{
+	color: #726A00;
+}
+
+#branding-background{
+	background-color: #726A00;
+}
+
+#footer{
+	background: #9F9500;
+}
+
+/* Top Menu */
+#top-menu {
+	background: #bcbcbc;
+	}
+
+#top-menu a {
+	color: #FFFFFF;
+}
+
+#top-menu ul ul a {
+	background: #9F9500;
+	color: #FFFFFF;
+}
+
+#top-menu li:hover > a,
+#top-menu ul ul :hover > a,
+#top-menu a:focus {
+	background: #bcbcbc;
+}
+#top-menu li:hover > a,
+#top-menu a:focus {
+	background: #9F9500;
+	color: #FFFFFF;
+}
+
+/* Main Menu */
+#main-menu {
+	background: #9F9500;
+	}
+
+#main-menu a {
+	color: #FFFFFF;
+}
+
+#main-menu ul ul a {
+	background: #bcbcbc;
+	color: #FFFFFF;
+}
+#main-menu li:hover > a,
+#main-menu ul ul :hover > a,
+#main-menu a:focus {
+	background: #9F9500;
+}
+#main-menu li:hover > a,
+#main-menu a:focus {
+	background: #bcbcbc;
+	color: #FFFFFF;
+}
+
+/* Featured Post Slideshow */
+.slide{
+	border: 1px solid #000000 !important;
+}
+
+.slide-photo{
+	border-right: 5px solid #D5CE00;
+}
+
+.slide-panel{
+	background: #FFFFFF;
+	border-left: 5px solid #D5CE00;
+	border-right: 3px solid #000000;
+}
+
+h3.slide-panel-title, h3.slide-panel-title a, h3.slide-panel-title a:link, h3.slide-panel-title a:visited, h3.slide-panel-title a:hover{
+	color: #D5CE00;
+}
+
+.next{
+	border: 1px solid #000000;
+}
+
+.prev{
+	border: 1px solid #000000;
+}
+
+/* Home Posts Area */
+.home-title-bg{
+	background: #9F9500;
+}
+
+.photo-post-details{
+	color: #FFFFFF;
+	background-color: rgba(159,149,0,.85);
+}
+
+h3.home-headline, h3.home-headline a, h3.home-headline a:link, h3.home-headline a:hover, h3.home-headline a:visited{
+	color: #D5CE00;
+}
+
+.home-view-all{
+	background: #9F9500;
+	color: #FFFFFF;
+}
+
+.home-view-all:hover{
+	background: #bcbcbc;
+	color: #000000 !important;
+}
+
+.home-next{
+	background: #9F9500;
+	color: #FFFFFF;
+}
+
+.home-next:hover{
+	background: #bcbcbc;
+	color: #000000 !important;
+}
+
+/* Latest Posts */
+.latest-posts-title-bg{
+	background: #9F9500;
+}
+
+.latest-posts-photo{
+	border: 1px solid #D5CE00;
+}
+
+h5.latest-posts-headline, h5.latest-posts-headline a, h5.latest-posts-headline a:link, h5.latest-posts-headline a:visited, h5.latest-posts-headline a:hover{
+	color: #D5CE00;
+}
+
+/* Single Post Styles */
+h3.single-headline{
+	color: #D5CE00;
+}
+
+.single-meta-table{
+	background-color: #D5CE00;
+}
+
+/* Archive, Author, Category, Search & Tag Styles */
+h1.archive-title{
+	color: #D5CE00;
+}
+
+.archive-separator{
+	background: #9F9500;
+}
+
+.archive-comments{
+	color: #FFFFFF;
+	background-color: rgba(159,149,0,.85);
+}
+
+.archive-comments, .archive-comments a, .archive-comments a:link, .archive-comments a:visited, .archive-comments a:hover{
+	color: #FFFFFF;
+}
+
+h3.archive-headline, h3.archive-headline a, h3.archive-headline a:link, h3.archive-headline a:hover, h3.archive-headline a:visited{
+	color: #D5CE00;
+}
+
+p.archive-meta-text, p.archive-meta-text a, p.archive-meta-text a:link, p.archive-meta-text a:hover, p.archive-meta-text a:visited{
+	color: #D5CE00;
+}
+
+.archive-continue{
+	background: #9F9500;
+	color: #FFFFFF;
+}
+
+.archive-continue:hover{
+	background: #bcbcbc;
+	color: #000000;
+}
+
+.archive-previous-posts{
+	background: #9F9500;
+	color: #FFFFFF;
+}
+
+.archive-previous-posts:hover{
+	background: #9F9500;
+	color: #000000;
+}
+
+.archive-next-posts{
+	background: #9F9500;
+	color: #FFFFFF;
+}
+
+.archive-next-posts:hover{
+	background: #bcbcbc;
+	color: #000000;
+}
+
+/* Comments Styles */
+h3#comments{background: #9F9500;}
+#respond h3{background: #9F9500;}
+.reply,.comment-navigation .newer a,.comment-navigation .older a,input#submit{background: #bcbcbc;} 
+a.comment-reply-link,.reply a:link,
+.comment-navigation .newer a,.comment-navigation .older a,input#submit{color:#fff} 
+a.comment-reply-link:hover,.reply a:hover,.comment-navigation .newer a:hover,
+.comment-navigation .older a:hover,input#submit:hover{color:#FFFFFF; background: #9F9500;}
+
+/* Widget Styles */
+.widget-title-bg{
+	background: #9F9500;
+}
+
+h3.widget-title{
+	color: #FFFFFF;
+}
+
+p.widget-body, p.widget-body a, p.widget-body a:link, p.widget-body a:visited, p.widget-body a:hover{
+	color: #D5CE00;
+}
+
+/* WP Calendar Styles */
+#wp-calendar caption { color: #D5CE00;}
+#wp-calendar thead { color: #FFFFFF; background: #9F9500;}
+#wp-calendar tbody { color: #aaa; }
