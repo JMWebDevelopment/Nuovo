@@ -136,7 +136,7 @@ function nuovo_menu_container() {
 	foreach ($menus as $menu){
 		$name = strtolower($menu->name);
 		$name = str_replace(" ", "-", $name);
-		echo '<style type="text/css">.menu-'.$name.'-container{width: 980px;margin: auto;} @media only screen and (max-width: 979px) and (min-width: 700px) {.menu-'.$name.'-container{width: 700px;margin: auto;min-height:39px;max-height:78px;}} @media only screen and (max-width: 699px) and (min-width: 650px) {.menu-'.$name.'-container{width: 650px;margin: auto;clear:both;}}</style>';
+		echo '<style type="text/css">#top-menu .menu-'.$name.'-container, #main-menu .menu-'.$name.'-container{width: 980px;margin: auto;} @media only screen and (max-width: 979px) and (min-width: 700px) {#top-menu .menu-'.$name.'-container, #main-menu .menu-'.$name.'-container{width: 700px;margin: auto;min-height:39px;max-height:78px;}} @media only screen and (max-width: 699px) and (min-width: 650px) {#top-menu .menu-'.$name.'-container, #main-menu .menu-'.$name.'-container{width: 650px;margin: auto;clear:both;}}</style>';
 	}
 }
 
