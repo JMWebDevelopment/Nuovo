@@ -31,7 +31,6 @@
 			<?php } ?>
 			<!--End Paged Navigation-->
 		</div>
-		<?php get_nuovo_mobile_template('tag'); ?><!--Tag Mobile Template-->
 		<?php get_sidebar(); ?>
 	</div>
 <?php get_footer(); ?>

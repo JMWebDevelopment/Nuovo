@@ -11,8 +11,8 @@
 	<div id="slideshow" class="clearfix">
 		<?php 
 			$slideshow_args = array(
-				'showposts' => nuovo_options('homepage', 'slideshow-count'),
-				'category_name' => cat_id_to_name(nuovo_options('homepage', 'slideshow-category')),
+				'showposts' => nuovo_options('slideshow-count'),
+				'category_name' => cat_id_to_name(nuovo_options('slideshow-category')),
 				'orderby' => 'date',
 				'order' => 'DES'
 			);
@@ -41,12 +41,12 @@
 	<!-- Begin Catgeory One Posts-->
 	<div class="category-area-one clearfix">
 		<div class="home-title-bg">
-			<h3 class="home-title"><?php echo cat_id_to_name(nuovo_options('homepage', 'category-one')); ?></h3>
+			<h3 class="home-title"><?php echo cat_id_to_name(nuovo_options('category-one')); ?></h3>
 		</div>
 		<?php 
 			$cat1_args = array(
-				'showposts' => nuovo_options('homepage', 'category-one-count'),
-				'category_name' => cat_id_to_name(nuovo_options('homepage', 'category-one')),
+				'showposts' => nuovo_options('category-one-count'),
+				'category_name' => cat_id_to_name(nuovo_options('category-one')),
 				'orderby' => 'date',
 				'order' => 'DES'
 			);
@@ -70,97 +70,100 @@
 		<?php endwhile; ?>
 		<?php endif; ?>
 		<div class="home-view-all">
-			<a href="index.php?cat=<?php echo nuovo_options('homepage', 'category-one'); ?>">
+			<a href="index.php?cat=<?php echo nuovo_options('category-one'); ?>">
 				View All&rsaquo;&rsaquo;
 			</a>
 		</div>
 	</div>
 	<!--End Category One Posts-->
 	<!--Begin Category Two Posts-->
-	<div class="category-area-two clearfix">
-		<div class="home-title-bg">
-			<h3 class="home-title"><?php echo cat_id_to_name(nuovo_options('homepage', 'category-two')); ?></h3>
-		</div>
-		<?php 
-		$cat2_args = array(
-			'showposts' => nuovo_options('homepage', 'category-two-count'),
-			'category_name' => cat_id_to_name(nuovo_options('homepage', 'category-two')),
-			'orderby' => 'date',
-			'order' => 'DES'
-		);
-		$cat2 = new WP_Query($cat2_args);
-		if ($cat2->have_posts()) : while ($cat2->have_posts()) : $cat2->the_post(); ?>
-			<div class="home-post">
-				<?php if (has_post_thumbnail()) { ?>
-					<div class="home-photo">
-						<a href="<?php the_permalink(); ?>">
-							<?php the_post_thumbnail(); ?>
-						</a>
-						<span class="photo-post-details"><p class="photo-post-details-links"><?php echo the_time('M j, Y'); ?> &bull; <?php echo comments_popup_link('0', '1', '%'); ?><img src="<?php echo get_template_directory_uri(); ?>/images/comments.png" style="margin-top:3px; margin-left:3px;margin-bottom:-2px;" /></p></span>
-					</div>
-				<?php } ?>
-				<h3 class="home-headline"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-				<p class="home-meta">Written By: <?php the_author_posts_link(); ?><?php edit_post_link('Edit', ' &bull; '); ?></p>
-				<hr />
-				<?php the_excerpt('Continue Reading', 'nuovo'); ?>
+	<?php if (nuovo_options('category-two')) { ?>
+		<div class="category-area-two clearfix">
+			<div class="home-title-bg">
+				<h3 class="home-title"><?php echo cat_id_to_name(nuovo_options('category-two')); ?></h3>
 			</div>
-		<?php endwhile; ?>
-		<?php endif; ?>
-		<div class="home-view-all">
-			<a href="index.php?cat=<?php echo nuovo_options('homepage', 'category-two'); ?>">
-				View All&rsaquo;&rsaquo;
-			</a>
+			<?php 
+				$cat2_args = array(
+					'showposts' => nuovo_options('category-two-count'),
+					'category_name' => cat_id_to_name(nuovo_options('category-two')),
+					'orderby' => 'date',
+					'order' => 'DES'
+				);
+				$cat2 = new WP_Query($cat2_args);
+				if ($cat2->have_posts()) : while ($cat2->have_posts()) : $cat2->the_post(); ?>
+					<div class="home-post">
+						<?php if (has_post_thumbnail()) { ?>
+							<div class="home-photo">
+								<a href="<?php the_permalink(); ?>">
+									<?php the_post_thumbnail(); ?>
+								</a>
+								<span class="photo-post-details"><p class="photo-post-details-links"><?php echo the_time('M j, Y'); ?> &bull; <?php echo comments_popup_link('0', '1', '%'); ?><img src="<?php echo get_template_directory_uri(); ?>/images/comments.png" style="margin-top:3px; margin-left:3px;margin-bottom:-2px;" /></p></span>
+							</div>
+						<?php } ?>
+						<h3 class="home-headline"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+						<p class="home-meta">Written By: <?php the_author_posts_link(); ?><?php edit_post_link('Edit', ' &bull; '); ?></p>
+						<hr />
+						<?php the_excerpt('Continue Reading', 'nuovo'); ?>
+					</div>
+				<?php endwhile; ?>
+				<?php endif; ?>
+			<div class="home-view-all">
+				<a href="index.php?cat=<?php echo nuovo_options('category-two'); ?>">
+					View All&rsaquo;&rsaquo;
+				</a>
+			</div>
 		</div>
-	</div>
+	<?php } ?>
 	<!--End Category Two Posts-->
 	<!--Begin Category Three Posts-->
-	<div class="category-area-three clearfix">
-		<div class="home-title-bg">
-			<h3 class="home-title"><?php echo cat_id_to_name(nuovo_options('homepage', 'category-three')); ?></h3>
-		</div>
-		<?php 
-		$cat3_args = array(
-			'showposts' => nuovo_options('homepage', 'category-three-count'),
-			'category_name' => cat_id_to_name(nuovo_options('homepage', 'category-three')),
-			'orderby' => 'date',
-			'order' => 'DES'
-		);
-		$cat3 = new WP_Query($cat3_args);
-		if ($cat3->have_posts()) : while ($cat3->have_posts()) : $cat3->the_post(); ?>
-			<div class="home-post">
-				<?php if (has_post_thumbnail()) { ?>
-					<div class="home-photo">
-						<a href="<?php the_permalink(); ?>">
-							<?php the_post_thumbnail(); ?>
-						</a>
-						<span class="photo-post-details"><p class="photo-post-details-links"><?php echo the_time('M j, Y'); ?> &bull; <?php echo comments_popup_link('0', '1', '%'); ?><img src="<?php echo get_template_directory_uri(); ?>/images/comments.png" style="margin-top:3px; margin-left:3px;margin-bottom:-2px;" /></p></span>
-					</div>
-				<?php } ?>
-				<h3 class="home-headline"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-				<p class="home-meta">Written By: <?php the_author_posts_link(); ?><?php edit_post_link('Edit', ' &bull; '); ?></p>
-				<hr />
-				<?php the_excerpt('Continue Reading', 'nuovo'); ?>
+	<?php if(nuovo_options('category-three')) { ?>
+		<div class="category-area-three clearfix">
+			<div class="home-title-bg">
+				<h3 class="home-title"><?php echo cat_id_to_name(nuovo_options('category-three')); ?></h3>
 			</div>
-		<?php endwhile; ?>
-		<?php endif; ?>
-		<div class="home-view-all">
-			<a href="index.php?cat=<?php echo nuovo_options('homepage', 'category-three'); ?>">
-				View All&rsaquo;&rsaquo;
-			</a>
+			<?php 
+			$cat3_args = array(
+				'showposts' => nuovo_options('category-three-count'),
+				'category_name' => cat_id_to_name(nuovo_options('category-three')),
+				'orderby' => 'date',
+				'order' => 'DES'
+			);
+			$cat3 = new WP_Query($cat3_args);
+			if ($cat3->have_posts()) : while ($cat3->have_posts()) : $cat3->the_post(); ?>
+				<div class="home-post">
+					<?php if (has_post_thumbnail()) { ?>
+						<div class="home-photo">
+							<a href="<?php the_permalink(); ?>">
+								<?php the_post_thumbnail(); ?>
+							</a>
+							<span class="photo-post-details"><p class="photo-post-details-links"><?php echo the_time('M j, Y'); ?> &bull; <?php echo comments_popup_link('0', '1', '%'); ?><img src="<?php echo get_template_directory_uri(); ?>/images/comments.png" style="margin-top:3px; margin-left:3px;margin-bottom:-2px;" /></p></span>
+						</div>
+					<?php } ?>
+					<h3 class="home-headline"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+					<p class="home-meta">Written By: <?php the_author_posts_link(); ?><?php edit_post_link('Edit', ' &bull; '); ?></p>
+					<hr />
+					<?php the_excerpt('Continue Reading', 'nuovo'); ?>
+				</div>
+			<?php endwhile; ?>
+			<?php endif; ?>
+			<div class="home-view-all">
+				<a href="index.php?cat=<?php echo nuovo_options('category-three'); ?>">
+					View All&rsaquo;&rsaquo;
+				</a>
+			</div>
 		</div>
-	</div>
+	<?php } ?>
 	<!--End Category Three Posts-->
-	<?php if (nuovo_options('homepage', 'category-four') != -1) { ?>
-		<?php echo nuovo_options('homepage', 'category-four'); ?>
+	<?php if (nuovo_options('category-four')) { ?>
 		<!--Begin Category Four Posts-->
 		<div class="category-area-four clearfix">
 			<div class="home-title-bg">
-				<h3 class="home-title"><?php echo cat_id_to_name(nuovo_options('homepage', 'category-four')); ?></h3>
+				<h3 class="home-title"><?php echo cat_id_to_name(nuovo_options('category-four')); ?></h3>
 			</div>
 			<?php 
 				$cat4_args = array(
-					'showposts' => nuovo_options('homepage', 'category-four-count'),
-					'category_name' => cat_id_to_name(nuovo_options('homepage', 'category-four')),
+					'showposts' => nuovo_options('category-four-count'),
+					'category_name' => cat_id_to_name(nuovo_options('category-four')),
 					'orderby' => 'date',
 					'order' => 'DES'
 				);
@@ -183,7 +186,7 @@
 			<?php endwhile; ?>
 			<?php endif; ?>
 			<div class="home-view-all">
-				<a href="index.php?cat=<?php echo nuovo_options('homepage', 'category-one'); ?>">
+				<a href="index.php?cat=<?php echo nuovo_options('category-one'); ?>">
 					View All&rsaquo;&rsaquo;
 				</a>
 			</div>
@@ -191,7 +194,7 @@
 		<!--End Category Four Posts-->
 	<?php } ?>
 	<?php wp_reset_query(); ?>
-	<?php if (nuovo_options('homepage', 'latest-posts-count') > 0) { ?>
+	<?php if (nuovo_options('latest-posts-count') > 0) { ?>
 		<!--Begin Latest Posts-->
 		<div class="latest-posts-area clearfix">
 			<div class="latest-posts-title-bg">
@@ -199,7 +202,7 @@
 			</div>
 			<?php 
 				$latest_posts_args = array(
-					'showposts' => nuovo_options('homepage', 'latest-posts-count'),
+					'showposts' => nuovo_options('latest-posts-count'),
 					'orderby' => 'date',
 					'order' => 'DES'
 				);
@@ -224,7 +227,211 @@
 	<?php } ?>
 </div>
 <!--End Home Posts Area-->
-<?php get_nuovo_tablet_template('home'); ?><!--Home Tablet Template-->
-<?php get_nuovo_mobile_template('home'); ?><!--Home Mobile Template-->
+<!--Begin Mobile Home Posts Area-->
+<div id="mobile-home-posts-area">
+	<!--Begin Category One Posts-->
+	<div id="category-area-one" class="clearfix">
+		<div class="mobile-home-title-bg">
+			<h3 class="home-title"><?php echo cat_id_to_name(nuovo_options('category-one')); ?></h3>
+		</div>
+		<div class="mobile-swiper-container1">
+			<div class="swiper-wrapper">
+				<?php 
+					$cat1_args = array(
+						'showposts' => nuovo_options('category-one-count'),
+						'category_name' => cat_id_to_name(nuovo_options('category-one')),
+						'orderby' => 'date',
+						'order' => 'DES'
+					);
+					$cat1 = new WP_Query($cat1_args);
+					if ($cat1->have_posts()) : while ($cat1->have_posts()) : $cat1->the_post(); 
+				?>
+					<div class="swiper-slide">
+						<?php if (has_post_thumbnail()) { ?>
+							<div class="mobile-home-photo">
+								<a href="<?php the_permalink(); ?>">
+									<?php the_post_thumbnail(); ?>
+								</a>
+								<span class="mobile-photo-post-details"><span class="mobile-photo-post-details-links"><?php echo the_time('M j, Y'); ?> &bull; <?php echo comments_popup_link('0', '1', '%'); ?><img src="<?php echo get_template_directory_uri(); ?>/images/comments.png" style="margin-top:3px; margin-left:3px;margin-bottom:-2px;" alt="comments" /></span></span>
+							</div>
+						<?php } ?>
+						<h3 class="mobile-home-headline"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+						<p class="mobile-home-meta">Written By: <?php the_author_posts_link(); ?><?php edit_post_link('Edit', ' &bull; '); ?></p>
+						<hr />
+						<?php the_excerpt('Continue Reading', 'nuovo'); ?>
+					</div>
+				<?php endwhile; ?>
+				<?php endif; ?>
+			</div>
+		</div>
+		<div class="mobile-home-view-all">
+			<a href="index.php?cat=<?php echo nuovo_options('category-one'); ?>">
+				View All&rsaquo;&rsaquo;
+			</a>
+		</div>
+	</div>
+	<!--End Category One Posts-->
+	<!--Begin Category Two Posts-->
+	<div id="category-area-two" class="clearfix">
+		<div class="mobile-home-title-bg">
+			<h3 class="home-title"><?php echo cat_id_to_name(nuovo_options('category-two')); ?></h3>
+		</div>
+		<div class="mobile-swiper-container2">
+			<div class="swiper-wrapper">
+				<?php 
+					$cat2_args = array(
+						'showposts' => nuovo_options('category-two-count'),
+						'category_name' => cat_id_to_name(nuovo_options('category-two')),
+						'orderby' => 'date',
+						'order' => 'DES'
+					);
+					$cat2 = new WP_Query($cat2_args);
+					if ($cat2->have_posts()) : while ($cat2->have_posts()) : $cat2->the_post(); 
+				?>
+					<div class="swiper-slide">
+						<?php if (has_post_thumbnail()) { ?>
+							<div class="mobile-home-photo">
+								<a href="<?php the_permalink(); ?>">
+									<?php the_post_thumbnail(); ?>
+								</a>
+								<span class="mobile-photo-post-details"><span class="mobile-photo-post-details-links"><?php echo the_time('M j, Y'); ?> &bull; <?php echo comments_popup_link('0', '1', '%'); ?><img src="<?php echo get_template_directory_uri(); ?>/images/comments.png" style="margin-top:3px; margin-left:3px;margin-bottom:-2px;" alt="comments" /></span></span>
+							</div>
+						<?php } ?>
+						<h3 class="mobile-home-headline"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+						<p class="mobile-home-meta">Written By: <?php the_author_posts_link(); ?><?php edit_post_link('Edit', ' &bull; '); ?></p>
+						<hr />
+						<?php the_excerpt('Continue Reading', 'nuovo'); ?>
+					</div>
+				<?php endwhile; ?>
+				<?php endif; ?>
+			</div>
+		</div>
+		<div class="mobile-home-view-all">
+			<a href="index.php?cat=<?php echo nuovo_options('category-one'); ?>">
+				View All&rsaquo;&rsaquo;
+			</a>
+		</div>
+	</div>
+	<!--End Category Two Posts-->
+	<!--Begin Category Three Posts-->
+	<div id="category-area-three" class="clearfix">
+		<div class="mobile-home-title-bg">
+			<h3 class="home-title"><?php echo cat_id_to_name(nuovo_options('category-three')); ?></h3>
+		</div>
+		<div class="mobile-swiper-container3">
+			<div class="swiper-wrapper">
+				<?php 
+					$cat3_args = array(
+						'showposts' => nuovo_options('category-three-count'),
+						'category_name' => cat_id_to_name(nuovo_options('category-three')),
+						'orderby' => 'date',
+						'order' => 'DES'
+					);
+					$cat3 = new WP_Query($cat3_args);
+					if ($cat3->have_posts()) : while ($cat3->have_posts()) : $cat3->the_post(); 
+				?>
+					<div class="swiper-slide">
+						<?php if (has_post_thumbnail()) { ?>
+							<div class="mobile-home-photo">
+								<a href="<?php the_permalink(); ?>">
+									<?php the_post_thumbnail(); ?>
+								</a>
+								<span class="mobile-photo-post-details"><span class="mobile-photo-post-details-links"><?php echo the_time('M j, Y'); ?> &bull; <?php echo comments_popup_link('0', '1', '%'); ?><img src="<?php echo get_template_directory_uri(); ?>/images/comments.png" style="margin-top:3px; margin-left:3px;margin-bottom:-2px;" alt="comments" /></span></span>
+							</div>
+						<?php } ?>
+						<h3 class="mobile-home-headline"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+						<p class="mobile-home-meta">Written By: <?php the_author_posts_link(); ?><?php edit_post_link('Edit', ' &bull; '); ?></p>
+						<hr />
+						<?php the_excerpt('Continue Reading', 'nuovo'); ?>
+					</div>
+				<?php endwhile; ?>
+				<?php endif; ?>
+			</div>
+		</div>
+		<div class="mobile-home-view-all">
+			<a href="index.php?cat=<?php echo nuovo_options('category-one'); ?>">
+				View All&rsaquo;&rsaquo;
+			</a>
+		</div>
+	</div>
+	<!--End Category Three Posts-->
+	<?php if (nuovo_options('category-four')) { ?>
+		<!--Begin Category Four Posts-->
+		<div id="category-area-four" class="clearfix">
+			<div class="mobile-home-title-bg">
+				<h3 class="home-title"><?php echo cat_id_to_name(nuovo_options('category-four')); ?></h3>
+			</div>
+			<div class="mobile-swiper-container4">
+				<div class="swiper-wrapper">
+					<?php 
+						$cat4_args = array(
+							'showposts' => nuovo_options('category-four-count'),
+							'category_name' => cat_id_to_name(nuovo_options('category-four')),
+							'orderby' => 'date',
+							'order' => 'DES'
+						);
+						$cat4 = new WP_Query($cat4_args);
+						if ($cat4->have_posts()) : while ($cat4->have_posts()) : $cat4->the_post(); 
+					?>
+						<div class="swiper-slide">
+							<?php if (has_post_thumbnail()) { ?>
+								<div class="mobile-home-photo">
+									<a href="<?php the_permalink(); ?>">
+										<?php the_post_thumbnail(); ?>
+									</a>
+									<span class="mobile-photo-post-details"><span class="mobile-photo-post-details-links"><?php echo the_time('M j, Y'); ?> &bull; <?php echo comments_popup_link('0', '1', '%'); ?><img src="<?php echo get_template_directory_uri(); ?>/images/comments.png" style="margin-top:3px; margin-left:3px;margin-bottom:-2px;" alt="comments" /></span></span>
+								</div>
+							<?php } ?>
+							<h3 class="mobile-home-headline"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+							<p class="mobile-home-meta">Written By: <?php the_author_posts_link(); ?><?php edit_post_link('Edit', ' &bull; '); ?></p>
+							<hr />
+							<?php the_excerpt('Continue Reading', 'nuovo'); ?>
+						</div>
+					<?php endwhile; ?>
+					<?php endif; ?>
+				</div>
+			</div>
+			<div class="mobile-home-view-all">
+				<a href="index.php?cat=<?php echo nuovo_options('category-one'); ?>">
+					View All&rsaquo;&rsaquo;
+				</a>
+			</div>
+		</div>
+		<!--End Category Four Posts-->
+	<?php } ?>
+	<?php wp_reset_query(); ?>
+	<?php if (nuovo_options('latest-posts-count') > 0) { ?> 
+		<!--Begin Latest Posts-->
+		<div id="mobile-latest-posts-area" class="clearfix">
+			<div class="mobile-latest-posts-title-bg">
+				<h3 class="mobile-latest-posts-title">Latest Posts</h3>
+			</div>
+			<?php 
+				$latest_posts_args = array(
+					'showposts' => nuovo_options('latest-posts-count'),
+					'orderby' => 'date',
+					'order' => 'DES'
+				);
+				$latest_posts = new WP_Query($latest_posts_args);
+				if ($latest_posts->have_posts()) : while ($latest_posts->have_posts()) : $latest_posts->the_post(); 
+			?>
+					<div class="mobile-latest-posts clearfix">
+						<?php if (has_post_thumbnail()) { ?>
+							<div class="mobile-latest-posts-photo"><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a></div>
+						<?php } ?>
+						<div class="mobile-latest-posts-headline-area clearfix">
+							<h5 class="mobile-latest-posts-headline"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> &bull; Written By: <?php the_author_posts_link(); ?> &bull; <?php the_time('F j, Y'); ?> &bull; <?php comments_popup_link('0 Comments', '1 Comment', '% Comments', '', 'Comments Disabled'); ?></h5>
+						</div>
+					</div>
+			<?php endwhile; ?>
+			<?php global $wp_query; $total_pages = $wp_query->max_num_pages; if ( $total_pages > 1 ) { ?>
+				<?php next_posts_link(__('<span class="mobile-home-next">Next Posts&rsaquo;&rsaquo;</span>', 'nuovo')); ?>
+			<?php } ?>
+			<?php endif; ?>
+		</div>
+		<!--End Latest Posts-->
+	<?php } ?>
+</div>
+<!--End Mobile Home Posts Area-->
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

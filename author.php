@@ -2,7 +2,7 @@
 	<div id="content">
 		<div id="archive-post-area" class="clearfix">
 			<?php the_post(); ?>
-				<div class="author-area"><!--Begin Author Bio Area-->
+				<div class="author-area clearfix"><!--Begin Author Bio Area-->
 					<div class="author-photo-area">
 						<div class="author-photo">
 							<?php echo get_avatar(get_the_author_email(), $size = '96'); ?>
@@ -40,7 +40,6 @@
 			<?php } ?>
 			<!--End Paged Navigation-->
 		</div>
-		<?php get_nuovo_mobile_template('author'); ?><!--Author Mobile Template-->
 		<?php get_sidebar(); ?>
 	</div>
 <?php get_footer(); ?>

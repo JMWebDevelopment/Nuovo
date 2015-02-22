@@ -21,43 +21,19 @@ function cat_id_to_name($id) {
 	}
 }
 
-//Simplify Calling the Tablet Templates
-function get_nuovo_tablet_template($temp_name) {
-	include_once( get_template_directory() . '/tablet/' . $temp_name . '.php' );
-}
-
-//Simplify Calling the Mobile Templates
-function get_nuovo_mobile_template($temp_name) {
-	include_once( get_template_directory() . '/mobile/' . $temp_name . '.php' );
-}
-
 //Create easy Function for Calling Theme Options
-function nuovo_options($type, $opt) {
-	if ($type == 'social') {
-		$option = get_option('nuovo_theme_social_options');
-	}
-	elseif ($type == 'homepage') {
-		$option = get_option('nuovo_theme_homepage_options');
-	}
-	else {
-		$option = get_option('nuovo_theme_general_options');
-	}
+function nuovo_options($opt) {
+	$option = get_option('nuovo_options');
 	if (isset($option[$opt])) {
 		return $option[$opt];
 	}
 }
 
 function show_nuovo_options($opt) {
-	if ($type == 'social') {
-		$option = get_option('nuovo_theme_social_options');
+	$option = get_option('nuovo_options');
+	if (isset($option[$opt])) {
+		echo $option[$opt];
 	}
-	elseif ($type = 'homepage') {
-		$option == get_option('nuovo_theme_homepage_options');
-	}
-	else {
-		$option = get_option('nuovo_theme_general_options');
-	}
-	echo $option[$opt];
 }
 
 //Add Support for Custom Background
@@ -161,20 +137,6 @@ function nuovo_custom_excerpt_length( $length ) {
 }
 add_filter( 'excerpt_length', 'nuovo_custom_excerpt_length', 999 );
 
-//Find the stylesheet the user wants to use
-function nuovo_find_stylesheet() {
-	$color = nuovo_options('general', 'color-style');
-	if ($color == 'default') {
-		return;
-	}
-	else {
-		$stylesheets = array('<link rel="stylesheet" type="text/css" href="'. get_template_directory_uri() . '/css/' . $color . '.css" />', '<link rel="stylesheet" type="text/css" href="'. get_template_directory_uri() . '/css/tablet/' . $color . '.css" />', '<link rel="stylesheet" type="text/css" href="'. get_template_directory_uri() . '/css/mobile/' . $color . '.css" />');
-		foreach ($stylesheets as $stylesheet){
-			echo $stylesheet . "\n";
-		}
-	}
-}
-
 //Add Support for Editor Style
 function nuovo_add_editor_styles() {
     add_editor_style();
@@ -183,8 +145,8 @@ add_action( 'init', 'nuovo_add_editor_styles' );
 
 //Enqueue Scripts
 function nuovo_scripts() {
+	wp_enqueue_script('jquery-ui-core');
 	$scripts = array(
-					'jquery-min' => '/js/jquery.min.js',
 					'cycle' => '/js/cycle.js',
 					'swiper' => '/js/idangerous.swiper-2.3.min.js'
 	);
@@ -192,27 +154,36 @@ function nuovo_scripts() {
 		wp_register_script( $key, get_template_directory_uri() . $location );
 		wp_enqueue_script( $key );
 	}
-	$color = nuovo_options('general', 'color-theme');
-	if ($color != 'default') {
+	if (is_home()) {
+		wp_enqueue_script( 'home-scripts', get_template_directory_uri() . '/js/home-scripts.js' );
+	}
+	if (nuovo_options('general', 'top-menu')) {
+		wp_enqueue_script( 'top-menu', get_template_directory_uri() . '/js/top-menu.js' );
+	}
+	wp_enqueue_script( 'main-menu', get_template_directory_uri() . '/js/main-menu.js' );
+	wp_enqueue_script( 'accordion', get_template_directory_uri() . '/js/accordion.js' );
+	wp_enqueue_style( 'styesheet', get_template_directory_uri() . '/style.css' );
+	$color = nuovo_options('color-theme');
+	if (($color != 'default') and (isset($color))) {
 		$color_styles = array(
 			'desktop' => '/css/' . $color . '.css',
 			'tablet' => '/css/tablet/' . $color . '.css',
 			'mobile' => '/css/mobile/' . $color . '.css'
 		);
-	} else {
-		$color_styles = array(
-			'tablet' => '/css/tablet/default.css',
-			'mobile' => '/css/mobile/default.css'
-		);
-	}
-	foreach ($color_styles as $key=>$location) {
-		wp_register_style($key, get_template_directory_uri() . $location);
-		wp_enqueue_style($key);
+	
+		foreach ($color_styles as $key=>$location) {
+			wp_enqueue_style($key, get_template_directory_uri() . $location);
+		}
 	}
 	wp_register_style('user', get_template_directory_uri() . '/user.css');
-	wp_enqueue_script('user');
-	wp_enqueue_script('jquery');
-	wp_enqueue_script('jquery-ui-core');
+	wp_enqueue_style('user');
+	if (get_header_image()== '') {
+		wp_register_style('header-css', get_template_directory_uri() . '/css/header.css');
+		wp_enqueue_style('header-css');
+	}
+	if ( is_singular() ) {
+		wp_enqueue_script( 'comment-reply' );
+	}
 }
 add_action( 'wp_enqueue_scripts', 'nuovo_scripts' );
 
@@ -226,24 +197,6 @@ function nuovo_remove_thumbnail_dimensions($html) {
 
 // Add Support for Automatic Feed Links
 add_theme_support( 'automatic-feed-links' );
-
-// Add function to make sure dropdown option is selected and to display selected item.
-function nuovo_selected($option, $value){
-	if ($option != '') {
-		if ($option == $value) {
-			return 'selected="selected"';
-		}
-	}
-}
-
-// Add function to make sure dropdown option is checked.
-function nuovo_checked($option) {
-	if ($option != '') {
-		if ($option == 1) {
-			return 'checked="checked"';
-		}
-	}
-}
 
 // Add function to display the page title
 function nuovo_wp_title( $title, $sep ) {

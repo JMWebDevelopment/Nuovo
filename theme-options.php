@@ -1,318 +1,327 @@
-<?php
-	
-function nuovo_create_theme_page() {
-	add_theme_page('Nuovo Theme Options', 'Theme Options', 'edit_theme_options', 'nuovo_options', 'nuovo_build_options_page');
+<?php 
+// Create the theme options page
+function nuovo_create_theme_options_page(){
+	add_theme_page('Nuovo Theme Options','Theme Options','edit_theme_options','nuovo_options','nuovo_build_options_page');
+}
+add_action('admin_menu','nuovo_create_theme_options_page');
+
+// Register the scripts needed for the theme options page
+function my_admin_scripts() {
+	if (isset($_GET['page']) && $_GET['page'] == 'nuovo_options') {
+   		wp_enqueue_script('jquery-ui');
+        wp_enqueue_script('jquery-ui-tabs');
+		wp_enqueue_script('option-tabs', get_template_directory_uri() . '/js/options-tabs.js');
+		wp_enqueue_style('option-styles', get_template_directory_uri() . '/admin/options-style.css');
+    }
+}
+add_action('admin_enqueue_scripts', 'my_admin_scripts');
+
+// Register the settings and set a callback function to sanitize the options
+function nuovo_register_settings(){
+	register_setting('nuovo_theme_options', 'nuovo_options', 'nuovo_validate_options');
+}
+add_action('admin_init','nuovo_register_settings');
+
+// Assign Default Values
+function nuovo_get_option_defaults(){
+	$defaults = array(
+		'rss-feed' => '',
+		'color-theme' => 'default',
+		'top-menu' => '',
+		'author-bio' => '',
+		'facebook' => '',
+		'twitter' => '   ',
+		'youtube' => '',
+		'googleplus' => '',
+		'linkedin' => '',
+		'slideshow-category' => '',
+		'slideshow-count' => '4',
+		'category-one' => '',
+		'category-one-count' => '3',
+		'category-two' => '',
+		'category-two-count' => '3',
+		'category-three' => '',
+		'category-three-count' => '3',
+		'category-four' => '',
+		'category-four-count' => '3',
+		'latest-posts-count' => '10'
+	);
+	return apply_filters('nuovo_option_defaults', $defaults);
 }
 
-add_action('admin_menu', 'nuovo_create_theme_page');
 
-function nuovo_build_options_page() { 
-?>
+// Add the color theme options into an array
+$nuovo_colors = array(
+	'default' => array(
+		'value' => 'default',
+		'label' => 'Default'
+	),
+	'blue' => array(
+		'value' => 'blue',
+		'label' => 'Blue'
+	),
+	'green' => array(
+		'value' => 'green',
+		'label' => 'Green'
+	),
+	'orange' => array(
+		'value' => 'orange',
+		'label' => 'Orange'
+	),
+	'purple' => array(
+		'value' => 'purple',
+		'label' => 'Purple'
+	),
+	'red' => array(
+		'value' => 'red',
+		'label' => 'Red'
+	),
+	'yellow' => array(
+		'value' => 'yellow',
+		'label' => 'Yellow'
+	),
+);
+
+// Create the theme options form
+function nuovo_build_options_page(){
+	
+	global $nuovo_options, $nuovo_colors;
+
+	if (!isset($_REQUEST['updated'])){
+		$_REQUEST['updated'] = false;
+	}
+	?>
 	<div class="wrap">
-		<div id="icon-themes" class="icon32"></div>
-		<h2>Nuovo Theme Options</h2>
-		
-		<?php settings_errors(); ?>
-		<?php if (isset($_GET['tab'])){
-			$active_tab = $_GET['tab'];
-		}
-		else {
-			$active_tab = 'general_options';
-		}?>
-		
-		<h2 class="nav-tab-wrapper">
-			<a href="?page=nuovo_options&tab=general_options" class="nav-tab <?php echo $active_tab == 'general_options' ? 'nav-tab-active' : ''; ?>">General Options</a>
-			<a href="?page=nuovo_options&tab=social_options" class="nav-tab <?php echo $active_tab == 'social_options' ? 'nav-tab-active' : ''; ?>">Social Options</a>
-			<a href="?page=nuovo_options&tab=homepage_options" class="nav-tab <?php echo $active_tab == 'homepage_options' ? 'nav-tab-active' : ''; ?>">Homepage Options</a>
-		</h2>
-		
+		<?php echo "<h2>" . __( 'Nuovo Theme Options' ) . "</h2>"; ?>
+		<?php if (false !== $_REQUEST['updated']) { ?>
+			<div class="updated fade"><p><strong><?php _e( 'Options saved' ); ?></strong></p></div>
+		<?php } ?>
+		<div id="tab-wrap">
 		<form method="post" action="options.php">
-			<?php
-				if ($active_tab == 'general_options'){
-					settings_fields('nuovo_theme_general_options');
-					do_settings_sections('nuovo_theme_general_options');
-				}
-				elseif ($active_tab == 'social_options') {
-					settings_fields('nuovo_theme_social_options');
-					do_settings_sections('nuovo_theme_social_options');
-				}
-				else {
-					settings_fields('nuovo_theme_homepage_options');
-					do_settings_sections('nuovo_theme_homepage_options');
-				}
-				submit_button();
-			?>
+			<?php $settings = wp_parse_args(
+				get_option('nuovo_options', array()), nuovo_get_option_defaults()
+			); ?>
+			<?php settings_fields('nuovo_theme_options'); ?>
+			<!--Tabs to go here -->
+			<ul>
+				<li class="nav-tab"><a href="#tab-general">General</a></li>
+				<li class="nav-tab"><a href="#tab-social">Social</a></li>
+				<li class="nav-tab"><a href="#tab-homepage">Homepage</a></li>
+			</ul>
+			<!--General options here-->
+			<div id="tab-general">
+				<table>
+					<!-- RSS Feed-->
+					<tr valign="top">
+						<th scope="row"><label for="rss-feed">RSS Feed</label></th>
+						<td><input id="rss-feed" name="nuovo_options[rss-feed]" type="text" value="<?php esc_attr_e($settings['rss-feed']); ?>" /></td>
+					</tr>
+					<!-- Color Theme-->
+					<tr valign="top">
+						<th scope="row"><label for="color-theme">Color Theme</label></th>
+						<td>
+							<select id="color-theme" name="nuovo_options[color-theme]">
+								<?php
+								foreach($nuovo_colors as $color){
+									$label = $color['label'];
+									$selected = "";
+									if ($color['value'] == $settings['color-theme']) {
+										$selected = 'selected="selected"';
+									}
+									echo '<option value="' . esc_attr($color['value']) . '" ' . $selected . '>' . $label . '</option>';
+								}
+								?>
+							</select>
+						</td>
+					</tr>
+					<!--Top Menu-->
+					<tr valign="top">
+						<th scope="row"><label for="top-menu">Top Menu</label></th>
+						<td><input type="checkbox" id="top-menu" name="nuovo_options[top-menu]" value="1" <?php checked(true, $settings['top-menu']); ?> /></td>
+					</tr>
+					<!--Author Bio-->
+					<tr valign="top">
+						<th scope="row"><label for="author-bio">Author Bio</label></th>
+						<td><input type="checkbox" id="author-bio" name="nuovo_options[author-bio]" value="1" <?php checked(true, $settings['author-bio']); ?> /></td>
+					</tr>
+				</table>
+			</div>
+			<!--Social options here-->
+			<div id="tab-social">
+				<table>
+					<!-- Facebook Link -->
+					<tr valign="top">
+						<th scope="row"><label for="facebook">Facebook Link</label></th>
+						<td><input id="facebook" name="nuovo_options[facebook]" type="text" value="<?php esc_attr_e($settings['facebook']); ?>" /></td>
+					</tr>
+					<!--Twitter Link-->
+					<tr valign="top">
+						<th scope="row"><label for="twitter">Twitter Link</label></th>
+						<td><input id="twitter" name="nuovo_options[twitter]" type="text" value="<?php esc_attr_e($settings['twitter']); ?>" /></td>
+					</tr>
+					<!--YouTube Link-->
+					<tr valign="top">
+						<th scope="row"><label for="youtube">YoutTube Link</label></th>
+						<td><input id="youtube" name="nuovo_options[youtube]" type="text" value="<?php esc_attr_e($settings['youtube']); ?>" /></td>
+					</tr>
+					<!--Google Plus Link-->
+					<tr valign="top">
+						<th scope="row"><label for="googleplus">Google+ Link</label></th>
+						<td><input id="googleplus" name="nuovo_options[googleplus]" type="text" value="<?php esc_attr_e($settings['googleplus']); ?>" /></td>
+					</tr>
+					<!--LinkedIn Link-->
+					<tr valign="top">
+						<th scope="row"><label for="linkedin">LinkedIn Link</label></th>
+						<td><input id="linkedin" name="nuovo_options[linkedin]" type="text" value="<?php esc_attr_e($settings['linkedin']); ?>" /></td>
+					</tr>
+				</table>
+			</div>
+			<!--Homepage options here-->
+			<div id="tab-homepage">
+				<table>
+					<tr valign="top">
+						<th scope="row"><label for="slideshow-category">Slideshow Category</label></th>
+						<td><?php wp_dropdown_categories(array('selected' => $settings['slideshow-category'], 'name' => 'nuovo_options[slideshow-category]', 'orderby' => 'name', 'hierarchical' => 1, 'show_option_none' => __("None", 'nuovo'), 'hide_empty' => '0' )); ?></td>
+					</tr>
+					<tr valign="top">
+						<th scope="row"><label for="slideshow-count">Number of Posts for the slideshow</label></th>
+						<td><input id="slideshow-count" name="nuovo_options[slideshow-count]" type="number" min="-1" value="<?php esc_attr_e($settings['slideshow-count']) ?>" size="2"/></td>
+					</tr>
+					<tr valign="top">
+						<th scope="row"><label for="category-one">First Category</label></th>
+						<td><?php wp_dropdown_categories(array('selected' => $settings['category-one'], 'name' => 'nuovo_options[category-one]', 'orderby' => 'name', 'hierarchical' => 1, 'show_option_none' => __("None", 'nuovo'), 'hide_empty' => '0' )); ?></td>
+					</tr>
+					<tr valign="top">
+						<th scope="row"><label for="category-one-count">Number of posts for Category One</label></th>
+						<td><input id="category-one-count" name="nuovo_options[category-one-count]" type="number" min="-1" value="<?php esc_attr_e($settings['category-one-count']) ?>" /></td>
+					</tr>
+					<tr valign="top">
+						<th scope="row"><label for="category-two">Second Category</label></th>
+						<td><?php wp_dropdown_categories(array('selected' => $settings['category-two'], 'name' => 'nuovo_options[category-two]', 'orderby' => 'name', 'hierarchical' => 1, 'show_option_none' => __("None", 'nuovo'), 'hide_empty' => '0' )); ?></td>
+					</tr>
+					<tr valign="top">
+						<th scope="row"><label for="category-two-count">Number of posts for Category Two</label></th>
+						<td><input id="category-two-count" name="nuovo_options[category-two-count]" type="number" min="-1" value="<?php esc_attr_e($settings['category-two-count']) ?>" /></td>
+					</tr>
+					<tr valign="top">
+						<th scope="row"><label for="category-three">Third Category</label></th>
+						<td><?php wp_dropdown_categories(array('selected' => $settings['category-three'], 'name' => 'nuovo_options[category-three]', 'orderby' => 'name', 'hierarchical' => 1, 'show_option_none' => __("None", 'nuovo'), 'hide_empty' => '0' )); ?></td>
+					</tr>
+					<tr valign="top">
+						<th scope="row"><label for="category-three-count">Number of posts for Category Three</label></th>
+						<td><input id="category-three-count" name="nuovo_options[category-three-count]" type="number" min="-1" value="<?php esc_attr_e($settings['category-three-count']) ?>" /></td>
+					</tr>
+					<tr valign="top">
+						<th scope="row"><label for="category-four">Fourth Category</label></th>
+						<td><?php wp_dropdown_categories(array('selected' => $settings['category-four'], 'name' => 'nuovo_options[category-four]', 'orderby' => 'name', 'hierarchical' => 1, 'show_option_none' => __("None", 'nuovo'), 'hide_empty' => '0' )); ?></td>
+					</tr>
+					<tr valign="top">
+						<th scope="row"><label for="category-four-count">Number of posts for Category Four</label></th>
+						<td><input id="category-four-count" name="nuovo_options[category-four-count]" type="number" min="-1" value="<?php esc_attr_e($settings['category-four-count']) ?>" /></td>
+					</tr>
+					<tr valign="top">
+						<th scope="row"><label for="latest-posts-count">Number of latest posts</label></th>
+						<td><input id="latest-posts-count" name="nuovo_options[latest-posts-count]" type="number" min="-1" value="<?php esc_attr_e($settings['latest-posts-count']) ?>" /></td>
+					</tr>
+				</table>
+			</div>
+			<p class="submit"><input type="submit" class="button-primary" value="Save Options" /></p>
 		</form>
+		</div>
 	</div>
-<?php	
-}
 
-function nuovo_initialize_theme_options() {
-	if (false == get_option('nuovo_theme_general_options')) {
-		add_option('nuovo_theme_general_options');
+	<?php
+}
+// Validate and sanitize the options
+function nuovo_validate_options($input){
+	global $nuovo_options, $nuovo_colors;
+	$settings = get_option('nuovo_options', $nuovo_options);
+	$cats = get_categories();
+
+	// Validate the input for the RSS feed
+	$input['rss-feed'] = wp_filter_nohtml_kses( $input['rss-feed'] );
+
+	// Validate the input for the color theme
+	//$prev = $settings['color-theme'];
+	//if ( !array_key_exists( $input['color-theme'], $nuovo_colors ) ){
+	//	$input['color-theme'] = $prev;
+	//}
+
+	// Validate the input for the top menu
+	if ( ! isset( $input['top-menu'] ) ){
+		$input['top-menu'] = null;
 	}
-	
-	// Add the General Settings Section
-	add_settings_section('general_settings_section', 'General Settings', 'nuovo_general_settings_callback', 'nuovo_theme_general_options');
-	
-	// Add Google Analytics Field
-	add_settings_field('google-analytics', 'Google Analytics Code', 'nuovo_google_analytics_callback', 'nuovo_theme_general_options', 'general_settings_section', array('Put your Google Analytics tracking code here.'));
-	
-	// Add Field to Input RSS Feed
-	add_settings_field('rss-feed', 'RSS Feed', 'nuovo_rss_feed_callback', 'nuovo_theme_general_options', 'general_settings_section');
-	
-	// Add the Color Theme Option
-	add_settings_field('color-theme', 'Color Theme', 'nuovo_color_theme_callback', 'nuovo_theme_general_options', 'general_settings_section');
-	
-	// Add the Top Menu Option
-	add_settings_field('top-menu', 'Display Top Menu', 'nuovo_top_menu_callback', 'nuovo_theme_general_options', 'general_settings_section', array('Display the top menu.'));
-	
-	// Add the Author Bio Option
-	add_settings_field('author-bio', 'Display Author Bio', 'nuovo_author_bio_callback', 'nuovo_theme_general_options', 'general_settings_section', array('Display the author bio on single posts.'));
-	
-	// Register the Fields
-	register_setting('nuovo_theme_general_options', 'nuovo_theme_general_options');
-	
-	
-}
-add_action('admin_init', 'nuovo_initialize_theme_options');
+	$input['top-menu'] = ( $input['top-menu'] == 1 ? 1 : 0 );
 
-function nuovo_general_settings_callback() {
-	echo '<p>Here are the general settings.</p>';
-}
-
-function nuovo_google_analytics_callback($args) {
-	$options = get_option('nuovo_theme_general_options');
-	if (isset($options['google-analytics'])) { $opt = $options['google-analytics']; } else { $opt = ''; }
-	$html = '<textarea cols="50" rows="8" name="nuovo_theme_general_options[google-analytics]" id="google-analytics">' . $opt . '</textarea>';
-	echo $html;
-}
-
-function nuovo_rss_feed_callback() {
-	$options = get_option('nuovo_theme_general_options');
-	if (isset($options['rss-feed'])) { $opt = $options['rss-feed']; } else { $opt = ''; }
-	$html = '<input type="text" name="nuovo_theme_general_options[rss-feed]" id="rss-feed" value="' . $opt . '" size="70" />';
-	echo $html;
-}
-
-function nuovo_color_theme_callback() {
-	$options = get_option('nuovo_theme_general_options');
-	if (isset($options['color-theme'])) { $opt = $options['color-theme']; } else { $opt = ''; }
-	$html = '<select id="color-theme" name="nuovo_theme_general_options[color-theme]">';
-	$html .= '<option value="default"' . nuovo_selected( $opt, 'default') . '>' . __( 'Default', 'sandbox' ) . '</option>';
-	$html .= '<option value="blue"' . nuovo_selected( $opt, 'blue') . '>' . __( 'Blue', 'sandbox' ) . '</option>';
-	$html .= '<option value="green"' . nuovo_selected( $opt, 'green') . '>' . __( 'Green', 'sandbox' ) . '</option>';
-	$html .= '<option value="orange"' . nuovo_selected( $opt, 'orange') . '>' . __( 'Orange', 'sandbox' ) . '</option>';
-	$html .= '<option value="purple"' . nuovo_selected( $opt, 'purple') . '>' . __( 'Purple', 'sandbox' ) . '</option>';
-	$html .= '<option value="red"' . nuovo_selected( $opt, 'red') . '>' . __( 'Red', 'sandbox' ) . '</option>';
-	$html .= '<option value="yellow"' . nuovo_selected( $opt, 'yellow') . '>' . __( 'Yellow', 'sandbox' ) . '</option>';
-	$html .= '</select>';
-	echo $html;
-	
-}
-
-function nuovo_top_menu_callback($args) {
-	$options = get_option('nuovo_theme_general_options');
-	if (isset($options['top-menu'])) { $opt = $options['top-menu']; } else { $opt = '';}
-	$html = '<input type="checkbox" id="top-menu" name="nuovo_theme_general_options[top-menu]" value="1" ' . nuovo_checked($opt) . '>';
-	$html .= '<label for="nuovo_theme_general_options[top-menu]">' . $args[0] . '</label>';
-	echo $html;
-}
-
-function nuovo_author_bio_callback($args) {
-	$options = get_option('nuovo_theme_general_options');
-	if (isset($options['author-bio'])) { $opt = $options['author-bio']; } else { $opt = '';}
-	$html = '<input type="checkbox" id="author-bio" name="nuovo_theme_general_options[author-bio]" value="1" ' . nuovo_checked($opt) . '>';
-	$html .= '<label for="nuovo_theme_general_options[author-bio]">' . $args[0] . '</label>';
-	echo $html;
-}
-
-function nuovo_initialize_social_options() {
-	if (false == get_option('nuovo_theme_social_options')) {
-		add_option('nuovo_theme_social_options');
+	// Validate the input for the author bio
+	if ( ! isset( $input['author-bio'] ) ){
+		$input['author-bio'] = null;
 	}
-	
-	// Add the Social Options Section
-	add_settings_section('social_options_section', 'Social Options', 'nuovo_social_options_callback', 'nuovo_theme_social_options');
+	$input['author-bio'] = ( $input['author-bio'] == 1 ? 1 : 0 );
 
-	// Add the Facebook Option
-	add_settings_field('facebook', 'Facebook Link', 'nuovo_facebook_callback', 'nuovo_theme_social_options', 'social_options_section');
-	
-	// Add the Twitter Option
-	add_settings_field('twitter', 'Twitter Link', 'nuovo_twitter_callback', 'nuovo_theme_social_options', 'social_options_section');
-	
-	// Add the YouTube Option
-	add_settings_field('youtube', 'YouTube Link', 'nuovo_youtube_callback', 'nuovo_theme_social_options', 'social_options_section');
-	
-	// Add the Google Plus Option
-	add_settings_field('googleplus', 'Google Plus Link', 'nuovo_googleplus_callback', 'nuovo_theme_social_options', 'social_options_section');
-	
-	// Add the LinkedIn Option
-	add_settings_field('linkedin', 'LinkedIn Link', 'nuovo_linkedin_callback', 'nuovo_theme_social_options', 'social_options_section');
-	
-	// Register the Fields
-	register_setting('nuovo_theme_social_options', 'nuovo_theme_social_options');
-}
-add_action('admin_init', 'nuovo_initialize_social_options');
+	// Validate the input for the Facebook Link
+	$input['facebook'] = wp_filter_nohtml_kses( $input['facebook'] );
 
-function nuovo_social_options_callback() {
-	echo '<p>Enter links to the social media sites you are a part of.</p>';
-}
+	// Validate the input for the Twitter Link
+	$input['twitter'] = wp_filter_nohtml_kses( $input['twitter'] );
 
-function nuovo_facebook_callback() {
-	$options = get_option('nuovo_theme_social_options');
-	if (isset($options['facebook'])) { $opt = $options['facebook']; } else { $opt = ''; }
-	
-	echo '<input type="text" id="facebook" name="nuovo_theme_social_options[facebook]" value="' . $opt . '" size="70" />';
-}
+	// Validate the input for the YouTube Link
+	$input['youtube'] = wp_filter_nohtml_kses( $input['youtube'] );
 
-function nuovo_twitter_callback() {
-	$options = get_option('nuovo_theme_social_options');
-	if (isset($options['twitter'])) { $opt = $options['twitter']; } else { $opt = ''; }
-	
-	echo '<input type="text" id="twitter" name="nuovo_theme_social_options[twitter]" value="' . $opt . '" size="70" />';
-}
+	// Validate the input for the Google+ Link
+	$input['googleplus'] = wp_filter_nohtml_kses( $input['googleplus'] );
 
-function nuovo_youtube_callback() {
-	$options = get_option('nuovo_theme_social_options');
-	if (isset($options['youtube'])) { $opt = $options['twitter']; } else { $opt = ''; }
-	
-	echo '<input type="text" id="youtube" name="nuovo_theme_social_options[youtube]" value="' . $opt . '" size="70" />';
-}
+	// Validate the input for the LinkedIn Link
+	$input['linkedin'] = wp_filter_nohtml_kses( $input['linkedin'] );
 
-function nuovo_googleplus_callback() {
-	$options = get_option('nuovo_theme_social_options');
-	if (isset($options['googleplus'])) { $opt = $options['googleplus']; } else { $opt = ''; }
-	
-	echo '<input type="text" id="googleplus" name="nuovo_theme_social_options[googleplus]" value="' . $opt . '" size="70" />';
-}
-
-function nuovo_linkedin_callback() {
-	$options = get_option('nuovo_theme_social_options');
-	if (isset($options['linkedin'])) { $opt = $options['linkedin']; } else { $opt = ''; }
-	
-	echo '<input type="text" id="linkedin" name="nuovo_theme_social_options[linkedin]" value="' . $opt . '" size="70" />';
-}
-
-function nuovo_initialize_homepage_options() {
-	if (false == get_option('nuovo_theme_homepage_options')) {
-		add_option('nuovo_theme_homepage_options');
+	// Validate the input for the Slideshow Category
+	$prev = $settings['slideshow-category'];
+	if ( !array_key_exists( $input['slideshow-category'], $cats ) ){
+		$input['slideshow-category'] = $prev;
 	}
-	
-	// Add the Social Options Section
-	add_settings_section('homepage_options_section', 'Homepage Options', 'nuovo_homepage_options_callback', 'nuovo_theme_homepage_options');
-	
-	// Add Featured Post Slider Category Option
-	add_settings_field('slideshow-category', 'Category for Slideshow', 'nuovo_slideshow_category_callback', 'nuovo_theme_homepage_options', 'homepage_options_section');
 
-	// Add the Featured Post Slider Count Option
-	add_settings_field('slideshow-count', 'Number of Posts for Slideshow', 'nuovo_slideshow_count_callback', 'nuovo_theme_homepage_options', 'homepage_options_section');
+	// Validate the input for the Slideshow Category Count
+	$input['slideshow-count'] = wp_filter_nohtml_kses( $input['slideshow-count'] );
 
-	// Add Category One Option
-	add_settings_field('category-one', 'First Category', 'nuovo_category_one_callback', 'nuovo_theme_homepage_options', 'homepage_options_section');
+	// Validate the input for the First Category
+	$prev = $settings['category-one'];
+	if ( !array_key_exists( $input['category-one'], $cats ) ){
+		$input['category-one'] = $prev;
+	}
 
-	// Add the Category One Count Option
-	add_settings_field('category-one-count', 'Number of Posts for Category One', 'nuovo_category_one_count_callback', 'nuovo_theme_homepage_options', 'homepage_options_section');
-	
-	// Add Category Two Option
-	add_settings_field('category-two', 'Second Category', 'nuovo_category_two_callback', 'nuovo_theme_homepage_options', 'homepage_options_section');
+	// Validate the input for the Category One Count
+	$input['category-one-count'] = wp_filter_nohtml_kses( $input['category-one-count'] );
 
-	// Add the Category Two Count Option
-	add_settings_field('category-two-count', 'Number of Posts for Category Two', 'nuovo_category_two_count_callback', 'nuovo_theme_homepage_options', 'homepage_options_section');
-	
-	// Add Category Three Option
-	add_settings_field('category-three', 'Third Category', 'nuovo_category_three_callback', 'nuovo_theme_homepage_options', 'homepage_options_section');
+	// Validate the input for the Second Category
+	$prev = $settings['category-two'];
+	if ( !array_key_exists( $input['category-two'], $cats ) ){
+		$input['category-two'] = $prev;
+	}
 
-	// Add the Category Three Count Option
-	add_settings_field('category-three-count', 'Number of Posts for Category Three', 'nuovo_category_three_count_callback', 'nuovo_theme_homepage_options', 'homepage_options_section');
-	
-	// Add Category Four Option
-	add_settings_field('category-four', 'Fourth Category', 'nuovo_category_four_callback', 'nuovo_theme_homepage_options', 'homepage_options_section');
+	// Validate the input for the Category Two Count
+	$input['category-two-count'] = wp_filter_nohtml_kses( $input['category-two-count'] );
 
-	// Add the Category Four Count Option
-	add_settings_field('category-four-count', 'Number of Posts for Category Four', 'nuovo_category_four_count_callback', 'nuovo_theme_homepage_options', 'homepage_options_section');
-	
-	// Add the Latest Posts Count Option
-	add_settings_field('latest-posts-count', 'Number of Latest Posts', 'nuovo_latest_posts_count_callback', 'nuovo_theme_homepage_options', 'homepage_options_section');
-	
-	// Register the Fields
-	register_setting('nuovo_theme_homepage_options', 'nuovo_theme_homepage_options');
-}
-add_action('admin_init', 'nuovo_initialize_homepage_options');
+	// Validate the input for the Third Category
+	$prev = $settings['category-three'];
+	if ( !array_key_exists( $input['category-three'], $cats ) ){
+		$input['category-three'] = $prev;
+	}
 
-function nuovo_homepage_options_callback() {
-	echo '<p>Here are the options for the homepage.</p>';
-}
+	// Validate the input for the Category Three Count
+	$input['category-three-count'] = wp_filter_nohtml_kses( $input['category-three-count'] );
 
-function nuovo_slideshow_category_callback(){
-	$options = get_option('nuovo_theme_homepage_options');
-	if (isset($options['slideshow-category'])) { $opt = $options['slideshow-category']; } else { $opt = ''; }
-	wp_dropdown_categories(array('selected' => $opt, 'name' => 'nuovo_theme_homepage_options[slideshow-category]', 'orderby' => 'name', 'hierarchical' => 1, 'show_option_none' => __("None", 'studiopress'), 'hide_empty' => '0' ));
-}
+	// Validate the input for the Fourth Category
+	$prev = $settings['category-four'];
+	if ( !array_key_exists( $input['category-four'], $cats ) ){
+		$input['category-four'] = $prev;
+	}
 
-function nuovo_slideshow_count_callback() {
-	$options = get_option('nuovo_theme_homepage_options');
-	if (isset($options['slideshow-count'])) { $opt = $options['slideshow-count']; } else { $opt = ''; }
-	$html = '<input type="text" name="nuovo_theme_homepage_options[slideshow-count]" id="slideshow-count" value="' . $opt . '" size="2" />';
-	echo $html;
-}
+	// Validate the input for the Category Four Count
+	$input['category-four-count'] = wp_filter_nohtml_kses( $input['category-four-count'] );
 
-function nuovo_category_one_callback(){
-	$options = get_option('nuovo_theme_homepage_options');
-	if (isset($options['category-one'])) { $opt = $options['category-one']; } else { $opt = ''; }
-	wp_dropdown_categories(array('selected' => $opt, 'name' => 'nuovo_theme_homepage_options[category-one]', 'orderby' => 'name', 'hierarchical' => 1, 'show_option_none' => __("None", 'studiopress'), 'hide_empty' => '0' ));
-}
+	// Validate the input for the Latest Posts Count
+	$input['latest-posts-count'] = wp_filter_nohtml_kses( $input['latest-posts-count'] );
 
-function nuovo_category_one_count_callback() {
-	$options = get_option('nuovo_theme_homepage_options');
-	if (isset($options['category-one-count'])) { $opt = $options['category-one-count']; } else { $opt = ''; }
-	$html = '<input type="text" name="nuovo_theme_homepage_options[category-one-count]" id="category-one-count" value="' . $opt . '" size="2" />';
-	echo $html;
-}
-
-function nuovo_category_two_callback(){
-	$options = get_option('nuovo_theme_homepage_options');
-	if (isset($options['category-two'])) { $opt = $options['category-two']; } else { $opt = ''; }
-	wp_dropdown_categories(array('selected' => $opt, 'name' => 'nuovo_theme_homepage_options[category-two]', 'orderby' => 'name', 'hierarchical' => 1, 'show_option_none' => __("None", 'studiopress'), 'hide_empty' => '0' ));
-}
-
-function nuovo_category_two_count_callback() {
-	$options = get_option('nuovo_theme_homepage_options');
-	if (isset($options['category-two-count'])) { $opt = $options['category-two-count']; } else { $opt = ''; }
-	$html = '<input type="text" name="nuovo_theme_homepage_options[category-two-count]" id="category-two-count" value="' . $opt . '" size="2" />';
-	echo $html;
-}
-
-function nuovo_category_three_callback(){
-	$options = get_option('nuovo_theme_homepage_options');
-	if (isset($options['category-three'])) { $opt = $options['category-three']; } else { $opt = ''; }
-	wp_dropdown_categories(array('selected' => $opt, 'name' => 'nuovo_theme_homepage_options[category-three]', 'orderby' => 'name', 'hierarchical' => 1, 'show_option_none' => __("None", 'studiopress'), 'hide_empty' => '0' ));
-}
-
-function nuovo_category_three_count_callback() {
-	$options = get_option('nuovo_theme_homepage_options');
-	if (isset($options['category-three-count'])) { $opt = $options['category-three-count']; } else { $opt = ''; }
-	$html = '<input type="text" name="nuovo_theme_homepage_options[category-three-count]" id="category-three-count" value="' . $opt . '" size="2" />';
-	echo $html;
-}
-
-function nuovo_category_four_callback(){
-	$options = get_option('nuovo_theme_homepage_options');
-	if (isset($options['category-four'])) { $opt = $options['category-four']; } else { $opt = ''; }
-	wp_dropdown_categories(array('selected' => $opt, 'name' => 'nuovo_theme_homepage_options[category-four]', 'orderby' => 'name', 'hierarchical' => 1, 'show_option_none' => __("None", 'studiopress'), 'hide_empty' => '0' ));
-}
-
-function nuovo_category_four_count_callback() {
-	$options = get_option('nuovo_theme_homepage_options');
-	if (isset($options['category-four-count'])) { $opt = $options['category-four-count']; } else { $opt = ''; }
-	$html = '<input type="text" name="nuovo_theme_homepage_options[category-four-count]" id="category-four-count" value="' . $opt . '" size="2" />';
-	echo $html;
-}
-
-function nuovo_latest_posts_count_callback() {
-	$options = get_option('nuovo_theme_homepage_options');
-	if (isset($options['latest-posts-count'])) { $opt = $options['latest-posts-count']; } else { $opt = '0'; }
-	$html = '<input type="text" name="nuovo_theme_homepage_options[latest-posts-count]" id="latest-posts-count" value="' . $opt . '" size="2" />';
-	echo $html;
+	return $input;
 }
 ?>

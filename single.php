@@ -20,9 +20,16 @@
 					<!--End Meta Tex-->
 					<!--Start Post Text-->
 					<?php the_content(); ?>
+					<div class="mobile-single-meta clearfix">
+						<div class="mobile-single-meta-table"><h5 class="single-meta-text"><?php the_time('M j, Y'); ?></h5></div>
+						<div class="mobile-single-meta-table-alt"><h5 class="single-meta-text">Written By: <?php the_author_posts_link(); ?></h5></div>
+						<div class="mobile-single-meta-table"><h5 class="single-meta-text"><?php comments_popup_link('0 Comments', '1 Comment', '% Comments', '', 'Comments Closed'); ?></h5></div>
+						<div class="mobile-single-meta-table-alt"><h5 class="single-meta-text"><?php the_category(', '); ?></h5></div>
+						<div class="mobile-single-meta-table"><h5 class="single-meta-text"><?php the_tags('<strong>Tags:</strong><br />', '<br />'); ?></h5></div>
+					</div>
 					<!--End Post Text-->
 				</div>
-				<?php if (nuovo_options('general', 'author-bio')) { ?>
+				<?php if (nuovo_options('author-bio' == 1)) { ?>
 					<!--Begin Author Bio-->
 					<div class="archive-separator"></div>
 					<div class="archive-featured-photo-area">
@@ -38,7 +45,6 @@
 			</div>
 		</div>
 	<?php endwhile; ?>
-	<?php get_nuovo_mobile_template('single'); ?><!--Single Mobile Template-->
 	<?php get_sidebar(); ?>
 </div>
 <?php get_footer(); ?>

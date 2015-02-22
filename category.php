@@ -30,7 +30,6 @@
 			<?php } ?>
 			<!--End Paged Navigation-->
 		</div>
-		<?php get_nuovo_mobile_template('category'); ?><!--Category Mobile Template-->
 		<?php get_sidebar(); ?>
 	</div>
 <?php get_footer(); ?>

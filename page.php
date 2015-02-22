@@ -10,7 +10,6 @@
 				<?php wp_link_pages(); ?>
 			</div><!--End Post Area-->
 		<?php endwhile; ?>
-		<?php get_nuovo_mobile_template('page'); ?><!--Page Mobile Template-->
 		<?php get_sidebar(); ?>
 	</div>
 <?php get_footer(); ?>

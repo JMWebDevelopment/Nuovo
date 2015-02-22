@@ -1,0 +1,29 @@
+/*
+Style sheet for the Nuovo theme options page
+*/
+
+ul.ui-tabs-nav {
+	border-bottom: 1px solid #cccccc;
+}
+
+.nav-tab a {
+	font-weight: 700;
+	font-size: 15px;
+	line-height: 24px;
+	color: #555555;
+	text-decoration: none;
+}
+
+.ui-tabs-nav .ui-state-active {
+	color: #000000;
+	background-color: #f1f1f1;
+}
+
+h2:before {
+    content: '\f108';
+    display: inline-block;
+    -webkit-font-smoothing: antialiased;
+    font: normal 29px/1 'dashicons';
+    vertical-align: middle;
+    margin-right: 0.3em;
+}

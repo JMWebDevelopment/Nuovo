@@ -217,3 +217,116 @@ p.widget-body, p.widget-body a, p.widget-body a:link, p.widget-body a:visited, p
 #wp-calendar caption { color: #000029;}
 #wp-calendar thead { color: #FFFFFF; background: #00062b;}
 #wp-calendar tbody { color: #aaa; }
+
+/* Tablet Styles */
+.tablet-slide{
+	border: 1px solid #000000 !important;
+	border-right: 1px solid #000000 !important;
+}
+
+.tablet-slide-panel{
+	background-color: rgba(0,0,41,.85) !important;
+}
+
+/* Mobile Styles */
+/* General Styles */
+#mobile-branding-background{
+	background-color: #000013;
+}
+
+#mobile-footer{
+	background: #00062b;
+}
+
+/* Main Menu */
+#mobile-main-menu {
+	background: #00062b;
+}
+
+.mobile-main-menu-area{
+	background-color: #00062b;
+	color: #FFFFFF;
+}
+
+/* Featured Post Slider */
+.mobile-slide-panel{
+	background-color: rgba(0,0,41,.85) !important;
+}
+
+/* Homepage Styles */
+.mobile-home-title-bg{
+	background: #00062b;
+}
+
+.mobile-photo-post-details{
+	color: #FFFFFF;
+	background-color: rgba(0,0,41,.85) !important;
+}
+
+.mobile-home-view-all{
+	background: #00062b;
+	color: #FFFFFF;
+}
+
+.mobile-home-next{
+	background: #00062b;
+	color: #FFFFFF;
+}
+
+.mobile-latest-posts-title-bg{
+	background: #00062b;
+}
+
+.mobile-latest-posts-photo{
+	border: 1px solid #000029;
+}
+
+h5.mobile-latest-posts-headline, h5.mobile-latest-posts-headline a, h5.mobile-latest-posts-headline a:link, h5.mobile-latest-posts-headline a:visited, h5.mobile-latest-posts-headline a:hover{
+	color: #000029;
+}
+
+/* Single Post */
+h3.mobile-single-headline{
+	color: #000029;
+}
+
+.mobile-single-meta-table{
+	background-color: #000029;
+}
+
+/* Archive, Author, Category, Search & Tag Styles */
+h1.mobile-archive-title{
+	color: #000029;
+}
+
+.mobile-archive-separator{
+	background: #00062b;
+}
+
+.mobile-archive-comments{
+	color: #FFFFFF;
+	background-color: rgba(0,0,41,.85);
+}
+
+h3.mobile-archive-headline, h3.mobile-archive-headline a, h3.mobile-archive-headline a:link, h3.mobile-archive-headline a:hover, h3.mobile-archive-headline a:visited{
+	color: #000029;
+}
+
+p.mobile-archive-meta-text, p.mobile-archive-meta-text a, p.mobile-archive-meta-text a:link, p.mobile-archive-meta-text a:hover, p.mobile-archive-meta-text a:visited{
+	color: #000029;
+}
+
+.mobile-archive-continue{
+	background: #00062b;
+	color: #FFFFFF;
+}
+
+.mobile-archive-previous-posts{
+	background: #00062b;
+	color: #FFFFFF;
+}
+
+.mobile-archive-next-posts{
+	background: #00062b;
+	color: #FFFFFF;
+}
