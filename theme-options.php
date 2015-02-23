@@ -281,7 +281,7 @@ function nuovo_validate_options($input){
 	}
 
 	// Validate the input for the Slideshow Category Count
-	$input['slideshow-count'] = wp_filter_nohtml_kses( $input['slideshow-count'] );
+	$input['slideshow-count'] = intval( $input['slideshow-count'] );
 
 	// Validate the input for the First Category
 	$prev = $settings['category-one'];
@@ -290,7 +290,7 @@ function nuovo_validate_options($input){
 	}
 
 	// Validate the input for the Category One Count
-	$input['category-one-count'] = wp_filter_nohtml_kses( $input['category-one-count'] );
+	$input['category-one-count'] = intval( $input['category-one-count'] );
 
 	// Validate the input for the Second Category
 	$prev = $settings['category-two'];
@@ -299,7 +299,7 @@ function nuovo_validate_options($input){
 	}
 
 	// Validate the input for the Category Two Count
-	$input['category-two-count'] = wp_filter_nohtml_kses( $input['category-two-count'] );
+	$input['category-two-count'] = intval( $input['category-two-count'] );
 
 	// Validate the input for the Third Category
 	$prev = $settings['category-three'];
@@ -308,7 +308,7 @@ function nuovo_validate_options($input){
 	}
 
 	// Validate the input for the Category Three Count
-	$input['category-three-count'] = wp_filter_nohtml_kses( $input['category-three-count'] );
+	$input['category-three-count'] = intval( $input['category-three-count'] );
 
 	// Validate the input for the Fourth Category
 	$prev = $settings['category-four'];
@@ -317,10 +317,10 @@ function nuovo_validate_options($input){
 	}
 
 	// Validate the input for the Category Four Count
-	$input['category-four-count'] = wp_filter_nohtml_kses( $input['category-four-count'] );
+	$input['category-four-count'] = intval( $input['category-four-count'] );
 
 	// Validate the input for the Latest Posts Count
-	$input['latest-posts-count'] = wp_filter_nohtml_kses( $input['latest-posts-count'] );
+	$input['latest-posts-count'] = intval( $input['latest-posts-count'] );
 
 	return $input;
 }
