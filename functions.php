@@ -1,18 +1,43 @@
 <?php
-// Set the Maximum Content Width
-if ( ! isset( $content_width ) )
- $content_width = 640;
-
-//Add support and Register the Two Menus
-function register_my_menus() {
+// Set up the features to initial after the theme setup
+function nuovo_setup() {
+	//Add support and Register the Two Menus
 	register_nav_menus(
 		array(
 			'top-menu' => __( 'Top Menu' ),
 			'main-menu' => __( 'Main Menu' )
 		)
 	);
+
+	//Add Support for Custom Background
+	$custom_background_args = array(
+		'default-color' => '000000',
+	);
+	add_theme_support( 'custom-background', $custom_background_args );
+
+	//Add Support for Custom Header
+	$args = array(
+		'flex-width' 	=> true,
+		'width'	=> 530,
+		'flex-height'	=> true,
+		'height'	=> 150,
+		'default-image' => '',
+		'default-text-color'     => '777777',
+		'upload'	=> true,
+	);
+	add_theme_support('custom-header', $args);
+
+	//Add Support for Featured Images
+	add_theme_support( 'post-thumbnails', array( 'post' ) );
+
+	// Add support for editor styles
+	add_editor_style();
+
 }
-add_action( 'init', 'register_my_menus' );
+add_action('after_setup_theme', 'nuovo_setup')
+// Set the Maximum Content Width
+if ( ! isset( $content_width ) )
+ $content_width = 640;
 
 // turns a category ID to a Name
 function cat_id_to_name($id) {
@@ -35,27 +60,6 @@ function show_nuovo_options($opt) {
 		echo $option[$opt];
 	}
 }
-
-//Add Support for Custom Background
-$custom_background_args = array(
-'default-color' => '000000',
-);
-add_theme_support( 'custom-background', $custom_background_args );
-
-//Add Support for Custom Header
-$args = array(
-'flex-width' 	=> true,
-'width'	=> 530,
-'flex-height'	=> true,
-'height'	=> 150,
-'default-image' => '',
-'default-text-color'     => '777777',
-'upload'	=> true,
-);
-add_theme_support('custom-header', $args);
-
-//Add Support for Featured Images
-add_theme_support( 'post-thumbnails', array( 'post' ) );
 
 //Setup Function For Comments
 function advanced_comment($comment, $args, $depth) {
@@ -136,12 +140,6 @@ function nuovo_custom_excerpt_length( $length ) {
 	return 40;
 }
 add_filter( 'excerpt_length', 'nuovo_custom_excerpt_length', 999 );
-
-//Add Support for Editor Style
-function nuovo_add_editor_styles() {
-    add_editor_style();
-}
-add_action( 'init', 'nuovo_add_editor_styles' );
 
 //Enqueue Scripts
 function nuovo_scripts() {
