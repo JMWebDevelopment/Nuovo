@@ -34,7 +34,7 @@ function nuovo_setup() {
 	add_editor_style();
 
 }
-add_action('after_setup_theme', 'nuovo_setup')
+add_action('after_setup_theme', 'nuovo_setup');
 // Set the Maximum Content Width
 if ( ! isset( $content_width ) )
  $content_width = 640;
