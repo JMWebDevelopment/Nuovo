@@ -33,6 +33,9 @@ function nuovo_setup() {
 	// Add support for editor styles
 	add_editor_style();
 
+	// Add Support for Automatic Feed Links
+	add_theme_support( 'automatic-feed-links' );
+
 }
 add_action('after_setup_theme', 'nuovo_setup');
 // Set the Maximum Content Width
@@ -192,9 +195,6 @@ function nuovo_remove_thumbnail_dimensions($html) {
 	$html = preg_replace('/(width\height)=\"\d*\"\s/', "", $html);
 	return $html;
 }
-
-// Add Support for Automatic Feed Links
-add_theme_support( 'automatic-feed-links' );
 
 // Add function to display the page title
 function nuovo_wp_title( $title, $sep ) {
