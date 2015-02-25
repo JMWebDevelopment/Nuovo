@@ -4,8 +4,8 @@ function nuovo_setup() {
 	//Add support and Register the Two Menus
 	register_nav_menus(
 		array(
-			'top-menu' => __( 'Top Menu' ),
-			'main-menu' => __( 'Main Menu' )
+			'top-menu' => __( 'Top Menu', 'needs-domain' ),
+			'main-menu' => __( 'Main Menu', 'needs-domain' )
 		)
 	);
 
@@ -90,15 +90,15 @@ function advanced_comment($comment, $args, $depth) {
 <?php }
 function delete_comment_link($id) {
   if (current_user_can('edit_post')) {
-    echo '<a href="'.admin_url("comment.php?action=cdc&c=$id").'">del</a> ';
-    echo '<a href="'.admin_url("comment.php?action=cdc&dt=spam&c=$id").'">spam</a>';
+    echo '<a href="'.admin_url("comment.php?action=cdc&c=$id").'">' . __('del', 'needs-domain') .' </a> ';
+    echo '<a href="'.admin_url("comment.php?action=cdc&dt=spam&c=$id").'">' . __('spam', 'needs-domain') . '</a>';
   }
 }
 
 //Register Sidebars
 function nuovo_sidebar() {
 	register_sidebar(array(
-		'name'=>'Sidebar',
+		'name'=> __('Sidebar', 'needs-domain'),
 		'before_widget' => '<div class="widget-wrap">',
 		'after_widget' => '</p> </div>',
 		'before_title' => '<div class="widget-title-bg"><h3 class="widget-title">',
