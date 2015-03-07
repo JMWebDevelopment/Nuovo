@@ -12,20 +12,20 @@
 					<!--Begin Meta Text-->
 					<div class="single-meta clearfix">
 						<div class="single-meta-table"><h5 class="single-meta-text"><?php the_time('M j, Y'); ?></h5></div>
-						<div class="single-meta-table-alt"><h5 class="single-meta-text">Written By: <?php the_author_posts_link(); ?></h5></div>
-						<div class="single-meta-table"><h5 class="single-meta-text"><?php comments_popup_link('0 Comments', '1 Comment', '% Comments', '', 'Comments Closed'); ?></h5></div>
+						<div class="single-meta-table-alt"><h5 class="single-meta-text"><?php _e('Written By: ', 'nuovo'); ?><?php the_author_posts_link(); ?></h5></div>
+						<div class="single-meta-table"><h5 class="single-meta-text"><?php comments_popup_link(__('0 Comments', 'nuovo'), __('1 Comments', 'nuovo'), __('% Comments', 'nuovo'), '', __('Comments Closed', 'nuovo')); ?></h5></div>
 						<div class="single-meta-table-alt"><h5 class="single-meta-text"><?php the_category(', '); ?></h5></div>
-						<div class="single-meta-table"><h5 class="single-meta-text"><?php the_tags('<strong>Tags:</strong><br />', '<br />'); ?></h5></div>
+						<div class="single-meta-table"><h5 class="single-meta-text"><?php _e('Tags: ', 'nuovo'); ?><br /><?php the_tags('', '<br />'); ?></h5></div>
 					</div>
 					<!--End Meta Tex-->
 					<!--Start Post Text-->
 					<?php the_content(); ?>
 					<div class="mobile-single-meta clearfix">
 						<div class="mobile-single-meta-table"><h5 class="single-meta-text"><?php the_time('M j, Y'); ?></h5></div>
-						<div class="mobile-single-meta-table-alt"><h5 class="single-meta-text">Written By: <?php the_author_posts_link(); ?></h5></div>
-						<div class="mobile-single-meta-table"><h5 class="single-meta-text"><?php comments_popup_link('0 Comments', '1 Comment', '% Comments', '', 'Comments Closed'); ?></h5></div>
+						<div class="mobile-single-meta-table-alt"><h5 class="single-meta-text"><?php _e('Written By: ', 'nuovo'); ?><?php the_author_posts_link(); ?></h5></div>
+						<div class="mobile-single-meta-table"><h5 class="single-meta-text"><?php comments_popup_link(__('0 Comments', 'nuovo'), __('1 Comments', 'nuovo'), __('% Comments', 'nuovo'), '', __('Comments Closed', 'nuovo')); ?></h5></div>
 						<div class="mobile-single-meta-table-alt"><h5 class="single-meta-text"><?php the_category(', '); ?></h5></div>
-						<div class="mobile-single-meta-table"><h5 class="single-meta-text"><?php the_tags('<strong>Tags:</strong><br />', '<br />'); ?></h5></div>
+						<div class="mobile-single-meta-table"><h5 class="single-meta-text"><?php _e('Tags: ', 'nuovo'); ?><br /><?php the_tags('', '<br />'); ?></h5></div>
 					</div>
 					<!--End Post Text-->
 				</div>
@@ -37,7 +37,7 @@
 							<?php echo get_avatar(get_the_author_email(), $size = '96'); ?>
 						</div>
 					</div>
-					<h1 class="archive-title">About <?php the_author_meta('display_name'); ?></h1>
+					<h1 class="archive-title"><?php _e('About', 'nuovo'); ?> <?php the_author_meta('display_name'); ?></h1>
 					<?php the_author_meta('description'); ?>
 					<!--End Author Bio-->
 				<?php } ?>

@@ -4,8 +4,8 @@ function nuovo_setup() {
 	//Add support and Register the Two Menus
 	register_nav_menus(
 		array(
-			'top-menu' => __( 'Top Menu', 'needs-domain' ),
-			'main-menu' => __( 'Main Menu', 'needs-domain' )
+			'top-menu' => __( 'Top Menu', 'nuovo' ),
+			'main-menu' => __( 'Main Menu', 'nuovo' )
 		)
 	);
 
@@ -35,6 +35,9 @@ function nuovo_setup() {
 
 	// Add Support for Automatic Feed Links
 	add_theme_support( 'automatic-feed-links' );
+
+	// Add in the text domain
+	load_theme_textdomain('nuovo', get_template_directory() . '/languages');
 
 }
 add_action('after_setup_theme', 'nuovo_setup');
@@ -77,7 +80,7 @@ function advanced_comment($comment, $args, $depth) {
      <div class="clear"></div>
  
      <?php if ($comment->comment_approved == '0') : ?>
-       <em><?php _e('Your comment is awaiting moderation.') ?></em>
+       <em><?php _e('Your comment is awaiting moderation.', 'nuovo') ?></em>
        <br />
      <?php endif; ?>
  
@@ -93,15 +96,15 @@ function advanced_comment($comment, $args, $depth) {
 <?php }
 function delete_comment_link($id) {
   if (current_user_can('edit_post')) {
-    echo '<a href="'.admin_url("comment.php?action=cdc&c=$id").'">' . __('del', 'needs-domain') .' </a> ';
-    echo '<a href="'.admin_url("comment.php?action=cdc&dt=spam&c=$id").'">' . __('spam', 'needs-domain') . '</a>';
+    echo '<a href="'.admin_url("comment.php?action=cdc&c=$id").'">' . __('del', 'nuovo') .' </a> ';
+    echo '<a href="'.admin_url("comment.php?action=cdc&dt=spam&c=$id").'">' . __('spam', 'nuovo') . '</a>';
   }
 }
 
 //Register Sidebars
 function nuovo_sidebar() {
 	register_sidebar(array(
-		'name'=> __('Sidebar', 'needs-domain'),
+		'name'=> __('Sidebar', 'nuovo'),
 		'before_widget' => '<div class="widget-wrap">',
 		'after_widget' => '</p> </div>',
 		'before_title' => '<div class="widget-title-bg"><h3 class="widget-title">',
@@ -134,7 +137,7 @@ function nuovo_change_page_two( $template ){
 
 //Change the "Read More" For Posts on Home Page
 function nuovo_new_excerpt_more( $more ) {
-		return '... <span class="home-read-more"><a href="'. get_the_permalink( get_the_ID() ) .'">Continue Reading&rsaquo;&rsaquo;</a></span>';
+		return '... <span class="home-read-more"><a href="'. get_the_permalink( get_the_ID() ) .'">' . __('Continue Reading&rsaquo;&rsaquo;', 'nuovo') . '</a></span>';
 }
 add_filter('excerpt_more', 'nuovo_new_excerpt_more');
 

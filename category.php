@@ -18,7 +18,7 @@
 						<?php } ?>
 					</div>
 					<h3 class="archive-headline"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-					<p class="archive-meta-text">Written By: <?php the_author_posts_link(); ?> on <?php the_time('F j, Y'); ?></p>
+					<p class="archive-meta-text"><?php _e('Written By: ', 'nuovo'); ?><?php the_author_posts_link(); ?> <?php _e('on', 'nuovo'); ?> <?php the_time('F j, Y'); ?></p>
 					<?php the_excerpt(); ?>
 					<hr />
 				</div>

@@ -24,8 +24,8 @@
 				</div>
 				<div class="slide-panel">
 					<h3 class="slide-panel-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-					<p class="slide-panel-meta">Written By: <?php the_author_posts_link(); ?><?php edit_post_link('Edit', ' &bull; '); ?><br />
-					Posted in: <?php the_category(', '); ?> &bull; <?php the_time('F j, Y'); ?> &bull; <?php comments_popup_link('0 Comments', '1 Comment', '% Comments', '', 'Comments Disabled'); ?></p>
+					<p class="slide-panel-meta"><?php _e('Written By: ', 'nuovo'); ?><?php the_author_posts_link(); ?><?php edit_post_link(__('Edit', 'nuovo'), ' &bull; '); ?><br />
+					<?php _e('Posted in: ', 'nuovo'); ?><?php _e('Posted in: ', 'nuovo'); ?><?php the_category(', '); ?> &bull; <?php the_time('F j, Y'); ?> &bull; <?php comments_popup_link(__('0 Comments', 'nuovo'), __('1 Comment', 'nuovo'), __('% Comments', 'nuovo'), '', __('Comments Off', 'nuovo')); ?></p>
 					<hr />
 					<?php the_excerpt('Continue Reading', 'nuovo'); ?>
 				</div>
@@ -59,11 +59,11 @@
 						<a href="<?php the_permalink(); ?>">
 							<?php the_post_thumbnail(); ?>
 						</a>
-						<span class="photo-post-details"><p class="photo-post-details-links"><?php echo the_time('M j, Y'); ?> &bull; <?php echo comments_popup_link('0', '1', '%'); ?><img src="<?php echo get_template_directory_uri(); ?>/images/comments.png" style="margin-top:3px; margin-left:3px;margin-bottom:-2px;" /></p></span>
+						<span class="photo-post-details"><p class="photo-post-details-links"><?php echo the_time('M j, Y'); ?> &bull; <?php echo comments_popup_link('0', '1', '%', '', __('Off', 'nuovo')); ?><img src="<?php echo get_template_directory_uri(); ?>/images/comments.png" style="margin-top:3px; margin-left:3px;margin-bottom:-2px;" /></p></span>
 					</div>
 				<?php } ?>
 				<h3 class="home-headline"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-				<p class="home-meta">Written By: <?php the_author_posts_link(); ?><?php edit_post_link('Edit', ' &bull; '); ?></p>
+				<p class="home-meta"><?php _e('Written By: ' ,'nuovo'); ?><?php the_author_posts_link(); ?><?php edit_post_link(__('Edit', 'nuovo'), ' &bull; '); ?></p>
 				<hr />
 				<?php the_excerpt('Continue Reading', 'nuovo'); ?>
 			</div>
@@ -71,7 +71,7 @@
 		<?php endif; ?>
 		<div class="home-view-all">
 			<a href="index.php?cat=<?php echo nuovo_options('category-one'); ?>">
-				View All&rsaquo;&rsaquo;
+				<?php _e('View All&rsaquo;&rsaquo;', 'nuovo'); ?>
 			</a>
 		</div>
 	</div>
@@ -97,11 +97,11 @@
 								<a href="<?php the_permalink(); ?>">
 									<?php the_post_thumbnail(); ?>
 								</a>
-								<span class="photo-post-details"><p class="photo-post-details-links"><?php echo the_time('M j, Y'); ?> &bull; <?php echo comments_popup_link('0', '1', '%'); ?><img src="<?php echo get_template_directory_uri(); ?>/images/comments.png" style="margin-top:3px; margin-left:3px;margin-bottom:-2px;" /></p></span>
+								<span class="photo-post-details"><p class="photo-post-details-links"><?php echo the_time('M j, Y'); ?> &bull; <?php echo comments_popup_link('0', '1', '%', '', __('Off', 'nuovo')); ?><img src="<?php echo get_template_directory_uri(); ?>/images/comments.png" style="margin-top:3px; margin-left:3px;margin-bottom:-2px;" /></p></span>
 							</div>
 						<?php } ?>
 						<h3 class="home-headline"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-						<p class="home-meta">Written By: <?php the_author_posts_link(); ?><?php edit_post_link('Edit', ' &bull; '); ?></p>
+						<p class="home-meta"><?php _e('Written By: ' ,'nuovo'); ?><?php the_author_posts_link(); ?><?php edit_post_link(__('Edit', 'nuovo'), ' &bull; '); ?></p>
 						<hr />
 						<?php the_excerpt('Continue Reading', 'nuovo'); ?>
 					</div>
@@ -109,7 +109,7 @@
 				<?php endif; ?>
 			<div class="home-view-all">
 				<a href="index.php?cat=<?php echo nuovo_options('category-two'); ?>">
-					View All&rsaquo;&rsaquo;
+					<?php _e('View All&rsaquo;&rsaquo;', 'nuovo'); ?>
 				</a>
 			</div>
 		</div>
@@ -136,11 +136,11 @@
 							<a href="<?php the_permalink(); ?>">
 								<?php the_post_thumbnail(); ?>
 							</a>
-							<span class="photo-post-details"><p class="photo-post-details-links"><?php echo the_time('M j, Y'); ?> &bull; <?php echo comments_popup_link('0', '1', '%'); ?><img src="<?php echo get_template_directory_uri(); ?>/images/comments.png" style="margin-top:3px; margin-left:3px;margin-bottom:-2px;" /></p></span>
+							<span class="photo-post-details"><p class="photo-post-details-links"><?php echo the_time('M j, Y'); ?> &bull; <?php echo comments_popup_link('0', '1', '%', '', __('Off', 'nuovo')); ?><img src="<?php echo get_template_directory_uri(); ?>/images/comments.png" style="margin-top:3px; margin-left:3px;margin-bottom:-2px;" /></p></span>
 						</div>
 					<?php } ?>
 					<h3 class="home-headline"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-					<p class="home-meta">Written By: <?php the_author_posts_link(); ?><?php edit_post_link('Edit', ' &bull; '); ?></p>
+					<p class="home-meta"><?php _e('Written By: ' ,'nuovo'); ?><?php the_author_posts_link(); ?><?php edit_post_link(__('Edit', 'nuovo'), ' &bull; '); ?></p>
 					<hr />
 					<?php the_excerpt('Continue Reading', 'nuovo'); ?>
 				</div>
@@ -148,7 +148,7 @@
 			<?php endif; ?>
 			<div class="home-view-all">
 				<a href="index.php?cat=<?php echo nuovo_options('category-three'); ?>">
-					View All&rsaquo;&rsaquo;
+					<?php _e('View All&rsaquo;&rsaquo;', 'nuovo'); ?>
 				</a>
 			</div>
 		</div>
@@ -175,11 +175,11 @@
 							<a href="<?php the_permalink(); ?>">
 								<?php the_post_thumbnail(); ?>
 							</a>
-							<span class="photo-post-details"><p class="photo-post-details-links"><?php echo the_time('M j, Y'); ?> &bull; <?php echo comments_popup_link('0', '1', '%'); ?><img src="<?php echo get_template_directory_uri(); ?>/images/comments.png" style="margin-top:3px; margin-left:3px;margin-bottom:-2px;" /></p></span>
+							<span class="photo-post-details"><p class="photo-post-details-links"><?php echo the_time('M j, Y'); ?> &bull; <?php echo comments_popup_link('0', '1', '%', '', __('Off', 'nuovo')); ?><img src="<?php echo get_template_directory_uri(); ?>/images/comments.png" style="margin-top:3px; margin-left:3px;margin-bottom:-2px;" /></p></span>
 						</div>
 					<?php } ?>
 					<h3 class="home-headline"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-					<p class="home-meta">Written By: <?php the_author_posts_link(); ?><?php edit_post_link('Edit', ' &bull; '); ?></p>
+					<p class="home-meta"><?php _e('Written By: ' ,'nuovo'); ?><?php the_author_posts_link(); ?><?php edit_post_link(__('Edit', 'nuovo'), ' &bull; '); ?></p>
 					<hr />
 					<?php the_excerpt('Continue Reading', 'nuovo'); ?>
 				</div>
@@ -187,7 +187,7 @@
 			<?php endif; ?>
 			<div class="home-view-all">
 				<a href="index.php?cat=<?php echo nuovo_options('category-one'); ?>">
-					View All&rsaquo;&rsaquo;
+					<?php _e('View All&rsaquo;&rsaquo;', 'nuovo'); ?>
 				</a>
 			</div>
 		</div>
@@ -214,7 +214,7 @@
 							<div class="latest-posts-photo"><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a></div>
 						<?php } ?>
 						<div class="latest-posts-headline-area">
-							<h5 class="latest-posts-headline"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> &bull; Written By: <?php the_author_posts_link(); ?> &bull; <?php the_time('F j, Y'); ?> &bull; <?php comments_popup_link('0 Comments', '1 Comment', '% Comments', '', 'Comments Disabled'); ?></h5>
+							<h5 class="latest-posts-headline"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> &bull; <?php _e('Written By: ', 'nuovo'); ?><?php the_author_posts_link(); ?> &bull; <?php the_time('F j, Y'); ?> &bull; <?php comments_popup_link(__('0 Comments', 'nuovo'), __('1 Comment', 'nuovo'), __('% Comments', 'nuovo'), '', __('Comments Closed', 'nuovo')); ?></h5>
 						</div>
 					</div>
 			<?php endwhile; ?>
@@ -252,11 +252,11 @@
 								<a href="<?php the_permalink(); ?>">
 									<?php the_post_thumbnail(); ?>
 								</a>
-								<span class="mobile-photo-post-details"><span class="mobile-photo-post-details-links"><?php echo the_time('M j, Y'); ?> &bull; <?php echo comments_popup_link('0', '1', '%'); ?><img src="<?php echo get_template_directory_uri(); ?>/images/comments.png" style="margin-top:3px; margin-left:3px;margin-bottom:-2px;" alt="comments" /></span></span>
+								<span class="mobile-photo-post-details"><span class="mobile-photo-post-details-links"><?php echo the_time('M j, Y'); ?> &bull; <?php echo comments_popup_link('0', '1', '%', '', __('Off', 'nuovo')); ?><img src="<?php echo get_template_directory_uri(); ?>/images/comments.png" style="margin-top:3px; margin-left:3px;margin-bottom:-2px;" alt="comments" /></span></span>
 							</div>
 						<?php } ?>
 						<h3 class="mobile-home-headline"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-						<p class="mobile-home-meta">Written By: <?php the_author_posts_link(); ?><?php edit_post_link('Edit', ' &bull; '); ?></p>
+						<p class="mobile-home-meta"><?php _e('Written By: ', 'nuovo'); ?><?php the_author_posts_link(); ?><?php edit_post_link(__('Edit', 'nuovo'), ' &bull; '); ?></p>
 						<hr />
 						<?php the_excerpt('Continue Reading', 'nuovo'); ?>
 					</div>
@@ -266,7 +266,7 @@
 		</div>
 		<div class="mobile-home-view-all">
 			<a href="index.php?cat=<?php echo nuovo_options('category-one'); ?>">
-				View All&rsaquo;&rsaquo;
+				<?php _e('View All&rsaquo;&rsaquo;', 'nuovo'); ?>
 			</a>
 		</div>
 	</div>
@@ -294,11 +294,11 @@
 								<a href="<?php the_permalink(); ?>">
 									<?php the_post_thumbnail(); ?>
 								</a>
-								<span class="mobile-photo-post-details"><span class="mobile-photo-post-details-links"><?php echo the_time('M j, Y'); ?> &bull; <?php echo comments_popup_link('0', '1', '%'); ?><img src="<?php echo get_template_directory_uri(); ?>/images/comments.png" style="margin-top:3px; margin-left:3px;margin-bottom:-2px;" alt="comments" /></span></span>
+								<span class="mobile-photo-post-details"><span class="mobile-photo-post-details-links"><?php echo the_time('M j, Y'); ?> &bull; <?php echo comments_popup_link('0', '1', '%', '', __('Off', 'nuovo')); ?><img src="<?php echo get_template_directory_uri(); ?>/images/comments.png" style="margin-top:3px; margin-left:3px;margin-bottom:-2px;" alt="comments" /></span></span>
 							</div>
 						<?php } ?>
 						<h3 class="mobile-home-headline"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-						<p class="mobile-home-meta">Written By: <?php the_author_posts_link(); ?><?php edit_post_link('Edit', ' &bull; '); ?></p>
+						<p class="mobile-home-meta"><?php _e('Written By: ', 'nuovo'); ?><?php the_author_posts_link(); ?><?php edit_post_link(__('Edit', 'nuovo'), ' &bull; '); ?></p>
 						<hr />
 						<?php the_excerpt('Continue Reading', 'nuovo'); ?>
 					</div>
@@ -307,8 +307,8 @@
 			</div>
 		</div>
 		<div class="mobile-home-view-all">
-			<a href="index.php?cat=<?php echo nuovo_options('category-one'); ?>">
-				View All&rsaquo;&rsaquo;
+			<a href="index.php?cat=<?php echo nuovo_options('category-two'); ?>">
+				<?php _e('View All&rsaquo;&rsaquo;', 'nuovo'); ?>
 			</a>
 		</div>
 	</div>
@@ -336,11 +336,11 @@
 								<a href="<?php the_permalink(); ?>">
 									<?php the_post_thumbnail(); ?>
 								</a>
-								<span class="mobile-photo-post-details"><span class="mobile-photo-post-details-links"><?php echo the_time('M j, Y'); ?> &bull; <?php echo comments_popup_link('0', '1', '%'); ?><img src="<?php echo get_template_directory_uri(); ?>/images/comments.png" style="margin-top:3px; margin-left:3px;margin-bottom:-2px;" alt="comments" /></span></span>
+								<span class="mobile-photo-post-details"><span class="mobile-photo-post-details-links"><?php echo the_time('M j, Y'); ?> &bull; <?php echo comments_popup_link('0', '1', '%', '', __('Off', 'nuovo')); ?><img src="<?php echo get_template_directory_uri(); ?>/images/comments.png" style="margin-top:3px; margin-left:3px;margin-bottom:-2px;" alt="comments" /></span></span>
 							</div>
 						<?php } ?>
 						<h3 class="mobile-home-headline"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-						<p class="mobile-home-meta">Written By: <?php the_author_posts_link(); ?><?php edit_post_link('Edit', ' &bull; '); ?></p>
+						<p class="mobile-home-meta"><?php _e('Written By: ', 'nuovo'); ?><?php the_author_posts_link(); ?><?php edit_post_link(__('Edit', 'nuovo'), ' &bull; '); ?></p>
 						<hr />
 						<?php the_excerpt('Continue Reading', 'nuovo'); ?>
 					</div>
@@ -349,8 +349,8 @@
 			</div>
 		</div>
 		<div class="mobile-home-view-all">
-			<a href="index.php?cat=<?php echo nuovo_options('category-one'); ?>">
-				View All&rsaquo;&rsaquo;
+			<a href="index.php?cat=<?php echo nuovo_options('category-three'); ?>">
+				<?php _e('View All&rsaquo;&rsaquo;', 'nuovo'); ?>
 			</a>
 		</div>
 	</div>
@@ -379,11 +379,11 @@
 									<a href="<?php the_permalink(); ?>">
 										<?php the_post_thumbnail(); ?>
 									</a>
-									<span class="mobile-photo-post-details"><span class="mobile-photo-post-details-links"><?php echo the_time('M j, Y'); ?> &bull; <?php echo comments_popup_link('0', '1', '%'); ?><img src="<?php echo get_template_directory_uri(); ?>/images/comments.png" style="margin-top:3px; margin-left:3px;margin-bottom:-2px;" alt="comments" /></span></span>
+									<span class="mobile-photo-post-details"><span class="mobile-photo-post-details-links"><?php echo the_time('M j, Y'); ?> &bull; <?php echo comments_popup_link('0', '1', '%', '', __('Off', 'nuovo')); ?><img src="<?php echo get_template_directory_uri(); ?>/images/comments.png" style="margin-top:3px; margin-left:3px;margin-bottom:-2px;" alt="comments" /></span></span>
 								</div>
 							<?php } ?>
 							<h3 class="mobile-home-headline"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-							<p class="mobile-home-meta">Written By: <?php the_author_posts_link(); ?><?php edit_post_link('Edit', ' &bull; '); ?></p>
+							<p class="mobile-home-meta"><?php _e('Written By: ', 'nuovo'); ?><?php the_author_posts_link(); ?><?php edit_post_link(__('Edit', 'nuovo'), ' &bull; '); ?></p>
 							<hr />
 							<?php the_excerpt('Continue Reading', 'nuovo'); ?>
 						</div>
@@ -392,8 +392,8 @@
 				</div>
 			</div>
 			<div class="mobile-home-view-all">
-				<a href="index.php?cat=<?php echo nuovo_options('category-one'); ?>">
-					View All&rsaquo;&rsaquo;
+				<a href="index.php?cat=<?php echo nuovo_options('category-four'); ?>">
+					<?php _e('View All&rsaquo;&rsaquo;', 'nuovo'); ?>
 				</a>
 			</div>
 		</div>
@@ -404,7 +404,7 @@
 		<!--Begin Latest Posts-->
 		<div id="mobile-latest-posts-area" class="clearfix">
 			<div class="mobile-latest-posts-title-bg">
-				<h3 class="mobile-latest-posts-title">Latest Posts</h3>
+				<h3 class="mobile-latest-posts-title"><?php _e('Latest Posts', 'nuovo'); ?></h3>
 			</div>
 			<?php 
 				$latest_posts_args = array(
@@ -420,7 +420,7 @@
 							<div class="mobile-latest-posts-photo"><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a></div>
 						<?php } ?>
 						<div class="mobile-latest-posts-headline-area clearfix">
-							<h5 class="mobile-latest-posts-headline"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> &bull; Written By: <?php the_author_posts_link(); ?> &bull; <?php the_time('F j, Y'); ?> &bull; <?php comments_popup_link('0 Comments', '1 Comment', '% Comments', '', 'Comments Disabled'); ?></h5>
+							<h5 class="mobile-latest-posts-headline"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> &bull; <?php _e('Written By: ', 'nuovo'); ?><?php the_author_posts_link(); ?> &bull; <?php the_time('F j, Y'); ?> &bull; <?php comments_popup_link(__('0 Comments', 'nuovo'), __('1 Comment', 'nuovo'), __('% Comments', 'nuovo'), '', __('Comments Disabled', 'nuovo')); ?></h5>
 						</div>
 					</div>
 			<?php endwhile; ?>

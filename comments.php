@@ -3,13 +3,13 @@
 		die ('Please do not load this page directly. Thanks!');
  
 	if ( post_password_required() ) { ?>
-		<p class="nocomments">This post is password protected. Enter the password to view comments.</p>
+		<p class="nocomments"><?php _e('This post is password protected. Enter the password to view comments.', 'nuovo'); ?></p>
 	<?php
 		return;
 	}
 ?>
 <?php if ( have_comments() ) : ?>
-	<h3 id="comments"><?php comments_number('No Responses', 'One Response', '% Responses' );?> to &#8220;<?php the_title(); ?>&#8221;</h3>
+	<h3 id="comments"><?php comments_number(__('No Responses', 'nuovo'), __('One Response', 'nuovo'), __('% Responses', 'nuovo') );?> <?php __('to', 'nuovo'); ?> &#8220;<?php the_title(); ?>&#8221;</h3>
 	<ol class="commentlist">
 		<?php wp_list_comments('type=comment&callback=advanced_comment'); 
                 ?>

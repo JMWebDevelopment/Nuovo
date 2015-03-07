@@ -20,7 +20,7 @@
 	<!--End Top Menu-->
 	<!--Begin Top Menu-->
 	<div id="mobile-top-menu">
-		<p class="mobile-menu-text"><a href="#" id="showhidestopmenu">Go to...</a></p>
+		<p class="mobile-menu-text"><a href="#" id="showhidestopmenu"><?php _e('Go to...' ,'nuovo'); ?></a></p>
 		<div class="mobile-top-menu-area">
 			<?php wp_nav_menu( array( 'sort_column' => 'menu_order', 'theme_location' =>  'top-menu' ) ); ?>
 		</div>
@@ -163,7 +163,7 @@
 <!--End Main Menu-->
 <!--Begin Main Menu-->
 <div id="mobile-main-menu">
-	<p class="mobile-menu-text"><a href="#" id="showhidesmainmenu">Go to...</a></p>
+	<p class="mobile-menu-text"><a href="#" id="showhidesmainmenu"><?php _e('Go to...', 'nuovo'); ?></a></p>
 	<div class="mobile-main-menu-area">
 		<?php wp_nav_menu( array( 'sort_column' => 'menu_order', 'theme_location' =>  'main-menu' ) ); ?>
 	</div>

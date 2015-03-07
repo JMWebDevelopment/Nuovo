@@ -1,7 +1,7 @@
 <?php 
 // Create the theme options page
 function nuovo_create_theme_options_page(){
-	add_theme_page('Nuovo Theme Options','Theme Options','edit_theme_options','nuovo_options','nuovo_build_options_page');
+	add_theme_page(__('Nuovo Theme Options', 'nuovo'),__('Theme Options', 'nuovo'),'edit_theme_options','nuovo_options','nuovo_build_options_page');
 }
 add_action('admin_menu','nuovo_create_theme_options_page');
 
@@ -92,7 +92,7 @@ function nuovo_build_options_page(){
 	}
 	?>
 	<div class="wrap">
-		<?php echo "<h2>" . __( 'Nuovo Theme Options' ) . "</h2>"; ?>
+		<?php echo "<h2>" . __( 'Nuovo Theme Options', 'nuovo' ) . "</h2>"; ?>
 		<?php if (false !== $_REQUEST['updated']) { ?>
 			<div class="updated fade"><p><strong><?php _e( 'Options saved' ); ?></strong></p></div>
 		<?php } ?>
@@ -113,12 +113,12 @@ function nuovo_build_options_page(){
 				<table>
 					<!-- RSS Feed-->
 					<tr valign="top">
-						<th scope="row"><label for="rss-feed">RSS Feed</label></th>
+						<th scope="row"><label for="rss-feed"><?php _e('RSS Feed', 'nuovo'); ?></label></th>
 						<td><input id="rss-feed" name="nuovo_options[rss-feed]" type="text" value="<?php esc_attr_e($settings['rss-feed']); ?>" /></td>
 					</tr>
 					<!-- Color Theme-->
 					<tr valign="top">
-						<th scope="row"><label for="color-theme">Color Theme</label></th>
+						<th scope="row"><label for="color-theme"><?php _e('Color Theme', 'nuovo'); ?></label></th>
 						<td>
 							<select id="color-theme" name="nuovo_options[color-theme]">
 								<?php
@@ -136,12 +136,12 @@ function nuovo_build_options_page(){
 					</tr>
 					<!--Top Menu-->
 					<tr valign="top">
-						<th scope="row"><label for="top-menu">Top Menu</label></th>
+						<th scope="row"><label for="top-menu"><?php _e('Top Menu', 'nuovo'); ?></label></th>
 						<td><input type="checkbox" id="top-menu" name="nuovo_options[top-menu]" value="1" <?php checked(true, $settings['top-menu']); ?> /></td>
 					</tr>
 					<!--Author Bio-->
 					<tr valign="top">
-						<th scope="row"><label for="author-bio">Author Bio</label></th>
+						<th scope="row"><label for="author-bio"><?php _e('Author Bio', 'nuovo'); ?></label></th>
 						<td><input type="checkbox" id="author-bio" name="nuovo_options[author-bio]" value="1" <?php checked(true, $settings['author-bio']); ?> /></td>
 					</tr>
 				</table>
@@ -151,27 +151,27 @@ function nuovo_build_options_page(){
 				<table>
 					<!-- Facebook Link -->
 					<tr valign="top">
-						<th scope="row"><label for="facebook">Facebook Link</label></th>
+						<th scope="row"><label for="facebook"><?php _e('Facebook', 'nuovo'); ?></label></th>
 						<td><input id="facebook" name="nuovo_options[facebook]" type="text" value="<?php esc_attr_e($settings['facebook']); ?>" /></td>
 					</tr>
 					<!--Twitter Link-->
 					<tr valign="top">
-						<th scope="row"><label for="twitter">Twitter Link</label></th>
+						<th scope="row"><label for="twitter"><?php _e('Twitter Link', 'nuovo'); ?></label></th>
 						<td><input id="twitter" name="nuovo_options[twitter]" type="text" value="<?php esc_attr_e($settings['twitter']); ?>" /></td>
 					</tr>
 					<!--YouTube Link-->
 					<tr valign="top">
-						<th scope="row"><label for="youtube">YoutTube Link</label></th>
+						<th scope="row"><label for="youtube"><?php _e('YouTube Link', 'nuovo'); ?></label></th>
 						<td><input id="youtube" name="nuovo_options[youtube]" type="text" value="<?php esc_attr_e($settings['youtube']); ?>" /></td>
 					</tr>
 					<!--Google Plus Link-->
 					<tr valign="top">
-						<th scope="row"><label for="googleplus">Google+ Link</label></th>
+						<th scope="row"><label for="googleplus"><?php _e('Google+ Link', 'nuovo'); ?></label></th>
 						<td><input id="googleplus" name="nuovo_options[googleplus]" type="text" value="<?php esc_attr_e($settings['googleplus']); ?>" /></td>
 					</tr>
 					<!--LinkedIn Link-->
 					<tr valign="top">
-						<th scope="row"><label for="linkedin">LinkedIn Link</label></th>
+						<th scope="row"><label for="linkedin"><?php _e('LinkedIn', 'nuovo'); ?></label></th>
 						<td><input id="linkedin" name="nuovo_options[linkedin]" type="text" value="<?php esc_attr_e($settings['linkedin']); ?>" /></td>
 					</tr>
 				</table>
@@ -180,47 +180,47 @@ function nuovo_build_options_page(){
 			<div id="tab-homepage">
 				<table>
 					<tr valign="top">
-						<th scope="row"><label for="slideshow-category">Slideshow Category</label></th>
+						<th scope="row"><label for="slideshow-category"><?php _e('Slideshow Category', 'nuovo'); ?></label></th>
 						<td><?php wp_dropdown_categories(array('selected' => $settings['slideshow-category'], 'name' => 'nuovo_options[slideshow-category]', 'orderby' => 'name', 'hierarchical' => 1, 'show_option_none' => __("None", 'nuovo'), 'hide_empty' => '0' )); ?></td>
 					</tr>
 					<tr valign="top">
-						<th scope="row"><label for="slideshow-count">Number of Posts for the slideshow</label></th>
+						<th scope="row"><label for="slideshow-count"><?php _e('Number of posts for the slideshow', 'nuovo'); ?></label></th>
 						<td><input id="slideshow-count" name="nuovo_options[slideshow-count]" type="number" min="-1" value="<?php esc_attr_e($settings['slideshow-count']) ?>" size="2"/></td>
 					</tr>
 					<tr valign="top">
-						<th scope="row"><label for="category-one">First Category</label></th>
+						<th scope="row"><label for="category-one"><?php _e('First Category', 'nuovo'); ?></label></th>
 						<td><?php wp_dropdown_categories(array('selected' => $settings['category-one'], 'name' => 'nuovo_options[category-one]', 'orderby' => 'name', 'hierarchical' => 1, 'show_option_none' => __("None", 'nuovo'), 'hide_empty' => '0' )); ?></td>
 					</tr>
 					<tr valign="top">
-						<th scope="row"><label for="category-one-count">Number of posts for Category One</label></th>
+						<th scope="row"><label for="category-one-count"><?php _e('Number of posts for Category One', 'nuovo'); ?></label></th>
 						<td><input id="category-one-count" name="nuovo_options[category-one-count]" type="number" min="-1" value="<?php esc_attr_e($settings['category-one-count']) ?>" /></td>
 					</tr>
 					<tr valign="top">
-						<th scope="row"><label for="category-two">Second Category</label></th>
+						<th scope="row"><label for="category-two"><?php _e('Second Category', 'nuovo'); ?></label></th>
 						<td><?php wp_dropdown_categories(array('selected' => $settings['category-two'], 'name' => 'nuovo_options[category-two]', 'orderby' => 'name', 'hierarchical' => 1, 'show_option_none' => __("None", 'nuovo'), 'hide_empty' => '0' )); ?></td>
 					</tr>
 					<tr valign="top">
-						<th scope="row"><label for="category-two-count">Number of posts for Category Two</label></th>
+						<th scope="row"><label for="category-two-count"><?php _e('Number of posts for Category Two', 'nuovo'); ?></label></th>
 						<td><input id="category-two-count" name="nuovo_options[category-two-count]" type="number" min="-1" value="<?php esc_attr_e($settings['category-two-count']) ?>" /></td>
 					</tr>
 					<tr valign="top">
-						<th scope="row"><label for="category-three">Third Category</label></th>
+						<th scope="row"><label for="category-three"><?php _e('Third Category', 'nuovo'); ?></label></th>
 						<td><?php wp_dropdown_categories(array('selected' => $settings['category-three'], 'name' => 'nuovo_options[category-three]', 'orderby' => 'name', 'hierarchical' => 1, 'show_option_none' => __("None", 'nuovo'), 'hide_empty' => '0' )); ?></td>
 					</tr>
 					<tr valign="top">
-						<th scope="row"><label for="category-three-count">Number of posts for Category Three</label></th>
+						<th scope="row"><label for="category-three-count"><?php _e('Number of posts for Category Three', 'nuovo'); ?></label></th>
 						<td><input id="category-three-count" name="nuovo_options[category-three-count]" type="number" min="-1" value="<?php esc_attr_e($settings['category-three-count']) ?>" /></td>
 					</tr>
 					<tr valign="top">
-						<th scope="row"><label for="category-four">Fourth Category</label></th>
+						<th scope="row"><label for="category-four"><?php _e('Fourth Category', 'nuovo'); ?></label></th>
 						<td><?php wp_dropdown_categories(array('selected' => $settings['category-four'], 'name' => 'nuovo_options[category-four]', 'orderby' => 'name', 'hierarchical' => 1, 'show_option_none' => __("None", 'nuovo'), 'hide_empty' => '0' )); ?></td>
 					</tr>
 					<tr valign="top">
-						<th scope="row"><label for="category-four-count">Number of posts for Category Four</label></th>
+						<th scope="row"><label for="category-four-count"><?php _e('Number of posts for Category Four', 'nuovo'); ?></label></th>
 						<td><input id="category-four-count" name="nuovo_options[category-four-count]" type="number" min="-1" value="<?php esc_attr_e($settings['category-four-count']) ?>" /></td>
 					</tr>
 					<tr valign="top">
-						<th scope="row"><label for="latest-posts-count">Number of latest posts</label></th>
+						<th scope="row"><label for="latest-posts-count"><?php _e('Number of posts for Latest Posts', 'nuovo'); ?></label></th>
 						<td><input id="latest-posts-count" name="nuovo_options[latest-posts-count]" type="number" min="-1" value="<?php esc_attr_e($settings['latest-posts-count']) ?>" /></td>
 					</tr>
 				</table>

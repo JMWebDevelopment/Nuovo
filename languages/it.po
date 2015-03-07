@@ -1,0 +1,300 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nuovo\n"
+"POT-Creation-Date: 2015-03-03 16:57-0600\n"
+"PO-Revision-Date: 2015-03-03 18:43-0600\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.4\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: 404.php:11
+msgid ""
+"We're sorry, but the post or page you are looking for is not here. It may "
+"have been removed before you got here or you have a bad link. You can either "
+"go back to the <a href=\""
+msgstr ""
+"Siamo spiacenti, ma il post o pagina che stai cercando non è qui. Essa "
+"potrebbe essere stata rimossa prima che hai qui o hai un cattivo "
+"collegamento. Si può andare indietro per la < href = \""
+
+#: 404.php:11
+msgid "\">homepage</a> or use the search form below to find another post."
+msgstr ""
+"\"> homepage</a> o uso la ricerca forma qui sotto per trovare un altro post."
+
+#: archive.php:21 author.php:30 category.php:21 home.php:27 home.php:66
+#: home.php:104 home.php:143 home.php:182 home.php:217 home.php:259
+#: home.php:301 home.php:343 home.php:386 home.php:423 index.php:22
+#: search.php:21 single.php:15 single.php:25 tag.php:21
+msgid "Written By: "
+msgstr "Scritto da: "
+
+#: archive.php:21 author.php:30 category.php:21 index.php:22 search.php:21
+#: tag.php:21
+msgid "on"
+msgstr "on"
+
+#: archive.php:22
+msgid "Posted In: "
+msgstr "Pubblicato in: "
+
+#: archive.php:29 author.php:38 category.php:28 index.php:30 search.php:29
+#: tag.php:29
+msgid "<div class=\"archive-next-posts\">Older Posts&rsaquo;&rsaquo;</div>"
+msgstr ""
+"<div class=\"archive-next-posts\">Post più vecchi&rsaquo;&rsaquo;</div>"
+
+#: archive.php:30 author.php:39 category.php:29 index.php:31 search.php:30
+#: tag.php:30
+msgid "<div class=\"archive-previous-posts\">&lsaquo;&lsaquo;Newer Posts</div>"
+msgstr ""
+"<div class=\"archive-previous-posts\">&lsaquo;&lsaquo;Post più recenti</div>"
+
+#: author.php:31 home.php:28 index.php:23 search.php:22 tag.php:22
+msgid "Posted in: "
+msgstr "Pubblicato in: "
+
+#: comments.php:6
+msgid "This post is password protected. Enter the password to view comments."
+msgstr ""
+"Questo post è protetto da password. Inseriscila la password per visualizzare "
+"i commenti."
+
+#: comments.php:12
+msgid "No Responses"
+msgstr "Nessuna Risposta"
+
+#: comments.php:12
+msgid "One Response"
+msgstr "Una Risposta"
+
+#: comments.php:12
+msgid "% Responses"
+msgstr "% Risposte"
+
+#: comments.php:12
+msgid "to"
+msgstr "a"
+
+#: footer.php:4 footer.php:8
+msgid "Copyright"
+msgstr "Diritto d'autore"
+
+#: functions.php:7 theme-options.php:139
+msgid "Top Menu"
+msgstr "Menu Alto"
+
+#: functions.php:8
+msgid "Main Menu"
+msgstr "Menù Principale"
+
+#: functions.php:77
+#, php-format
+msgid "%s"
+msgstr ""
+
+#: functions.php:78
+#, php-format
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: functions.php:78
+msgid "(Edit)"
+msgstr "(Modifica)"
+
+#: functions.php:83
+msgid "Your comment is awaiting moderation."
+msgstr "Commento in attesa di moderazione."
+
+#: functions.php:99
+msgid "del"
+msgstr "del"
+
+#: functions.php:100
+msgid "spam"
+msgstr "spam"
+
+#: functions.php:107
+msgid "Sidebar"
+msgstr "Sidebar"
+
+#: functions.php:140
+msgid "Continue Reading&rsaquo;&rsaquo;"
+msgstr "Continua a leggere &rsaquo; &rsaquo;"
+
+#: functions.php:219
+#, php-format
+msgid "Page %s"
+msgstr "Pagina %s"
+
+#: header.php:23 header.php:166
+msgid "Go to..."
+msgstr "Vai a..."
+
+#: home.php:27 home.php:66 home.php:104 home.php:143 home.php:182 home.php:259
+#: home.php:301 home.php:343 home.php:386
+msgid "Edit"
+msgstr "Modifica"
+
+#: home.php:28 home.php:217 home.php:423 single.php:16 single.php:26
+msgid "0 Comments"
+msgstr "0 Commenti"
+
+#: home.php:28 home.php:217 home.php:423
+msgid "1 Comment"
+msgstr "1 Commento"
+
+#: home.php:28 home.php:217 home.php:423 single.php:16 single.php:26
+msgid "% Comments"
+msgstr "% Commenti"
+
+#: home.php:28
+msgid "Comments Off"
+msgstr "Commenti disabilitati"
+
+#: home.php:62 home.php:100 home.php:139 home.php:178 home.php:255
+#: home.php:297 home.php:339 home.php:382
+msgid "Off"
+msgstr "Off"
+
+#: home.php:74 home.php:112 home.php:151 home.php:190 home.php:269
+#: home.php:311 home.php:353 home.php:396
+msgid "View All&rsaquo;&rsaquo;"
+msgstr "Visualizza tutto &rsaquo;&rsaquo;"
+
+#: home.php:217 single.php:16 single.php:26
+msgid "Comments Closed"
+msgstr "I commenti sono chiusi"
+
+#: home.php:222
+msgid "<span class=\"home-next\">Next Posts&rsaquo;&rsaquo;</span>"
+msgstr "<span class=\"home-next\">Prossimo Posts››</span>"
+
+#: home.php:407
+msgid "Latest Posts"
+msgstr "Ultimi Posts"
+
+#: home.php:423
+msgid "Comments Disabled"
+msgstr "Commenti disabili"
+
+#: home.php:428
+msgid "<span class=\"mobile-home-next\">Next Posts&rsaquo;&rsaquo;</span>"
+msgstr "<span class=\"mobile-home-next\">Prossimo Posts››</span>"
+
+#: index.php:6
+msgid "Page "
+msgstr "Pagina"
+
+#: single.php:16 single.php:26
+msgid "1 Comments"
+msgstr "1 Commento"
+
+#: single.php:18 single.php:28
+msgid "Tags: "
+msgstr "Tags:"
+
+#: single.php:40
+msgid "About"
+msgstr "Chi Siamo"
+
+#: theme-options.php:95
+msgid "Nuovo Theme Options"
+msgstr "Nuovo Tema Opzioni"
+
+#: theme-options.php:97
+msgid "Options saved"
+msgstr "Opzioni salvate"
+
+#: theme-options.php:116
+msgid "RSS Feed"
+msgstr "RSS Feed"
+
+#: theme-options.php:121
+msgid "Color Theme"
+msgstr "Tema di Color"
+
+#: theme-options.php:144
+msgid "Author Bio"
+msgstr "Biografia Autore"
+
+#: theme-options.php:154
+msgid "Facebook"
+msgstr "Facebook"
+
+#: theme-options.php:159
+msgid "Twitter Link"
+msgstr "Twitter Link"
+
+#: theme-options.php:164
+msgid "YouTube Link"
+msgstr "YouTube Link"
+
+#: theme-options.php:169
+msgid "Google+ Link"
+msgstr "Google+ Link"
+
+#: theme-options.php:174
+msgid "LinkedIn"
+msgstr "LinkedIn"
+
+#: theme-options.php:183
+msgid "Slideshow Category"
+msgstr "Categoria slideshow"
+
+#: theme-options.php:184 theme-options.php:192 theme-options.php:200
+#: theme-options.php:208 theme-options.php:216
+msgid "None"
+msgstr "Nessuno"
+
+#: theme-options.php:187
+msgid "Number of posts for the slideshow"
+msgstr "Numero di messaggi per la proiezione di diapositive"
+
+#: theme-options.php:191
+msgid "First Category"
+msgstr "Prima Categoria"
+
+#: theme-options.php:195
+msgid "Number of posts for Category One"
+msgstr "Numero di posti per la Categoria Uno"
+
+#: theme-options.php:199
+msgid "Second Category"
+msgstr "Seconda Categoria"
+
+#: theme-options.php:203
+msgid "Number of posts for Category Two"
+msgstr "Numero di posti per la Categoria Due"
+
+#: theme-options.php:207
+msgid "Third Category"
+msgstr "Terza Categoria"
+
+#: theme-options.php:211
+msgid "Number of posts for Category Three"
+msgstr "Numero di messaggi per Categoria Tre"
+
+#: theme-options.php:215
+msgid "Fourth Category"
+msgstr "Quarta Categoria"
+
+#: theme-options.php:219
+msgid "Number of posts for Category Four"
+msgstr "Numero di messaggi per Categoria Quattro"
+
+#: theme-options.php:223
+msgid "Number of posts for Latest Posts"
+msgstr "Numero di messaggi per Articoli più Recenti"
