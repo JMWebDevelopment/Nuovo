@@ -27,9 +27,6 @@ http://www.gnu.org/licenses/gpl-2.0.html
 
 == Features/How To ==
 
-= Twitter Widget =
-In order for the Twitter widget to work, you will need to enter your Twitter name and Twitter handle as well as four Twitter API developer keys in the theme options page. The four keys can be found on the Twitter API Developer page (https://apps.twitter.com/ or click the link on the options page) by creating a new "app". After creating the app, you'll have two of the four keys (API Key and API Secret). You'll then have to create an access token and from that enter the access token and access token secret into the theme options. After that, add the "Nuovo Twitter Widget" to the sidebar and enter how many Twitter posts you want to display. Note: You can only have one Twitter widget running on your site.
-
 = User Stylesheet =
 The User stylesheet might be the easiest feature in the theme. Just like any old stylesheet, all you need to do is type in the id or class and type the attributes you want to change. Everything put in there will override the other style sheets.
 
@@ -56,5 +53,5 @@ Currently, to have your own favicon, you'll have to do it manually. First, uploa
 
 == Changelog ==
 
-= RC 1 =
-A bit of an initial release for others to test and debug the theme. Will be erased once version 1.0 is released.
+= 1.0.5 =
+Initial release to the WordPress theme directory.

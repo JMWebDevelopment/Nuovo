@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Nuovo\n"
-"POT-Creation-Date: 2015-03-06 20:30-0600\n"
-"PO-Revision-Date: 2015-03-06 20:51-0600\n"
+"POT-Creation-Date: 2015-03-07 12:22-0600\n"
+"PO-Revision-Date: 2015-03-07 12:23-0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru_RU\n"
@@ -36,6 +36,108 @@ msgstr ""
 "\">Домашняя страница</a> или использовать форму поиска ниже, чтобы найти "
 "другую должность."
 
+#: admin/theme-options.php:4 admin/theme-options.php:95
+msgid "Nuovo Theme Options"
+msgstr "Nuovo Тема Опции"
+
+#: admin/theme-options.php:4
+msgid "Theme Options"
+msgstr "Настройки темы"
+
+#: admin/theme-options.php:97
+msgid "Options saved"
+msgstr "Настройки сохранены"
+
+#: admin/theme-options.php:116
+msgid "RSS Feed"
+msgstr "RSS лента"
+
+#: admin/theme-options.php:121
+msgid "Color Theme"
+msgstr "Цветовая тема"
+
+#: admin/theme-options.php:139 functions.php:7
+msgid "Top Menu"
+msgstr "Верхнее меню"
+
+#: admin/theme-options.php:144
+msgid "Author Bio"
+msgstr "Данные автора"
+
+#: admin/theme-options.php:154
+msgid "Facebook"
+msgstr "Facebook"
+
+#: admin/theme-options.php:159
+msgid "Twitter Link"
+msgstr "Ссылка на Twitter"
+
+#: admin/theme-options.php:164
+msgid "YouTube Link"
+msgstr "Ссылка на YouTube"
+
+#: admin/theme-options.php:169
+msgid "Google+ Link"
+msgstr "Google+ ссылка"
+
+#: admin/theme-options.php:174
+msgid "LinkedIn"
+msgstr "LinkedIn"
+
+#: admin/theme-options.php:183
+msgid "Slideshow Category"
+msgstr "Слайд-шоу Категория"
+
+#: admin/theme-options.php:184 admin/theme-options.php:192
+#: admin/theme-options.php:200 admin/theme-options.php:208
+#: admin/theme-options.php:216
+msgid "None"
+msgstr "Отсутствует"
+
+#: admin/theme-options.php:187
+msgid "Number of posts for the slideshow"
+msgstr "Количество должностей для слайд-шоу"
+
+#: admin/theme-options.php:191
+msgid "First Category"
+msgstr "Первая категория"
+
+#: admin/theme-options.php:195
+msgid "Number of posts for Category One"
+msgstr "Количество должностей для категории 1"
+
+#: admin/theme-options.php:199
+msgid "Second Category"
+msgstr "Вторая категория"
+
+#: admin/theme-options.php:203
+msgid "Number of posts for Category Two"
+msgstr "Количество должностей для категории 2"
+
+#: admin/theme-options.php:207
+msgid "Third Category"
+msgstr "Третья категория"
+
+#: admin/theme-options.php:211
+msgid "Number of posts for Category Three"
+msgstr "Количество должностей для категории 3"
+
+#: admin/theme-options.php:215
+msgid "Fourth Category"
+msgstr "Четвертая категория"
+
+#: admin/theme-options.php:219
+msgid "Number of posts for Category Four"
+msgstr "Количество должностей для категорий 4"
+
+#: admin/theme-options.php:223
+msgid "Number of posts for Latest Posts"
+msgstr "Количество постов за последние сообщения"
+
+#: archive.php:5
+msgid " Archives: "
+msgstr "архив: "
+
 #: archive.php:21 author.php:30 category.php:21 home.php:27 home.php:66
 #: home.php:104 home.php:143 home.php:182 home.php:217 home.php:259
 #: home.php:301 home.php:343 home.php:386 home.php:423 index.php:22
@@ -64,9 +166,21 @@ msgid "<div class=\"archive-previous-posts\">&lsaquo;&lsaquo;Newer Posts</div>"
 msgstr ""
 "<div class=\"archive-previous-posts\">&lsaquo;&lsaquo;Новые сообщения</div>"
 
+#: author.php:11 single.php:40
+msgid "About"
+msgstr "О плагине"
+
+#: author.php:15
+msgid "Posts by "
+msgstr "Сообщения от "
+
 #: author.php:31 home.php:28 index.php:23 search.php:22 tag.php:22
 msgid "Posted in: "
 msgstr "Опубликовано в: "
+
+#: category.php:5
+msgid "Posts in "
+msgstr "Сообщений в "
 
 #: comments.php:6
 msgid "This post is password protected. Enter the password to view comments."
@@ -92,10 +206,6 @@ msgstr "до"
 #: footer.php:4 footer.php:8
 msgid "Copyright"
 msgstr "Авторские права"
-
-#: functions.php:7 theme-options.php:139
-msgid "Top Menu"
-msgstr "Верхнее меню"
 
 #: functions.php:8
 msgid "Main Menu"
@@ -200,6 +310,10 @@ msgstr ""
 msgid "Page "
 msgstr "Страница"
 
+#: search.php:5
+msgid "Search Results for: "
+msgstr "Результаты поиска для: "
+
 #: single.php:16 single.php:26
 msgid "1 Comments"
 msgstr "1 комментарий"
@@ -208,99 +322,6 @@ msgstr "1 комментарий"
 msgid "Tags: "
 msgstr "Теги: "
 
-#: single.php:40
-msgid "About"
-msgstr "О плагине"
-
-#: theme-options.php:4 theme-options.php:95
-msgid "Nuovo Theme Options"
-msgstr "Nuovo Тема Опции"
-
-#: theme-options.php:4
-msgid "Theme Options"
-msgstr "Настройки темы"
-
-#: theme-options.php:97
-msgid "Options saved"
-msgstr "Настройки сохранены"
-
-#: theme-options.php:116
-msgid "RSS Feed"
-msgstr "RSS лента"
-
-#: theme-options.php:121
-msgid "Color Theme"
-msgstr "Цветовая тема"
-
-#: theme-options.php:144
-msgid "Author Bio"
-msgstr "Данные автора"
-
-#: theme-options.php:154
-msgid "Facebook"
-msgstr "Facebook"
-
-#: theme-options.php:159
-msgid "Twitter Link"
-msgstr "Ссылка на Twitter"
-
-#: theme-options.php:164
-msgid "YouTube Link"
-msgstr "Ссылка на YouTube"
-
-#: theme-options.php:169
-msgid "Google+ Link"
-msgstr "Google+ ссылка"
-
-#: theme-options.php:174
-msgid "LinkedIn"
-msgstr "LinkedIn"
-
-#: theme-options.php:183
-msgid "Slideshow Category"
-msgstr "Слайд-шоу Категория"
-
-#: theme-options.php:184 theme-options.php:192 theme-options.php:200
-#: theme-options.php:208 theme-options.php:216
-msgid "None"
-msgstr "Отсутствует"
-
-#: theme-options.php:187
-msgid "Number of posts for the slideshow"
-msgstr "Количество должностей для слайд-шоу"
-
-#: theme-options.php:191
-msgid "First Category"
-msgstr "Первая категория"
-
-#: theme-options.php:195
-msgid "Number of posts for Category One"
-msgstr "Количество должностей для категории 1"
-
-#: theme-options.php:199
-msgid "Second Category"
-msgstr "Вторая категория"
-
-#: theme-options.php:203
-msgid "Number of posts for Category Two"
-msgstr "Количество должностей для категории 2"
-
-#: theme-options.php:207
-msgid "Third Category"
-msgstr "Третья категория"
-
-#: theme-options.php:211
-msgid "Number of posts for Category Three"
-msgstr "Количество должностей для категории 3"
-
-#: theme-options.php:215
-msgid "Fourth Category"
-msgstr "Четвертая категория"
-
-#: theme-options.php:219
-msgid "Number of posts for Category Four"
-msgstr "Количество должностей для категорий 4"
-
-#: theme-options.php:223
-msgid "Number of posts for Latest Posts"
-msgstr "Количество постов за последние сообщения"
+#: tag.php:5
+msgid "Tag Archive "
+msgstr "Архивы: "

@@ -2,7 +2,7 @@
 	<div id="content">
 		<div id="archive-post-area" class="clearfix">
 			<?php the_post(); ?>
-				<h1 class="archive-title"><?php bloginfo('name'); ?>'s Archives: <?php the_time('M j, Y'); ?></h1>
+				<h1 class="archive-title"><?php bloginfo('name'); ?><?php _e(' Archives: ', 'nuovo'); ?><?php the_time('M j, Y'); ?></h1>
 				<div class="archive-separator"></div>
 			<?php rewind_posts(); ?>
 			<?php while (have_posts()) : the_post(); ?>

@@ -8,11 +8,11 @@
 							<?php echo get_avatar(get_the_author_email(), $size = '96'); ?>
 						</div>
 					</div>
-					<h1 class="archive-title">About <?php the_author_meta('display_name'); ?></h1>
+					<h1 class="archive-title"><?php _e('About', 'nuovo'); ?> <?php the_author_meta('display_name'); ?></h1>
 					<?php the_author_meta('description'); ?>
 				</div><!--End Author Bio Area-->
 				<div class="archive-separator"></div>
-				<h1 class="archive-title">Posts by <?php the_author_meta('display_name'); ?></h1>
+				<h1 class="archive-title"><?php _e('Posts by ', 'nuovo'); ?><?php the_author_meta('display_name'); ?></h1>
 			<?php rewind_posts(); ?>
 			<?php while (have_posts()) : the_post(); ?>
 				<div id="<?php the_ID(); ?>" class="archive-post clearfix">

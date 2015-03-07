@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Nuovo\n"
-"POT-Creation-Date: 2015-03-05 21:15-0600\n"
-"PO-Revision-Date: 2015-03-05 21:29-0600\n"
+"POT-Creation-Date: 2015-03-07 12:07-0600\n"
+"PO-Revision-Date: 2015-03-07 12:09-0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -35,6 +35,108 @@ msgstr ""
 "\">Startseite</a> oder die Verwendung die Suche bilden unten eine andere "
 "Stelle zu finden."
 
+#: admin/theme-options.php:4 admin/theme-options.php:95
+msgid "Nuovo Theme Options"
+msgstr "Nuovo Theme-Optionen"
+
+#: admin/theme-options.php:4
+msgid "Theme Options"
+msgstr "Theme-Optionen"
+
+#: admin/theme-options.php:97
+msgid "Options saved"
+msgstr "Optionen gespeichert"
+
+#: admin/theme-options.php:116
+msgid "RSS Feed"
+msgstr "RSS Feed"
+
+#: admin/theme-options.php:121
+msgid "Color Theme"
+msgstr "Farbschema"
+
+#: admin/theme-options.php:139 functions.php:7
+msgid "Top Menu"
+msgstr "Top Menü"
+
+#: admin/theme-options.php:144
+msgid "Author Bio"
+msgstr "Autoren Bio"
+
+#: admin/theme-options.php:154
+msgid "Facebook"
+msgstr "Facebook"
+
+#: admin/theme-options.php:159
+msgid "Twitter Link"
+msgstr "Twitter Link"
+
+#: admin/theme-options.php:164
+msgid "YouTube Link"
+msgstr "Youtube Link:"
+
+#: admin/theme-options.php:169
+msgid "Google+ Link"
+msgstr "Google+ Link"
+
+#: admin/theme-options.php:174
+msgid "LinkedIn"
+msgstr "LinkedIn"
+
+#: admin/theme-options.php:183
+msgid "Slideshow Category"
+msgstr "Slideshow Kategorie"
+
+#: admin/theme-options.php:184 admin/theme-options.php:192
+#: admin/theme-options.php:200 admin/theme-options.php:208
+#: admin/theme-options.php:216
+msgid "None"
+msgstr "Keine"
+
+#: admin/theme-options.php:187
+msgid "Number of posts for the slideshow"
+msgstr "Anzahl der Beiträge für die Diashow"
+
+#: admin/theme-options.php:191
+msgid "First Category"
+msgstr "Erste Kategorie"
+
+#: admin/theme-options.php:195
+msgid "Number of posts for Category One"
+msgstr "Anzahl der Beiträge für Kategorie 1"
+
+#: admin/theme-options.php:199
+msgid "Second Category"
+msgstr "Zweite Kategorie"
+
+#: admin/theme-options.php:203
+msgid "Number of posts for Category Two"
+msgstr "Anzahl der Beiträge für Kategorie 2"
+
+#: admin/theme-options.php:207
+msgid "Third Category"
+msgstr "Dritte Kategorie"
+
+#: admin/theme-options.php:211
+msgid "Number of posts for Category Three"
+msgstr "Anzahl der Beiträge für die Kategorie 3"
+
+#: admin/theme-options.php:215
+msgid "Fourth Category"
+msgstr "Vierte Kategorie"
+
+#: admin/theme-options.php:219
+msgid "Number of posts for Category Four"
+msgstr "Anzahl der Beiträge für die Kategorie 4"
+
+#: admin/theme-options.php:223
+msgid "Number of posts for Latest Posts"
+msgstr "Anzahl der Beiträge für die neueste Beiträge"
+
+#: archive.php:5
+msgid " Archives: "
+msgstr " Archiv: "
+
 #: archive.php:21 author.php:30 category.php:21 home.php:27 home.php:66
 #: home.php:104 home.php:143 home.php:182 home.php:217 home.php:259
 #: home.php:301 home.php:343 home.php:386 home.php:423 index.php:22
@@ -62,9 +164,21 @@ msgid "<div class=\"archive-previous-posts\">&lsaquo;&lsaquo;Newer Posts</div>"
 msgstr ""
 "<div class=\"archive-previous-posts\">&lsaquo;&lsaquo;Neuere Posts</div>"
 
+#: author.php:11 single.php:40
+msgid "About"
+msgstr "Über mich"
+
+#: author.php:15
+msgid "Posts by "
+msgstr "Beiträge von "
+
 #: author.php:31 home.php:28 index.php:23 search.php:22 tag.php:22
 msgid "Posted in: "
 msgstr "Veröffentlicht in: "
+
+#: category.php:5
+msgid "Posts in "
+msgstr "Beiträge in "
 
 #: comments.php:6
 msgid "This post is password protected. Enter the password to view comments."
@@ -91,10 +205,6 @@ msgstr "bis"
 #: footer.php:4 footer.php:8
 msgid "Copyright"
 msgstr "Copyright"
-
-#: functions.php:7 theme-options.php:139
-msgid "Top Menu"
-msgstr "Top Menü"
 
 #: functions.php:8
 msgid "Main Menu"
@@ -198,6 +308,10 @@ msgstr "<span class=\"home-next\">Nächste Artikel&rsaquo;&rsaquo;</span>"
 msgid "Page "
 msgstr "Seite"
 
+#: search.php:5
+msgid "Search Results for: "
+msgstr "Ergebnisse der Suche "
+
 #: single.php:16 single.php:26
 msgid "1 Comments"
 msgstr "1 Kommentar"
@@ -206,99 +320,6 @@ msgstr "1 Kommentar"
 msgid "Tags: "
 msgstr "Schlagworte: "
 
-#: single.php:40
-msgid "About"
-msgstr "Über mich"
-
-#: theme-options.php:4 theme-options.php:95
-msgid "Nuovo Theme Options"
-msgstr "Nuovo Theme-Optionen"
-
-#: theme-options.php:4
-msgid "Theme Options"
-msgstr "Theme-Optionen"
-
-#: theme-options.php:97
-msgid "Options saved"
-msgstr "Optionen gespeichert"
-
-#: theme-options.php:116
-msgid "RSS Feed"
-msgstr "RSS Feed"
-
-#: theme-options.php:121
-msgid "Color Theme"
-msgstr "Farbschema"
-
-#: theme-options.php:144
-msgid "Author Bio"
-msgstr "Autoren Bio"
-
-#: theme-options.php:154
-msgid "Facebook"
-msgstr "Facebook"
-
-#: theme-options.php:159
-msgid "Twitter Link"
-msgstr "Twitter Link"
-
-#: theme-options.php:164
-msgid "YouTube Link"
-msgstr "Youtube Link:"
-
-#: theme-options.php:169
-msgid "Google+ Link"
-msgstr "Google+ Link"
-
-#: theme-options.php:174
-msgid "LinkedIn"
-msgstr "LinkedIn"
-
-#: theme-options.php:183
-msgid "Slideshow Category"
-msgstr "Slideshow Kategorie"
-
-#: theme-options.php:184 theme-options.php:192 theme-options.php:200
-#: theme-options.php:208 theme-options.php:216
-msgid "None"
-msgstr "Keine"
-
-#: theme-options.php:187
-msgid "Number of posts for the slideshow"
-msgstr "Anzahl der Beiträge für die Diashow"
-
-#: theme-options.php:191
-msgid "First Category"
-msgstr "Erste Kategorie"
-
-#: theme-options.php:195
-msgid "Number of posts for Category One"
-msgstr "Anzahl der Beiträge für Kategorie 1"
-
-#: theme-options.php:199
-msgid "Second Category"
-msgstr "Zweite Kategorie"
-
-#: theme-options.php:203
-msgid "Number of posts for Category Two"
-msgstr "Anzahl der Beiträge für Kategorie 2"
-
-#: theme-options.php:207
-msgid "Third Category"
-msgstr "Dritte Kategorie"
-
-#: theme-options.php:211
-msgid "Number of posts for Category Three"
-msgstr "Anzahl der Beiträge für die Kategorie 3"
-
-#: theme-options.php:215
-msgid "Fourth Category"
-msgstr "Vierte Kategorie"
-
-#: theme-options.php:219
-msgid "Number of posts for Category Four"
-msgstr "Anzahl der Beiträge für die Kategorie 4"
-
-#: theme-options.php:223
-msgid "Number of posts for Latest Posts"
-msgstr "Anzahl der Beiträge für die neueste Beiträge"
+#: tag.php:5
+msgid "Tag Archive "
+msgstr "Tag-Archiv "

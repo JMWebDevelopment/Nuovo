@@ -46,7 +46,7 @@ if ( ! isset( $content_width ) )
  $content_width = 640;
 
 // turns a category ID to a Name
-function cat_id_to_name($id) {
+function nuovo_cat_id_to_name($id) {
 	foreach((array)(get_categories()) as $category) {
     	if ($id == $category->cat_ID) { return $category->cat_name; break; }
 	}
@@ -114,7 +114,7 @@ function nuovo_sidebar() {
 add_action('widgets_init', 'nuovo_sidebar');
 
 //Theme Options
-require_once(get_template_directory() . '/theme-options.php');
+require_once(get_template_directory() . '/admin/theme-options.php');
 
 //Change Menu Container CSS Based on Menu Names
 function nuovo_menu_container() {
@@ -151,39 +151,39 @@ add_filter( 'excerpt_length', 'nuovo_custom_excerpt_length', 999 );
 function nuovo_scripts() {
 	wp_enqueue_script('jquery-ui-core');
 	$scripts = array(
-					'cycle' => '/js/cycle.js',
-					'swiper' => '/js/idangerous.swiper-2.3.min.js'
+					'nuovo-cycle' => '/js/nuovo-cycle.js',
+					'nuovo-swiper' => '/js/nuovo-idangerous.swiper-2.3.min.js'
 	);
 	foreach ($scripts as $key=>$location) {
 		wp_register_script( $key, get_template_directory_uri() . $location );
 		wp_enqueue_script( $key );
 	}
 	if (is_home()) {
-		wp_enqueue_script( 'home-scripts', get_template_directory_uri() . '/js/home-scripts.js' );
+		wp_enqueue_script( 'nuovo-home-scripts', get_template_directory_uri() . '/js/nuovo-home-scripts.js' );
 	}
 	if (nuovo_options('general', 'top-menu')) {
-		wp_enqueue_script( 'top-menu', get_template_directory_uri() . '/js/top-menu.js' );
+		wp_enqueue_script( 'nuovo-top-menu', get_template_directory_uri() . '/js/nuovo-top-menu.js' );
 	}
-	wp_enqueue_script( 'main-menu', get_template_directory_uri() . '/js/main-menu.js' );
-	wp_enqueue_script( 'accordion', get_template_directory_uri() . '/js/accordion.js' );
-	wp_enqueue_style( 'styesheet', get_template_directory_uri() . '/style.css' );
-	$color = nuovo_options('color-theme');
+	wp_enqueue_script( 'nuovo-main-menu', get_template_directory_uri() . '/js/nuovo-main-menu.js' );
+	wp_enqueue_script( 'nuovo-accordion', get_template_directory_uri() . '/js/nuovo-accordion.js' );
+	wp_enqueue_style( 'nuovo-styesheet', get_template_directory_uri() . '/style.css' );
+	$color = nuovo_options('nuovo-color-theme');
 	if (($color != 'default') and (isset($color))) {
 		$color_styles = array(
-			'desktop' => '/css/' . $color . '.css',
-			'tablet' => '/css/tablet/' . $color . '.css',
-			'mobile' => '/css/mobile/' . $color . '.css'
+			'nuovo-desktop' => '/css/nuovo-' . $color . '.css',
+			'nuovo-tablet' => '/css/tablet/nuovo-' . $color . '.css',
+			'nuovo-mobile' => '/css/mobile/nuovo-' . $color . '.css'
 		);
 	
 		foreach ($color_styles as $key=>$location) {
 			wp_enqueue_style($key, get_template_directory_uri() . $location);
 		}
 	}
-	wp_register_style('user', get_template_directory_uri() . '/user.css');
+	wp_register_style('nuovo-user', get_template_directory_uri() . '/nuovo-user.css');
 	wp_enqueue_style('user');
 	if (get_header_image()== '') {
-		wp_register_style('header-css', get_template_directory_uri() . '/css/header.css');
-		wp_enqueue_style('header-css');
+		wp_register_style('nuovo-header-css', get_template_directory_uri() . '/css/nuovo-header.css');
+		wp_enqueue_style('nuovo-header-css');
 	}
 	if ( is_singular() ) {
 		wp_enqueue_script( 'comment-reply' );

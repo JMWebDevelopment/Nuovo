@@ -29,7 +29,7 @@
 					</div>
 					<!--End Post Text-->
 				</div>
-				<?php if (nuovo_options('author-bio' == 1)) { ?>
+				<?php if (nuovo_options('nuovo-author-bio' == 1)) { ?>
 					<!--Begin Author Bio-->
 					<div class="archive-separator"></div>
 					<div class="archive-featured-photo-area">

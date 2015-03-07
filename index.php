@@ -3,7 +3,7 @@
 		<div id="archive-post-area" class="clearfix">
 			<?php the_post(); ?>
 				<?php $page = get_query_var('paged'); ?>
-				<h1 class="archive-title"><?php _e('Page ' . $page); ?></h1>
+				<h1 class="archive-title"><?php _e('Page ', 'nuovo'); echo $page; ?></h1>
 				<div class="archive-separator"></div>
 			<?php rewind_posts(); ?>
 			<?php while (have_posts()) : the_post(); ?>

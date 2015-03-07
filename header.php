@@ -7,7 +7,7 @@
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>
-<?php if (nuovo_options('top-menu') == 1) { ?>
+<?php if (nuovo_options('nuovo-top-menu') == 1) { ?>
 	<!--Begin Top Menu-->
 	<div id="top-menu">
 		<?php wp_nav_menu(
@@ -28,7 +28,7 @@
 	<!--End Top Menu-->
 <?php } ?>
 <!--Begin Header Logo Area-->
-<div id="branding-background" class="clearfix" style="<?php if (nuovo_options('top-menu') == 1) { ?>padding-top:40px;<?php } else { ?>padding-top:0px; <?php } ?>">
+<div id="branding-background" class="clearfix" style="<?php if (nuovo_options('nuovo-top-menu') == 1) { ?>padding-top:40px;<?php } else { ?>padding-top:0px; <?php } ?>">
 	<div id="branding">
 			<?php if (get_header_image()) { ?>
 				<!--Logo Header-->
@@ -44,42 +44,42 @@
 			<?php } ?>
 		<!--Begin Social Area-->
 		<div id="social-area">
-			<?php if (nuovo_options('facebook')) { ?>
+			<?php if (nuovo_options('nuovo-facebook')) { ?>
 				<div class="social-icon">
-					<a href="<?php echo nuovo_options('facebook'); ?>">
+					<a href="<?php echo nuovo_options('nuovo-facebook'); ?>">
 						<img src="<?php echo get_template_directory_uri(); ?>/images/facebook.png" alt="<?php echo bloginfo('name'); ?> on Facebook" />
 					</a>
 				</div>
 			<?php } ?>
-			<?php if (nuovo_options('twitter')) {?>
+			<?php if (nuovo_options('nuovo-twitter')) {?>
 				<div class="social-icon">
-					<a href="<?php echo nuovo_options('twitter'); ?>">
+					<a href="<?php echo nuovo_options('nuovo-twitter'); ?>">
 						<img src="<?php echo get_template_directory_uri(); ?>/images/twitter.png" alt="<?php echo bloginfo('name'); ?> on Twitter" />
 					</a>
 				</div>
 			<?php } ?>
 			<div class="social-icon">
-				<a href="<?php if (nuovo_options('rss-feed')) { echo nuovo_options('rss-feed'); } else { echo get_feed_link( 'rss' ); }?>">
+				<a href="<?php if (nuovo_options('nuovo-rss-feed')) { echo nuovo_options('nuovo-rss-feed'); } else { echo get_feed_link( 'rss' ); }?>">
 					<img src="<?php echo get_template_directory_uri(); ?>/images/rss.png" alt="<?php echo bloginfo('name'); ?>'s RSS Feed" />
 				</a>
 			</div>
-			<?php if (nuovo_options('youtube')) { ?>
+			<?php if (nuovo_options('nuovo-youtube')) { ?>
 				<div class="social-icon">
-					<a href="<?php echo nuovo_options('youtube'); ?>">
+					<a href="<?php echo nuovo_options('nuovo-youtube'); ?>">
 						<img src="<?php echo get_template_directory_uri(); ?>/images/youtube.PNG" alt="<?php echo bloginfo('name'); ?> on YouTube" />
 					</a>
 				</div>
 			<?php } ?>
-			<?php if (nuovo_options('googleplus')) { ?>
+			<?php if (nuovo_options('nuovo-googleplus')) { ?>
 				<div class="social-icon">
-					<a href="<?php echo nuovo_options('googleplus'); ?>">
+					<a href="<?php echo nuovo_options('nuovo-googleplus'); ?>">
 						<img src="<?php echo get_template_directory_uri(); ?>/images/googleplus.png" alt="<?php echo bloginfo('name'); ?> on Google+" />
 					</a>
 				</div>
 			<?php } ?>
-			<?php if (nuovo_options('linkedin')) { ?>
+			<?php if (nuovo_options('nuovo-linkedin')) { ?>
 				<div class="social-icon">
-					<a href="<?php echo nuovo_options('linkedin'); ?>">
+					<a href="<?php echo nuovo_options('nuovo-linkedin'); ?>">
 						<img src="<?php echo get_template_directory_uri(); ?>/images/linkedin.png" alt="<?php echo bloginfo('name'); ?> on LinkedIn" />
 					</a>
 				</div>
@@ -90,7 +90,7 @@
 </div>
 <!--End Header Logo Area-->
 <!--Begin Header Area-->
-<div id="mobile-branding-background" style="<?php if (nuovo_options('top-menu') == 1) { ?>padding-top:20px;<?php } else { ?>padding-top:0px; <?php } ?>" class="clearfix">
+<div id="mobile-branding-background" style="<?php if (nuovo_options('nuovo-top-menu') == 1) { ?>padding-top:20px;<?php } else { ?>padding-top:0px; <?php } ?>" class="clearfix">
 	<div id="mobile-branding">
 		<?php if (get_header_image()) { ?>
 			<!--Header Logo-->
@@ -107,42 +107,42 @@
 	</div>
 	<!--Begin Social Area-->
 	<div id="mobile-social-area" class="clearfix">
-		<?php if (nuovo_options('facebook')) { ?>
+		<?php if (nuovo_options('nuovo-facebook')) { ?>
 			<div class="mobile-social-icon">
-				<a href="<?php echo nuovo_options('facebook'); ?>">
+				<a href="<?php echo nuovo_options('nuovo-facebook'); ?>">
 					<img src="<?php echo get_template_directory_uri(); ?>/images/facebook.png" width="100%" alt="<?php echo bloginfo('name'); ?> on Facebook" />
 				</a>
 			</div>
 		<?php } ?>
-		<?php if (nuovo_options('twitter')) {?>
+		<?php if (nuovo_options('nuovo-twitter')) {?>
 			<div class="mobile-social-icon">
-				<a href="<?php echo nuovo_options('twitter'); ?>">
+				<a href="<?php echo nuovo_options('nuovo-twitter'); ?>">
 					<img src="<?php echo get_template_directory_uri(); ?>/images/twitter.png" width="100%" alt="<?php echo bloginfo('name'); ?> on Twitter" />
 				</a>
 			</div>
 		<?php } ?>
 		<div class="mobile-social-icon">
-		<a href="<?php if (nuovo_options('rss-feed')) { echo nuovo_options('rss-feed'); } else { echo get_feed_link( 'rss' ); }?>">
+		<a href="<?php if (nuovo_options('nuovo-rss-feed')) { echo nuovo_options('nuovo-rss-feed'); } else { echo get_feed_link( 'rss' ); }?>">
 			<img src="<?php echo get_template_directory_uri(); ?>/images/rss.png" width="100%" alt="<?php echo bloginfo('name'); ?>'s RSS Feed" />
 		</a>
 		</div>
-		<?php if (nuovo_options('youtube')) { ?>
+		<?php if (nuovo_options('nuovo-youtube')) { ?>
 			<div class="mobile-social-icon">
-				<a href="<?php echo nuovo_options('youtube'); ?>">
+				<a href="<?php echo nuovo_options('nuovo-youtube'); ?>">
 					<img src="<?php echo get_template_directory_uri(); ?>/images/youtube.PNG" width="100%" alt="<?php echo bloginfo('name'); ?> on Youtube" />
 				</a>
 			</div>
 		<?php } ?>
-		<?php if (nuovo_options('googleplus')) { ?>
+		<?php if (nuovo_options('nuovo-googleplus')) { ?>
 			<div class="mobile-social-icon">
-				<a href="<?php echo nuovo_options('googleplus'); ?>">
+				<a href="<?php echo nuovo_options('nuovo-googleplus'); ?>">
 					<img src="<?php echo get_template_directory_uri(); ?>/images/googleplus.png" width="100%" alt="<?php echo bloginfo('name'); ?> on Google+" />
 				</a>
 			</div>
 		<?php } ?>
-		<?php if (nuovo_options('linkedin')) { ?>
+		<?php if (nuovo_options('nuovo-linkedin')) { ?>
 			<div class="mobile-social-icon">
-				<a href="<?php echo nuovo_options('linkedin'); ?>">
+				<a href="<?php echo nuovo_options('nuovo-linkedin'); ?>">
 					<img src="<?php echo get_template_directory_uri(); ?>/images/linkedin.png" width="100%" alt="<?php echo bloginfo('name'); ?> on LinkedIn" />
 				</a>
 			</div>
