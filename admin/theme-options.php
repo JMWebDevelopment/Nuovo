@@ -94,7 +94,7 @@ function nuovo_build_options_page(){
 	<div class="wrap">
 		<?php echo "<h2>" . __( 'Nuovo Theme Options', 'nuovo' ) . "</h2>"; ?>
 		<?php if (false !== $_REQUEST['updated']) { ?>
-			<div class="updated fade"><p><strong><?php _e( 'Options saved' ); ?></strong></p></div>
+			<div class="updated fade"><p><strong><?php _e( 'Options saved', 'nuovo' ); ?></strong></p></div>
 		<?php } ?>
 		<div id="tab-wrap">
 		<form method="post" action="options.php">
@@ -181,7 +181,7 @@ function nuovo_build_options_page(){
 				<table>
 					<tr valign="top">
 						<th scope="row"><label for="nuovo-slideshow-category"><?php _e('Slideshow Category', 'nuovo'); ?></label></th>
-						<td><?php wp_dropdown_categories(array('selected' => $settings['nuovo-slideshow-category'], 'name' => 'nuovo_options[nuovo-slideshow-category]', 'orderby' => 'name', 'hierarchical' => 1, 'show_option_none' => __("None", 'nuovo'), 'hide_empty' => '0' )); ?></td>
+						<td><?php wp_dropdown_categories(array('selected' => esc_attr($settings['nuovo-slideshow-category']), 'name' => 'nuovo_options[nuovo-slideshow-category]', 'orderby' => 'name', 'hierarchical' => 1, 'show_option_none' => __("None", 'nuovo'), 'hide_empty' => '0' )); ?></td>
 					</tr>
 					<tr valign="top">
 						<th scope="row"><label for="nuovo-slideshow-count"><?php _e('Number of posts for the slideshow', 'nuovo'); ?></label></th>
@@ -189,7 +189,7 @@ function nuovo_build_options_page(){
 					</tr>
 					<tr valign="top">
 						<th scope="row"><label for="nuovo-category-one"><?php _e('First Category', 'nuovo'); ?></label></th>
-						<td><?php wp_dropdown_categories(array('selected' => $settings['nuovo-category-one'], 'name' => 'nuovo_options[nuovo-category-one]', 'orderby' => 'name', 'hierarchical' => 1, 'show_option_none' => __("None", 'nuovo'), 'hide_empty' => '0' )); ?></td>
+						<td><?php wp_dropdown_categories(array('selected' => esc_attr($settings['nuovo-category-one']), 'name' => 'nuovo_options[nuovo-category-one]', 'orderby' => 'name', 'hierarchical' => 1, 'show_option_none' => __("None", 'nuovo'), 'hide_empty' => '0' )); ?></td>
 					</tr>
 					<tr valign="top">
 						<th scope="row"><label for="nuovo-category-one-count"><?php _e('Number of posts for Category One', 'nuovo'); ?></label></th>
@@ -197,7 +197,7 @@ function nuovo_build_options_page(){
 					</tr>
 					<tr valign="top">
 						<th scope="row"><label for="nuovo-category-two"><?php _e('Second Category', 'nuovo'); ?></label></th>
-						<td><?php wp_dropdown_categories(array('selected' => $settings['nuovo-category-two'], 'name' => 'nuovo_options[nuovo-category-two]', 'orderby' => 'name', 'hierarchical' => 1, 'show_option_none' => __("None", 'nuovo'), 'hide_empty' => '0' )); ?></td>
+						<td><?php wp_dropdown_categories(array('selected' => esc_attr($settings['nuovo-category-two']), 'name' => 'nuovo_options[nuovo-category-two]', 'orderby' => 'name', 'hierarchical' => 1, 'show_option_none' => __("None", 'nuovo'), 'hide_empty' => '0' )); ?></td>
 					</tr>
 					<tr valign="top">
 						<th scope="row"><label for="nuovo-category-two-count"><?php _e('Number of posts for Category Two', 'nuovo'); ?></label></th>
@@ -205,7 +205,7 @@ function nuovo_build_options_page(){
 					</tr>
 					<tr valign="top">
 						<th scope="row"><label for="nuovo-category-three"><?php _e('Third Category', 'nuovo'); ?></label></th>
-						<td><?php wp_dropdown_categories(array('selected' => $settings['nuovo-category-three'], 'name' => 'nuovo_options[nuovo-category-three]', 'orderby' => 'name', 'hierarchical' => 1, 'show_option_none' => __("None", 'nuovo'), 'hide_empty' => '0' )); ?></td>
+						<td><?php wp_dropdown_categories(array('selected' => esc_attr($settings['nuovo-category-three']), 'name' => 'nuovo_options[nuovo-category-three]', 'orderby' => 'name', 'hierarchical' => 1, 'show_option_none' => __("None", 'nuovo'), 'hide_empty' => '0' )); ?></td>
 					</tr>
 					<tr valign="top">
 						<th scope="row"><label for="nuovo-category-three-count"><?php _e('Number of posts for Category Three', 'nuovo'); ?></label></th>
@@ -213,7 +213,7 @@ function nuovo_build_options_page(){
 					</tr>
 					<tr valign="top">
 						<th scope="row"><label for="nuovo-category-four"><?php _e('Fourth Category', 'nuovo'); ?></label></th>
-						<td><?php wp_dropdown_categories(array('selected' => $settings['nuovo-category-four'], 'name' => 'nuovo_options[nuovo-category-four]', 'orderby' => 'name', 'hierarchical' => 1, 'show_option_none' => __("None", 'nuovo'), 'hide_empty' => '0' )); ?></td>
+						<td><?php wp_dropdown_categories(array('selected' => esc_attr($settings['nuovo-category-four']), 'name' => 'nuovo_options[nuovo-category-four]', 'orderby' => 'name', 'hierarchical' => 1, 'show_option_none' => __("None", 'nuovo'), 'hide_empty' => '0' )); ?></td>
 					</tr>
 					<tr valign="top">
 						<th scope="row"><label for="nuovo-category-four-count"><?php _e('Number of posts for Category Four', 'nuovo'); ?></label></th>

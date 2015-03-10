@@ -41,6 +41,7 @@ function nuovo_setup() {
 
 }
 add_action('after_setup_theme', 'nuovo_setup');
+
 // Set the Maximum Content Width
 if ( ! isset( $content_width ) )
  $content_width = 640;
@@ -60,13 +61,6 @@ function nuovo_options($opt) {
 	}
 }
 
-function show_nuovo_options($opt) {
-	$option = get_option('nuovo_options');
-	if (isset($option[$opt])) {
-		echo $option[$opt];
-	}
-}
-
 //Setup Function For Comments
 function advanced_comment($comment, $args, $depth) {
    $GLOBALS['comment'] = $comment; ?>
@@ -74,8 +68,8 @@ function advanced_comment($comment, $args, $depth) {
 <li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
    <div class="comment-author vcard">
      <?php echo get_avatar($comment,$size='48'); ?>
-       <div class="comment-meta"<a href="<?php the_author_meta( 'user_url'); ?>"><?php printf(__('%s'), get_comment_author_link()) ?></a></div>
-       <small><?php printf(__('%1$s at %2$s'), get_comment_date(),  get_comment_time()) ?><?php edit_comment_link(__('(Edit)'),'  ','') ?></small>
+       <div class="comment-meta"<a href="<?php the_author_meta( 'user_url'); ?>"><?php printf(__('%s', 'nuovo'), get_comment_author_link()) ?></a></div>
+       <small><?php printf(__('%1$s at %2$s', 'nuovo'), get_comment_date(),  get_comment_time()) ?><?php edit_comment_link(__('(Edit)', 'nuovo'),'  ','') ?></small>
      </div>
      <div class="clear"></div>
  
@@ -90,11 +84,11 @@ function advanced_comment($comment, $args, $depth) {
  
    <div class="reply">
       <?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
-	   <?php delete_comment_link(get_comment_ID()); ?>
+	   <?php nuovo_delete_comment_link(get_comment_ID()); ?>
    </div>
    <div class="clear"></div>
 <?php }
-function delete_comment_link($id) {
+function nuovo_delete_comment_link($id) {
   if (current_user_can('edit_post')) {
     echo '<a href="'.admin_url("comment.php?action=cdc&c=$id").'">' . __('del', 'nuovo') .' </a> ';
     echo '<a href="'.admin_url("comment.php?action=cdc&dt=spam&c=$id").'">' . __('spam', 'nuovo') . '</a>';
@@ -155,19 +149,18 @@ function nuovo_scripts() {
 					'nuovo-swiper' => '/js/nuovo-idangerous.swiper-2.3.min.js'
 	);
 	foreach ($scripts as $key=>$location) {
-		wp_register_script( $key, get_template_directory_uri() . $location );
-		wp_enqueue_script( $key );
+		wp_enqueue_script( $key, get_template_directory_uri() . $location );
 	}
 	if (is_home()) {
 		wp_enqueue_script( 'nuovo-home-scripts', get_template_directory_uri() . '/js/nuovo-home-scripts.js' );
 	}
-	if (nuovo_options('general', 'top-menu')) {
+	if (esc_attr(nuovo_options('general', 'top-menu')) == 1) {
 		wp_enqueue_script( 'nuovo-top-menu', get_template_directory_uri() . '/js/nuovo-top-menu.js' );
 	}
 	wp_enqueue_script( 'nuovo-main-menu', get_template_directory_uri() . '/js/nuovo-main-menu.js' );
 	wp_enqueue_script( 'nuovo-accordion', get_template_directory_uri() . '/js/nuovo-accordion.js' );
 	wp_enqueue_style( 'nuovo-styesheet', get_template_directory_uri() . '/style.css' );
-	$color = nuovo_options('nuovo-color-theme');
+	$color = esc_attr(nuovo_options('nuovo-color-theme'));
 	if (($color != 'default') and (isset($color))) {
 		$color_styles = array(
 			'nuovo-desktop' => '/css/nuovo-' . $color . '.css',
@@ -179,25 +172,14 @@ function nuovo_scripts() {
 			wp_enqueue_style($key, get_template_directory_uri() . $location);
 		}
 	}
-	wp_register_style('nuovo-user', get_template_directory_uri() . '/nuovo-user.css');
-	wp_enqueue_style('user');
 	if (get_header_image()== '') {
-		wp_register_style('nuovo-header-css', get_template_directory_uri() . '/css/nuovo-header.css');
-		wp_enqueue_style('nuovo-header-css');
+		wp_enqueue_style('nuovo-header-css', get_template_directory_uri() . '/css/nuovo-header.css');
 	}
 	if ( is_singular() ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'nuovo_scripts' );
-
-// Add Responsiveness for Featured Images
-add_filter('post_thumbnail_html', 'nuovo_remove_thumbnail_dimensions', 10);
-add_filter('image_send_to_editor', 'nuovo_remove_thumbnail_dimensions', 10);
-function nuovo_remove_thumbnail_dimensions($html) {
-	$html = preg_replace('/(width\height)=\"\d*\"\s/', "", $html);
-	return $html;
-}
 
 // Add function to display the page title
 function nuovo_wp_title( $title, $sep ) {
