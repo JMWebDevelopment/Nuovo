@@ -46,13 +46,6 @@ add_action('after_setup_theme', 'nuovo_setup');
 if ( ! isset( $content_width ) )
  $content_width = 640;
 
-// turns a category ID to a Name
-function nuovo_cat_id_to_name($id) {
-	foreach((array)(get_categories()) as $category) {
-    	if ($id == $category->cat_ID) { return $category->cat_name; break; }
-	}
-}
-
 //Create easy Function for Calling Theme Options
 function nuovo_options($opt) {
 	$option = get_option('nuovo_options');
@@ -62,7 +55,7 @@ function nuovo_options($opt) {
 }
 
 //Setup Function For Comments
-function advanced_comment($comment, $args, $depth) {
+function nuovo_advanced_comment($comment, $args, $depth) {
    $GLOBALS['comment'] = $comment; ?>
  
 <li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">

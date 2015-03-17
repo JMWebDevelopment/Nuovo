@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Nuovo\n"
-"POT-Creation-Date: 2015-03-07 12:12-0600\n"
-"PO-Revision-Date: 2015-03-07 12:14-0600\n"
+"POT-Creation-Date: 2015-03-16 20:50-0600\n"
+"PO-Revision-Date: 2015-03-16 20:51-0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_MX\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.7.4\n"
+"X-Generator: Poedit 1.7.5\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
@@ -32,7 +32,8 @@ msgstr ""
 #: 404.php:11
 msgid "\">homepage</a> or use the search form below to find another post."
 msgstr ""
-"\">homepage</a> o uso la búsqueda forma debajo para encontrar otro post."
+"\">página principal</a> o uso la búsqueda forma debajo para encontrar otro "
+"post."
 
 #: admin/theme-options.php:4 admin/theme-options.php:95
 msgid "Nuovo Theme Options"
@@ -45,6 +46,18 @@ msgstr "Opciones Tema"
 #: admin/theme-options.php:97
 msgid "Options saved"
 msgstr "Opciones guardan"
+
+#: admin/theme-options.php:107
+msgid "General"
+msgstr "General"
+
+#: admin/theme-options.php:108
+msgid "Social"
+msgstr "Social"
+
+#: admin/theme-options.php:109
+msgid "Homepage"
+msgstr "Página Principal"
 
 #: admin/theme-options.php:116
 msgid "RSS Feed"
@@ -132,13 +145,17 @@ msgstr "Número de puestos de categoría cuatro"
 msgid "Number of posts for Latest Posts"
 msgstr "Número de puestos para las últimas entradas"
 
+#: admin/theme-options.php:228
+msgid "Save Options"
+msgstr "Guardar Opciones"
+
 #: archive.php:5
 msgid " Archives: "
 msgstr " Archivos: "
 
 #: archive.php:21 author.php:30 category.php:21 home.php:27 home.php:66
-#: home.php:104 home.php:143 home.php:182 home.php:217 home.php:259
-#: home.php:301 home.php:343 home.php:386 home.php:423 index.php:22
+#: home.php:106 home.php:145 home.php:184 home.php:219 home.php:261
+#: home.php:304 home.php:348 home.php:392 home.php:429 index.php:22
 #: search.php:21 single.php:15 single.php:25 tag.php:21
 msgid "Written By: "
 msgstr "Escrito por: "
@@ -210,41 +227,41 @@ msgstr "Copyright"
 msgid "Main Menu"
 msgstr "Menú Principal"
 
-#: functions.php:77
+#: functions.php:64
 #, php-format
 msgid "%s"
 msgstr ""
 
-#: functions.php:78
+#: functions.php:65
 #, php-format
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: functions.php:78
+#: functions.php:65
 msgid "(Edit)"
 msgstr "(Editar)"
 
-#: functions.php:83
+#: functions.php:70
 msgid "Your comment is awaiting moderation."
 msgstr "Tú comentario esta esperando ser aprobado"
 
-#: functions.php:99
+#: functions.php:86
 msgid "del"
 msgstr "del"
 
-#: functions.php:100
+#: functions.php:87
 msgid "spam"
 msgstr "spam"
 
-#: functions.php:107
+#: functions.php:94
 msgid "Sidebar"
 msgstr "Sidebar"
 
-#: functions.php:140
+#: functions.php:127
 msgid "Continue Reading&rsaquo;&rsaquo;"
 msgstr "Seguir leyendo &rsaquo; &rsaquo;"
 
-#: functions.php:219
+#: functions.php:194
 #, php-format
 msgid "Page %s"
 msgstr "Página %s"
@@ -253,20 +270,20 @@ msgstr "Página %s"
 msgid "Go to..."
 msgstr "Ir a..."
 
-#: home.php:27 home.php:66 home.php:104 home.php:143 home.php:182 home.php:259
-#: home.php:301 home.php:343 home.php:386
+#: home.php:27 home.php:66 home.php:106 home.php:145 home.php:184 home.php:261
+#: home.php:304 home.php:348 home.php:392
 msgid "Edit"
 msgstr "Editar"
 
-#: home.php:28 home.php:217 home.php:423 single.php:16 single.php:26
+#: home.php:28 home.php:219 home.php:429 single.php:16 single.php:26
 msgid "0 Comments"
 msgstr "0 Comentarios"
 
-#: home.php:28 home.php:217 home.php:423
+#: home.php:28 home.php:219 home.php:429
 msgid "1 Comment"
 msgstr "1 Comentario"
 
-#: home.php:28 home.php:217 home.php:423 single.php:16 single.php:26
+#: home.php:28 home.php:219 home.php:429 single.php:16 single.php:26
 msgid "% Comments"
 msgstr "% Comentarios"
 
@@ -274,33 +291,33 @@ msgstr "% Comentarios"
 msgid "Comments Off"
 msgstr "Comentarios desactivados"
 
-#: home.php:62 home.php:100 home.php:139 home.php:178 home.php:255
-#: home.php:297 home.php:339 home.php:382
+#: home.php:62 home.php:102 home.php:141 home.php:180 home.php:257
+#: home.php:300 home.php:344 home.php:388
 msgid "Off"
 msgstr "Apagada"
 
-#: home.php:74 home.php:112 home.php:151 home.php:190 home.php:269
-#: home.php:311 home.php:353 home.php:396
+#: home.php:75 home.php:114 home.php:153 home.php:192 home.php:271
+#: home.php:314 home.php:358 home.php:402
 msgid "View All&rsaquo;&rsaquo;"
 msgstr "Ver todos los &rsaquo; &rsaquo;"
 
-#: home.php:217 single.php:16 single.php:26
+#: home.php:219 single.php:16 single.php:26
 msgid "Comments Closed"
 msgstr "Comentarios Cerrados"
 
-#: home.php:222
+#: home.php:224
 msgid "<span class=\"home-next\">Next Posts&rsaquo;&rsaquo;</span>"
 msgstr "<span class=\"home-next\">Siguiente Mensajes&rsaquo;&rsaquo;</span>"
 
-#: home.php:407
+#: home.php:413
 msgid "Latest Posts"
 msgstr "Últimas entradas"
 
-#: home.php:423
+#: home.php:429
 msgid "Comments Disabled"
 msgstr "Comentarios de personas con discapacidad"
 
-#: home.php:428
+#: home.php:434
 msgid "<span class=\"mobile-home-next\">Next Posts&rsaquo;&rsaquo;</span>"
 msgstr "<span class=\"home-next\">Siguiente Mensajes&rsaquo;&rsaquo;</span>"
 

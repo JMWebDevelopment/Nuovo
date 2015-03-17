@@ -11,7 +11,7 @@
 <?php if ( have_comments() ) : ?>
 	<h3 id="comments"><?php comments_number(__('No Responses', 'nuovo'), __('One Response', 'nuovo'), __('% Responses', 'nuovo') );?> <?php __('to', 'nuovo'); ?> &#8220;<?php the_title(); ?>&#8221;</h3>
 	<ol class="commentlist">
-		<?php wp_list_comments('type=comment&callback=advanced_comment'); 
+		<?php wp_list_comments('type=comment&callback=nuovo_advanced_comment'); 
                 ?>
 	</ol>
 	<div class="clear"></div>

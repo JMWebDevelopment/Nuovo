@@ -104,9 +104,9 @@ function nuovo_build_options_page(){
 			<?php settings_fields('nuovo_theme_options'); ?>
 			<!--Tabs to go here -->
 			<ul>
-				<li class="nav-tab"><a href="#tab-general">General</a></li>
-				<li class="nav-tab"><a href="#tab-social">Social</a></li>
-				<li class="nav-tab"><a href="#tab-homepage">Homepage</a></li>
+				<li class="nav-tab"><a href="#tab-general"><?php _e('General' ,'nuovo'); ?></a></li>
+				<li class="nav-tab"><a href="#tab-social"><?php _e('Social' ,'nuovo'); ?></a></li>
+				<li class="nav-tab"><a href="#tab-homepage"><?php _e('Homepage' ,'nuovo'); ?></a></li>
 			</ul>
 			<!--General options here-->
 			<div id="tab-general">
@@ -114,7 +114,7 @@ function nuovo_build_options_page(){
 					<!-- RSS Feed-->
 					<tr valign="top">
 						<th scope="row"><label for="nuovo-rss-feed"><?php _e('RSS Feed', 'nuovo'); ?></label></th>
-						<td><input id="nuovo-rss-feed" name="nuovo_options[nuovo-rss-feed]" type="text" value="<?php esc_attr_e($settings['nuovo-rss-feed']); ?>" /></td>
+						<td><input id="nuovo-rss-feed" name="nuovo_options[nuovo-rss-feed]" type="text" value="<?php esc_attr($settings['nuovo-rss-feed']); ?>" /></td>
 					</tr>
 					<!-- Color Theme-->
 					<tr valign="top">
@@ -152,27 +152,27 @@ function nuovo_build_options_page(){
 					<!-- Facebook Link -->
 					<tr valign="top">
 						<th scope="row"><label for="nuovo-facebook"><?php _e('Facebook', 'nuovo'); ?></label></th>
-						<td><input id="nuovo-facebook" name="nuovo_options[nuovo-facebook]" type="text" value="<?php esc_attr_e($settings['nuovo-facebook']); ?>" /></td>
+						<td><input id="nuovo-facebook" name="nuovo_options[nuovo-facebook]" type="text" value="<?php esc_attr($settings['nuovo-facebook']); ?>" /></td>
 					</tr>
 					<!--Twitter Link-->
 					<tr valign="top">
 						<th scope="row"><label for="nuovo-twitter"><?php _e('Twitter Link', 'nuovo'); ?></label></th>
-						<td><input id="nuovo-twitter" name="nuovo_options[nuovo-twitter]" type="text" value="<?php esc_attr_e($settings['nuovo-twitter']); ?>" /></td>
+						<td><input id="nuovo-twitter" name="nuovo_options[nuovo-twitter]" type="text" value="<?php esc_attr($settings['nuovo-twitter']); ?>" /></td>
 					</tr>
 					<!--YouTube Link-->
 					<tr valign="top">
 						<th scope="row"><label for="nuovo-youtube"><?php _e('YouTube Link', 'nuovo'); ?></label></th>
-						<td><input id="nuovo-youtube" name="nuovo_options[nuovo-youtube]" type="text" value="<?php esc_attr_e($settings['nuovo-youtube']); ?>" /></td>
+						<td><input id="nuovo-youtube" name="nuovo_options[nuovo-youtube]" type="text" value="<?php esc_attr($settings['nuovo-youtube']); ?>" /></td>
 					</tr>
 					<!--Google Plus Link-->
 					<tr valign="top">
 						<th scope="row"><label for="nuovo-googleplus"><?php _e('Google+ Link', 'nuovo'); ?></label></th>
-						<td><input id="nuovo-googleplus" name="nuovo_options[nuovo-googleplus]" type="text" value="<?php esc_attr_e($settings['nuovo-googleplus']); ?>" /></td>
+						<td><input id="nuovo-googleplus" name="nuovo_options[nuovo-googleplus]" type="text" value="<?php esc_attr($settings['nuovo-googleplus']); ?>" /></td>
 					</tr>
 					<!--LinkedIn Link-->
 					<tr valign="top">
 						<th scope="row"><label for="nuovo-linkedin"><?php _e('LinkedIn', 'nuovo'); ?></label></th>
-						<td><input id="nuovo-linkedin" name="nuovo_options[nuovo-linkedin]" type="text" value="<?php esc_attr_e($settings['nuovo-linkedin']); ?>" /></td>
+						<td><input id="nuovo-linkedin" name="nuovo_options[nuovo-linkedin]" type="text" value="<?php esc_attr($settings['nuovo-linkedin']); ?>" /></td>
 					</tr>
 				</table>
 			</div>
@@ -185,7 +185,7 @@ function nuovo_build_options_page(){
 					</tr>
 					<tr valign="top">
 						<th scope="row"><label for="nuovo-slideshow-count"><?php _e('Number of posts for the slideshow', 'nuovo'); ?></label></th>
-						<td><input id="nuovo-slideshow-count" name="nuovo_options[nuovo-slideshow-count]" type="number" min="-1" value="<?php esc_attr_e($settings['nuovo-slideshow-count']) ?>" size="2"/></td>
+						<td><input id="nuovo-slideshow-count" name="nuovo_options[nuovo-slideshow-count]" type="number" min="-1" value="<?php esc_attr($settings['nuovo-slideshow-count']) ?>" size="2"/></td>
 					</tr>
 					<tr valign="top">
 						<th scope="row"><label for="nuovo-category-one"><?php _e('First Category', 'nuovo'); ?></label></th>
@@ -193,7 +193,7 @@ function nuovo_build_options_page(){
 					</tr>
 					<tr valign="top">
 						<th scope="row"><label for="nuovo-category-one-count"><?php _e('Number of posts for Category One', 'nuovo'); ?></label></th>
-						<td><input id="nuovo-category-one-count" name="nuovo_options[nuovo-category-one-count]" type="number" min="-1" value="<?php esc_attr_e($settings['nuovo-category-one-count']) ?>" /></td>
+						<td><input id="nuovo-category-one-count" name="nuovo_options[nuovo-category-one-count]" type="number" min="-1" value="<?php esc_attr($settings['nuovo-category-one-count']) ?>" /></td>
 					</tr>
 					<tr valign="top">
 						<th scope="row"><label for="nuovo-category-two"><?php _e('Second Category', 'nuovo'); ?></label></th>
@@ -201,7 +201,7 @@ function nuovo_build_options_page(){
 					</tr>
 					<tr valign="top">
 						<th scope="row"><label for="nuovo-category-two-count"><?php _e('Number of posts for Category Two', 'nuovo'); ?></label></th>
-						<td><input id="nuovo-category-two-count" name="nuovo_options[nuovo-category-two-count]" type="number" min="-1" value="<?php esc_attr_e($settings['nuovo-category-two-count']) ?>" /></td>
+						<td><input id="nuovo-category-two-count" name="nuovo_options[nuovo-category-two-count]" type="number" min="-1" value="<?php esc_attr($settings['nuovo-category-two-count']) ?>" /></td>
 					</tr>
 					<tr valign="top">
 						<th scope="row"><label for="nuovo-category-three"><?php _e('Third Category', 'nuovo'); ?></label></th>
@@ -209,7 +209,7 @@ function nuovo_build_options_page(){
 					</tr>
 					<tr valign="top">
 						<th scope="row"><label for="nuovo-category-three-count"><?php _e('Number of posts for Category Three', 'nuovo'); ?></label></th>
-						<td><input id="nuovo-category-three-count" name="nuovo_options[nuovo-category-three-count]" type="number" min="-1" value="<?php esc_attr_e($settings['nuovo-category-three-count']) ?>" /></td>
+						<td><input id="nuovo-category-three-count" name="nuovo_options[nuovo-category-three-count]" type="number" min="-1" value="<?php esc_attr($settings['nuovo-category-three-count']) ?>" /></td>
 					</tr>
 					<tr valign="top">
 						<th scope="row"><label for="nuovo-category-four"><?php _e('Fourth Category', 'nuovo'); ?></label></th>
@@ -217,15 +217,15 @@ function nuovo_build_options_page(){
 					</tr>
 					<tr valign="top">
 						<th scope="row"><label for="nuovo-category-four-count"><?php _e('Number of posts for Category Four', 'nuovo'); ?></label></th>
-						<td><input id="nuovo-category-four-count" name="nuovo_options[nuovo-category-four-count]" type="number" min="-1" value="<?php esc_attr_e($settings['nuovo-category-four-count']) ?>" /></td>
+						<td><input id="nuovo-category-four-count" name="nuovo_options[nuovo-category-four-count]" type="number" min="-1" value="<?php esc_attr($settings['nuovo-category-four-count']) ?>" /></td>
 					</tr>
 					<tr valign="top">
 						<th scope="row"><label for="nuovo-latest-posts-count"><?php _e('Number of posts for Latest Posts', 'nuovo'); ?></label></th>
-						<td><input id="nuovo-latest-posts-count" name="nuovo_options[nuovo-latest-posts-count]" type="number" min="-1" value="<?php esc_attr_e($settings['nuovo-latest-posts-count']) ?>" /></td>
+						<td><input id="nuovo-latest-posts-count" name="nuovo_options[nuovo-latest-posts-count]" type="number" min="-1" value="<?php esc_attr($settings['nuovo-latest-posts-count']) ?>" /></td>
 					</tr>
 				</table>
 			</div>
-			<p class="submit"><input type="submit" class="button-primary" value="Save Options" /></p>
+			<p class="submit"><input type="submit" class="button-primary" value="<?php _e('Save Options', 'nuovo'); ?>" /></p>
 		</form>
 		</div>
 	</div>
