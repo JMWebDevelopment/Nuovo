@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Nuovo\n"
-"POT-Creation-Date: 2015-03-16 20:46-0600\n"
-"PO-Revision-Date: 2015-03-16 20:47-0600\n"
+"POT-Creation-Date: 2015-03-24 16:45-0600\n"
+"PO-Revision-Date: 2015-03-24 16:46-0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -23,17 +23,20 @@ msgstr ""
 msgid ""
 "We're sorry, but the post or page you are looking for is not here. It may "
 "have been removed before you got here or you have a bad link. You can either "
-"go back to the <a href=\""
+"go back to the "
 msgstr ""
 "Es tut uns leid, aber die Post oder die Seite, die du suchst ist nicht hier. "
 "Es kann entfernt worden sein, bevor du hier oder Sie eine schlechte "
-"Verbindung haben. Sie können auch zurück zu die < a href = \""
+"Verbindung haben. Sie können auch zurück zu den"
 
 #: 404.php:11
-msgid "\">homepage</a> or use the search form below to find another post."
+msgid "homepage"
+msgstr "Startseite"
+
+#: 404.php:11
+msgid " or use the search form below to find another post."
 msgstr ""
-"\">Startseite</a> oder die Verwendung die Suche bilden unten eine andere "
-"Stelle zu finden."
+"oder verwenden Sie das Suchformular unten, um eine andere Stelle zu finden."
 
 #: admin/theme-options.php:4 admin/theme-options.php:95
 msgid "Nuovo Theme Options"
@@ -42,6 +45,34 @@ msgstr "Nuovo Theme-Optionen"
 #: admin/theme-options.php:4
 msgid "Theme Options"
 msgstr "Theme-Optionen"
+
+#: admin/theme-options.php:57
+msgid "Default"
+msgstr "Standard"
+
+#: admin/theme-options.php:61
+msgid "Blue"
+msgstr "Blau"
+
+#: admin/theme-options.php:65
+msgid "Green"
+msgstr "Grün"
+
+#: admin/theme-options.php:69
+msgid "Orange"
+msgstr "Orange"
+
+#: admin/theme-options.php:73
+msgid "Purple"
+msgstr "Violett"
+
+#: admin/theme-options.php:77
+msgid "Red"
+msgstr "Rot"
+
+#: admin/theme-options.php:81
+msgid "Yellow"
+msgstr "Gelb"
 
 #: admin/theme-options.php:97
 msgid "Options saved"
@@ -260,7 +291,7 @@ msgstr "Seitenleiste"
 msgid "Continue Reading&rsaquo;&rsaquo;"
 msgstr "Weiterlesen&rsaquo;&rsaquo;"
 
-#: functions.php:194
+#: functions.php:193
 #, php-format
 msgid "Page %s"
 msgstr "Seite %s"
@@ -339,3 +370,17 @@ msgstr "Schlagworte: "
 #: tag.php:5
 msgid "Tag Archive "
 msgstr "Tag-Archiv "
+
+#~ msgid ""
+#~ "We're sorry, but the post or page you are looking for is not here. It may "
+#~ "have been removed before you got here or you have a bad link. You can "
+#~ "either go back to the <a href=\""
+#~ msgstr ""
+#~ "Es tut uns leid, aber die Post oder die Seite, die du suchst ist nicht "
+#~ "hier. Es kann entfernt worden sein, bevor du hier oder Sie eine schlechte "
+#~ "Verbindung haben. Sie können auch zurück zu die < a href = \""
+
+#~ msgid "\">homepage</a> or use the search form below to find another post."
+#~ msgstr ""
+#~ "\">Startseite</a> oder die Verwendung die Suche bilden unten eine andere "
+#~ "Stelle zu finden."

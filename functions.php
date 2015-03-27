@@ -151,7 +151,6 @@ function nuovo_scripts() {
 		wp_enqueue_script( 'nuovo-top-menu', get_template_directory_uri() . '/js/nuovo-top-menu.js' );
 	}
 	wp_enqueue_script( 'nuovo-main-menu', get_template_directory_uri() . '/js/nuovo-main-menu.js' );
-	wp_enqueue_script( 'nuovo-accordion', get_template_directory_uri() . '/js/nuovo-accordion.js' );
 	wp_enqueue_style( 'nuovo-styesheet', get_template_directory_uri() . '/style.css' );
 	$color = esc_attr(nuovo_options('nuovo-color-theme'));
 	if (($color != 'default') and (isset($color))) {

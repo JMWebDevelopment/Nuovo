@@ -25,43 +25,52 @@ jQuery(document).ready(function() {
 		timeout: 6000
 	});
 });
-jQuery(function(){
-	var mySwiper1 = jQuery('.mobile-swiper-container1').swiper({
-		mode:'horizontal',
-		loop: true,
-		freeMode: true,
-		freeModeFluid: true,
-		simulateTouch: true,
-		calculateHeight: true,
+
+if ( jQuery(window).width() <= 649){
+	jQuery(function(){
+		var mySwiper1 = jQuery('#swiper-container-1').swiper({
+			mode:'horizontal',
+			loop: true,
+			freeMode: true,
+			freeModeFluid: true,
+			simulateTouch: true,
+			calculateHeight: true,
+		});
 	});
-});
-jQuery(function(){
-	var mySwiper2 = jQuery('.mobile-swiper-container2').swiper({
-		mode:'horizontal',
-		loop: true,
-		freeMode: true,
-		freeModeFluid: true,
-		simulateTouch: true,
-		calculateHeight: true,
+}
+if(jQuery(window).width() <= 649){
+	jQuery(function(){
+		var mySwiper2 = jQuery('#swiper-container-2').swiper({
+			mode:'horizontal',
+			loop: true,
+			freeMode: true,
+			freeModeFluid: true,
+			simulateTouch: true,
+			calculateHeight: true,
+		});
 	});
-});
-jQuery(function(){
-	var mySwiper3 = jQuery('.mobile-swiper-container3').swiper({
-		mode:'horizontal',
-		loop: true,
-		freeMode: true,
-		freeModeFluid: true,
-		simulateTouch: true,
-		calculateHeight: true,
+}
+if(jQuery(window).width() <= 649){
+	jQuery(function(){
+		var mySwiper3 = jQuery('#swiper-container-3').swiper({
+			mode:'horizontal',
+			loop: true,
+			freeMode: true,
+			freeModeFluid: true,
+			simulateTouch: true,
+			calculateHeight: true,
+		});
 	});
-});
-jQuery(function(){
-	var mySwiper4 = jQuery('.mobile-swiper-container4').swiper({
-		mode:'horizontal',
-		loop: true,
-		freeMode: true,
-		freeModeFluid: true,
-		simulateTouch: true,
-		calculateHeight: true,
+}
+if(jQuery(window).width() <= 649){
+	jQuery(function(){
+		var mySwiper4 = jQuery('#swiper-container-4').swiper({
+			mode:'horizontal',
+			loop: true,
+			freeMode: true,
+			freeModeFluid: true,
+			simulateTouch: true,
+			calculateHeight: true,
+		});
 	});
-});
+}

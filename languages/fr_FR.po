@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Nuovo\n"
-"POT-Creation-Date: 2015-03-16 20:51-0600\n"
-"PO-Revision-Date: 2015-03-16 20:53-0600\n"
+"POT-Creation-Date: 2015-03-24 16:49-0600\n"
+"PO-Revision-Date: 2015-03-24 16:50-0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -23,17 +23,21 @@ msgstr ""
 msgid ""
 "We're sorry, but the post or page you are looking for is not here. It may "
 "have been removed before you got here or you have a bad link. You can either "
-"go back to the <a href=\""
+"go back to the "
 msgstr ""
 "Nous sommes désolés, mais le poteau ou la page que vous cherchez n'est pas "
 "ici. Il a été supprimé avant que vous êtes arrivé ici ou si vous avez un "
-"mauvais lien. Vous pouvez soit revenir à la < a href = \""
+"mauvais lien. Vous pouvez soit revenir à la"
 
 #: 404.php:11
-msgid "\">homepage</a> or use the search form below to find another post."
+msgid "homepage"
+msgstr "page d'accueil"
+
+#: 404.php:11
+msgid " or use the search form below to find another post."
 msgstr ""
-"\">page d'accueil</a> ou utiliser la recherche formulaire ci-dessous pour "
-"trouver un autre poste."
+"ou utilisez le formulaire de recherche ci-dessous pour trouver un autre "
+"poste."
 
 #: admin/theme-options.php:4 admin/theme-options.php:95
 msgid "Nuovo Theme Options"
@@ -42,6 +46,34 @@ msgstr "Options de Thème Nuovo"
 #: admin/theme-options.php:4
 msgid "Theme Options"
 msgstr "Options du Thème"
+
+#: admin/theme-options.php:57
+msgid "Default"
+msgstr "Défaut"
+
+#: admin/theme-options.php:61
+msgid "Blue"
+msgstr "Bleu"
+
+#: admin/theme-options.php:65
+msgid "Green"
+msgstr "Vert"
+
+#: admin/theme-options.php:69
+msgid "Orange"
+msgstr "Orange"
+
+#: admin/theme-options.php:73
+msgid "Purple"
+msgstr "Violet"
+
+#: admin/theme-options.php:77
+msgid "Red"
+msgstr "Rouge"
+
+#: admin/theme-options.php:81
+msgid "Yellow"
+msgstr "Jaune"
 
 #: admin/theme-options.php:97
 msgid "Options saved"
@@ -262,7 +294,7 @@ msgstr "Sidebar"
 msgid "Continue Reading&rsaquo;&rsaquo;"
 msgstr "Lire la suite&rsaquo;&rsaquo;"
 
-#: functions.php:194
+#: functions.php:193
 #, php-format
 msgid "Page %s"
 msgstr "Page %s"
@@ -342,3 +374,17 @@ msgstr "Mots clés: "
 #: tag.php:5
 msgid "Tag Archive "
 msgstr "Tag Archive "
+
+#~ msgid ""
+#~ "We're sorry, but the post or page you are looking for is not here. It may "
+#~ "have been removed before you got here or you have a bad link. You can "
+#~ "either go back to the <a href=\""
+#~ msgstr ""
+#~ "Nous sommes désolés, mais le poteau ou la page que vous cherchez n'est "
+#~ "pas ici. Il a été supprimé avant que vous êtes arrivé ici ou si vous avez "
+#~ "un mauvais lien. Vous pouvez soit revenir à la < a href = \""
+
+#~ msgid "\">homepage</a> or use the search form below to find another post."
+#~ msgstr ""
+#~ "\">page d'accueil</a> ou utiliser la recherche formulaire ci-dessous pour "
+#~ "trouver un autre poste."

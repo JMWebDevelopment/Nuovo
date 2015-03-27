@@ -33,7 +33,7 @@
 			<?php if (get_header_image()) { ?>
 				<!--Logo Header-->
 				<div id="header">
-					<a href="<?php echo esc_url(home_url()); ?>"><img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" /></a>
+					<a href="<?php echo esc_url(home_url()); ?>"><img src="<?php header_image(); ?>" height="<?php echo esc_attr(get_custom_header()->height); ?>" width="<?php echo esc_attr(get_custom_header()->width); ?>" alt="" /></a>
 				</div>
 			<?php } else { ?>
 				<!--Text Header-->

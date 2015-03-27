@@ -4,7 +4,7 @@ Theme URI: http://www.jacobmartella.com/nuovo-wordpress-theme/
 Description: With today's technology, being able to have a website that looks good across desktop, tablet and mobile devices. Nuovo allows you to have just that with minimal work on your part. This theme is design to give your views a great experience no matter what device they use to access the internet. It also allows you to display your social media links. Finally, this theme is designed with photos in mind, maximizing the use of the featured photos. It is recommended that you try to use a featured photo for each of your posts. Finally, the theme allows easy customization with a theme options page that allows you to change the color theme, add links to you social media pages and to customize how your homepage looks. It also includes a user style sheets that overrides all of the other style sheets from the theme editor screen in the Wordpress admin.
 Author: Jacob Martella
 Author URI: http://www.jacobmartella.com/
-Version: 1.0.9
+Version: 1.0.10
 Tags: black,blue,green,orange,purple,red,yellow,dark,two-columns,right-sidebar,responsive-layout,custom-background,custom-header,featured-images,theme-options
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -1205,8 +1205,9 @@ p.widget-body, p.widget-body a, p.widget-body a:link, p.widget-body a:visited, p
 	top: auto !important;
 	height: auto !important;
 	position: absolute !important;
-	padding-left: 1px !important;
-	padding-right: 1px !important;
+	border: none;
+	padding-left: 0px !important;
+	padding-right: 0px !important;
 	margin: 0px !important;
 	display: block !important;
 }
@@ -1423,8 +1424,9 @@ p.slide-panel-meta {
 	top: auto !important;
 	height: auto !important;
 	position: absolute !important;
-	padding-left: 1px !important;
-	padding-right: 1px !important;
+	border: none;
+	padding-left: 0px !important;
+	padding-right: 0px !important;
 	margin: 0px !important;
 	display: block !important;
 }
@@ -1794,8 +1796,9 @@ p.mobile-menu-text, p.mobile-menu-text a, p.mobile-menu-text a:hover, p.mobile-m
 	top: auto !important;
 	height: auto !important;
 	position: absolute !important;
-	padding-left: 1px !important;
-	padding-right: 1px !important;
+	border: none;
+	padding-left: 0px !important;
+	padding-right: 0px !important;
 	margin: 0px !important;
 	display: block !important;
 	z-index: 998 !important;
@@ -1853,7 +1856,7 @@ img.prev{
 	display: none;
 }
 
-#mobile-home-posts-area{
+#home-posts-area{
 	width: 300px !important;
 	background: #FFFFFF;
 	padding: 5px;
@@ -1863,7 +1866,7 @@ img.prev{
 	position: relative;
 }
 
-.mobile-home-title-bg{
+.home-title-bg{
 	width: 100%;
 	height: 30px;
 	background: #000000;
@@ -1871,7 +1874,7 @@ img.prev{
 	margin-bottom: 5px;
 }
 
-h3.mobile-home-title{
+h3.home-title{
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	font-weight: 100;
 	font-size: 22px;
@@ -1879,13 +1882,13 @@ h3.mobile-home-title{
 	margin: 0px;
 }
 
-.mobile-home-post{
+.home-post{
 	width: 205px;
 	margin: 4px;
 	float: left;
 }
 
-.mobile-home-photo{
+.home-photo, .home-photo:hover{
 	width: 200px;
 	height: 100px;
 	position: relative;
@@ -1894,7 +1897,7 @@ h3.mobile-home-title{
 	margin: auto;
 }
 
-.mobile-photo-post-details{
+.photo-post-details{
 	color: #FFFFFF;
 	background-color: rgba(0,0,0,.85);
 	width: 100%;
@@ -1905,7 +1908,7 @@ h3.mobile-home-title{
 	display: block;
 }
 
-.mobile-photo-post-details-links, .mobile-photo-post-details-links a, .mobile-photo-post-details-links a:link, .mobile-photo-post-details-links a:visited, .mobile-photo-post-details-links a:hover{
+.photo-post-details-links, .photo-post-details-links a, .photo-post-details-links a:link, .photo-post-details-links a:visited, .photo-post-details-links a:hover{
 	font-size: 14px;
 	color: #FFFFFF;
 	margin: 0px 0px 5px 0px;
@@ -1913,24 +1916,24 @@ h3.mobile-home-title{
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 
-h3.mobile-home-headline, h3.home-headline a, h3.home-headline a:link, h3.home-headline a:hover, h3.home-headline a:visited{
+h3.home-headline, h3.home-headline a, h3.home-headline a:link, h3.home-headline a:hover, h3.home-headline a:visited{
 	font-family: Georgia;
 	font-weight: 100;
 	font-size: 22px;
 	color: #000000;
 }
 
-p.mobile-home-meta{
+p.home-meta{
 	font-family: Arial;
 	font-size: 14px;
 }
 
-.mobile-home-read-more, .home-read-more a, .home-read-more a:link,.home-read-more a:hover, .home-read-more a:visited{
+.home-read-more, .home-read-more a, .home-read-more a:link,.home-read-more a:hover, .home-read-more a:visited{
 	font-family: Arial;
 	font-size: 14px;
 }
 
-.mobile-home-view-all{
+.home-view-all{
 	width: 100px;
 	height: 30px;
 	background: #262626;
@@ -1945,7 +1948,7 @@ p.mobile-home-meta{
 	padding-left: 3px;
 }
 
-.mobile-home-view-all:hover{
+.home-view-all:hover{
 	width: 100px;
 	height: 30px;
 	background: #bcbcbc;
@@ -1960,7 +1963,7 @@ p.mobile-home-meta{
 	padding-left: 3px;
 }
 
-.mobile-home-next{
+.home-next{
 	width: 135px;
 	height: 30px;
 	background: #262626;
@@ -1975,7 +1978,7 @@ p.mobile-home-meta{
 	padding-left: 3px;
 }
 
-.mobile-home-next:hover{
+.home-next:hover{
 	width: 135px;
 	height: 30px;
 	background: #bcbcbc;
@@ -1990,7 +1993,7 @@ p.mobile-home-meta{
 	padding-left: 3px;
 }
 
-.mobile-swiper-container1 {
+#swiper-container-1 {
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -2002,7 +2005,7 @@ p.mobile-home-meta{
 	z-index:1;
 }
 
-.mobile-swiper-container2 {
+#swiper-container-2 {
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -2014,7 +2017,7 @@ p.mobile-home-meta{
 	z-index:1;
 }
 
-.mobile-swiper-container3 {
+#swiper-container-3 {
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -2026,7 +2029,7 @@ p.mobile-home-meta{
 	z-index:1;
 }
 
-.mobile-swiper-container4 {
+#swiper-container-4 {
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -2086,16 +2089,19 @@ p.mobile-home-meta{
 	-ms-touch-action: pan-x;
 }
 
-.swiper-container1 {
+#swiper-container-1 {
 	width:100%;
+	height: 330px;
 }
 
-.swiper-container2 {
+#swiper-container-2 {
 	width:100%;
+	height: 330px;
 }
 
-.swiper-container3 {
+#swiper-container-3 {
 	width:100%;
+	height: 330px;
 }
 
 .swiper-container4 {
@@ -2108,11 +2114,11 @@ p.mobile-home-meta{
 }
 
 /* Latest Posts */
-#mobile-latest-posts-area{
+#latest-posts-area{
 	width: 100%;
 }
 
-.mobile-latest-posts-title-bg{
+.latest-posts-title-bg{
 	width: 100%;
 	height: 30px;
 	background: #262626;
@@ -2120,7 +2126,7 @@ p.mobile-home-meta{
 	margin-bottom: 5px;
 }
 
-h3.mobile-latest-posts-title{
+h3.latest-posts-title{
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	font-weight: 100;
 	font-size: 22px;
@@ -2128,21 +2134,21 @@ h3.mobile-latest-posts-title{
 	margin: 0px;
 }
 
-.mobile-latest-posts{
+.latest-posts{
 	background-color: #929292;
 	width: 100%;
 	padding-top: 12px;
 	padding-bottom: 12px;
 }
 
-.mobile-latest-postsalt{
+.latest-postsalt{
 	background-color: #E1E1E1;
 	width: 100%;
 	padding-top: 12px;
 	padding-bottom: 12px;
 }
 
-.mobile-latest-posts-photo{
+.latest-posts-photo{
 	width: 100px;
 	height: 50px;
 	border: 1px solid #000000;
@@ -2154,14 +2160,14 @@ h3.mobile-latest-posts-title{
 	margin-bottom: auto;
 }
 
-.mobile-latest-posts-headline-area{
+.latest-posts-headline-area{
 	width: 60%;
 	margin: auto;
 	float: right;
 	position: relative;
 }
 
-h5.mobile-latest-posts-headline, h5.mobile-latest-posts-headline a, h5.mobile-latest-posts-headline a:link, h5.mobile-latest-posts-headline a:visited, h5.mobile-latest-posts-headline a:hover{
+h5.latest-posts-headline, h5.latest-posts-headline a, h5.latest-posts-headline a:link, h5.latest-posts-headline a:visited, h5.latest-posts-headline a:hover{
 	font-family: Georgia;
 	font-size: 14px;
 	color: #000000;
@@ -2694,8 +2700,9 @@ p.mobile-menu-text, p.mobile-menu-text a, p.mobile-menu-text a:hover, p.mobile-m
 	top: auto !important;
 	height: auto !important;
 	position: absolute !important;
-	padding-left: 1px !important;
-	padding-right: 1px !important;
+	border: none;
+	padding-left: 0px !important;
+	padding-right: 0px !important;
 	margin: 0px !important;
 	display: block !important;
 	z-index: 998 !important;
@@ -2757,7 +2764,7 @@ img.prev{
 	display: none;
 }
 
-#mobile-home-posts-area{
+#home-posts-area{
 	width: 320px !important;
 	background: #FFFFFF;
 	padding: 5px;
@@ -2767,7 +2774,7 @@ img.prev{
 	position: relative;
 }
 
-.mobile-home-title-bg{
+.home-title-bg{
 	width: 100%;
 	height: 30px;
 	background: #000000;
@@ -2775,7 +2782,7 @@ img.prev{
 	margin-bottom: 5px;
 }
 
-h3.mobile-home-title{
+h3.home-title{
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	font-weight: 100;
 	font-size: 22px;
@@ -2783,13 +2790,13 @@ h3.mobile-home-title{
 	margin: 0px;
 }
 
-.mobile-home-post{
+.home-post{
 	width: 225px;
 	margin: 4px;
 	float: left;
 }
 
-.mobile-home-photo{
+.home-photo, .home-photo:hover{
 	width: 220px;
 	height: 110px;
 	position: relative;
@@ -2798,7 +2805,7 @@ h3.mobile-home-title{
 	margin: auto;
 }
 
-.mobile-photo-post-details{
+.photo-post-details{
 	color: #FFFFFF;
 	background-color: rgba(0,0,0,.85);
 	width: 100%;
@@ -2809,7 +2816,7 @@ h3.mobile-home-title{
 	display: block;
 }
 
-.mobile-photo-post-details-links, .mobile-photo-post-details-links a, .mobile-photo-post-details-links a:link, .mobile-photo-post-details-links a:visited, .mobile-photo-post-details-links a:hover{
+.photo-post-details-links, .photo-post-details-links a, .photo-post-details-links a:link, .photo-post-details-links a:visited, .photo-post-details-links a:hover{
 	font-size: 14px;
 	color: #FFFFFF;
 	margin: 0px 0px 5px 0px;
@@ -2817,24 +2824,24 @@ h3.mobile-home-title{
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 
-h3.mobile-home-headline, h3.home-headline a, h3.home-headline a:link, h3.home-headline a:hover, h3.home-headline a:visited{
+h3.home-headline, h3.home-headline a, h3.home-headline a:link, h3.home-headline a:hover, h3.home-headline a:visited{
 	font-family: Georgia;
 	font-weight: 100;
 	font-size: 22px;
 	color: #000000;
 }
 
-p.mobile-home-meta{
+p.home-meta{
 	font-family: Arial;
 	font-size: 14px;
 }
 
-.mobile-home-read-more, .home-read-more a, .home-read-more a:link,.home-read-more a:hover, .home-read-more a:visited{
+.home-read-more, .home-read-more a, .home-read-more a:link,.home-read-more a:hover, .home-read-more a:visited{
 	font-family: Arial;
 	font-size: 14px;
 }
 
-.mobile-home-view-all{
+.home-view-all{
 	width: 100px;
 	height: 30px;
 	background: #262626;
@@ -2849,7 +2856,7 @@ p.mobile-home-meta{
 	padding-left: 3px;
 }
 
-.mobile-home-view-all:hover{
+.home-view-all:hover{
 	width: 100px;
 	height: 30px;
 	background: #bcbcbc;
@@ -2864,21 +2871,21 @@ p.mobile-home-meta{
 	padding-left: 3px;
 }
 
-.mobile-home-view-all a:link, .mobile-home-view-all a:visited{
+.home-view-all a:link, .home-view-all a:visited{
 	color: #FFFFFF;
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	font-weight: 100;
 	font-size: 22px;
 }
 
-.mobile-home-view-all a:hover{
+.home-view-all a:hover{
 	color: #000000 !important;
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	font-weight: 100;
 	font-size: 22px;
 }
 
-.mobile-home-next{
+.home-next{
 	width: 135px;
 	height: 30px;
 	background: #262626;
@@ -2893,7 +2900,7 @@ p.mobile-home-meta{
 	padding-left: 3px;
 }
 
-.mobile-home-next:hover{
+.home-next:hover{
 	width: 135px;
 	height: 30px;
 	background: #bcbcbc;
@@ -2908,7 +2915,7 @@ p.mobile-home-meta{
 	padding-left: 3px;
 }
 
-.mobile-swiper-container1 {
+#swiper-container-1 {
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -2920,7 +2927,7 @@ p.mobile-home-meta{
 	z-index:1;
 }
 
-.mobile-swiper-container2 {
+#swiper-container-2 {
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -2932,7 +2939,7 @@ p.mobile-home-meta{
 	z-index:1;
 }
 
-.mobile-swiper-container3 {
+#swiper-container-3 {
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -2944,7 +2951,7 @@ p.mobile-home-meta{
 	z-index:1;
 }
 
-.mobile-swiper-container4 {
+#swiper-container-4 {
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -3004,20 +3011,24 @@ p.mobile-home-meta{
 	-ms-touch-action: pan-x;
 }
 
-.swiper-container1 {
+#swiper-container-1 {
 	width:100%;
+	height: 320px;
 }
 
-.swiper-container2 {
+#swiper-container-2 {
 	width:100%;
+	height: 320px;
 }
 
-.swiper-container3 {
+#swiper-container-3 {
 	width:100%;
+	height: 320px;
 }
 
-.swiper-container4 {
+#swiper-container-4 {
 	width:100%;
+	height: 320px;
 }
 
 .swiper-slide {
@@ -3026,11 +3037,11 @@ p.mobile-home-meta{
 }
 
 /* Latest Posts */
-#mobile-latest-posts-area{
+#latest-posts-area{
 	width: 100%;
 }
 
-.mobile-latest-posts-title-bg{
+.latest-posts-title-bg{
 	width: 100%;
 	height: 30px;
 	background: #262626;
@@ -3038,7 +3049,7 @@ p.mobile-home-meta{
 	margin-bottom: 5px;
 }
 
-h3.mobile-latest-posts-title{
+h3.latest-posts-title{
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	font-weight: 100;
 	font-size: 22px;
@@ -3046,21 +3057,21 @@ h3.mobile-latest-posts-title{
 	margin: 0px;
 }
 
-.mobile-latest-posts{
+.latest-posts{
 	background-color: #929292;
 	width: 100%;
 	padding-top: 12px;
 	padding-bottom: 12px;
 }
 
-.mobile-latest-postsalt{
+.latest-postsalt{
 	background-color: #E1E1E1;
 	width: 100%;
 	padding-top: 12px;
 	padding-bottom: 12px;
 }
 
-.mobile-latest-posts-photo{
+.latest-posts-photo{
 	width: 120px;
 	height: 60px;
 	border: 1px solid #000000;
@@ -3072,14 +3083,14 @@ h3.mobile-latest-posts-title{
 	margin-bottom: auto;
 }
 
-.mobile-latest-posts-headline-area{
+.latest-posts-headline-area{
 	width: 60%;
 	margin: auto;
 	float: right;
 	position: relative;
 }
 
-h5.mobile-latest-posts-headline, h5.mobile-latest-posts-headline a, h5.mobile-latest-posts-headline a:link, h5.mobile-latest-posts-headline a:visited, h5.mobile-latest-posts-headline a:hover{
+h5.latest-posts-headline, h5.latest-posts-headline a, h5.latest-posts-headline a:link, h5.latest-posts-headline a:visited, h5.latest-posts-headline a:hover{
 	font-family: Georgia;
 	font-size: 14px;
 	color: #000000;
@@ -3611,8 +3622,9 @@ p.mobile-menu-text, p.mobile-menu-text a, p.mobile-menu-text a:hover, p.mobile-m
 	top: auto !important;
 	height: auto !important;
 	position: absolute !important;
-	padding-left: 1px !important;
-	padding-right: 1px !important;
+	border: none;
+	padding-left: 0px !important;
+	padding-right: 0px !important;
 	margin: 0px !important;
 	display: block !important;
 	z-index: 998 !important;
@@ -3674,7 +3686,7 @@ img.prev{
 	display: none;
 }
 
-#mobile-home-posts-area{
+#home-posts-area{
 	width: 340px !important;
 	background: #FFFFFF;
 	padding: 5px;
@@ -3684,7 +3696,7 @@ img.prev{
 	position: relative;
 }
 
-.mobile-home-title-bg{
+.home-title-bg{
 	width: 100%;
 	height: 30px;
 	background: #000000;
@@ -3692,7 +3704,7 @@ img.prev{
 	margin-bottom: 5px;
 }
 
-h3.mobile-home-title{
+h3.home-title{
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	font-weight: 100;
 	font-size: 22px;
@@ -3700,13 +3712,13 @@ h3.mobile-home-title{
 	margin: 0px;
 }
 
-.mobile-home-post{
+.home-post{
 	width: 245px;
 	margin: 4px;
 	float: left;
 }
 
-.mobile-home-photo{
+.home-photo, .home-photo:hover{
 	width: 240px;
 	height: 120px;
 	position: relative;
@@ -3715,7 +3727,7 @@ h3.mobile-home-title{
 	margin: auto;
 }
 
-.mobile-photo-post-details{
+.photo-post-details{
 	color: #FFFFFF;
 	background-color: rgba(0,0,0,.85);
 	width: 100%;
@@ -3726,7 +3738,7 @@ h3.mobile-home-title{
 	display: block;
 }
 
-.mobile-photo-post-details-links, .mobile-photo-post-details-links a, .mobile-photo-post-details-links a:link, .mobile-photo-post-details-links a:visited, .mobile-photo-post-details-links a:hover{
+.photo-post-details-links, .photo-post-details-links a, .photo-post-details-links a:link, .photo-post-details-links a:visited, .photo-post-details-links a:hover{
 	font-size: 14px;
 	color: #FFFFFF;
 	margin: 0px 0px 5px 0px;
@@ -3734,24 +3746,24 @@ h3.mobile-home-title{
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 
-h3.mobile-home-headline, h3.home-headline a, h3.home-headline a:link, h3.home-headline a:hover, h3.home-headline a:visited{
+h3.home-headline, h3.home-headline a, h3.home-headline a:link, h3.home-headline a:hover, h3.home-headline a:visited{
 	font-family: Georgia;
 	font-weight: 100;
 	font-size: 22px;
 	color: #000000;
 }
 
-p.mobile-home-meta{
+p.home-meta{
 	font-family: Arial;
 	font-size: 14px;
 }
 
-.mobile-home-read-more, .home-read-more a, .home-read-more a:link,.home-read-more a:hover, .home-read-more a:visited{
+.home-read-more, .home-read-more a, .home-read-more a:link,.home-read-more a:hover, .home-read-more a:visited{
 	font-family: Arial;
 	font-size: 14px;
 }
 
-.mobile-home-view-all{
+.home-view-all{
 	width: 100px;
 	height: 30px;
 	background: #262626;
@@ -3766,7 +3778,7 @@ p.mobile-home-meta{
 	padding-left: 3px;
 }
 
-.mobile-home-view-all:hover{
+.home-view-all:hover{
 	width: 100px;
 	height: 30px;
 	background: #bcbcbc;
@@ -3781,7 +3793,7 @@ p.mobile-home-meta{
 	padding-left: 3px;
 }
 
-.mobile-home-next{
+.home-next{
 	width: 135px;
 	height: 30px;
 	background: #262626;
@@ -3796,7 +3808,7 @@ p.mobile-home-meta{
 	padding-left: 3px;
 }
 
-.mobile-home-next:hover{
+.home-next:hover{
 	width: 135px;
 	height: 30px;
 	background: #bcbcbc;
@@ -3811,7 +3823,7 @@ p.mobile-home-meta{
 	padding-left: 3px;
 }
 
-.mobile-swiper-container1 {
+#swiper-container-1 {
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -3823,7 +3835,7 @@ p.mobile-home-meta{
 	z-index:1;
 }
 
-.mobile-swiper-container2 {
+#swiper-container-2 {
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -3835,7 +3847,7 @@ p.mobile-home-meta{
 	z-index:1;
 }
 
-.mobile-swiper-container3 {
+#swiper-container-3 {
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -3847,7 +3859,7 @@ p.mobile-home-meta{
 	z-index:1;
 }
 
-.mobile-swiper-container4 {
+#swiper-container-4 {
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -3907,20 +3919,24 @@ p.mobile-home-meta{
 	-ms-touch-action: pan-x;
 }
 
-.swiper-container1 {
+#swiper-container-1 {
 	width:100%;
+	height: 320px;
 }
 
-.swiper-container2 {
+#swiper-container-2 {
 	width:100%;
+	height: 320px;
 }
 
-.swiper-container3 {
+#swiper-container-3 {
 	width:100%;
+	height: 320px;
 }
 
-.swiper-container4 {
+#swiper-container-4 {
 	width:100%;
+	height: 320px;
 }
 
 .swiper-slide {
@@ -3929,11 +3945,11 @@ p.mobile-home-meta{
 }
 
 /* Latest Posts */
-#mobile-latest-posts-area{
+#latest-posts-area{
 	width: 100%;
 }
 
-.mobile-latest-posts-title-bg{
+.latest-posts-title-bg{
 	width: 100%;
 	height: 30px;
 	background: #262626;
@@ -3941,7 +3957,7 @@ p.mobile-home-meta{
 	margin-bottom: 5px;
 }
 
-h3.mobile-latest-posts-title{
+h3.latest-posts-title{
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	font-weight: 100;
 	font-size: 22px;
@@ -3949,21 +3965,21 @@ h3.mobile-latest-posts-title{
 	margin: 0px;
 }
 
-.mobile-latest-posts{
+.latest-posts{
 	background-color: #929292;
 	width: 100%;
 	padding-top: 12px;
 	padding-bottom: 12px;
 }
 
-.mobile-latest-postsalt{
+.latest-postsalt{
 	background-color: #E1E1E1;
 	width: 100%;
 	padding-top: 12px;
 	padding-bottom: 12px;
 }
 
-.mobile-latest-posts-photo{
+.latest-posts-photo{
 	width: 120px;
 	height: 60px;
 	border: 1px solid #000000;
@@ -3975,14 +3991,14 @@ h3.mobile-latest-posts-title{
 	margin-bottom: auto;
 }
 
-.mobile-latest-posts-headline-area{
+.latest-posts-headline-area{
 	width: 60%;
 	margin: auto;
 	float: right;
 	position: relative;
 }
 
-h5.mobile-latest-posts-headline, h5.mobile-latest-posts-headline a, h5.mobile-latest-posts-headline a:link, h5.mobile-latest-posts-headline a:visited, h5.mobile-latest-posts-headline a:hover{
+h5.latest-posts-headline, h5.latest-posts-headline a, h5.latest-posts-headline a:link, h5.latest-posts-headline a:visited, h5.latest-posts-headline a:hover{
 	font-family: Georgia;
 	font-size: 14px;
 	color: #000000;
@@ -4514,8 +4530,10 @@ p.mobile-menu-text, p.mobile-menu-text a, p.mobile-menu-text a:hover, p.mobile-m
 	top: auto !important;
 	height: auto !important;
 	position: absolute !important;
-	padding-left: 1px !important;
-	padding-right: 1px !important;
+	border: none;
+	border: none;
+	padding-left: 0px !important;
+	padding-right: 0px !important;
 	margin: 0px !important;
 	display: block !important;
 	z-index: 998 !important;
@@ -4577,7 +4595,7 @@ img.prev{
 	display: none;
 }
 
-#mobile-home-posts-area{
+#home-posts-area{
 	width: 360px !important;
 	background: #FFFFFF;
 	padding: 5px;
@@ -4587,7 +4605,7 @@ img.prev{
 	position: relative;
 }
 
-.mobile-home-title-bg{
+.home-title-bg{
 	width: 100%;
 	height: 30px;
 	background: #000000;
@@ -4595,7 +4613,7 @@ img.prev{
 	margin-bottom: 5px;
 }
 
-h3.mobile-home-title{
+h3.home-title{
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	font-weight: 100;
 	font-size: 22px;
@@ -4603,13 +4621,13 @@ h3.mobile-home-title{
 	margin: 0px;
 }
 
-.mobile-home-post{
+.home-post{
 	width: 265px;
 	margin: 4px;
 	float: left;
 }
 
-.mobile-home-photo{
+.home-photo, .home-photo:hover{
 	width: 260px;
 	height: 130px;
 	position: relative;
@@ -4618,7 +4636,7 @@ h3.mobile-home-title{
 	margin: auto;
 }
 
-.mobile-photo-post-details{
+.photo-post-details{
 	color: #FFFFFF;
 	background-color: rgba(0,0,0,.85);
 	width: 100%;
@@ -4629,7 +4647,7 @@ h3.mobile-home-title{
 	display: block;
 }
 
-.mobile-photo-post-details-links, .mobile-photo-post-details-links a, .mobile-photo-post-details-links a:link, .mobile-photo-post-details-links a:visited, .mobile-photo-post-details-links a:hover{
+.photo-post-details-links, .photo-post-details-links a, .photo-post-details-links a:link, .photo-post-details-links a:visited, .photo-post-details-links a:hover{
 	font-size: 14px;
 	color: #FFFFFF;
 	margin: 0px 0px 5px 0px;
@@ -4637,24 +4655,24 @@ h3.mobile-home-title{
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 
-h3.mobile-home-headline, h3.home-headline a, h3.home-headline a:link, h3.home-headline a:hover, h3.home-headline a:visited{
+h3.home-headline, h3.home-headline a, h3.home-headline a:link, h3.home-headline a:hover, h3.home-headline a:visited{
 	font-family: Georgia;
 	font-weight: 100;
 	font-size: 22px;
 	color: #000000;
 }
 
-p.mobile-home-meta{
+p.home-meta{
 	font-family: Arial;
 	font-size: 14px;
 }
 
-.mobile-home-read-more, .home-read-more a, .home-read-more a:link,.home-read-more a:hover, .home-read-more a:visited{
+.home-read-more, .home-read-more a, .home-read-more a:link,.home-read-more a:hover, .home-read-more a:visited{
 	font-family: Arial;
 	font-size: 14px;
 }
 
-.mobile-home-view-all{
+.home-view-all{
 	width: 100px;
 	height: 30px;
 	background: #262626;
@@ -4669,7 +4687,7 @@ p.mobile-home-meta{
 	padding-left: 3px;
 }
 
-.mobile-home-view-all:hover{
+.home-view-all:hover{
 	width: 100px;
 	height: 30px;
 	background: #bcbcbc;
@@ -4684,7 +4702,7 @@ p.mobile-home-meta{
 	padding-left: 3px;
 }
 
-.mobile-home-next{
+.home-next{
 	width: 135px;
 	height: 30px;
 	background: #262626;
@@ -4699,7 +4717,7 @@ p.mobile-home-meta{
 	padding-left: 3px;
 }
 
-.mobile-home-next:hover{
+.home-next:hover{
 	width: 135px;
 	height: 30px;
 	background: #bcbcbc;
@@ -4714,7 +4732,7 @@ p.mobile-home-meta{
 	padding-left: 3px;
 }
 
-.mobile-swiper-container1 {
+#swiper-container-1 {
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -4726,7 +4744,7 @@ p.mobile-home-meta{
 	z-index:1;
 }
 
-.mobile-swiper-container2 {
+#swiper-container-2 {
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -4738,7 +4756,7 @@ p.mobile-home-meta{
 	z-index:1;
 }
 
-.mobile-swiper-container3 {
+#swiper-container-3 {
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -4750,7 +4768,7 @@ p.mobile-home-meta{
 	z-index:1;
 }
 
-.mobile-swiper-container4 {
+#swiper-container-4 {
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -4810,20 +4828,24 @@ p.mobile-home-meta{
 	-ms-touch-action: pan-x;
 }
 
-.swiper-container1 {
+#swiper-container-1 {
 	width:100%;
+	height: 320px;
 }
 
-.swiper-container2 {
+#swiper-container-2 {
 	width:100%;
+	height: 320px;
 }
 
-.swiper-container3 {
+#swiper-container-3 {
 	width:100%;
+	height: 320px;
 }
 
-.swiper-container4 {
+#swiper-container-4 {
 	width:100%;
+	height: 320px;
 }
 
 .swiper-slide {
@@ -4832,11 +4854,11 @@ p.mobile-home-meta{
 }
 
 /* Latest Posts */
-#mobile-latest-posts-area{
+#latest-posts-area{
 	width: 100%;
 }
 
-.mobile-latest-posts-title-bg{
+.latest-posts-title-bg{
 	width: 100%;
 	height: 30px;
 	background: #262626;
@@ -4844,7 +4866,7 @@ p.mobile-home-meta{
 	margin-bottom: 5px;
 }
 
-h3.mobile-latest-posts-title{
+h3.latest-posts-title{
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	font-weight: 100;
 	font-size: 22px;
@@ -4852,21 +4874,21 @@ h3.mobile-latest-posts-title{
 	margin: 0px;
 }
 
-.mobile-latest-posts{
+.latest-posts{
 	background-color: #929292;
 	width: 100%;
 	padding-top: 12px;
 	padding-bottom: 12px;
 }
 
-.mobile-latest-postsalt{
+.latest-postsalt{
 	background-color: #E1E1E1;
 	width: 100%;
 	padding-top: 12px;
 	padding-bottom: 12px;
 }
 
-.mobile-latest-posts-photo{
+.latest-posts-photo{
 	width: 120px;
 	height: 60px;
 	border: 1px solid #000000;
@@ -4878,14 +4900,14 @@ h3.mobile-latest-posts-title{
 	margin-bottom: auto;
 }
 
-.mobile-latest-posts-headline-area{
+.latest-posts-headline-area{
 	width: 60%;
 	margin: auto;
 	float: right;
 	position: relative;
 }
 
-h5.mobile-latest-posts-headline, h5.mobile-latest-posts-headline a, h5.mobile-latest-posts-headline a:link, h5.mobile-latest-posts-headline a:visited, h5.mobile-latest-posts-headline a:hover{
+h5.latest-posts-headline, h5.latest-posts-headline a, h5.latest-posts-headline a:link, h5.latest-posts-headline a:visited, h5.latest-posts-headline a:hover{
 	font-family: Georgia;
 	font-size: 14px;
 	color: #000000;
@@ -5417,8 +5439,9 @@ p.mobile-menu-text, p.mobile-menu-text a, p.mobile-menu-text a:hover, p.mobile-m
 	top: auto !important;
 	height: auto !important;
 	position: absolute !important;
-	padding-left: 1px !important;
-	padding-right: 1px !important;
+	border: none;
+	padding-left: 0px !important;
+	padding-right: 0px !important;
 	margin: 0px !important;
 	display: block !important;
 	z-index: 998 !important;
@@ -5480,7 +5503,7 @@ img.prev{
 	display: none;
 }
 
-#mobile-home-posts-area{
+#home-posts-area{
 	width: 380px !important;
 	background: #FFFFFF;
 	padding: 5px;
@@ -5490,7 +5513,7 @@ img.prev{
 	position: relative;
 }
 
-.mobile-home-title-bg{
+.home-title-bg{
 	width: 100%;
 	height: 30px;
 	background: #000000;
@@ -5498,7 +5521,7 @@ img.prev{
 	margin-bottom: 5px;
 }
 
-h3.mobile-home-title{
+h3.home-title{
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	font-weight: 100;
 	font-size: 22px;
@@ -5506,13 +5529,13 @@ h3.mobile-home-title{
 	margin: 0px;
 }
 
-.mobile-home-post{
+.home-post{
 	width: 285px;
 	margin: 4px;
 	float: left;
 }
 
-.mobile-home-photo{
+.home-photo, .home-photo:hover{
 	width: 260px;
 	height: 130px;
 	position: relative;
@@ -5521,7 +5544,7 @@ h3.mobile-home-title{
 	margin: auto;
 }
 
-.mobile-photo-post-details{
+.photo-post-details{
 	color: #FFFFFF;
 	background-color: rgba(0,0,0,.85);
 	width: 100%;
@@ -5532,7 +5555,7 @@ h3.mobile-home-title{
 	display: block;
 }
 
-.mobile-photo-post-details-links, .mobile-photo-post-details-links a, .mobile-photo-post-details-links a:link, .mobile-photo-post-details-links a:visited, .mobile-photo-post-details-links a:hover{
+.photo-post-details-links, .photo-post-details-links a, .photo-post-details-links a:link, .photo-post-details-links a:visited, .photo-post-details-links a:hover{
 	font-size: 14px;
 	color: #FFFFFF;
 	margin: 0px 0px 5px 0px;
@@ -5540,24 +5563,24 @@ h3.mobile-home-title{
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 
-h3.mobile-home-headline, h3.home-headline a, h3.home-headline a:link, h3.home-headline a:hover, h3.home-headline a:visited{
+h3.home-headline, h3.home-headline a, h3.home-headline a:link, h3.home-headline a:hover, h3.home-headline a:visited{
 	font-family: Georgia;
 	font-weight: 100;
 	font-size: 22px;
 	color: #000000;
 }
 
-p.mobile-home-meta{
+p.home-meta{
 	font-family: Arial;
 	font-size: 14px;
 }
 
-.mobile-home-read-more, .home-read-more a, .home-read-more a:link,.home-read-more a:hover, .home-read-more a:visited{
+.home-read-more, .home-read-more a, .home-read-more a:link,.home-read-more a:hover, .home-read-more a:visited{
 	font-family: Arial;
 	font-size: 14px;
 }
 
-.mobile-home-view-all{
+.home-view-all{
 	width: 100px;
 	height: 30px;
 	background: #262626;
@@ -5572,7 +5595,7 @@ p.mobile-home-meta{
 	padding-left: 3px;
 }
 
-.mobile-home-view-all:hover{
+.home-view-all:hover{
 	width: 100px;
 	height: 30px;
 	background: #bcbcbc;
@@ -5587,7 +5610,7 @@ p.mobile-home-meta{
 	padding-left: 3px;
 }
 
-.mobile-home-next{
+.home-next{
 	width: 135px;
 	height: 30px;
 	background: #262626;
@@ -5602,7 +5625,7 @@ p.mobile-home-meta{
 	padding-left: 3px;
 }
 
-.mobile-home-next:hover{
+.home-next:hover{
 	width: 135px;
 	height: 30px;
 	background: #bcbcbc;
@@ -5617,7 +5640,7 @@ p.mobile-home-meta{
 	padding-left: 3px;
 }
 
-.mobile-swiper-container1 {
+#swiper-container-1 {
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -5629,7 +5652,7 @@ p.mobile-home-meta{
 	z-index:1;
 }
 
-.mobile-swiper-container2 {
+#swiper-container-2 {
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -5641,7 +5664,7 @@ p.mobile-home-meta{
 	z-index:1;
 }
 
-.mobile-swiper-container3 {
+#swiper-container-3 {
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -5653,7 +5676,7 @@ p.mobile-home-meta{
 	z-index:1;
 }
 
-.mobile-swiper-container4 {
+#swiper-container-4 {
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -5713,20 +5736,24 @@ p.mobile-home-meta{
 	-ms-touch-action: pan-x;
 }
 
-.swiper-container1 {
+#swiper-container-1 {
 	width:100%;
+	height: 320px;
 }
 
-.swiper-container2 {
+#swiper-container-2 {
 	width:100%;
+	height: 320px;
 }
 
-.swiper-container3 {
+#swiper-container-3 {
 	width:100%;
+	height: 320px;
 }
 
-.swiper-container4 {
+#swiper-container-4 {
 	width:100%;
+	height: 320px;
 }
 
 .swiper-slide {
@@ -5735,11 +5762,11 @@ p.mobile-home-meta{
 }
 
 /* Latest Posts */
-#mobile-latest-posts-area{
+#latest-posts-area{
 	width: 100%;
 }
 
-.mobile-latest-posts-title-bg{
+.latest-posts-title-bg{
 	width: 100%;
 	height: 30px;
 	background: #262626;
@@ -5747,7 +5774,7 @@ p.mobile-home-meta{
 	margin-bottom: 5px;
 }
 
-h3.mobile-latest-posts-title{
+h3.latest-posts-title{
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	font-weight: 100;
 	font-size: 22px;
@@ -5755,21 +5782,21 @@ h3.mobile-latest-posts-title{
 	margin: 0px;
 }
 
-.mobile-latest-posts{
+.latest-posts{
 	background-color: #929292;
 	width: 100%;
 	padding-top: 12px;
 	padding-bottom: 12px;
 }
 
-.mobile-latest-postsalt{
+.latest-postsalt{
 	background-color: #E1E1E1;
 	width: 100%;
 	padding-top: 12px;
 	padding-bottom: 12px;
 }
 
-.mobile-latest-posts-photo{
+.latest-posts-photo{
 	width: 120px;
 	height: 60px;
 	border: 1px solid #000000;
@@ -5781,14 +5808,14 @@ h3.mobile-latest-posts-title{
 	margin-bottom: auto;
 }
 
-.mobile-latest-posts-headline-area{
+.latest-posts-headline-area{
 	width: 60%;
 	margin: auto;
 	float: right;
 	position: relative;
 }
 
-h5.mobile-latest-posts-headline, h5.mobile-latest-posts-headline a, h5.mobile-latest-posts-headline a:link, h5.mobile-latest-posts-headline a:visited, h5.mobile-latest-posts-headline a:hover{
+h5.latest-posts-headline, h5.latest-posts-headline a, h5.latest-posts-headline a:link, h5.latest-posts-headline a:visited, h5.latest-posts-headline a:hover{
 	font-family: Georgia;
 	font-size: 14px;
 	color: #000000;
@@ -6321,8 +6348,9 @@ p.mobile-menu-text, p.mobile-menu-text a, p.mobile-menu-text a:hover, p.mobile-m
 	top: auto !important;
 	height: auto !important;
 	position: absolute !important;
-	padding-left: 1px !important;
-	padding-right: 1px !important;
+	border: none;
+	padding-left: 0px !important;
+	padding-right: 0px !important;
 	margin: 0px !important;
 	display: block !important;
 	z-index: 998 !important;
@@ -6384,7 +6412,7 @@ img.prev{
 	display: none;
 }
 
-#mobile-home-posts-area{
+#home-posts-area{
 	width: 400px !important;
 	background: #FFFFFF;
 	padding: 5px;
@@ -6394,7 +6422,7 @@ img.prev{
 	position: relative;
 }
 
-.mobile-home-title-bg{
+.home-title-bg{
 	width: 100%;
 	height: 30px;
 	background: #000000;
@@ -6402,7 +6430,7 @@ img.prev{
 	margin-bottom: 5px;
 }
 
-h3.mobile-home-title{
+h3.home-title{
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	font-weight: 100;
 	font-size: 22px;
@@ -6410,13 +6438,13 @@ h3.mobile-home-title{
 	margin: 0px;
 }
 
-.mobile-home-post{
+.home-post{
 	width: 305px;
 	margin: 4px;
 	float: left;
 }
 
-.mobile-home-photo{
+.home-photo, .home-photo:hover{
 	width: 260px;
 	height: 130px;
 	position: relative;
@@ -6425,7 +6453,7 @@ h3.mobile-home-title{
 	margin: auto;
 }
 
-.mobile-photo-post-details{
+.photo-post-details{
 	color: #FFFFFF;
 	background-color: rgba(0,0,0,.85);
 	width: 100%;
@@ -6436,7 +6464,7 @@ h3.mobile-home-title{
 	display: block;
 }
 
-.mobile-photo-post-details-links, .mobile-photo-post-details-links a, .mobile-photo-post-details-links a:link, .mobile-photo-post-details-links a:visited, .mobile-photo-post-details-links a:hover{
+.photo-post-details-links, .photo-post-details-links a, .photo-post-details-links a:link, .photo-post-details-links a:visited, .photo-post-details-links a:hover{
 	font-size: 14px;
 	color: #FFFFFF;
 	margin: 0px 0px 5px 0px;
@@ -6444,24 +6472,24 @@ h3.mobile-home-title{
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 
-h3.mobile-home-headline, h3.home-headline a, h3.home-headline a:link, h3.home-headline a:hover, h3.home-headline a:visited{
+h3.home-headline, h3.home-headline a, h3.home-headline a:link, h3.home-headline a:hover, h3.home-headline a:visited{
 	font-family: Georgia;
 	font-weight: 100;
 	font-size: 22px;
 	color: #000000;
 }
 
-p.mobile-home-meta{
+p.home-meta{
 	font-family: Arial;
 	font-size: 14px;
 }
 
-.mobile-home-read-more, .home-read-more a, .home-read-more a:link,.home-read-more a:hover, .home-read-more a:visited{
+.home-read-more, .home-read-more a, .home-read-more a:link,.home-read-more a:hover, .home-read-more a:visited{
 	font-family: Arial;
 	font-size: 14px;
 }
 
-.mobile-home-view-all{
+.home-view-all{
 	width: 100px;
 	height: 30px;
 	background: #262626;
@@ -6476,7 +6504,7 @@ p.mobile-home-meta{
 	padding-left: 3px;
 }
 
-.mobile-home-view-all:hover{
+.home-view-all:hover{
 	width: 100px;
 	height: 30px;
 	background: #bcbcbc;
@@ -6491,7 +6519,7 @@ p.mobile-home-meta{
 	padding-left: 3px;
 }
 
-.mobile-home-next{
+.home-next{
 	width: 135px;
 	height: 30px;
 	background: #262626;
@@ -6506,7 +6534,7 @@ p.mobile-home-meta{
 	padding-left: 3px;
 }
 
-.mobile-home-next:hover{
+.home-next:hover{
 	width: 135px;
 	height: 30px;
 	background: #bcbcbc;
@@ -6521,7 +6549,7 @@ p.mobile-home-meta{
 	padding-left: 3px;
 }
 
-.mobile-swiper-container1 {
+#swiper-container-1 {
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -6533,7 +6561,7 @@ p.mobile-home-meta{
 	z-index:1;
 }
 
-.mobile-swiper-container2 {
+#swiper-container-2 {
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -6545,7 +6573,7 @@ p.mobile-home-meta{
 	z-index:1;
 }
 
-.mobile-swiper-container3 {
+#swiper-container-3 {
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -6557,7 +6585,7 @@ p.mobile-home-meta{
 	z-index:1;
 }
 
-.mobile-swiper-container4 {
+#swiper-container-4 {
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -6617,20 +6645,24 @@ p.mobile-home-meta{
 	-ms-touch-action: pan-x;
 }
 
-.swiper-container1 {
+#swiper-container-1 {
 	width:100%;
+	height: 300px;
 }
 
-.swiper-container2 {
+#swiper-container-2 {
 	width:100%;
+	height: 300px;
 }
 
-.swiper-container3 {
+#swiper-container-3 {
 	width:100%;
+	height: 300px;
 }
 
-.swiper-container4 {
+#swiper-container-4 {
 	width:100%;
+	height: 300px;
 }
 
 .swiper-slide {
@@ -6639,11 +6671,11 @@ p.mobile-home-meta{
 }
 
 /* Latest Posts */
-#mobile-latest-posts-area{
+#latest-posts-area{
 	width: 100%;
 }
 
-.mobile-latest-posts-title-bg{
+.latest-posts-title-bg{
 	width: 100%;
 	height: 30px;
 	background: #262626;
@@ -6651,7 +6683,7 @@ p.mobile-home-meta{
 	margin-bottom: 5px;
 }
 
-h3.mobile-latest-posts-title{
+h3.latest-posts-title{
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	font-weight: 100;
 	font-size: 22px;
@@ -6659,21 +6691,21 @@ h3.mobile-latest-posts-title{
 	margin: 0px;
 }
 
-.mobile-latest-posts{
+.latest-posts{
 	background-color: #929292;
 	width: 100%;
 	padding-top: 12px;
 	padding-bottom: 12px;
 }
 
-.mobile-latest-postsalt{
+.latest-postsalt{
 	background-color: #E1E1E1;
 	width: 100%;
 	padding-top: 12px;
 	padding-bottom: 12px;
 }
 
-.mobile-latest-posts-photo{
+.latest-posts-photo{
 	width: 120px;
 	height: 60px;
 	border: 1px solid #000000;
@@ -6685,14 +6717,14 @@ h3.mobile-latest-posts-title{
 	margin-bottom: auto;
 }
 
-.mobile-latest-posts-headline-area{
+.latest-posts-headline-area{
 	width: 65%;
 	margin: auto;
 	float: right;
 	position: relative;
 }
 
-h5.mobile-latest-posts-headline, h5.mobile-latest-posts-headline a, h5.mobile-latest-posts-headline a:link, h5.mobile-latest-posts-headline a:visited, h5.mobile-latest-posts-headline a:hover{
+h5.latest-posts-headline, h5.latest-posts-headline a, h5.latest-posts-headline a:link, h5.latest-posts-headline a:visited, h5.latest-posts-headline a:hover{
 	font-family: Georgia;
 	font-size: 14px;
 	color: #000000;
@@ -7225,8 +7257,9 @@ p.mobile-menu-text, p.mobile-menu-text a, p.mobile-menu-text a:hover, p.mobile-m
 	top: auto !important;
 	height: auto !important;
 	position: absolute !important;
-	padding-left: 1px !important;
-	padding-right: 1px !important;
+	border: none;
+	padding-left: 0px !important;
+	padding-right: 0px !important;
 	margin: 0px !important;
 	display: block !important;
 	z-index: 998 !important;
@@ -7288,7 +7321,7 @@ img.prev{
 	display: none;
 }
 
-#mobile-home-posts-area{
+#home-posts-area{
 	width: 420px !important;
 	background: #FFFFFF;
 	padding: 5px;
@@ -7298,7 +7331,7 @@ img.prev{
 	position: relative;
 }
 
-.mobile-home-title-bg{
+.home-title-bg{
 	width: 100%;
 	height: 30px;
 	background: #000000;
@@ -7306,7 +7339,7 @@ img.prev{
 	margin-bottom: 5px;
 }
 
-h3.mobile-home-title{
+h3.home-title{
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	font-weight: 100;
 	font-size: 22px;
@@ -7314,13 +7347,13 @@ h3.mobile-home-title{
 	margin: 0px;
 }
 
-.mobile-home-post{
+.home-post{
 	width: 325px;
 	margin: 4px;
 	float: left;
 }
 
-.mobile-home-photo{
+.home-photo, .home-photo:hover{
 	width: 260px;
 	height: 130px;
 	position: relative;
@@ -7329,7 +7362,7 @@ h3.mobile-home-title{
 	margin: auto;
 }
 
-.mobile-photo-post-details{
+.photo-post-details{
 	color: #FFFFFF;
 	background-color: rgba(0,0,0,.85);
 	width: 100%;
@@ -7340,7 +7373,7 @@ h3.mobile-home-title{
 	display: block;
 }
 
-.mobile-photo-post-details-links, .mobile-photo-post-details-links a, .mobile-photo-post-details-links a:link, .mobile-photo-post-details-links a:visited, .mobile-photo-post-details-links a:hover{
+.photo-post-details-links, .photo-post-details-links a, .photo-post-details-links a:link, .photo-post-details-links a:visited, .photo-post-details-links a:hover{
 	font-size: 14px;
 	color: #FFFFFF;
 	margin: 0px 0px 5px 0px;
@@ -7348,24 +7381,24 @@ h3.mobile-home-title{
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 
-h3.mobile-home-headline, h3.home-headline a, h3.home-headline a:link, h3.home-headline a:hover, h3.home-headline a:visited{
+h3.home-headline, h3.home-headline a, h3.home-headline a:link, h3.home-headline a:hover, h3.home-headline a:visited{
 	font-family: Georgia;
 	font-weight: 100;
 	font-size: 22px;
 	color: #000000;
 }
 
-p.mobile-home-meta{
+p.home-meta{
 	font-family: Arial;
 	font-size: 14px;
 }
 
-.mobile-home-read-more, .home-read-more a, .home-read-more a:link,.home-read-more a:hover, .home-read-more a:visited{
+.home-read-more, .home-read-more a, .home-read-more a:link,.home-read-more a:hover, .home-read-more a:visited{
 	font-family: Arial;
 	font-size: 14px;
 }
 
-.mobile-home-view-all{
+.home-view-all{
 	width: 100px;
 	height: 30px;
 	background: #262626;
@@ -7380,7 +7413,7 @@ p.mobile-home-meta{
 	padding-left: 3px;
 }
 
-.mobile-home-view-all:hover{
+.home-view-all:hover{
 	width: 100px;
 	height: 30px;
 	background: #bcbcbc;
@@ -7395,7 +7428,7 @@ p.mobile-home-meta{
 	padding-left: 3px;
 }
 
-.mobile-home-next{
+.home-next{
 	width: 135px;
 	height: 30px;
 	background: #262626;
@@ -7410,7 +7443,7 @@ p.mobile-home-meta{
 	padding-left: 3px;
 }
 
-.mobile-home-next:hover{
+.home-next:hover{
 	width: 135px;
 	height: 30px;
 	background: #bcbcbc;
@@ -7425,7 +7458,7 @@ p.mobile-home-meta{
 	padding-left: 3px;
 }
 
-.mobile-swiper-container1 {
+#swiper-container-1 {
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -7437,7 +7470,7 @@ p.mobile-home-meta{
 	z-index:1;
 }
 
-.mobile-swiper-container2 {
+#swiper-container-2 {
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -7449,7 +7482,7 @@ p.mobile-home-meta{
 	z-index:1;
 }
 
-.mobile-swiper-container3 {
+#swiper-container-3 {
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -7461,7 +7494,7 @@ p.mobile-home-meta{
 	z-index:1;
 }
 
-.mobile-swiper-container4 {
+#swiper-container-4 {
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -7521,20 +7554,24 @@ p.mobile-home-meta{
 	-ms-touch-action: pan-x;
 }
 
-.swiper-container1 {
+#swiper-container-1 {
 	width:100%;
+	height: 300px;
 }
 
-.swiper-container2 {
+#swiper-container-2 {
 	width:100%;
+	height: 300px;
 }
 
-.swiper-container3 {
+#swiper-container-3 {
 	width:100%;
+	height: 300px;
 }
 
-.swiper-container4 {
+#swiper-container-4 {
 	width:100%;
+	height: 300px;
 }
 
 .swiper-slide {
@@ -7543,11 +7580,11 @@ p.mobile-home-meta{
 }
 
 /* Latest Posts */
-#mobile-latest-posts-area{
+#latest-posts-area{
 	width: 100%;
 }
 
-.mobile-latest-posts-title-bg{
+.latest-posts-title-bg{
 	width: 100%;
 	height: 30px;
 	background: #262626;
@@ -7555,7 +7592,7 @@ p.mobile-home-meta{
 	margin-bottom: 5px;
 }
 
-h3.mobile-latest-posts-title{
+h3.latest-posts-title{
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	font-weight: 100;
 	font-size: 22px;
@@ -7563,21 +7600,21 @@ h3.mobile-latest-posts-title{
 	margin: 0px;
 }
 
-.mobile-latest-posts{
+.latest-posts{
 	background-color: #929292;
 	width: 100%;
 	padding-top: 12px;
 	padding-bottom: 12px;
 }
 
-.mobile-latest-postsalt{
+.latest-postsalt{
 	background-color: #E1E1E1;
 	width: 100%;
 	padding-top: 12px;
 	padding-bottom: 12px;
 }
 
-.mobile-latest-posts-photo{
+.latest-posts-photo{
 	width: 120px;
 	height: 60px;
 	border: 1px solid #000000;
@@ -7589,14 +7626,14 @@ h3.mobile-latest-posts-title{
 	margin-bottom: auto;
 }
 
-.mobile-latest-posts-headline-area{
+.latest-posts-headline-area{
 	width: 70%;
 	margin: auto;
 	float: right;
 	position: relative;
 }
 
-h5.mobile-latest-posts-headline, h5.mobile-latest-posts-headline a, h5.mobile-latest-posts-headline a:link, h5.mobile-latest-posts-headline a:visited, h5.mobile-latest-posts-headline a:hover{
+h5.latest-posts-headline, h5.latest-posts-headline a, h5.latest-posts-headline a:link, h5.latest-posts-headline a:visited, h5.latest-posts-headline a:hover{
 	font-family: Georgia;
 	font-size: 14px;
 	color: #000000;
@@ -8129,8 +8166,9 @@ p.mobile-menu-text, p.mobile-menu-text a, p.mobile-menu-text a:hover, p.mobile-m
 	top: auto !important;
 	height: auto !important;
 	position: absolute !important;
-	padding-left: 1px !important;
-	padding-right: 1px !important;
+	border: none;
+	padding-left: 0px !important;
+	padding-right: 0px !important;
 	margin: 0px !important;
 	display: block !important;
 	z-index: 998 !important;
@@ -8192,7 +8230,7 @@ img.prev{
 	display: none;
 }
 
-#mobile-home-posts-area{
+#home-posts-area{
 	width: 440px !important;
 	background: #FFFFFF;
 	padding: 5px;
@@ -8202,7 +8240,7 @@ img.prev{
 	position: relative;
 }
 
-.mobile-home-title-bg{
+.home-title-bg{
 	width: 100%;
 	height: 30px;
 	background: #000000;
@@ -8210,7 +8248,7 @@ img.prev{
 	margin-bottom: 5px;
 }
 
-h3.mobile-home-title{
+h3.home-title{
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	font-weight: 100;
 	font-size: 22px;
@@ -8218,13 +8256,13 @@ h3.mobile-home-title{
 	margin: 0px;
 }
 
-.mobile-home-post{
+.home-post{
 	width: 345px;
 	margin: 4px;
 	float: left;
 }
 
-.mobile-home-photo{
+.home-photo, .home-photo:hover {
 	width: 260px;
 	height: 130px;
 	position: relative;
@@ -8233,7 +8271,7 @@ h3.mobile-home-title{
 	margin: auto;
 }
 
-.mobile-photo-post-details{
+.photo-post-details{
 	color: #FFFFFF;
 	background-color: rgba(0,0,0,.85);
 	width: 100%;
@@ -8244,7 +8282,7 @@ h3.mobile-home-title{
 	display: block;
 }
 
-.mobile-photo-post-details-links, .mobile-photo-post-details-links a, .mobile-photo-post-details-links a:link, .mobile-photo-post-details-links a:visited, .mobile-photo-post-details-links a:hover{
+.photo-post-details-links, .photo-post-details-links a, .photo-post-details-links a:link, .photo-post-details-links a:visited, .photo-post-details-links a:hover{
 	font-size: 14px;
 	color: #FFFFFF;
 	margin: 0px 0px 5px 0px;
@@ -8252,24 +8290,24 @@ h3.mobile-home-title{
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 
-h3.mobile-home-headline, h3.home-headline a, h3.home-headline a:link, h3.home-headline a:hover, h3.home-headline a:visited{
+h3.home-headline, h3.home-headline a, h3.home-headline a:link, h3.home-headline a:hover, h3.home-headline a:visited{
 	font-family: Georgia;
 	font-weight: 100;
 	font-size: 22px;
 	color: #000000;
 }
 
-p.mobile-home-meta{
+p.home-meta{
 	font-family: Arial;
 	font-size: 14px;
 }
 
-.mobile-home-read-more, .home-read-more a, .home-read-more a:link,.home-read-more a:hover, .home-read-more a:visited{
+.home-read-more, .home-read-more a, .home-read-more a:link,.home-read-more a:hover, .home-read-more a:visited{
 	font-family: Arial;
 	font-size: 14px;
 }
 
-.mobile-home-view-all{
+.home-view-all{
 	width: 100px;
 	height: 30px;
 	background: #262626;
@@ -8284,7 +8322,7 @@ p.mobile-home-meta{
 	padding-left: 3px;
 }
 
-.mobile-home-view-all:hover{
+.home-view-all:hover{
 	width: 100px;
 	height: 30px;
 	background: #bcbcbc;
@@ -8299,7 +8337,7 @@ p.mobile-home-meta{
 	padding-left: 3px;
 }
 
-.mobile-home-next{
+.home-next{
 	width: 135px;
 	height: 30px;
 	background: #262626;
@@ -8314,7 +8352,7 @@ p.mobile-home-meta{
 	padding-left: 3px;
 }
 
-.mobile-home-next:hover{
+.home-next:hover{
 	width: 135px;
 	height: 30px;
 	background: #bcbcbc;
@@ -8329,7 +8367,7 @@ p.mobile-home-meta{
 	padding-left: 3px;
 }
 
-.mobile-swiper-container1 {
+#swiper-container-1 {
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -8341,7 +8379,7 @@ p.mobile-home-meta{
 	z-index:1;
 }
 
-.mobile-swiper-container2 {
+#swiper-container-2 {
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -8353,7 +8391,7 @@ p.mobile-home-meta{
 	z-index:1;
 }
 
-.mobile-swiper-container3 {
+#swiper-container-3 {
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -8365,7 +8403,7 @@ p.mobile-home-meta{
 	z-index:1;
 }
 
-.mobile-swiper-container4 {
+#swiper-container-4 {
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -8425,20 +8463,24 @@ p.mobile-home-meta{
 	-ms-touch-action: pan-x;
 }
 
-.swiper-container1 {
+#swiper-container-1 {
 	width:100%;
+	height: 300px;
 }
 
-.swiper-container2 {
+#swiper-container-2 {
 	width:100%;
+	height: 300px;
 }
 
-.swiper-container3 {
+#swiper-container-3 {
 	width:100%;
+	height: 300px;
 }
 
-.swiper-container4 {
+#swiper-container-4 {
 	width:100%;
+	height: 300px;
 }
 
 .swiper-slide {
@@ -8447,11 +8489,11 @@ p.mobile-home-meta{
 }
 
 /* Latest Posts */
-#mobile-latest-posts-area{
+#latest-posts-area{
 	width: 100%;
 }
 
-.mobile-latest-posts-title-bg{
+.latest-posts-title-bg{
 	width: 100%;
 	height: 30px;
 	background: #262626;
@@ -8459,7 +8501,7 @@ p.mobile-home-meta{
 	margin-bottom: 5px;
 }
 
-h3.mobile-latest-posts-title{
+h3.latest-posts-title{
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	font-weight: 100;
 	font-size: 22px;
@@ -8467,21 +8509,21 @@ h3.mobile-latest-posts-title{
 	margin: 0px;
 }
 
-.mobile-latest-posts{
+.latest-posts{
 	background-color: #929292;
 	width: 100%;
 	padding-top: 12px;
 	padding-bottom: 12px;
 }
 
-.mobile-latest-postsalt{
+.latest-postsalt{
 	background-color: #E1E1E1;
 	width: 100%;
 	padding-top: 12px;
 	padding-bottom: 12px;
 }
 
-.mobile-latest-posts-photo{
+.latest-posts-photo{
 	width: 120px;
 	height: 60px;
 	border: 1px solid #000000;
@@ -8493,14 +8535,14 @@ h3.mobile-latest-posts-title{
 	margin-bottom: auto;
 }
 
-.mobile-latest-posts-headline-area{
+.latest-posts-headline-area{
 	width: 70%;
 	margin: auto;
 	float: right;
 	position: relative;
 }
 
-h5.mobile-latest-posts-headline, h5.mobile-latest-posts-headline a, h5.mobile-latest-posts-headline a:link, h5.mobile-latest-posts-headline a:visited, h5.mobile-latest-posts-headline a:hover{
+h5.latest-posts-headline, h5.latest-posts-headline a, h5.latest-posts-headline a:link, h5.latest-posts-headline a:visited, h5.latest-posts-headline a:hover{
 	font-family: Georgia;
 	font-size: 14px;
 	color: #000000;
@@ -9033,8 +9075,9 @@ p.mobile-menu-text, p.mobile-menu-text a, p.mobile-menu-text a:hover, p.mobile-m
 	top: auto !important;
 	height: auto !important;
 	position: absolute !important;
-	padding-left: 1px !important;
-	padding-right: 1px !important;
+	border: none;
+	padding-left: 0px !important;
+	padding-right: 0px !important;
 	margin: 0px !important;
 	display: block !important;
 	z-index: 998 !important;
@@ -9096,7 +9139,7 @@ img.prev{
 	display: none;
 }
 
-#mobile-home-posts-area{
+#home-posts-area{
 	width: 460px !important;
 	background: #FFFFFF;
 	padding: 5px;
@@ -9106,7 +9149,7 @@ img.prev{
 	position: relative;
 }
 
-.mobile-home-title-bg{
+.home-title-bg{
 	width: 100%;
 	height: 30px;
 	background: #000000;
@@ -9114,7 +9157,7 @@ img.prev{
 	margin-bottom: 5px;
 }
 
-h3.mobile-home-title{
+h3.home-title{
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	font-weight: 100;
 	font-size: 22px;
@@ -9122,13 +9165,13 @@ h3.mobile-home-title{
 	margin: 0px;
 }
 
-.mobile-home-post{
+.home-post{
 	width: 345px;
 	margin: 4px;
 	float: left;
 }
 
-.mobile-home-photo{
+.home-photo, .home-photo:hover{
 	width: 260px;
 	height: 130px;
 	position: relative;
@@ -9137,7 +9180,7 @@ h3.mobile-home-title{
 	margin: auto;
 }
 
-.mobile-photo-post-details{
+.photo-post-details{
 	color: #FFFFFF;
 	background-color: rgba(0,0,0,.85);
 	width: 100%;
@@ -9148,7 +9191,7 @@ h3.mobile-home-title{
 	display: block;
 }
 
-.mobile-photo-post-details-links, .mobile-photo-post-details-links a, .mobile-photo-post-details-links a:link, .mobile-photo-post-details-links a:visited, .mobile-photo-post-details-links a:hover{
+.photo-post-details-links, .photo-post-details-links a, .photo-post-details-links a:link, .photo-post-details-links a:visited, .photo-post-details-links a:hover{
 	font-size: 14px;
 	color: #FFFFFF;
 	margin: 0px 0px 5px 0px;
@@ -9156,24 +9199,24 @@ h3.mobile-home-title{
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 
-h3.mobile-home-headline, h3.home-headline a, h3.home-headline a:link, h3.home-headline a:hover, h3.home-headline a:visited{
+h3.home-headline, h3.home-headline a, h3.home-headline a:link, h3.home-headline a:hover, h3.home-headline a:visited{
 	font-family: Georgia;
 	font-weight: 100;
 	font-size: 22px;
 	color: #000000;
 }
 
-p.mobile-home-meta{
+p.home-meta{
 	font-family: Arial;
 	font-size: 14px;
 }
 
-.mobile-home-read-more, .home-read-more a, .home-read-more a:link,.home-read-more a:hover, .home-read-more a:visited{
+.home-read-more, .home-read-more a, .home-read-more a:link,.home-read-more a:hover, .home-read-more a:visited{
 	font-family: Arial;
 	font-size: 14px;
 }
 
-.mobile-home-view-all{
+.home-view-all{
 	width: 100px;
 	height: 30px;
 	background: #262626;
@@ -9188,7 +9231,7 @@ p.mobile-home-meta{
 	padding-left: 3px;
 }
 
-.mobile-home-view-all:hover{
+.home-view-all:hover{
 	width: 100px;
 	height: 30px;
 	background: #bcbcbc;
@@ -9203,7 +9246,7 @@ p.mobile-home-meta{
 	padding-left: 3px;
 }
 
-.mobile-home-next{
+.home-next{
 	width: 135px;
 	height: 30px;
 	background: #262626;
@@ -9218,7 +9261,7 @@ p.mobile-home-meta{
 	padding-left: 3px;
 }
 
-.mobile-home-next:hover{
+.home-next:hover{
 	width: 135px;
 	height: 30px;
 	background: #bcbcbc;
@@ -9233,7 +9276,7 @@ p.mobile-home-meta{
 	padding-left: 3px;
 }
 
-.mobile-swiper-container1 {
+#swiper-container-1 {
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -9245,7 +9288,7 @@ p.mobile-home-meta{
 	z-index:1;
 }
 
-.mobile-swiper-container2 {
+#swiper-container-2 {
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -9257,7 +9300,7 @@ p.mobile-home-meta{
 	z-index:1;
 }
 
-.mobile-swiper-container3 {
+#swiper-container-3 {
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -9269,7 +9312,7 @@ p.mobile-home-meta{
 	z-index:1;
 }
 
-.mobile-swiper-container4 {
+#swiper-container-4 {
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -9329,20 +9372,24 @@ p.mobile-home-meta{
 	-ms-touch-action: pan-x;
 }
 
-.swiper-container1 {
+#swiper-container-1 {
 	width:100%;
+	height: 300px;
 }
 
-.swiper-container2 {
+#swiper-container-2 {
 	width:100%;
+	height: 300px;
 }
 
-.swiper-container3 {
+#swiper-container-3 {
 	width:100%;
+	height: 300px;
 }
 
-.swiper-container4 {
+#swiper-container-4 {
 	width:100%;
+	height: 300px;
 }
 
 .swiper-slide {
@@ -9351,11 +9398,11 @@ p.mobile-home-meta{
 }
 
 /* Latest Posts */
-#mobile-latest-posts-area{
+#latest-posts-area{
 	width: 100%;
 }
 
-.mobile-latest-posts-title-bg{
+.latest-posts-title-bg{
 	width: 100%;
 	height: 30px;
 	background: #262626;
@@ -9363,7 +9410,7 @@ p.mobile-home-meta{
 	margin-bottom: 5px;
 }
 
-h3.mobile-latest-posts-title{
+h3.latest-posts-title{
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	font-weight: 100;
 	font-size: 22px;
@@ -9371,21 +9418,21 @@ h3.mobile-latest-posts-title{
 	margin: 0px;
 }
 
-.mobile-latest-posts{
+.latest-posts{
 	background-color: #929292;
 	width: 100%;
 	padding-top: 12px;
 	padding-bottom: 12px;
 }
 
-.mobile-latest-postsalt{
+.latest-postsalt{
 	background-color: #E1E1E1;
 	width: 100%;
 	padding-top: 12px;
 	padding-bottom: 12px;
 }
 
-.mobile-latest-posts-photo{
+.latest-posts-photo{
 	width: 120px;
 	height: 60px;
 	border: 1px solid #000000;
@@ -9397,14 +9444,14 @@ h3.mobile-latest-posts-title{
 	margin-bottom: auto;
 }
 
-.mobile-latest-posts-headline-area{
+.latest-posts-headline-area{
 	width: 70%;
 	margin: auto;
 	float: right;
 	position: relative;
 }
 
-h5.mobile-latest-posts-headline, h5.mobile-latest-posts-headline a, h5.mobile-latest-posts-headline a:link, h5.mobile-latest-posts-headline a:visited, h5.mobile-latest-posts-headline a:hover{
+h5.latest-posts-headline, h5.latest-posts-headline a, h5.latest-posts-headline a:link, h5.latest-posts-headline a:visited, h5.latest-posts-headline a:hover{
 	font-family: Georgia;
 	font-size: 14px;
 	color: #000000;
@@ -9937,8 +9984,9 @@ p.mobile-menu-text, p.mobile-menu-text a, p.mobile-menu-text a:hover, p.mobile-m
 	top: auto !important;
 	height: auto !important;
 	position: absolute !important;
-	padding-left: 1px !important;
-	padding-right: 1px !important;
+	border: none;
+	padding-left: 0px !important;
+	padding-right: 0px !important;
 	margin: 0px !important;
 	display: block !important;
 	z-index: 998 !important;
@@ -10000,7 +10048,7 @@ img.prev{
 	display: none;
 }
 
-#mobile-home-posts-area{
+#home-posts-area{
 	width: 480px !important;
 	background: #FFFFFF;
 	padding: 5px;
@@ -10010,7 +10058,7 @@ img.prev{
 	position: relative;
 }
 
-.mobile-home-title-bg{
+.home-title-bg{
 	width: 100%;
 	height: 30px;
 	background: #000000;
@@ -10018,7 +10066,7 @@ img.prev{
 	margin-bottom: 5px;
 }
 
-h3.mobile-home-title{
+h3.home-title{
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	font-weight: 100;
 	font-size: 22px;
@@ -10026,13 +10074,13 @@ h3.mobile-home-title{
 	margin: 0px;
 }
 
-.mobile-home-post{
+.home-post{
 	width: 365px;
 	margin: 4px;
 	float: left;
 }
 
-.mobile-home-photo{
+.home-photo, .home-photo:hover{
 	width: 260px;
 	height: 130px;
 	position: relative;
@@ -10041,7 +10089,7 @@ h3.mobile-home-title{
 	margin: auto;
 }
 
-.mobile-photo-post-details{
+.photo-post-details{
 	color: #FFFFFF;
 	background-color: rgba(0,0,0,.85);
 	width: 100%;
@@ -10052,7 +10100,7 @@ h3.mobile-home-title{
 	display: block;
 }
 
-.mobile-photo-post-details-links, .mobile-photo-post-details-links a, .mobile-photo-post-details-links a:link, .mobile-photo-post-details-links a:visited, .mobile-photo-post-details-links a:hover{
+.photo-post-details-links, .photo-post-details-links a, .photo-post-details-links a:link, .photo-post-details-links a:visited, .photo-post-details-links a:hover{
 	font-size: 14px;
 	color: #FFFFFF;
 	margin: 0px 0px 5px 0px;
@@ -10060,24 +10108,24 @@ h3.mobile-home-title{
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 
-h3.mobile-home-headline, h3.home-headline a, h3.home-headline a:link, h3.home-headline a:hover, h3.home-headline a:visited{
+h3.home-headline, h3.home-headline a, h3.home-headline a:link, h3.home-headline a:hover, h3.home-headline a:visited{
 	font-family: Georgia;
 	font-weight: 100;
 	font-size: 22px;
 	color: #000000;
 }
 
-p.mobile-home-meta{
+p.home-meta{
 	font-family: Arial;
 	font-size: 14px;
 }
 
-.mobile-home-read-more, .home-read-more a, .home-read-more a:link,.home-read-more a:hover, .home-read-more a:visited{
+.home-read-more, .home-read-more a, .home-read-more a:link,.home-read-more a:hover, .home-read-more a:visited{
 	font-family: Arial;
 	font-size: 14px;
 }
 
-.mobile-home-view-all{
+.home-view-all{
 	width: 100px;
 	height: 30px;
 	background: #262626;
@@ -10092,7 +10140,7 @@ p.mobile-home-meta{
 	padding-left: 3px;
 }
 
-.mobile-home-view-all:hover{
+.home-view-all:hover{
 	width: 100px;
 	height: 30px;
 	background: #bcbcbc;
@@ -10107,7 +10155,7 @@ p.mobile-home-meta{
 	padding-left: 3px;
 }
 
-.mobile-home-next{
+.home-next{
 	width: 135px;
 	height: 30px;
 	background: #262626;
@@ -10122,7 +10170,7 @@ p.mobile-home-meta{
 	padding-left: 3px;
 }
 
-.mobile-home-next:hover{
+.home-next:hover{
 	width: 135px;
 	height: 30px;
 	background: #bcbcbc;
@@ -10137,7 +10185,7 @@ p.mobile-home-meta{
 	padding-left: 3px;
 }
 
-.mobile-swiper-container1 {
+#swiper-container-1 {
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -10149,7 +10197,7 @@ p.mobile-home-meta{
 	z-index:1;
 }
 
-.mobile-swiper-container2 {
+#swiper-container-2 {
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -10161,7 +10209,7 @@ p.mobile-home-meta{
 	z-index:1;
 }
 
-.mobile-swiper-container3 {
+#swiper-container-3 {
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -10173,7 +10221,7 @@ p.mobile-home-meta{
 	z-index:1;
 }
 
-.mobile-swiper-container4 {
+#swiper-container-4 {
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -10233,20 +10281,24 @@ p.mobile-home-meta{
 	-ms-touch-action: pan-x;
 }
 
-.swiper-container1 {
+#swiper-container-1 {
 	width:100%;
+	height: 300px;
 }
 
-.swiper-container2 {
+#swiper-container-2 {
 	width:100%;
+	height: 300px;
 }
 
-.swiper-container3 {
+#swiper-container-3 {
 	width:100%;
+	height: 300px;
 }
 
-.swiper-container4 {
+#swiper-container-4 {
 	width:100%;
+	height: 300px;
 }
 
 .swiper-slide {
@@ -10255,11 +10307,11 @@ p.mobile-home-meta{
 }
 
 /* Latest Posts */
-#mobile-latest-posts-area{
+#latest-posts-area{
 	width: 100%;
 }
 
-.mobile-latest-posts-title-bg{
+.latest-posts-title-bg{
 	width: 100%;
 	height: 30px;
 	background: #262626;
@@ -10267,7 +10319,7 @@ p.mobile-home-meta{
 	margin-bottom: 5px;
 }
 
-h3.mobile-latest-posts-title{
+h3.latest-posts-title{
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	font-weight: 100;
 	font-size: 22px;
@@ -10275,21 +10327,21 @@ h3.mobile-latest-posts-title{
 	margin: 0px;
 }
 
-.mobile-latest-posts{
+.latest-posts{
 	background-color: #929292;
 	width: 100%;
 	padding-top: 12px;
 	padding-bottom: 12px;
 }
 
-.mobile-latest-postsalt{
+.latest-postsalt{
 	background-color: #E1E1E1;
 	width: 100%;
 	padding-top: 12px;
 	padding-bottom: 12px;
 }
 
-.mobile-latest-posts-photo{
+.latest-posts-photo{
 	width: 120px;
 	height: 60px;
 	border: 1px solid #000000;
@@ -10301,14 +10353,14 @@ h3.mobile-latest-posts-title{
 	margin-bottom: auto;
 }
 
-.mobile-latest-posts-headline-area{
+.latest-posts-headline-area{
 	width: 70%;
 	margin: auto;
 	float: right;
 	position: relative;
 }
 
-h5.mobile-latest-posts-headline, h5.mobile-latest-posts-headline a, h5.mobile-latest-posts-headline a:link, h5.mobile-latest-posts-headline a:visited, h5.mobile-latest-posts-headline a:hover{
+h5.latest-posts-headline, h5.latest-posts-headline a, h5.latest-posts-headline a:link, h5.latest-posts-headline a:visited, h5.latest-posts-headline a:hover{
 	font-family: Georgia;
 	font-size: 14px;
 	color: #000000;
@@ -10841,8 +10893,9 @@ p.mobile-menu-text, p.mobile-menu-text a, p.mobile-menu-text a:hover, p.mobile-m
 	top: auto !important;
 	height: auto !important;
 	position: absolute !important;
-	padding-left: 1px !important;
-	padding-right: 1px !important;
+	border: none;
+	padding-left: 0px !important;
+	padding-right: 0px !important;
 	margin: 0px !important;
 	display: block !important;
 	z-index: 998 !important;
@@ -10904,7 +10957,7 @@ img.prev{
 	display: none;
 }
 
-#mobile-home-posts-area{
+#home-posts-area{
 	width: 500px !important;
 	background: #FFFFFF;
 	padding: 5px;
@@ -10914,7 +10967,7 @@ img.prev{
 	position: relative;
 }
 
-.mobile-home-title-bg{
+.home-title-bg{
 	width: 100%;
 	height: 30px;
 	background: #000000;
@@ -10922,7 +10975,7 @@ img.prev{
 	margin-bottom: 5px;
 }
 
-h3.mobile-home-title{
+h3.home-title{
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	font-weight: 100;
 	font-size: 22px;
@@ -10930,13 +10983,13 @@ h3.mobile-home-title{
 	margin: 0px;
 }
 
-.mobile-home-post{
+.home-post{
 	width: 385px;
 	margin: 4px;
 	float: left;
 }
 
-.mobile-home-photo{
+.home-photo, .home-photo:hover{
 	width: 260px;
 	height: 130px;
 	position: relative;
@@ -10945,7 +10998,7 @@ h3.mobile-home-title{
 	margin: auto;
 }
 
-.mobile-photo-post-details{
+.photo-post-details{
 	color: #FFFFFF;
 	background-color: rgba(0,0,0,.85);
 	width: 100%;
@@ -10956,7 +11009,7 @@ h3.mobile-home-title{
 	display: block;
 }
 
-.mobile-photo-post-details-links, .mobile-photo-post-details-links a, .mobile-photo-post-details-links a:link, .mobile-photo-post-details-links a:visited, .mobile-photo-post-details-links a:hover{
+.photo-post-details-links, .photo-post-details-links a, .photo-post-details-links a:link, .photo-post-details-links a:visited, .photo-post-details-links a:hover{
 	font-size: 14px;
 	color: #FFFFFF;
 	margin: 0px 0px 5px 0px;
@@ -10964,24 +11017,24 @@ h3.mobile-home-title{
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 
-h3.mobile-home-headline, h3.home-headline a, h3.home-headline a:link, h3.home-headline a:hover, h3.home-headline a:visited{
+h3.home-headline, h3.home-headline a, h3.home-headline a:link, h3.home-headline a:hover, h3.home-headline a:visited{
 	font-family: Georgia;
 	font-weight: 100;
 	font-size: 22px;
 	color: #000000;
 }
 
-p.mobile-home-meta{
+p.home-meta{
 	font-family: Arial;
 	font-size: 14px;
 }
 
-.mobile-home-read-more, .home-read-more a, .home-read-more a:link,.home-read-more a:hover, .home-read-more a:visited{
+.home-read-more, .home-read-more a, .home-read-more a:link,.home-read-more a:hover, .home-read-more a:visited{
 	font-family: Arial;
 	font-size: 14px;
 }
 
-.mobile-home-view-all{
+.home-view-all{
 	width: 100px;
 	height: 30px;
 	background: #262626;
@@ -10996,7 +11049,7 @@ p.mobile-home-meta{
 	padding-left: 3px;
 }
 
-.mobile-home-view-all:hover{
+.home-view-all:hover{
 	width: 100px;
 	height: 30px;
 	background: #bcbcbc;
@@ -11011,7 +11064,7 @@ p.mobile-home-meta{
 	padding-left: 3px;
 }
 
-.mobile-home-next{
+.home-next{
 	width: 135px;
 	height: 30px;
 	background: #262626;
@@ -11026,7 +11079,7 @@ p.mobile-home-meta{
 	padding-left: 3px;
 }
 
-.mobile-home-next:hover{
+.home-next:hover{
 	width: 135px;
 	height: 30px;
 	background: #bcbcbc;
@@ -11041,7 +11094,7 @@ p.mobile-home-meta{
 	padding-left: 3px;
 }
 
-.mobile-swiper-container1 {
+#swiper-container-1 {
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -11053,7 +11106,7 @@ p.mobile-home-meta{
 	z-index:1;
 }
 
-.mobile-swiper-container2 {
+#swiper-container-2 {
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -11065,7 +11118,7 @@ p.mobile-home-meta{
 	z-index:1;
 }
 
-.mobile-swiper-container3 {
+#swiper-container-3 {
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -11077,7 +11130,7 @@ p.mobile-home-meta{
 	z-index:1;
 }
 
-.mobile-swiper-container4 {
+#swiper-container-4 {
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -11137,20 +11190,24 @@ p.mobile-home-meta{
 	-ms-touch-action: pan-x;
 }
 
-.swiper-container1 {
+#swiper-container-1 {
 	width:100%;
+	height: 300px;
 }
 
-.swiper-container2 {
+#swiper-container-2 {
 	width:100%;
+	height: 300px;
 }
 
-.swiper-container3 {
+#swiper-container-3 {
 	width:100%;
+	height: 300px;
 }
 
-.swiper-container4 {
+#swiper-container-4 {
 	width:100%;
+	height: 300px;
 }
 
 .swiper-slide {
@@ -11159,11 +11216,11 @@ p.mobile-home-meta{
 }
 
 /* Latest Posts */
-#mobile-latest-posts-area{
+#latest-posts-area{
 	width: 100%;
 }
 
-.mobile-latest-posts-title-bg{
+.latest-posts-title-bg{
 	width: 100%;
 	height: 30px;
 	background: #262626;
@@ -11171,7 +11228,7 @@ p.mobile-home-meta{
 	margin-bottom: 5px;
 }
 
-h3.mobile-latest-posts-title{
+h3.latest-posts-title{
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	font-weight: 100;
 	font-size: 22px;
@@ -11179,21 +11236,21 @@ h3.mobile-latest-posts-title{
 	margin: 0px;
 }
 
-.mobile-latest-posts{
+.latest-posts{
 	background-color: #929292;
 	width: 100%;
 	padding-top: 12px;
 	padding-bottom: 12px;
 }
 
-.mobile-latest-postsalt{
+.latest-postsalt{
 	background-color: #E1E1E1;
 	width: 100%;
 	padding-top: 12px;
 	padding-bottom: 12px;
 }
 
-.mobile-latest-posts-photo{
+.latest-posts-photo{
 	width: 120px;
 	height: 60px;
 	border: 1px solid #000000;
@@ -11205,14 +11262,14 @@ h3.mobile-latest-posts-title{
 	margin-bottom: auto;
 }
 
-.mobile-latest-posts-headline-area{
+.latest-posts-headline-area{
 	width: 75%;
 	margin: auto;
 	float: right;
 	position: relative;
 }
 
-h5.mobile-latest-posts-headline, h5.mobile-latest-posts-headline a, h5.mobile-latest-posts-headline a:link, h5.mobile-latest-posts-headline a:visited, h5.mobile-latest-posts-headline a:hover{
+h5.latest-posts-headline, h5.latest-posts-headline a, h5.latest-posts-headline a:link, h5.latest-posts-headline a:visited, h5.latest-posts-headline a:hover{
 	font-family: Georgia;
 	font-size: 14px;
 	color: #000000;
@@ -11745,8 +11802,9 @@ p.mobile-menu-text, p.mobile-menu-text a, p.mobile-menu-text a:hover, p.mobile-m
 	top: auto !important;
 	height: auto !important;
 	position: absolute !important;
-	padding-left: 1px !important;
-	padding-right: 1px !important;
+	border: none;
+	padding-left: 0px !important;
+	padding-right: 0px !important;
 	margin: 0px !important;
 	display: block !important;
 	z-index: 998 !important;
@@ -11808,7 +11866,7 @@ img.prev{
 	display: none;
 }
 
-#mobile-home-posts-area{
+#home-posts-area{
 	width: 520px !important;
 	background: #FFFFFF;
 	padding: 5px;
@@ -11818,7 +11876,7 @@ img.prev{
 	position: relative;
 }
 
-.mobile-home-title-bg{
+.home-title-bg{
 	width: 100%;
 	height: 30px;
 	background: #000000;
@@ -11826,7 +11884,7 @@ img.prev{
 	margin-bottom: 5px;
 }
 
-h3.mobile-home-title{
+h3.home-title{
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	font-weight: 100;
 	font-size: 22px;
@@ -11834,13 +11892,13 @@ h3.mobile-home-title{
 	margin: 0px;
 }
 
-.mobile-home-post{
+.home-post{
 	width: 405px;
 	margin: 4px;
 	float: left;
 }
 
-.mobile-home-photo{
+.home-photo, .home-photo:hover{
 	width: 260px;
 	height: 130px;
 	position: relative;
@@ -11849,7 +11907,7 @@ h3.mobile-home-title{
 	margin: auto;
 }
 
-.mobile-photo-post-details{
+.photo-post-details{
 	color: #FFFFFF;
 	background-color: rgba(0,0,0,.85);
 	width: 100%;
@@ -11860,7 +11918,7 @@ h3.mobile-home-title{
 	display: block;
 }
 
-.mobile-photo-post-details-links, .mobile-photo-post-details-links a, .mobile-photo-post-details-links a:link, .mobile-photo-post-details-links a:visited, .mobile-photo-post-details-links a:hover{
+.photo-post-details-links, .photo-post-details-links a, .photo-post-details-links a:link, .photo-post-details-links a:visited, .photo-post-details-links a:hover{
 	font-size: 14px;
 	color: #FFFFFF;
 	margin: 0px 0px 5px 0px;
@@ -11868,24 +11926,24 @@ h3.mobile-home-title{
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 
-h3.mobile-home-headline, h3.home-headline a, h3.home-headline a:link, h3.home-headline a:hover, h3.home-headline a:visited{
+h3.home-headline, h3.home-headline a, h3.home-headline a:link, h3.home-headline a:hover, h3.home-headline a:visited{
 	font-family: Georgia;
 	font-weight: 100;
 	font-size: 22px;
 	color: #000000;
 }
 
-p.mobile-home-meta{
+p.home-meta{
 	font-family: Arial;
 	font-size: 14px;
 }
 
-.mobile-home-read-more, .home-read-more a, .home-read-more a:link,.home-read-more a:hover, .home-read-more a:visited{
+.home-read-more, .home-read-more a, .home-read-more a:link,.home-read-more a:hover, .home-read-more a:visited{
 	font-family: Arial;
 	font-size: 14px;
 }
 
-.mobile-home-view-all{
+.home-view-all{
 	width: 100px;
 	height: 30px;
 	background: #262626;
@@ -11900,7 +11958,7 @@ p.mobile-home-meta{
 	padding-left: 3px;
 }
 
-.mobile-home-view-all:hover{
+.home-view-all:hover{
 	width: 100px;
 	height: 30px;
 	background: #bcbcbc;
@@ -11915,7 +11973,7 @@ p.mobile-home-meta{
 	padding-left: 3px;
 }
 
-.mobile-home-next{
+.home-next{
 	width: 135px;
 	height: 30px;
 	background: #262626;
@@ -11930,7 +11988,7 @@ p.mobile-home-meta{
 	padding-left: 3px;
 }
 
-.mobile-home-next:hover{
+.home-next:hover{
 	width: 135px;
 	height: 30px;
 	background: #bcbcbc;
@@ -11945,7 +12003,7 @@ p.mobile-home-meta{
 	padding-left: 3px;
 }
 
-.mobile-swiper-container1 {
+#swiper-container-1 {
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -11957,7 +12015,7 @@ p.mobile-home-meta{
 	z-index:1;
 }
 
-.mobile-swiper-container2 {
+#swiper-container-2 {
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -11969,7 +12027,7 @@ p.mobile-home-meta{
 	z-index:1;
 }
 
-.mobile-swiper-container3 {
+#swiper-container-3 {
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -11981,7 +12039,7 @@ p.mobile-home-meta{
 	z-index:1;
 }
 
-.mobile-swiper-container4 {
+#swiper-container-4 {
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -12041,20 +12099,24 @@ p.mobile-home-meta{
 	-ms-touch-action: pan-x;
 }
 
-.swiper-container1 {
+#swiper-container-1 {
 	width:100%;
+	height: 300px;
 }
 
-.swiper-container2 {
+#swiper-container-2 {
 	width:100%;
+	height: 300px;
 }
 
-.swiper-container3 {
+#swiper-container-3 {
 	width:100%;
+	height: 300px;
 }
 
-.swiper-container4 {
+#swiper-container-4 {
 	width:100%;
+	height: 300px;
 }
 
 .swiper-slide {
@@ -12063,11 +12125,11 @@ p.mobile-home-meta{
 }
 
 /* Latest Posts */
-#mobile-latest-posts-area{
+#latest-posts-area{
 	width: 100%;
 }
 
-.mobile-latest-posts-title-bg{
+.latest-posts-title-bg{
 	width: 100%;
 	height: 30px;
 	background: #262626;
@@ -12075,7 +12137,7 @@ p.mobile-home-meta{
 	margin-bottom: 5px;
 }
 
-h3.mobile-latest-posts-title{
+h3.latest-posts-title{
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	font-weight: 100;
 	font-size: 22px;
@@ -12083,21 +12145,21 @@ h3.mobile-latest-posts-title{
 	margin: 0px;
 }
 
-.mobile-latest-posts{
+.latest-posts{
 	background-color: #929292;
 	width: 100%;
 	padding-top: 12px;
 	padding-bottom: 12px;
 }
 
-.mobile-latest-postsalt{
+.latest-postsalt{
 	background-color: #E1E1E1;
 	width: 100%;
 	padding-top: 12px;
 	padding-bottom: 12px;
 }
 
-.mobile-latest-posts-photo{
+.latest-posts-photo{
 	width: 120px;
 	height: 60px;
 	border: 1px solid #000000;
@@ -12109,14 +12171,14 @@ h3.mobile-latest-posts-title{
 	margin-bottom: auto;
 }
 
-.mobile-latest-posts-headline-area{
+.latest-posts-headline-area{
 	width: 75%;
 	margin: auto;
 	float: right;
 	position: relative;
 }
 
-h5.mobile-latest-posts-headline, h5.mobile-latest-posts-headline a, h5.mobile-latest-posts-headline a:link, h5.mobile-latest-posts-headline a:visited, h5.mobile-latest-posts-headline a:hover{
+h5.latest-posts-headline, h5.latest-posts-headline a, h5.latest-posts-headline a:link, h5.latest-posts-headline a:visited, h5.latest-posts-headline a:hover{
 	font-family: Georgia;
 	font-size: 14px;
 	color: #000000;
@@ -12649,8 +12711,9 @@ p.mobile-menu-text, p.mobile-menu-text a, p.mobile-menu-text a:hover, p.mobile-m
 	top: auto !important;
 	height: auto !important;
 	position: absolute !important;
-	padding-left: 1px !important;
-	padding-right: 1px !important;
+	border: none;
+	padding-left: 0px !important;
+	padding-right: 0px !important;
 	margin: 0px !important;
 	display: block !important;
 	z-index: 998 !important;
@@ -12712,7 +12775,7 @@ img.prev{
 	display: none;
 }
 
-#mobile-home-posts-area{
+#home-posts-area{
 	width: 540px !important;
 	background: #FFFFFF;
 	padding: 5px;
@@ -12722,7 +12785,7 @@ img.prev{
 	position: relative;
 }
 
-.mobile-home-title-bg{
+.home-title-bg{
 	width: 100%;
 	height: 30px;
 	background: #000000;
@@ -12730,7 +12793,7 @@ img.prev{
 	margin-bottom: 5px;
 }
 
-h3.mobile-home-title{
+h3.home-title{
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	font-weight: 100;
 	font-size: 22px;
@@ -12738,13 +12801,13 @@ h3.mobile-home-title{
 	margin: 0px;
 }
 
-.mobile-home-post{
+.home-post{
 	width: 425px;
 	margin: 4px;
 	float: left;
 }
 
-.mobile-home-photo{
+.home-photo, .home-photo:hover{
 	width: 260px;
 	height: 130px;
 	position: relative;
@@ -12753,7 +12816,7 @@ h3.mobile-home-title{
 	margin: auto;
 }
 
-.mobile-photo-post-details{
+.photo-post-details{
 	color: #FFFFFF;
 	background-color: rgba(0,0,0,.85);
 	width: 100%;
@@ -12764,7 +12827,7 @@ h3.mobile-home-title{
 	display: block;
 }
 
-.mobile-photo-post-details-links, .mobile-photo-post-details-links a, .mobile-photo-post-details-links a:link, .mobile-photo-post-details-links a:visited, .mobile-photo-post-details-links a:hover{
+.photo-post-details-links, .photo-post-details-links a, .photo-post-details-links a:link, .photo-post-details-links a:visited, .photo-post-details-links a:hover{
 	font-size: 14px;
 	color: #FFFFFF;
 	margin: 0px 0px 5px 0px;
@@ -12772,24 +12835,24 @@ h3.mobile-home-title{
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 
-h3.mobile-home-headline, h3.home-headline a, h3.home-headline a:link, h3.home-headline a:hover, h3.home-headline a:visited{
+h3.home-headline, h3.home-headline a, h3.home-headline a:link, h3.home-headline a:hover, h3.home-headline a:visited{
 	font-family: Georgia;
 	font-weight: 100;
 	font-size: 22px;
 	color: #000000;
 }
 
-p.mobile-home-meta{
+p.home-meta{
 	font-family: Arial;
 	font-size: 14px;
 }
 
-.mobile-home-read-more, .home-read-more a, .home-read-more a:link,.home-read-more a:hover, .home-read-more a:visited{
+.home-read-more, .home-read-more a, .home-read-more a:link,.home-read-more a:hover, .home-read-more a:visited{
 	font-family: Arial;
 	font-size: 14px;
 }
 
-.mobile-home-view-all{
+.home-view-all{
 	width: 100px;
 	height: 30px;
 	background: #262626;
@@ -12804,7 +12867,7 @@ p.mobile-home-meta{
 	padding-left: 3px;
 }
 
-.mobile-home-view-all:hover{
+.home-view-all:hover{
 	width: 100px;
 	height: 30px;
 	background: #bcbcbc;
@@ -12819,7 +12882,7 @@ p.mobile-home-meta{
 	padding-left: 3px;
 }
 
-.mobile-home-next{
+.home-next{
 	width: 135px;
 	height: 30px;
 	background: #262626;
@@ -12834,7 +12897,7 @@ p.mobile-home-meta{
 	padding-left: 3px;
 }
 
-.mobile-home-next:hover{
+.home-next:hover{
 	width: 135px;
 	height: 30px;
 	background: #bcbcbc;
@@ -12849,7 +12912,7 @@ p.mobile-home-meta{
 	padding-left: 3px;
 }
 
-.mobile-swiper-container1 {
+#swiper-container-1 {
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -12861,7 +12924,7 @@ p.mobile-home-meta{
 	z-index:1;
 }
 
-.mobile-swiper-container2 {
+#swiper-container-2 {
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -12873,7 +12936,7 @@ p.mobile-home-meta{
 	z-index:1;
 }
 
-.mobile-swiper-container3 {
+#swiper-container-3 {
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -12885,7 +12948,7 @@ p.mobile-home-meta{
 	z-index:1;
 }
 
-.mobile-swiper-container4 {
+#swiper-container-4 {
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -12945,20 +13008,24 @@ p.mobile-home-meta{
 	-ms-touch-action: pan-x;
 }
 
-.swiper-container1 {
+#swiper-container-1 {
 	width:100%;
+	height: 300px;
 }
 
-.swiper-container2 {
+#swiper-container-2 {
 	width:100%;
+	height: 300px;
 }
 
-.swiper-container3 {
+#swiper-container-3 {
 	width:100%;
+	height: 300px;
 }
 
-.swiper-container4 {
+#swiper-container-4 {
 	width:100%;
+	height: 300px;
 }
 
 .swiper-slide {
@@ -12967,11 +13034,11 @@ p.mobile-home-meta{
 }
 
 /* Latest Posts */
-#mobile-latest-posts-area{
+#latest-posts-area{
 	width: 100%;
 }
 
-.mobile-latest-posts-title-bg{
+.latest-posts-title-bg{
 	width: 100%;
 	height: 30px;
 	background: #262626;
@@ -12979,7 +13046,7 @@ p.mobile-home-meta{
 	margin-bottom: 5px;
 }
 
-h3.mobile-latest-posts-title{
+h3.latest-posts-title{
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	font-weight: 100;
 	font-size: 22px;
@@ -12987,21 +13054,21 @@ h3.mobile-latest-posts-title{
 	margin: 0px;
 }
 
-.mobile-latest-posts{
+.latest-posts{
 	background-color: #929292;
 	width: 100%;
 	padding-top: 12px;
 	padding-bottom: 12px;
 }
 
-.mobile-latest-postsalt{
+.latest-postsalt{
 	background-color: #E1E1E1;
 	width: 100%;
 	padding-top: 12px;
 	padding-bottom: 12px;
 }
 
-.mobile-latest-posts-photo{
+.latest-posts-photo{
 	width: 120px;
 	height: 60px;
 	border: 1px solid #000000;
@@ -13013,14 +13080,14 @@ h3.mobile-latest-posts-title{
 	margin-bottom: auto;
 }
 
-.mobile-latest-posts-headline-area{
+.latest-posts-headline-area{
 	width: 75%;
 	margin: auto;
 	float: right;
 	position: relative;
 }
 
-h5.mobile-latest-posts-headline, h5.mobile-latest-posts-headline a, h5.mobile-latest-posts-headline a:link, h5.mobile-latest-posts-headline a:visited, h5.mobile-latest-posts-headline a:hover{
+h5.latest-posts-headline, h5.latest-posts-headline a, h5.latest-posts-headline a:link, h5.latest-posts-headline a:visited, h5.latest-posts-headline a:hover{
 	font-family: Georgia;
 	font-size: 14px;
 	color: #000000;
@@ -13553,8 +13620,9 @@ p.mobile-menu-text, p.mobile-menu-text a, p.mobile-menu-text a:hover, p.mobile-m
 	top: auto !important;
 	height: auto !important;
 	position: absolute !important;
-	padding-left: 1px !important;
-	padding-right: 1px !important;
+	border: none;
+	padding-left: 0px !important;
+	padding-right: 0px !important;
 	margin: 0px !important;
 	display: block !important;
 	z-index: 998 !important;
@@ -13616,7 +13684,7 @@ img.prev{
 	display: none;
 }
 
-#mobile-home-posts-area{
+#home-posts-area{
 	width: 560px !important;
 	background: #FFFFFF;
 	padding: 5px;
@@ -13626,7 +13694,7 @@ img.prev{
 	position: relative;
 }
 
-.mobile-home-title-bg{
+.home-title-bg{
 	width: 100%;
 	height: 30px;
 	background: #000000;
@@ -13634,7 +13702,7 @@ img.prev{
 	margin-bottom: 5px;
 }
 
-h3.mobile-home-title{
+h3.home-title{
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	font-weight: 100;
 	font-size: 22px;
@@ -13642,13 +13710,13 @@ h3.mobile-home-title{
 	margin: 0px;
 }
 
-.mobile-home-post{
+.home-post{
 	width: 445px;
 	margin: 4px;
 	float: left;
 }
 
-.mobile-home-photo{
+.home-photo, .home-photo:hover{
 	width: 260px;
 	height: 130px;
 	position: relative;
@@ -13657,7 +13725,7 @@ h3.mobile-home-title{
 	margin: auto;
 }
 
-.mobile-photo-post-details{
+.photo-post-details{
 	color: #FFFFFF;
 	background-color: rgba(0,0,0,.85);
 	width: 100%;
@@ -13668,7 +13736,7 @@ h3.mobile-home-title{
 	display: block;
 }
 
-.mobile-photo-post-details-links, .mobile-photo-post-details-links a, .mobile-photo-post-details-links a:link, .mobile-photo-post-details-links a:visited, .mobile-photo-post-details-links a:hover{
+.photo-post-details-links, .photo-post-details-links a, .photo-post-details-links a:link, .photo-post-details-links a:visited, .photo-post-details-links a:hover{
 	font-size: 14px;
 	color: #FFFFFF;
 	margin: 0px 0px 5px 0px;
@@ -13676,24 +13744,24 @@ h3.mobile-home-title{
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 
-h3.mobile-home-headline, h3.home-headline a, h3.home-headline a:link, h3.home-headline a:hover, h3.home-headline a:visited{
+h3.home-headline, h3.home-headline a, h3.home-headline a:link, h3.home-headline a:hover, h3.home-headline a:visited{
 	font-family: Georgia;
 	font-weight: 100;
 	font-size: 22px;
 	color: #000000;
 }
 
-p.mobile-home-meta{
+p.home-meta{
 	font-family: Arial;
 	font-size: 14px;
 }
 
-.mobile-home-read-more, .home-read-more a, .home-read-more a:link,.home-read-more a:hover, .home-read-more a:visited{
+.home-read-more, .home-read-more a, .home-read-more a:link,.home-read-more a:hover, .home-read-more a:visited{
 	font-family: Arial;
 	font-size: 14px;
 }
 
-.mobile-home-view-all{
+.home-view-all{
 	width: 100px;
 	height: 30px;
 	background: #262626;
@@ -13708,7 +13776,7 @@ p.mobile-home-meta{
 	padding-left: 3px;
 }
 
-.mobile-home-view-all:hover{
+.home-view-all:hover{
 	width: 100px;
 	height: 30px;
 	background: #bcbcbc;
@@ -13723,7 +13791,7 @@ p.mobile-home-meta{
 	padding-left: 3px;
 }
 
-.mobile-home-next{
+.home-next{
 	width: 135px;
 	height: 30px;
 	background: #262626;
@@ -13738,7 +13806,7 @@ p.mobile-home-meta{
 	padding-left: 3px;
 }
 
-.mobile-home-next:hover{
+.home-next:hover{
 	width: 135px;
 	height: 30px;
 	background: #bcbcbc;
@@ -13753,7 +13821,7 @@ p.mobile-home-meta{
 	padding-left: 3px;
 }
 
-.mobile-swiper-container1 {
+#swiper-container-1 {
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -13765,7 +13833,7 @@ p.mobile-home-meta{
 	z-index:1;
 }
 
-.mobile-swiper-container2 {
+#swiper-container-2 {
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -13777,7 +13845,7 @@ p.mobile-home-meta{
 	z-index:1;
 }
 
-.mobile-swiper-container3 {
+#swiper-container-3 {
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -13789,7 +13857,7 @@ p.mobile-home-meta{
 	z-index:1;
 }
 
-.mobile-swiper-container4 {
+#swiper-container-4 {
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -13849,20 +13917,24 @@ p.mobile-home-meta{
 	-ms-touch-action: pan-x;
 }
 
-.swiper-container1 {
+#swiper-container-1 {
 	width:100%;
+	height: 300px;
 }
 
-.swiper-container2 {
+#swiper-container-2 {
 	width:100%;
+	height: 300px;
 }
 
-.swiper-container3 {
+#swiper-container-3 {
 	width:100%;
+	height: 300px;
 }
 
-.swiper-container4 {
+#swiper-container-4 {
 	width:100%;
+	height: 300px;
 }
 
 .swiper-slide {
@@ -13871,11 +13943,11 @@ p.mobile-home-meta{
 }
 
 /* Latest Posts */
-#mobile-latest-posts-area{
+#latest-posts-area{
 	width: 100%;
 }
 
-.mobile-latest-posts-title-bg{
+.latest-posts-title-bg{
 	width: 100%;
 	height: 30px;
 	background: #262626;
@@ -13883,7 +13955,7 @@ p.mobile-home-meta{
 	margin-bottom: 5px;
 }
 
-h3.mobile-latest-posts-title{
+h3.latest-posts-title{
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	font-weight: 100;
 	font-size: 22px;
@@ -13891,21 +13963,21 @@ h3.mobile-latest-posts-title{
 	margin: 0px;
 }
 
-.mobile-latest-posts{
+.latest-posts{
 	background-color: #929292;
 	width: 100%;
 	padding-top: 12px;
 	padding-bottom: 12px;
 }
 
-.mobile-latest-postsalt{
+.latest-postsalt{
 	background-color: #E1E1E1;
 	width: 100%;
 	padding-top: 12px;
 	padding-bottom: 12px;
 }
 
-.mobile-latest-posts-photo{
+.latest-posts-photo{
 	width: 120px;
 	height: 60px;
 	border: 1px solid #000000;
@@ -13917,14 +13989,14 @@ h3.mobile-latest-posts-title{
 	margin-bottom: auto;
 }
 
-.mobile-latest-posts-headline-area{
+.latest-posts-headline-area{
 	width: 75%;
 	margin: auto;
 	float: right;
 	position: relative;
 }
 
-h5.mobile-latest-posts-headline, h5.mobile-latest-posts-headline a, h5.mobile-latest-posts-headline a:link, h5.mobile-latest-posts-headline a:visited, h5.mobile-latest-posts-headline a:hover{
+h5.latest-posts-headline, h5.latest-posts-headline a, h5.latest-posts-headline a:link, h5.latest-posts-headline a:visited, h5.latest-posts-headline a:hover{
 	font-family: Georgia;
 	font-size: 14px;
 	color: #000000;
@@ -14457,8 +14529,9 @@ p.mobile-menu-text, p.mobile-menu-text a, p.mobile-menu-text a:hover, p.mobile-m
 	top: auto !important;
 	height: auto !important;
 	position: absolute !important;
-	padding-left: 1px !important;
-	padding-right: 1px !important;
+	border: none;
+	padding-left: 0px !important;
+	padding-right: 0px !important;
 	margin: 0px !important;
 	display: block !important;
 	z-index: 998 !important;
@@ -14520,7 +14593,7 @@ img.prev{
 	display: none;
 }
 
-#mobile-home-posts-area{
+#home-posts-area{
 	width: 580px !important;
 	background: #FFFFFF;
 	padding: 5px;
@@ -14530,7 +14603,7 @@ img.prev{
 	position: relative;
 }
 
-.mobile-home-title-bg{
+.home-title-bg{
 	width: 100%;
 	height: 30px;
 	background: #000000;
@@ -14538,7 +14611,7 @@ img.prev{
 	margin-bottom: 5px;
 }
 
-h3.mobile-home-title{
+h3.home-title{
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	font-weight: 100;
 	font-size: 22px;
@@ -14546,13 +14619,13 @@ h3.mobile-home-title{
 	margin: 0px;
 }
 
-.mobile-home-post{
+.home-post{
 	width: 465px;
 	margin: 4px;
 	float: left;
 }
 
-.mobile-home-photo{
+.home-photo{
 	width: 260px;
 	height: 130px;
 	position: relative;
@@ -14561,7 +14634,16 @@ h3.mobile-home-title{
 	margin: auto;
 }
 
-.mobile-photo-post-details{
+.home-photo:hover{
+	width: 260px;
+	height: 130px;
+	position: relative;
+	border: 5px solid #E0E0E0;
+	opacity: 1;
+	margin: auto;
+}
+
+.photo-post-details{
 	color: #FFFFFF;
 	background-color: rgba(0,0,0,.85);
 	width: 100%;
@@ -14572,7 +14654,7 @@ h3.mobile-home-title{
 	display: block;
 }
 
-.mobile-photo-post-details-links, .mobile-photo-post-details-links a, .mobile-photo-post-details-links a:link, .mobile-photo-post-details-links a:visited, .mobile-photo-post-details-links a:hover{
+.photo-post-details-links, .photo-post-details-links a, .photo-post-details-links a:link, .photo-post-details-links a:visited, .photo-post-details-links a:hover{
 	font-size: 14px;
 	color: #FFFFFF;
 	margin: 0px 0px 5px 0px;
@@ -14580,24 +14662,24 @@ h3.mobile-home-title{
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 
-h3.mobile-home-headline, h3.home-headline a, h3.home-headline a:link, h3.home-headline a:hover, h3.home-headline a:visited{
+h3.home-headline, h3.home-headline a, h3.home-headline a:link, h3.home-headline a:hover, h3.home-headline a:visited{
 	font-family: Georgia;
 	font-weight: 100;
 	font-size: 22px;
 	color: #000000;
 }
 
-p.mobile-home-meta{
+p.home-meta{
 	font-family: Arial;
 	font-size: 14px;
 }
 
-.mobile-home-read-more, .home-read-more a, .home-read-more a:link,.home-read-more a:hover, .home-read-more a:visited{
+.home-read-more, .home-read-more a, .home-read-more a:link,.home-read-more a:hover, .home-read-more a:visited{
 	font-family: Arial;
 	font-size: 14px;
 }
 
-.mobile-home-view-all{
+.home-view-all{
 	width: 100px;
 	height: 30px;
 	background: #262626;
@@ -14612,7 +14694,7 @@ p.mobile-home-meta{
 	padding-left: 3px;
 }
 
-.mobile-home-view-all:hover{
+.home-view-all:hover{
 	width: 100px;
 	height: 30px;
 	background: #bcbcbc;
@@ -14627,7 +14709,7 @@ p.mobile-home-meta{
 	padding-left: 3px;
 }
 
-.mobile-home-next{
+.home-next{
 	width: 135px;
 	height: 30px;
 	background: #262626;
@@ -14642,7 +14724,7 @@ p.mobile-home-meta{
 	padding-left: 3px;
 }
 
-.mobile-home-next:hover{
+.home-next:hover{
 	width: 135px;
 	height: 30px;
 	background: #bcbcbc;
@@ -14657,7 +14739,7 @@ p.mobile-home-meta{
 	padding-left: 3px;
 }
 
-.mobile-swiper-container1 {
+#swiper-container-1 {
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -14669,7 +14751,7 @@ p.mobile-home-meta{
 	z-index:1;
 }
 
-.mobile-swiper-container2 {
+#swiper-container-2 {
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -14681,7 +14763,7 @@ p.mobile-home-meta{
 	z-index:1;
 }
 
-.mobile-swiper-container3 {
+#swiper-container-3 {
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -14693,7 +14775,7 @@ p.mobile-home-meta{
 	z-index:1;
 }
 
-.mobile-swiper-container4 {
+#swiper-container-4 {
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -14708,6 +14790,7 @@ p.mobile-home-meta{
 .swiper-wrapper {
 	position:relative;
 	width:100%;
+	overflow: hidden;
 	-webkit-transition-property:-webkit-transform, left, top;
 	-webkit-transition-duration:0s;
 	-webkit-transform:translate3d(0px,0,0);
@@ -14753,20 +14836,24 @@ p.mobile-home-meta{
 	-ms-touch-action: pan-x;
 }
 
-.swiper-container1 {
+#swiper-container-1 {
 	width:100%;
+	height: 300px;
 }
 
-.swiper-container2 {
+#swiper-container-2 {
 	width:100%;
+	height: 300px;
 }
 
-.swiper-container3 {
+#swiper-container-3 {
 	width:100%;
+	height: 300px;
 }
 
-.swiper-container4 {
+#swiper-container-4 {
 	width:100%;
+	height: 300px;
 }
 
 .swiper-slide {
@@ -14775,11 +14862,11 @@ p.mobile-home-meta{
 }
 
 /* Latest Posts */
-#mobile-latest-posts-area{
+#latest-posts-area{
 	width: 100%;
 }
 
-.mobile-latest-posts-title-bg{
+.latest-posts-title-bg{
 	width: 100%;
 	height: 30px;
 	background: #262626;
@@ -14787,7 +14874,7 @@ p.mobile-home-meta{
 	margin-bottom: 5px;
 }
 
-h3.mobile-latest-posts-title{
+h3.latest-posts-title{
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	font-weight: 100;
 	font-size: 22px;
@@ -14795,21 +14882,21 @@ h3.mobile-latest-posts-title{
 	margin: 0px;
 }
 
-.mobile-latest-posts{
+.latest-posts{
 	background-color: #929292;
 	width: 100%;
 	padding-top: 12px;
 	padding-bottom: 12px;
 }
 
-.mobile-latest-postsalt{
+.latest-postsalt{
 	background-color: #E1E1E1;
 	width: 100%;
 	padding-top: 12px;
 	padding-bottom: 12px;
 }
 
-.mobile-latest-posts-photo{
+.latest-posts-photo{
 	width: 120px;
 	height: 60px;
 	border: 1px solid #000000;
@@ -14821,14 +14908,14 @@ h3.mobile-latest-posts-title{
 	margin-bottom: auto;
 }
 
-.mobile-latest-posts-headline-area{
+.latest-posts-headline-area{
 	width: 75%;
 	margin: auto;
 	float: right;
 	position: relative;
 }
 
-h5.mobile-latest-posts-headline, h5.mobile-latest-posts-headline a, h5.mobile-latest-posts-headline a:link, h5.mobile-latest-posts-headline a:visited, h5.mobile-latest-posts-headline a:hover{
+h5.latest-posts-headline, h5.latest-posts-headline a, h5.latest-posts-headline a:link, h5.latest-posts-headline a:visited, h5.latest-posts-headline a:hover{
 	font-family: Georgia;
 	font-size: 14px;
 	color: #000000;
@@ -15168,10 +15255,6 @@ form#commentform textarea{width:98% !important;}
 	display: block !important;
 }
 
-#home-posts-area{
-	display: none;
-}
-
 .sidebar{
 	float: none !important;
 	position: static !important;
@@ -15361,8 +15444,9 @@ p.mobile-menu-text, p.mobile-menu-text a, p.mobile-menu-text a:hover, p.mobile-m
 	top: auto !important;
 	height: auto !important;
 	position: absolute !important;
-	padding-left: 1px !important;
-	padding-right: 1px !important;
+	border: none;
+	padding-left: 0px !important;
+	padding-right: 0px !important;
 	margin: 0px !important;
 	display: block !important;
 	z-index: 998 !important;
@@ -15430,15 +15514,7 @@ img.mobile-prev{
 }
 
 /* Homepage Styles */
-#tablet-home-posts-area{
-	display: none;
-}
-
 #home-posts-area{
-	display: none;
-}
-
-#mobile-home-posts-area{
 	width: 600px !important;
 	background: #FFFFFF;
 	padding: 5px;
@@ -15448,7 +15524,7 @@ img.mobile-prev{
 	position: relative;
 }
 
-.mobile-home-title-bg{
+.home-title-bg{
 	width: 100%;
 	height: 30px;
 	background: #000000;
@@ -15456,7 +15532,7 @@ img.mobile-prev{
 	margin-bottom: 5px;
 }
 
-h3.mobile-home-title{
+h3.home-title{
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	font-weight: 100;
 	font-size: 22px;
@@ -15464,13 +15540,13 @@ h3.mobile-home-title{
 	margin: 0px;
 }
 
-.mobile-home-post{
+.home-post{
 	width: 485px;
 	margin: 4px;
 	float: left;
 }
 
-.mobile-home-photo{
+.home-photo{
 	width: 260px;
 	height: 130px;
 	position: relative;
@@ -15479,7 +15555,16 @@ h3.mobile-home-title{
 	margin: auto;
 }
 
-.mobile-photo-post-details{
+.home-photo:hover {
+	width: 260px;
+	height: 130px;
+	position: relative;
+	border: 5px solid #E0E0E0;
+	opacity: 1;
+	margin: auto;
+}
+
+.photo-post-details{
 	color: #FFFFFF;
 	background-color: rgba(0,0,0,.85);
 	width: 100%;
@@ -15490,7 +15575,7 @@ h3.mobile-home-title{
 	display: block;
 }
 
-.mobile-photo-post-details-links, .mobile-photo-post-details-links a, .mobile-photo-post-details-links a:link, .mobile-photo-post-details-links a:visited, .mobile-photo-post-details-links a:hover{
+.photo-post-details-links, .photo-post-details-links a, .photo-post-details-links a:link, .photo-post-details-links a:visited, .photo-post-details-links a:hover{
 	font-size: 14px;
 	color: #FFFFFF;
 	margin: 0px 0px 5px 0px;
@@ -15498,24 +15583,24 @@ h3.mobile-home-title{
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 
-h3.mobile-home-headline, h3.home-headline a, h3.home-headline a:link, h3.home-headline a:hover, h3.home-headline a:visited{
+h3.home-headline, h3.home-headline a, h3.home-headline a:link, h3.home-headline a:hover, h3.home-headline a:visited{
 	font-family: Georgia;
 	font-weight: 100;
 	font-size: 22px;
 	color: #000000;
 }
 
-p.mobile-home-meta{
+p.home-meta{
 	font-family: Arial;
 	font-size: 14px;
 }
 
-.mobile-home-read-more, .home-read-more a, .home-read-more a:link,.home-read-more a:hover, .home-read-more a:visited{
+.home-read-more, .home-read-more a, .home-read-more a:link,.home-read-more a:hover, .home-read-more a:visited{
 	font-family: Arial;
 	font-size: 14px;
 }
 
-.mobile-home-view-all{
+.home-view-all{
 	width: 100px;
 	height: 30px;
 	background: #262626;
@@ -15530,7 +15615,7 @@ p.mobile-home-meta{
 	padding-left: 3px;
 }
 
-.mobile-home-view-all:hover{
+.home-view-all:hover{
 	width: 100px;
 	height: 30px;
 	background: #bcbcbc;
@@ -15545,7 +15630,7 @@ p.mobile-home-meta{
 	padding-left: 3px;
 }
 
-.mobile-home-next{
+.home-next{
 	width: 135px;
 	height: 30px;
 	background: #262626;
@@ -15560,7 +15645,7 @@ p.mobile-home-meta{
 	padding-left: 3px;
 }
 
-.mobile-home-next:hover{
+.home-next:hover{
 	width: 135px;
 	height: 30px;
 	background: #bcbcbc;
@@ -15575,7 +15660,7 @@ p.mobile-home-meta{
 	padding-left: 3px;
 }
 
-.mobile-swiper-container1 {
+#swiper-container-1 {
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -15587,7 +15672,7 @@ p.mobile-home-meta{
 	z-index:1;
 }
 
-.mobile-swiper-container2 {
+#swiper-container-2 {
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -15599,7 +15684,7 @@ p.mobile-home-meta{
 	z-index:1;
 }
 
-.mobile-swiper-container3 {
+#swiper-container-3 {
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -15611,7 +15696,7 @@ p.mobile-home-meta{
 	z-index:1;
 }
 
-.mobile-swiper-container4 {
+#swiper-container-4 {
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -15626,6 +15711,7 @@ p.mobile-home-meta{
 .swiper-wrapper {
 	position:relative;
 	width:100%;
+	overflow: hidden;
 	-webkit-transition-property:-webkit-transform, left, top;
 	-webkit-transition-duration:0s;
 	-webkit-transform:translate3d(0px,0,0);
@@ -15671,20 +15757,24 @@ p.mobile-home-meta{
 	-ms-touch-action: pan-x;
 }
 
-.swiper-container1 {
+#swiper-container-1 {
 	width:100%;
+	height: 300px;
 }
 
-.swiper-container2 {
+#swiper-container-2 {
 	width:100%;
+	height: 300px;
 }
 
-.swiper-container3 {
+#swiper-container-3 {
 	width:100%;
+	height: 300px;
 }
 
-.swiper-container4 {
+#swiper-container-4 {
 	width:100%;
+	height: 300px;
 }
 
 .swiper-slide {
@@ -15693,11 +15783,11 @@ p.mobile-home-meta{
 }
 
 /* Latest Posts */
-#mobile-latest-posts-area{
+#latest-posts-area{
 	width: 100%;
 }
 
-.mobile-latest-posts-title-bg{
+.latest-posts-title-bg{
 	width: 100%;
 	height: 30px;
 	background: #262626;
@@ -15705,7 +15795,7 @@ p.mobile-home-meta{
 	margin-bottom: 5px;
 }
 
-h3.mobile-latest-posts-title{
+h3.latest-posts-title{
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	font-weight: 100;
 	font-size: 22px;
@@ -15713,21 +15803,21 @@ h3.mobile-latest-posts-title{
 	margin: 0px;
 }
 
-.mobile-latest-posts{
+.latest-posts{
 	background-color: #929292;
 	width: 100%;
 	padding-top: 12px;
 	padding-bottom: 12px;
 }
 
-.mobile-latest-postsalt{
+.latest-postsalt{
 	background-color: #E1E1E1;
 	width: 100%;
 	padding-top: 12px;
 	padding-bottom: 12px;
 }
 
-.mobile-latest-posts-photo{
+.latest-posts-photo{
 	width: 120px;
 	height: 60px;
 	border: 1px solid #000000;
@@ -15739,14 +15829,14 @@ h3.mobile-latest-posts-title{
 	margin-bottom: auto;
 }
 
-.mobile-latest-posts-headline-area{
+.latest-posts-headline-area{
 	width: 75%;
 	margin: auto;
 	float: right;
 	position: relative;
 }
 
-h5.mobile-latest-posts-headline, h5.mobile-latest-posts-headline a, h5.mobile-latest-posts-headline a:link, h5.mobile-latest-posts-headline a:visited, h5.mobile-latest-posts-headline a:hover{
+h5.latest-posts-headline, h5.latest-posts-headline a, h5.latest-posts-headline a:link, h5.latest-posts-headline a:visited, h5.latest-posts-headline a:hover{
 	font-family: Georgia;
 	font-size: 14px;
 	color: #000000;
@@ -16086,10 +16176,6 @@ form#commentform textarea{width:98% !important;}
 	display: block !important;
 }
 
-#home-posts-area{
-	display: none;
-}
-
 .sidebar{
 	float: none !important;
 	position: static !important;
@@ -16279,8 +16365,9 @@ p.mobile-menu-text, p.mobile-menu-text a, p.mobile-menu-text a:hover, p.mobile-m
 	top: auto !important;
 	height: auto !important;
 	position: absolute !important;
-	padding-left: 1px !important;
-	padding-right: 1px !important;
+	border: none;
+	padding-left: 0px !important;
+	padding-right: 0px !important;
 	margin: 0px !important;
 	display: block !important;
 	z-index: 998 !important;
@@ -16334,15 +16421,7 @@ img.prev{
 }
 
 /* Homepage Styles */
-#tablet-home-posts-area{
-	display: none;
-}
-
 #home-posts-area{
-	display: none;
-}
-
-#mobile-home-posts-area{
 	width: 620px !important;
 	background: #FFFFFF;
 	padding: 5px;
@@ -16352,7 +16431,7 @@ img.prev{
 	position: relative;
 }
 
-.mobile-home-title-bg{
+.home-title-bg{
 	width: 100%;
 	height: 30px;
 	background: #000000;
@@ -16360,7 +16439,7 @@ img.prev{
 	margin-bottom: 5px;
 }
 
-h3.mobile-home-title{
+h3.home-title{
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	font-weight: 100;
 	font-size: 22px;
@@ -16368,13 +16447,13 @@ h3.mobile-home-title{
 	margin: 0px;
 }
 
-.mobile-home-post{
+.home-post{
 	width: 505px;
 	margin: 4px;
 	float: left;
 }
 
-.mobile-home-photo{
+.home-photo{
 	width: 260px;
 	height: 130px;
 	position: relative;
@@ -16383,7 +16462,16 @@ h3.mobile-home-title{
 	margin: auto;
 }
 
-.mobile-photo-post-details{
+.home-photo:hover {
+	width: 260px;
+	height: 130px;
+	position: relative;
+	border: 5px solid #E0E0E0;
+	opacity: 1;
+	margin: auto;
+}
+
+.photo-post-details{
 	color: #FFFFFF;
 	background-color: rgba(0,0,0,.85);
 	width: 100%;
@@ -16394,7 +16482,7 @@ h3.mobile-home-title{
 	display: block;
 }
 
-.mobile-photo-post-details-links, .mobile-photo-post-details-links a, .mobile-photo-post-details-links a:link, .mobile-photo-post-details-links a:visited, .mobile-photo-post-details-links a:hover{
+.photo-post-details-links, .photo-post-details-links a, .photo-post-details-links a:link, .photo-post-details-links a:visited, .photo-post-details-links a:hover{
 	font-size: 14px;
 	color: #FFFFFF;
 	margin: 0px 0px 5px 0px;
@@ -16402,24 +16490,24 @@ h3.mobile-home-title{
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 
-h3.mobile-home-headline, h3.home-headline a, h3.home-headline a:link, h3.home-headline a:hover, h3.home-headline a:visited{
+h3.home-headline, h3.home-headline a, h3.home-headline a:link, h3.home-headline a:hover, h3.home-headline a:visited{
 	font-family: Georgia;
 	font-weight: 100;
 	font-size: 22px;
 	color: #000000;
 }
 
-p.mobile-home-meta{
+p.home-meta{
 	font-family: Arial;
 	font-size: 14px;
 }
 
-.mobile-home-read-more, .home-read-more a, .home-read-more a:link,.home-read-more a:hover, .home-read-more a:visited{
+.home-read-more, .home-read-more a, .home-read-more a:link,.home-read-more a:hover, .home-read-more a:visited{
 	font-family: Arial;
 	font-size: 14px;
 }
 
-.mobile-home-view-all{
+.home-view-all{
 	width: 100px;
 	height: 30px;
 	background: #262626;
@@ -16434,7 +16522,7 @@ p.mobile-home-meta{
 	padding-left: 3px;
 }
 
-.mobile-home-view-all:hover{
+.home-view-all:hover{
 	width: 100px;
 	height: 30px;
 	background: #bcbcbc;
@@ -16449,7 +16537,7 @@ p.mobile-home-meta{
 	padding-left: 3px;
 }
 
-.mobile-home-next{
+.home-next{
 	width: 135px;
 	height: 30px;
 	background: #262626;
@@ -16464,7 +16552,7 @@ p.mobile-home-meta{
 	padding-left: 3px;
 }
 
-.mobile-home-next:hover{
+.home-next:hover{
 	width: 135px;
 	height: 30px;
 	background: #bcbcbc;
@@ -16479,7 +16567,7 @@ p.mobile-home-meta{
 	padding-left: 3px;
 }
 
-.mobile-swiper-container1 {
+#swiper-container-1 {
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -16491,7 +16579,7 @@ p.mobile-home-meta{
 	z-index:1;
 }
 
-.mobile-swiper-container2 {
+#swiper-container-2 {
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -16503,7 +16591,7 @@ p.mobile-home-meta{
 	z-index:1;
 }
 
-.mobile-swiper-container3 {
+#swiper-container-3 {
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -16515,7 +16603,7 @@ p.mobile-home-meta{
 	z-index:1;
 }
 
-.mobile-swiper-container4 {
+#swiper-container-4 {
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -16575,20 +16663,24 @@ p.mobile-home-meta{
 	-ms-touch-action: pan-x;
 }
 
-.swiper-container1 {
+#swiper-container-1 {
 	width:100%;
+	height: 300px;
 }
 
-.swiper-container2 {
+#swiper-container-2 {
 	width:100%;
+	height: 300px;
 }
 
-.swiper-container3 {
+#swiper-container-3 {
 	width:100%;
+	height: 300px;
 }
 
-.swiper-container4 {
+#swiper-container-4 {
 	width:100%;
+	height: 300px;
 }
 
 .swiper-slide {
@@ -16597,11 +16689,11 @@ p.mobile-home-meta{
 }
 
 /* Latest Posts */
-#mobile-latest-posts-area{
+#latest-posts-area{
 	width: 100%;
 }
 
-.mobile-latest-posts-title-bg{
+.latest-posts-title-bg{
 	width: 100%;
 	height: 30px;
 	background: #262626;
@@ -16609,7 +16701,7 @@ p.mobile-home-meta{
 	margin-bottom: 5px;
 }
 
-h3.mobile-latest-posts-title{
+h3.latest-posts-title{
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	font-weight: 100;
 	font-size: 22px;
@@ -16617,21 +16709,21 @@ h3.mobile-latest-posts-title{
 	margin: 0px;
 }
 
-.mobile-latest-posts:nth-child(even){
+.latest-posts:nth-child(even){
 	background-color: #929292;
 	width: 100%;
 	padding-top: 12px;
 	padding-bottom: 12px;
 }
 
-.mobile-latest-posts:nth-child(odd){
+.latest-posts:nth-child(odd){
 	background-color: #E1E1E1;
 	width: 100%;
 	padding-top: 12px;
 	padding-bottom: 12px;
 }
 
-.mobile-latest-posts-photo{
+.latest-posts-photo{
 	width: 120px;
 	height: 60px;
 	border: 1px solid #000000;
@@ -16643,14 +16735,14 @@ h3.mobile-latest-posts-title{
 	margin-bottom: auto;
 }
 
-.mobile-latest-posts-headline-area{
+.latest-posts-headline-area{
 	width: 75%;
 	margin: auto;
 	float: right;
 	position: relative;
 }
 
-h5.mobile-latest-posts-headline, h5.mobile-latest-posts-headline a, h5.mobile-latest-posts-headline a:link, h5.mobile-latest-posts-headline a:visited, h5.mobile-latest-posts-headline a:hover{
+h5.latest-posts-headline, h5.latest-posts-headline a, h5.latest-posts-headline a:link, h5.latest-posts-headline a:visited, h5.latest-posts-headline a:hover{
 	font-family: Georgia;
 	font-size: 14px;
 	color: #000000;

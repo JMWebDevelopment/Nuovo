@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Nuovo\n"
-"POT-Creation-Date: 2015-03-16 20:59-0600\n"
-"PO-Revision-Date: 2015-03-16 21:00-0600\n"
+"POT-Creation-Date: 2015-03-24 16:52-0600\n"
+"PO-Revision-Date: 2015-03-24 16:53-0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru_RU\n"
@@ -24,17 +24,19 @@ msgstr ""
 msgid ""
 "We're sorry, but the post or page you are looking for is not here. It may "
 "have been removed before you got here or you have a bad link. You can either "
-"go back to the <a href=\""
+"go back to the "
 msgstr ""
 "Извините, но после или страница, которую вы ищете, не здесь. Он может был "
 "удален, прежде чем вы получили здесь или у вас плохая связь. Вы можете либо "
-"вернуться к < a href = \""
+"вернуться к"
 
 #: 404.php:11
-msgid "\">homepage</a> or use the search form below to find another post."
-msgstr ""
-"\">Домашняя страница</a> или использовать форму поиска ниже, чтобы найти "
-"другую должность."
+msgid "homepage"
+msgstr "домашняя страница"
+
+#: 404.php:11
+msgid " or use the search form below to find another post."
+msgstr " или использовать форму поиска ниже, чтобы найти другую должность."
 
 #: admin/theme-options.php:4 admin/theme-options.php:95
 msgid "Nuovo Theme Options"
@@ -43,6 +45,34 @@ msgstr "Nuovo Тема Опции"
 #: admin/theme-options.php:4
 msgid "Theme Options"
 msgstr "Настройки темы"
+
+#: admin/theme-options.php:57
+msgid "Default"
+msgstr "дефолт"
+
+#: admin/theme-options.php:61
+msgid "Blue"
+msgstr "Синий"
+
+#: admin/theme-options.php:65
+msgid "Green"
+msgstr "Зелёный"
+
+#: admin/theme-options.php:69
+msgid "Orange"
+msgstr "Оранжевый"
+
+#: admin/theme-options.php:73
+msgid "Purple"
+msgstr "Фиолетовый"
+
+#: admin/theme-options.php:77
+msgid "Red"
+msgstr "Красный"
+
+#: admin/theme-options.php:81
+msgid "Yellow"
+msgstr "Желтый"
 
 #: admin/theme-options.php:97
 msgid "Options saved"
@@ -261,7 +291,7 @@ msgstr "Сайдбар"
 msgid "Continue Reading&rsaquo;&rsaquo;"
 msgstr "Продолжить чтение &rsaquo; &rsaquo;"
 
-#: functions.php:194
+#: functions.php:193
 #, php-format
 msgid "Page %s"
 msgstr "Страница %s"
@@ -341,3 +371,17 @@ msgstr "Теги: "
 #: tag.php:5
 msgid "Tag Archive "
 msgstr "Архивы: "
+
+#~ msgid ""
+#~ "We're sorry, but the post or page you are looking for is not here. It may "
+#~ "have been removed before you got here or you have a bad link. You can "
+#~ "either go back to the <a href=\""
+#~ msgstr ""
+#~ "Извините, но после или страница, которую вы ищете, не здесь. Он может был "
+#~ "удален, прежде чем вы получили здесь или у вас плохая связь. Вы можете "
+#~ "либо вернуться к < a href = \""
+
+#~ msgid "\">homepage</a> or use the search form below to find another post."
+#~ msgstr ""
+#~ "\">Домашняя страница</a> или использовать форму поиска ниже, чтобы найти "
+#~ "другую должность."
