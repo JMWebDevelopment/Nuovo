@@ -153,15 +153,9 @@ function nuovo_scripts() {
 	wp_enqueue_script( 'nuovo-main-menu', get_template_directory_uri() . '/js/nuovo-main-menu.js' );
 	wp_enqueue_style( 'nuovo-styesheet', get_template_directory_uri() . '/style.css' );
 	$color = esc_attr(nuovo_options('nuovo-color-theme'));
-	if (($color != 'default') and (isset($color))) {
-		$color_styles = array(
-			'nuovo-desktop' => '/css/nuovo-' . $color . '.css',
-			'nuovo-tablet' => '/css/tablet/nuovo-' . $color . '.css',
-			'nuovo-mobile' => '/css/mobile/nuovo-' . $color . '.css'
-		);
-	
-		foreach ($color_styles as $key=>$location) {
-			wp_enqueue_style($key, get_template_directory_uri() . $location);
+	if ($color != '') { 
+		if (nuovo_options('nuovo-color-theme') != 'default') {
+			wp_enqueue_style('nuovo-'. $color . '-css', get_template_directory_uri() . '/css/nuovo-' . $color . '.css');
 		}
 	}
 	if (get_header_image()== '') {

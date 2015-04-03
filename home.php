@@ -43,8 +43,6 @@
 		<div class="home-title-bg">
 			<h3 class="home-title"><?php echo get_cat_name(esc_attr(nuovo_options('nuovo-category-one'))); ?></h3>
 		</div>
-		<div id="swiper-container-1">
-			<div class="swiper-wrapper">
 		<?php 
 			$cat1_args = array(
 				'showposts' => esc_attr(nuovo_options('nuovo-category-one-count')),
@@ -55,7 +53,7 @@
 			$cat1 = new WP_Query($cat1_args);
 			if ($cat1->have_posts()) : while ($cat1->have_posts()) : $cat1->the_post(); 
 		?>
-			<div class="home-post swiper-slide">
+			<div class="home-post">
 					<?php if (has_post_thumbnail()) { ?>
 						<div class="home-photo">
 							<a href="<?php the_permalink(); ?>">
@@ -71,8 +69,6 @@
 			</div>
 		<?php endwhile; ?>
 		<?php endif; ?>
-		</div>
-		</div>
 		<?php if (esc_attr(nuovo_options('nuovo-category-one'))) { ?>
 			<div class="home-view-all">
 				<a href="index.php?cat=<?php echo esc_attr(nuovo_options('nuovo-category-one')); ?>">
@@ -88,8 +84,6 @@
 			<div class="home-title-bg">
 				<h3 class="home-title"><?php echo get_cat_name(esc_attr(nuovo_options('nuovo-category-two'))); ?></h3>
 			</div>
-			<div id="swiper-container-2">
-				<div class="swiper-wrapper">
 			<?php 
 				$cat2_args = array(
 					'showposts' => esc_attr(nuovo_options('nuovo-category-two-count')),
@@ -99,7 +93,7 @@
 				);
 				$cat2 = new WP_Query($cat2_args);
 				if ($cat2->have_posts()) : while ($cat2->have_posts()) : $cat2->the_post(); ?>
-					<div class="home-post swiper-slide">
+					<div class="home-post">
 						<?php if (has_post_thumbnail()) { ?>
 							<div class="home-photo">
 								<a href="<?php the_permalink(); ?>">
@@ -115,8 +109,6 @@
 					</div>
 				<?php endwhile; ?>
 				<?php endif; ?>
-			</div>
-			</div>
 			<div class="home-view-all">
 				<a href="index.php?cat=<?php echo esc_attr(nuovo_options('nuovo-category-two')); ?>">
 					<?php _e('View All&rsaquo;&rsaquo;', 'nuovo'); ?>
@@ -131,8 +123,6 @@
 			<div class="home-title-bg">
 				<h3 class="home-title"><?php echo get_cat_name(esc_attr(nuovo_options('nuovo-category-three'))); ?></h3>
 			</div>
-			<div id="swiper-container-3">
-				<div class="swiper-wrapper">
 			<?php 
 			$cat3_args = array(
 				'showposts' => esc_attr(nuovo_options('nuovo-category-three-count')),
@@ -142,7 +132,7 @@
 			);
 			$cat3 = new WP_Query($cat3_args);
 			if ($cat3->have_posts()) : while ($cat3->have_posts()) : $cat3->the_post(); ?>
-				<div class="home-post swiper-slide">
+				<div class="home-post">
 					<?php if (has_post_thumbnail()) { ?>
 						<div class="home-photo">
 							<a href="<?php the_permalink(); ?>">
@@ -158,8 +148,6 @@
 				</div>
 			<?php endwhile; ?>
 			<?php endif; ?>
-			</div>
-			</div>
 			<div class="home-view-all">
 				<a href="index.php?cat=<?php echo esc_attr(nuovo_options('nuovo-category-three')); ?>">
 					<?php _e('View All&rsaquo;&rsaquo;', 'nuovo'); ?>
@@ -174,8 +162,6 @@
 			<div class="home-title-bg">
 				<h3 class="home-title"><?php echo get_cat_name(esc_attr(nuovo_options('nuovo-category-four'))); ?></h3>
 			</div>
-			<div id="swiper-container-4">
-			<div class="swiper-wrapper">
 			<?php 
 				$cat4_args = array(
 					'showposts' => esc_attr(nuovo_options('nuovo-category-four-count')),
@@ -185,7 +171,7 @@
 				);
 				$cat4 = new WP_Query($cat4_args);
 				if ($cat4->have_posts()) : while ($cat4->have_posts()) : $cat4->the_post(); ?>
-					<div class="home-post swiper-slide">
+					<div class="home-post">
 						<?php if (has_post_thumbnail()) { ?>
 							<div class="home-photo">
 								<a href="<?php the_permalink(); ?>">
@@ -201,8 +187,6 @@
 				</div>
 			<?php endwhile; ?>
 			<?php endif; ?>
-			</div>
-			</div>
 			<div class="home-view-all">
 				<a href="index.php?cat=<?php echo esc_attr(nuovo_options('nuovo-category-four')); ?>">
 					<?php _e('View All&rsaquo;&rsaquo;', 'nuovo'); ?>

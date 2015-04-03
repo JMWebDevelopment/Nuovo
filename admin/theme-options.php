@@ -53,32 +53,32 @@ function nuovo_get_option_defaults(){
 // Add the color theme options into an array
 $nuovo_colors = array(
 	'default' => array(
-		'value' => 'default',
-		'label' => 'Default'
+		'value' => __('default', 'nuovo'),
+		'label' => __('Default', 'nuovo')
 	),
 	'blue' => array(
-		'value' => 'blue',
-		'label' => 'Blue'
+		'value' => __('blue', 'nuovo'),
+		'label' => __('Blue', 'nuovo')
 	),
 	'green' => array(
-		'value' => 'green',
-		'label' => 'Green'
+		'value' => __('green', 'nuovo'),
+		'label' => __('Green', 'nuovo')
 	),
 	'orange' => array(
-		'value' => 'orange',
-		'label' => 'Orange'
+		'value' => __('orange', 'nuovo'),
+		'label' => __('Orange', 'nuovo')
 	),
 	'purple' => array(
-		'value' => 'purple',
-		'label' => 'Purple'
+		'value' => __('purple', 'nuovo'),
+		'label' => __('Purple', 'nuovo')
 	),
 	'red' => array(
-		'value' => 'red',
-		'label' => 'Red'
+		'value' => __('red', 'nuovo'),
+		'label' => __('Red', 'nuovo')
 	),
 	'yellow' => array(
-		'value' => 'yellow',
-		'label' => 'Yellow'
+		'value' => __( 'yellow', 'nuovo' ),
+		'label' => __( 'Yellow', 'nuovo' )
 	),
 );
 
@@ -128,7 +128,7 @@ function nuovo_build_options_page(){
 									if ($color['value'] == $settings['nuovo-color-theme']) {
 										$selected = 'selected="selected"';
 									}
-									echo '<option value="' . esc_attr($color['value']) . '" ' . $selected . '>' . __($label) . '</option>';
+									echo '<option value="' . esc_attr($color['value']) . '" ' . $selected . '>' . $label . '</option>';
 								}
 								?>
 							</select>
