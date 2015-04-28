@@ -30,6 +30,11 @@ function nuovo_setup() {
 	//Add Support for Featured Images
 	add_theme_support( 'post-thumbnails', array( 'post' ) );
 
+	//Add Image Sizes
+	add_image_size('single-post', 630, 315);
+	add_image_size('archive', 260, 132);
+	add_image_size('slideshow', 570, 289);
+
 	// Add support for editor styles
 	add_editor_style();
 
@@ -82,7 +87,7 @@ function nuovo_advanced_comment($comment, $args, $depth) {
    <div class="clear"></div>
 <?php }
 function nuovo_delete_comment_link($id) {
-  if (current_user_can('edit_post')) {
+  if (current_user_can('edit_posts')) {
     echo '<a href="'.admin_url("comment.php?action=cdc&c=$id").'">' . __('del', 'nuovo') .' </a> ';
     echo '<a href="'.admin_url("comment.php?action=cdc&dt=spam&c=$id").'">' . __('spam', 'nuovo') . '</a>';
   }
@@ -92,6 +97,7 @@ function nuovo_delete_comment_link($id) {
 function nuovo_sidebar() {
 	register_sidebar(array(
 		'name'=> __('Sidebar', 'nuovo'),
+		'id' => 'sidebar-1',
 		'before_widget' => '<div class="widget-wrap">',
 		'after_widget' => '</p> </div>',
 		'before_title' => '<div class="widget-title-bg"><h3 class="widget-title">',
@@ -152,9 +158,9 @@ function nuovo_scripts() {
 	}
 	wp_enqueue_script( 'nuovo-main-menu', get_template_directory_uri() . '/js/nuovo-main-menu.js' );
 	wp_enqueue_style( 'nuovo-styesheet', get_template_directory_uri() . '/style.css' );
-	$color = esc_attr(nuovo_options('nuovo-color-theme'));
+	$color = esc_attr(get_theme_mod('nuovo-color-theme'));
 	if ($color != '') { 
-		if (nuovo_options('nuovo-color-theme') != 'default') {
+		if (get_theme_mod('nuovo-color-theme') != 'default') {
 			wp_enqueue_style('nuovo-'. $color . '-css', get_template_directory_uri() . '/css/nuovo-' . $color . '.css');
 		}
 	}

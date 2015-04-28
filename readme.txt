@@ -34,7 +34,7 @@ Except where otherwise noted, all photos in the screenshot are licensed under a 
 Setting up the homepage may look daunting, but it's not that bad. All you really need to do is define a category for the first three category post areas as well as how many posts per category area. It's recommended to have the posts per area a multiple of three so each row is full. You don't have to necessarily pick a category for the featured post slider; however, I recommend creating either a "featured" or "top stories" category to display the posts you want everyone to see. Also, you don't have to display a fourth category area or the latest posts, but if you do, make sure to define how many of each you wish to display.
 
 = Featured Photos =
-Nuovo has a lot of support for featured photos. The requested size for all featured photos is 630 pixels by 315 pixels, or a 2:1 ratio.
+Nuovo has a lot of support for featured photos. The optimal size for all featured photos is 630 pixels by 315 pixels, or a 2:1 ratio, otherwise if the photo is too small, there will be white space inside of the frame or if the photo is too big, it will get cut off.
 
 = Photos =
 To look good in the mobile version, it's recommended to keep any photos in your posts to a maximum width of 280 pixels.
@@ -50,5 +50,5 @@ Nuovo also supports custom backgrounds as well. It can either be a photo backgro
 
 == Changelog ==
 
-= 1.0.13 =
+= 1.0.14 =
 Initial release to the WordPress theme directory.

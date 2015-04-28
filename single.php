@@ -4,7 +4,7 @@
 		<div id="single-post" class="clearfix">
 			<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				<?php if (has_post_thumbnail()) { ?>
-					<div class="single-featured-photo"><?php the_post_thumbnail(); ?></div>
+					<div class="single-featured-photo"><?php the_post_thumbnail('single-post'); ?></div>
 					<hr />
 				<?php } ?>
 				<h3 class="single-headline"><?php the_title(); ?></h3>
@@ -29,7 +29,7 @@
 					</div>
 					<!--End Post Text-->
 				</div>
-				<?php if (esc_attr(nuovo_options('nuovo-author-bio' == 1))) { ?>
+				<?php if (esc_attr(get_theme_mod('nuovo-author-bio') == 1)) { ?>
 					<!--Begin Author Bio-->
 					<div class="archive-separator"></div>
 					<div class="archive-featured-photo-area">

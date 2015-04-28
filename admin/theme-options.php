@@ -1,327 +1,473 @@
-<?php 
-// Create the theme options page
-function nuovo_create_theme_options_page(){
-	add_theme_page(__('Nuovo Theme Options', 'nuovo'),__('Theme Options', 'nuovo'),'edit_theme_options','nuovo_options','nuovo_build_options_page');
-}
-add_action('admin_menu','nuovo_create_theme_options_page');
+<?php
+/**
+ * Add the general options to the theme customizer
+ */
+function nuovo_general_customizer( $wp_customize ) {
+    $wp_customize->add_section(
+        'general',
+        array(
+            'title' => __('General Settings', 'nuovo'),
+            'description' => __('This is the general settings section.', 'nuovo'),
+            'priority' => 35,
+        )
+    );
 
-// Register the scripts needed for the theme options page
-function nuovo_admin_scripts() {
-	if (isset($_GET['page']) && $_GET['page'] == 'nuovo_options') {
-   		wp_enqueue_script('jquery-ui');
-        wp_enqueue_script('jquery-ui-tabs');
-		wp_enqueue_script('nuovo-option-tabs', get_template_directory_uri() . '/js/nuovo-options-tabs.js');
-		wp_enqueue_style('nuovo-option-styles', get_template_directory_uri() . '/admin/nuovo-options-style.css');
+    // Add in the RSS Feed Option
+    $wp_customize->add_setting(
+   		'nuovo-rss-feed',
+    	array(
+        	'default' => '',
+        	'sanitize_callback' => 'nuovo_sanitize_link',
+    	)
+	);
+
+	$wp_customize->add_control(
+    	'nuovo-rss-feed',
+    	array(
+        	'label' => __('Custom RSS Feed', 'nuovo'),
+        	'section' => 'general',
+        	'type' => 'text',
+    	)
+	);
+
+	// Add in the Color Theme Option
+    $wp_customize->add_setting(
+   		'nuovo-color-theme',
+    	array(
+        	'default' => 'default',
+        	'sanitize_callback' => 'nuovo_sanitize_select',
+    	)
+	);
+
+	$wp_customize->add_control(
+    	'nuovo-color-theme',
+    	array(
+        	'label' => __('Color Theme', 'nuovo'),
+        	'section' => 'general',
+        	'type' => 'select',
+        	'choices' => array(
+        		'default' => __('Default', 'nuovo'),
+        		'blue' => __('Blue', 'nuovo'),
+        		'green' => __('Green', 'nuovo'),
+        		'orange' => __('Orange', 'nuovo'),
+        		'purple' => __('Purple', 'nuovo'),
+        		'red' => __('Red', 'nuovo'),
+        		'yellow' => __('Yellow', 'nuovo')
+        	)
+    	)
+	);
+
+	// Add in the Top Menu Option
+    $wp_customize->add_setting(
+   		'nuovo-top-menu',
+    	array(
+        	'default' => '',
+        	'sanitize_callback' => 'nuovo_sanitize_checkbox',
+    	)
+	);
+
+	$wp_customize->add_control(
+    	'nuovo-top-menu',
+    	array(
+        	'label' => __('Top Menu', 'nuovo'),
+        	'section' => 'general',
+        	'type' => 'checkbox',
+    	)
+	);
+
+	// Add in the Author Bio Option
+    $wp_customize->add_setting(
+   		'nuovo-author-bio',
+    	array(
+        	'default' => '',
+        	'sanitize_callback' => 'nuovo_sanitize_checkbox',
+    	)
+	);
+
+	$wp_customize->add_control(
+    	'nuovo-author-bio',
+    	array(
+        	'label' => __('Author Bio', 'nuovo'),
+        	'section' => 'general',
+        	'type' => 'checkbox',
+    	)
+	);
+}
+add_action( 'customize_register', 'nuovo_general_customizer' );
+
+/**
+ * Add the social media options to the theme customizer
+ */
+function nuovo_social_customizer( $wp_customize ) {
+    $wp_customize->add_section(
+        'social_media',
+        array(
+            'title' => __('Social Media Settings', 'nuovo'),
+            'description' => __('This is the social media settings section.', 'nuovo'),
+            'priority' => 35,
+        )
+    );
+
+    // Add the Facebook Link Option
+    $wp_customize->add_setting(
+   		'nuovo-facebook',
+    	array(
+        	'default' => '',
+        	'sanitize_callback' => 'nuovo_sanitize_link',
+    	)
+	);
+
+	$wp_customize->add_control(
+    	'nuovo-facebook',
+    	array(
+        	'label' => __('Facebook Link', 'nuovo'),
+        	'section' => 'social_media',
+        	'type' => 'text',
+    	)
+	);
+
+	// Add the Twitter Link Option
+    $wp_customize->add_setting(
+   		'nuovo-twitter',
+    	array(
+        	'default' => '',
+        	'sanitize_callback' => 'nuovo_sanitize_link',
+    	)
+	);
+
+	$wp_customize->add_control(
+    	'nuovo-twitter',
+    	array(
+        	'label' => __('Twitter Link', 'nuovo'),
+        	'section' => 'social_media',
+        	'type' => 'text',
+    	)
+	);
+
+	// Add the YouTube Link Option
+    $wp_customize->add_setting(
+   		'nuovo-youtube',
+    	array(
+        	'default' => '',
+        	'sanitize_callback' => 'nuovo_sanitize_link',
+    	)
+	);
+
+	$wp_customize->add_control(
+    	'nuovo-youtube',
+    	array(
+        	'label' => __('YouTube Link', 'nuovo'),
+        	'section' => 'social_media',
+        	'type' => 'text',
+    	)
+	);
+
+	// Add the Google+ Link Option
+    $wp_customize->add_setting(
+   		'nuovo-googleplus',
+    	array(
+        	'default' => '',
+        	'sanitize_callback' => 'nuovo_sanitize_link',
+    	)
+	);
+
+	$wp_customize->add_control(
+    	'nuovo-googleplus',
+    	array(
+        	'label' => __('Google+ Link', 'nuovo'),
+        	'section' => 'social_media',
+        	'type' => 'text',
+    	)
+	);
+
+	// Add the LinkedIn Link Option
+    $wp_customize->add_setting(
+   		'nuovo-linkedin',
+    	array(
+        	'default' => '',
+        	'sanitize_callback' => 'nuovo_sanitize_link',
+    	)
+	);
+
+	$wp_customize->add_control(
+    	'nuovo-linkedin',
+    	array(
+        	'label' => __('LinkedIn Link', 'nuovo'),
+        	'section' => 'social_media',
+        	'type' => 'text',
+    	)
+	);
+}
+add_action( 'customize_register', 'nuovo_social_customizer' );
+
+/**
+ * Add the homepage options to the theme customizer
+ */
+function nuovo_homepage_customizer( $wp_customize ) {
+    
+    $cats = get_categories();
+    foreach($cats as $cat) {
+          $cat_args[$cat->term_id] = $cat->name;
+    }
+
+	$wp_customize->add_section(
+        'homepage',
+        array(
+            'title' => __('Homepage Options', 'nuovo'),
+            'description' => __('This is the homepage settings section.', 'nuovo'),
+            'priority' => 35,
+        )
+    );
+
+	// Add the Slideshow Category Option
+    $wp_customize->add_setting(
+   		'nuovo-slideshow-category',
+    	array(
+        	'default' => '',
+        	'sanitize_callback' => 'nuovo_sanitize_category',
+    	)
+	);
+
+	$wp_customize->add_control(
+        'nuovo-slideshow-category',
+        array(
+            'label' => 'Slideshow Category',
+            'section' => 'homepage',
+            'type' => 'select',
+            'choices' => $cat_args
+        )
+    );
+    
+    // Add the Slideshow Count Option
+    $wp_customize->add_setting(
+        'nuovo-slideshow-count',
+        array(
+            'default' => '4',
+            'sanitize_callback' => 'nuovo_sanitize_num',
+        )
+    );
+
+    $wp_customize->add_control(
+        'nuovo-slideshow-count',
+        array(
+            'label' => 'Number of Slideshow Posts',
+            'section' => 'homepage',
+            'type' => 'text',
+        )
+    );
+
+    // Add the First Category Option
+    $wp_customize->add_setting(
+        'nuovo-category-one',
+        array(
+            'default' => '',
+            'sanitize_callback' => 'nuovo_sanitize_category',
+        )
+    );
+
+    $wp_customize->add_control(
+        'nuovo-category-one',
+        array(
+            'label' => 'First Category',
+            'section' => 'homepage',
+            'type' => 'select',
+            'choices' => $cat_args,
+        )
+    );
+
+    // Add the First Category Option
+    $wp_customize->add_setting(
+        'nuovo-category-one-count',
+        array(
+            'default' => '3',
+            'sanitize_callback' => 'nuovo_sanitize_category',
+        )
+    );
+
+    $wp_customize->add_control(
+        'nuovo-category-one-count',
+        array(
+            'label' => 'Number of Posts in the First Section',
+            'section' => 'homepage',
+            'type' => 'text',
+        )
+    );
+
+    // Add the Second Category Option
+    $wp_customize->add_setting(
+        'nuovo-category-two',
+        array(
+            'default' => '',
+            'sanitize_callback' => 'nuovo_sanitize_category',
+        )
+    );
+
+    $wp_customize->add_control(
+        'nuovo-category-two',
+        array(
+            'label' => 'Second Category',
+            'section' => 'homepage',
+            'type' => 'select',
+            'choices' => $cat_args
+        )
+    );
+
+    // Add the Second Category Count Option
+    $wp_customize->add_setting(
+        'nuovo-category-two-count',
+        array(
+            'default' => '3',
+            'sanitize_callback' => 'nuovo_sanitize_num',
+        )
+    );
+
+    $wp_customize->add_control(
+        'nuovo-category-two-count',
+        array(
+            'label' => 'Number of Posts in the Second Section',
+            'section' => 'homepage',
+            'type' => 'text',
+        )
+    );
+
+    // Add the Third Category Option
+    $wp_customize->add_setting(
+        'nuovo-category-three',
+        array(
+            'default' => '',
+            'sanitize_callback' => 'nuovo_sanitize_category',
+        )
+    );
+
+    $wp_customize->add_control(
+        'nuovo-category-three',
+        array(
+            'label' => 'Third Category',
+            'section' => 'homepage',
+            'type' => 'select',
+            'choices' => $cat_args
+        )
+    );
+
+    // Add the Third Category Count Option
+    $wp_customize->add_setting(
+        'nuovo-category-three-count',
+        array(
+            'default' => '3',
+            'sanitize_callback' => 'nuovo_sanitize_num',
+        )
+    );
+
+    $wp_customize->add_control(
+        'nuovo-category-three-count',
+        array(
+            'label' => 'Number of Posts in the Third Section',
+            'section' => 'homepage',
+            'type' => 'text',
+        )
+    );
+
+    // Add the Fourth Category Option
+    $wp_customize->add_setting(
+        'nuovo-category-four',
+        array(
+            'default' => '',
+            'sanitize_callback' => 'nuovo_sanitize_category',
+        )
+    );
+
+    $wp_customize->add_control(
+        'nuovo-category-four',
+        array(
+            'label' => 'Fourth Category',
+            'section' => 'homepage',
+            'type' => 'select',
+            'choices' => $cat_args
+        )
+    );
+
+    // Add the Fourth Category Count Option
+    $wp_customize->add_setting(
+        'nuovo-category-four-count',
+        array(
+            'default' => '3',
+            'sanitize_callback' => 'nuovo_sanitize_num',
+        )
+    );
+
+    $wp_customize->add_control(
+        'nuovo-category-four-count',
+        array(
+            'label' => 'Number of Posts in the Fourth Section',
+            'section' => 'homepage',
+            'type' => 'text',
+        )
+    );
+
+    // Add the Latest Post Count Option
+    $wp_customize->add_setting(
+        'nuovo-latest-posts-count',
+        array(
+            'default' => '10',
+            'sanitize_callback' => 'nuovo_sanitize_num',
+        )
+    );
+
+    $wp_customize->add_control(
+        'nuovo-latest-posts-count',
+        array(
+            'label' => 'Number of Latest Posts',
+            'section' => 'homepage',
+            'type' => 'text',
+        )
+    );
+
+}
+add_action( 'customize_register', 'nuovo_homepage_customizer' );
+
+function nuovo_sanitize_link($input) {
+	return wp_filter_nohtml_kses($input);
+}
+
+function nuovo_sanitize_select( $input ) {
+    $valid = array(
+        'default' => __('Default', 'nuovo'),
+        'blue' => __('Blue', 'nuovo'),
+        'green' => __('Green', 'nuovo'),
+        'orange' => __('Orange', 'nuovo'),
+        'purple' => __('Purple', 'nuovo'),
+        'red' => __('Red', 'nuovo'),
+        'yellow' => __('Yellow', 'nuovo')
+    );
+ 
+    if ( array_key_exists( $input, $valid ) ) {
+        return $input;
+    } else {
+        return 'default';
     }
 }
-add_action('admin_enqueue_scripts', 'nuovo_admin_scripts');
 
-// Register the settings and set a callback function to sanitize the options
-function nuovo_register_settings(){
-	register_setting('nuovo_theme_options', 'nuovo_options', 'nuovo_validate_options');
-}
-add_action('admin_init','nuovo_register_settings');
-
-// Assign Default Values
-function nuovo_get_option_defaults(){
-	$defaults = array(
-		'nuovo-rss-feed' => '',
-		'nuovo-color-theme' => 'default',
-		'nuovo-top-menu' => '',
-		'nuovo-author-bio' => '',
-		'nuovo-facebook' => '',
-		'nuovo-twitter' => '   ',
-		'nuovo-youtube' => '',
-		'nuovo-googleplus' => '',
-		'nuovo-linkedin' => '',
-		'nuovo-slideshow-category' => '',
-		'nuovo-slideshow-count' => '4',
-		'nuovo-category-one' => '',
-		'nuovo-category-one-count' => '3',
-		'nuovo-category-two' => '',
-		'nuovo-category-two-count' => '3',
-		'nuovo-category-three' => '',
-		'nuovo-category-three-count' => '3',
-		'nuovo-category-four' => '',
-		'nuovo-category-four-count' => '3',
-		'nuovo-latest-posts-count' => '10'
-	);
-	return apply_filters('nuovo_option_defaults', $defaults);
+function nuovo_sanitize_checkbox( $input ) {
+    if ( $input == 1 ) {
+        return 1;
+    } else {
+        return '';
+    }
 }
 
-
-// Add the color theme options into an array
-$nuovo_colors = array(
-	'default' => array(
-		'value' => __('default', 'nuovo'),
-		'label' => __('Default', 'nuovo')
-	),
-	'blue' => array(
-		'value' => __('blue', 'nuovo'),
-		'label' => __('Blue', 'nuovo')
-	),
-	'green' => array(
-		'value' => __('green', 'nuovo'),
-		'label' => __('Green', 'nuovo')
-	),
-	'orange' => array(
-		'value' => __('orange', 'nuovo'),
-		'label' => __('Orange', 'nuovo')
-	),
-	'purple' => array(
-		'value' => __('purple', 'nuovo'),
-		'label' => __('Purple', 'nuovo')
-	),
-	'red' => array(
-		'value' => __('red', 'nuovo'),
-		'label' => __('Red', 'nuovo')
-	),
-	'yellow' => array(
-		'value' => __( 'yellow', 'nuovo' ),
-		'label' => __( 'Yellow', 'nuovo' )
-	),
-);
-
-// Create the theme options form
-function nuovo_build_options_page(){
-	
-	global $nuovo_options, $nuovo_colors;
-
-	if (!isset($_REQUEST['updated'])){
-		$_REQUEST['updated'] = false;
-	}
-	?>
-	<div class="wrap">
-		<?php echo "<h2>" . __( 'Nuovo Theme Options', 'nuovo' ) . "</h2>"; ?>
-		<?php if (false !== $_REQUEST['updated']) { ?>
-			<div class="updated fade"><p><strong><?php _e( 'Options saved', 'nuovo' ); ?></strong></p></div>
-		<?php } ?>
-		<div id="tab-wrap">
-		<form method="post" action="options.php">
-			<?php $settings = wp_parse_args(
-				get_option('nuovo_options', array()), nuovo_get_option_defaults()
-			); ?>
-			<?php settings_fields('nuovo_theme_options'); ?>
-			<!--Tabs to go here -->
-			<ul>
-				<li class="nav-tab"><a href="#tab-general"><?php _e('General' ,'nuovo'); ?></a></li>
-				<li class="nav-tab"><a href="#tab-social"><?php _e('Social' ,'nuovo'); ?></a></li>
-				<li class="nav-tab"><a href="#tab-homepage"><?php _e('Homepage' ,'nuovo'); ?></a></li>
-			</ul>
-			<!--General options here-->
-			<div id="tab-general">
-				<table>
-					<!-- RSS Feed-->
-					<tr valign="top">
-						<th scope="row"><label for="nuovo-rss-feed"><?php _e('RSS Feed', 'nuovo'); ?></label></th>
-						<td><input id="nuovo-rss-feed" name="nuovo_options[nuovo-rss-feed]" type="text" value="<?php echo esc_attr($settings['nuovo-rss-feed']); ?>" /></td>
-					</tr>
-					<!-- Color Theme-->
-					<tr valign="top">
-						<th scope="row"><label for="nuovo-color-theme"><?php _e('Color Theme', 'nuovo'); ?></label></th>
-						<td>
-							<select id="nuovo-color-theme" name="nuovo_options[nuovo-color-theme]">
-								<?php
-								foreach($nuovo_colors as $color){
-									$label = $color['label'];
-									$selected = "";
-									if ($color['value'] == $settings['nuovo-color-theme']) {
-										$selected = 'selected="selected"';
-									}
-									echo '<option value="' . esc_attr($color['value']) . '" ' . $selected . '>' . $label . '</option>';
-								}
-								?>
-							</select>
-						</td>
-					</tr>
-					<!--Top Menu-->
-					<tr valign="top">
-						<th scope="row"><label for="nuovo-top-menu"><?php _e('Top Menu', 'nuovo'); ?></label></th>
-						<td><input type="checkbox" id="nuovo-top-menu" name="nuovo_options[nuovo-top-menu]" value="1" <?php checked(true, $settings['nuovo-top-menu']); ?> /></td>
-					</tr>
-					<!--Author Bio-->
-					<tr valign="top">
-						<th scope="row"><label for="nuovo-author-bio"><?php _e('Author Bio', 'nuovo'); ?></label></th>
-						<td><input type="checkbox" id="nuovo-author-bio" name="nuovo_options[nuovo-author-bio]" value="1" <?php checked(true, $settings['nuovo-author-bio']); ?> /></td>
-					</tr>
-				</table>
-			</div>
-			<!--Social options here-->
-			<div id="tab-social">
-				<table>
-					<!-- Facebook Link -->
-					<tr valign="top">
-						<th scope="row"><label for="nuovo-facebook"><?php _e('Facebook', 'nuovo'); ?></label></th>
-						<td><input id="nuovo-facebook" name="nuovo_options[nuovo-facebook]" type="text" value="<?php echo esc_attr($settings['nuovo-facebook']); ?>" /></td>
-					</tr>
-					<!--Twitter Link-->
-					<tr valign="top">
-						<th scope="row"><label for="nuovo-twitter"><?php _e('Twitter Link', 'nuovo'); ?></label></th>
-						<td><input id="nuovo-twitter" name="nuovo_options[nuovo-twitter]" type="text" value="<?php echo esc_attr($settings['nuovo-twitter']); ?>" /></td>
-					</tr>
-					<!--YouTube Link-->
-					<tr valign="top">
-						<th scope="row"><label for="nuovo-youtube"><?php _e('YouTube Link', 'nuovo'); ?></label></th>
-						<td><input id="nuovo-youtube" name="nuovo_options[nuovo-youtube]" type="text" value="<?php echo esc_attr($settings['nuovo-youtube']); ?>" /></td>
-					</tr>
-					<!--Google Plus Link-->
-					<tr valign="top">
-						<th scope="row"><label for="nuovo-googleplus"><?php _e('Google+ Link', 'nuovo'); ?></label></th>
-						<td><input id="nuovo-googleplus" name="nuovo_options[nuovo-googleplus]" type="text" value="<?php echo esc_attr($settings['nuovo-googleplus']); ?>" /></td>
-					</tr>
-					<!--LinkedIn Link-->
-					<tr valign="top">
-						<th scope="row"><label for="nuovo-linkedin"><?php _e('LinkedIn', 'nuovo'); ?></label></th>
-						<td><input id="nuovo-linkedin" name="nuovo_options[nuovo-linkedin]" type="text" value="<?php echo esc_attr($settings['nuovo-linkedin']); ?>" /></td>
-					</tr>
-				</table>
-			</div>
-			<!--Homepage options here-->
-			<div id="tab-homepage">
-				<table>
-					<tr valign="top">
-						<th scope="row"><label for="nuovo-slideshow-category"><?php _e('Slideshow Category', 'nuovo'); ?></label></th>
-						<td><?php wp_dropdown_categories(array('selected' => esc_attr($settings['nuovo-slideshow-category']), 'name' => 'nuovo_options[nuovo-slideshow-category]', 'orderby' => 'name', 'hierarchical' => 1, 'show_option_none' => __("None", 'nuovo'), 'hide_empty' => '0' )); ?></td>
-					</tr>
-					<tr valign="top">
-						<th scope="row"><label for="nuovo-slideshow-count"><?php _e('Number of posts for the slideshow', 'nuovo'); ?></label></th>
-						<td><input id="nuovo-slideshow-count" name="nuovo_options[nuovo-slideshow-count]" type="number" min="-1" value="<?php echo esc_attr($settings['nuovo-slideshow-count']) ?>" size="2"/></td>
-					</tr>
-					<tr valign="top">
-						<th scope="row"><label for="nuovo-category-one"><?php _e('First Category', 'nuovo'); ?></label></th>
-						<td><?php wp_dropdown_categories(array('selected' => esc_attr($settings['nuovo-category-one']), 'name' => 'nuovo_options[nuovo-category-one]', 'orderby' => 'name', 'hierarchical' => 1, 'show_option_none' => __("None", 'nuovo'), 'hide_empty' => '0' )); ?></td>
-					</tr>
-					<tr valign="top">
-						<th scope="row"><label for="nuovo-category-one-count"><?php _e('Number of posts for Category One', 'nuovo'); ?></label></th>
-						<td><input id="nuovo-category-one-count" name="nuovo_options[nuovo-category-one-count]" type="number" min="-1" value="<?php echo esc_attr($settings['nuovo-category-one-count']) ?>" /></td>
-					</tr>
-					<tr valign="top">
-						<th scope="row"><label for="nuovo-category-two"><?php _e('Second Category', 'nuovo'); ?></label></th>
-						<td><?php wp_dropdown_categories(array('selected' => esc_attr($settings['nuovo-category-two']), 'name' => 'nuovo_options[nuovo-category-two]', 'orderby' => 'name', 'hierarchical' => 1, 'show_option_none' => __("None", 'nuovo'), 'hide_empty' => '0' )); ?></td>
-					</tr>
-					<tr valign="top">
-						<th scope="row"><label for="nuovo-category-two-count"><?php _e('Number of posts for Category Two', 'nuovo'); ?></label></th>
-						<td><input id="nuovo-category-two-count" name="nuovo_options[nuovo-category-two-count]" type="number" min="-1" value="<?php echo esc_attr($settings['nuovo-category-two-count']) ?>" /></td>
-					</tr>
-					<tr valign="top">
-						<th scope="row"><label for="nuovo-category-three"><?php _e('Third Category', 'nuovo'); ?></label></th>
-						<td><?php wp_dropdown_categories(array('selected' => esc_attr($settings['nuovo-category-three']), 'name' => 'nuovo_options[nuovo-category-three]', 'orderby' => 'name', 'hierarchical' => 1, 'show_option_none' => __("None", 'nuovo'), 'hide_empty' => '0' )); ?></td>
-					</tr>
-					<tr valign="top">
-						<th scope="row"><label for="nuovo-category-three-count"><?php _e('Number of posts for Category Three', 'nuovo'); ?></label></th>
-						<td><input id="nuovo-category-three-count" name="nuovo_options[nuovo-category-three-count]" type="number" min="-1" value="<?php echo esc_attr($settings['nuovo-category-three-count']) ?>" /></td>
-					</tr>
-					<tr valign="top">
-						<th scope="row"><label for="nuovo-category-four"><?php _e('Fourth Category', 'nuovo'); ?></label></th>
-						<td><?php wp_dropdown_categories(array('selected' => esc_attr($settings['nuovo-category-four']), 'name' => 'nuovo_options[nuovo-category-four]', 'orderby' => 'name', 'hierarchical' => 1, 'show_option_none' => __("None", 'nuovo'), 'hide_empty' => '0' )); ?></td>
-					</tr>
-					<tr valign="top">
-						<th scope="row"><label for="nuovo-category-four-count"><?php _e('Number of posts for Category Four', 'nuovo'); ?></label></th>
-						<td><input id="nuovo-category-four-count" name="nuovo_options[nuovo-category-four-count]" type="number" min="-1" value="<?php echo esc_attr($settings['nuovo-category-four-count']) ?>" /></td>
-					</tr>
-					<tr valign="top">
-						<th scope="row"><label for="nuovo-latest-posts-count"><?php _e('Number of posts for Latest Posts', 'nuovo'); ?></label></th>
-						<td><input id="nuovo-latest-posts-count" name="nuovo_options[nuovo-latest-posts-count]" type="number" min="-1" value="<?php echo esc_attr($settings['nuovo-latest-posts-count']) ?>" /></td>
-					</tr>
-				</table>
-			</div>
-			<p class="submit"><input type="submit" class="button-primary" value="<?php _e('Save Options', 'nuovo'); ?>" /></p>
-		</form>
-		</div>
-	</div>
-
-	<?php
-}
-// Validate and sanitize the options
-function nuovo_validate_options($input){
-	global $nuovo_options, $nuovo_colors;
-	$settings = get_option('nuovo_options', $nuovo_options);
+function nuovo_sanitize_category( $input ) {
 	$cats = get_categories();
-
-	// Validate the input for the RSS feed
-	$input['nuovo-rss-feed'] = wp_filter_nohtml_kses( $input['nuovo-rss-feed'] );
-
-	// Validate the input for the color theme
-	$prev = $settings['nuovo-color-theme'];
-	if ( !array_key_exists( $input['nuovo-color-theme'], $nuovo_colors ) ){
-		$input['nuovo-color-theme'] = $prev;
+    foreach($cats as $cat) {
+          $cat_args[$cat->term_id] = $cat->name;
+    }
+	if ( array_key_exists( $input, $cat_args ) ){
+		return $input;
+	} else {
+		return 1;
 	}
+}
 
-	// Validate the input for the top menu
-	if ( ! isset( $input['nuovo-top-menu'] ) ){
-		$input['nuovo-top-menu'] = null;
-	}
-	$input['nuovo-top-menu'] = ( $input['nuovo-top-menu'] == 1 ? 1 : 0 );
-
-	// Validate the input for the author bio
-	if ( ! isset( $input['nuovo-author-bio'] ) ){
-		$input['nuovo-author-bio'] = null;
-	}
-	$input['nuovo-author-bio'] = ( $input['nuovo-author-bio'] == 1 ? 1 : 0 );
-
-	// Validate the input for the Facebook Link
-	$input['nuovo-facebook'] = wp_filter_nohtml_kses( $input['nuovo-facebook'] );
-
-	// Validate the input for the Twitter Link
-	$input['nuovo-twitter'] = wp_filter_nohtml_kses( $input['nuovo-twitter'] );
-
-	// Validate the input for the YouTube Link
-	$input['nuovo-youtube'] = wp_filter_nohtml_kses( $input['nuovo-youtube'] );
-
-	// Validate the input for the Google+ Link
-	$input['nuovo-googleplus'] = wp_filter_nohtml_kses( $input['nuovo-googleplus'] );
-
-	// Validate the input for the LinkedIn Link
-	$input['nuovo-linkedin'] = wp_filter_nohtml_kses( $input['nuovo-linkedin'] );
-
-	// Validate the input for the Slideshow Category
-	$prev = $settings['nuovo-slideshow-category'];
-	if ( !array_key_exists( $input['nuovo-slideshow-category'], $cats ) ){
-		$input['nuovo-slideshow-category'] = $prev;
-	}
-
-	// Validate the input for the Slideshow Category Count
-	$input['nuovo-slideshow-count'] = intval( $input['nuovo-slideshow-count'] );
-
-	// Validate the input for the First Category
-	$prev = $settings['nuovo-category-one'];
-	if ( !array_key_exists( $input['nuovo-category-one'], $cats ) ){
-		$input['nuovo-category-one'] = $prev;
-	}
-
-	// Validate the input for the Category One Count
-	$input['nuovo-category-one-count'] = intval( $input['nuovo-category-one-count'] );
-
-	// Validate the input for the Second Category
-	$prev = $settings['nuovo-category-two'];
-	if ( !array_key_exists( $input['nuovo-category-two'], $cats ) ){
-		$input['nuovo-category-two'] = $prev;
-	}
-
-	// Validate the input for the Category Two Count
-	$input['nuovo-category-two-count'] = intval( $input['nuovo-category-two-count'] );
-
-	// Validate the input for the Third Category
-	$prev = $settings['nuovo-category-three'];
-	if ( !array_key_exists( $input['nuovo-category-three'], $cats ) ){
-		$input['nuovo-category-three'] = $prev;
-	}
-
-	// Validate the input for the Category Three Count
-	$input['nuovo-category-three-count'] = intval( $input['nuovo-category-three-count'] );
-
-	// Validate the input for the Fourth Category
-	$prev = $settings['nuovo-category-four'];
-	if ( !array_key_exists( $input['nuovo-category-four'], $cats ) ){
-		$input['nuovo-category-four'] = $prev;
-	}
-
-	// Validate the input for the Category Four Count
-	$input['nuovo-category-four-count'] = intval( $input['nuovo-category-four-count'] );
-
-	// Validate the input for the Latest Posts Count
-	$input['nuovo-latest-posts-count'] = intval( $input['nuovo-latest-posts-count'] );
-
-	return $input;
+function nuovo_sanitize_num($input) {
+    return intval($input);
 }
 ?>

@@ -7,7 +7,7 @@
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>
-<?php if (esc_attr(nuovo_options('nuovo-top-menu')) == 1) { ?>
+<?php if (esc_attr(get_theme_mod('nuovo-top-menu')) == 1) { ?>
 	<!--Begin Top Menu-->
 	<div id="top-menu">
 		<?php wp_nav_menu(
@@ -44,42 +44,42 @@
 			<?php } ?>
 		<!--Begin Social Area-->
 		<div id="social-area">
-			<?php if (esc_url(nuovo_options('nuovo-facebook'))) { ?>
+			<?php if (esc_url(get_theme_mod('nuovo-facebook'))) { ?>
 				<div class="social-icon">
-					<a href="<?php echo esc_url(nuovo_options('nuovo-facebook')); ?>">
+					<a href="<?php echo esc_url(get_theme_mod('nuovo-facebook', '')); ?>">
 						<img src="<?php echo get_template_directory_uri(); ?>/images/facebook.png" alt="<?php echo bloginfo('name'); ?> on Facebook" />
 					</a>
 				</div>
 			<?php } ?>
-			<?php if (esc_url(nuovo_options('nuovo-twitter'))) {?>
+			<?php if (esc_url(get_theme_mod('nuovo-twitter'))) {?>
 				<div class="social-icon">
-					<a href="<?php echo esc_url(nuovo_options('nuovo-twitter')); ?>">
+					<a href="<?php echo esc_url(get_theme_mod('nuovo-twitter')); ?>">
 						<img src="<?php echo get_template_directory_uri(); ?>/images/twitter.png" alt="<?php echo bloginfo('name'); ?> on Twitter" />
 					</a>
 				</div>
 			<?php } ?>
 			<div class="social-icon">
-				<a href="<?php if (esc_url(nuovo_options('nuovo-rss-feed'))) { echo esc_url(nuovo_options('nuovo-rss-feed')); } else { echo get_feed_link( 'rss' ); }?>">
+				<a href="<?php if (esc_url(get_theme_mod('nuovo-rss-feed'))) { echo esc_url(get_theme_mod('nuovo-rss-feed')); } else { echo get_feed_link( 'rss' ); }?>">
 					<img src="<?php echo get_template_directory_uri(); ?>/images/rss.png" alt="<?php echo bloginfo('name'); ?>'s RSS Feed" />
 				</a>
 			</div>
-			<?php if (esc_url(nuovo_options('nuovo-youtube'))) { ?>
+			<?php if (esc_url(get_theme_mod('nuovo-youtube'))) { ?>
 				<div class="social-icon">
-					<a href="<?php echo esc_url(nuovo_options('nuovo-youtube')); ?>">
+					<a href="<?php echo esc_url(get_theme_mod('nuovo-youtube')); ?>">
 						<img src="<?php echo get_template_directory_uri(); ?>/images/youtube.PNG" alt="<?php echo bloginfo('name'); ?> on YouTube" />
 					</a>
 				</div>
 			<?php } ?>
-			<?php if (esc_url(nuovo_options('nuovo-googleplus'))) { ?>
+			<?php if (esc_url(get_theme_mod('nuovo-googleplus'))) { ?>
 				<div class="social-icon">
-					<a href="<?php echo esc_url(nuovo_options('nuovo-googleplus')); ?>">
+					<a href="<?php echo esc_url(get_theme_mod('nuovo-googleplus')); ?>">
 						<img src="<?php echo get_template_directory_uri(); ?>/images/googleplus.png" alt="<?php echo bloginfo('name'); ?> on Google+" />
 					</a>
 				</div>
 			<?php } ?>
-			<?php if (esc_url(nuovo_options('nuovo-linkedin'))) { ?>
+			<?php if (esc_url(get_theme_mod('nuovo-linkedin'))) { ?>
 				<div class="social-icon">
-					<a href="<?php echo esc_url(nuovo_options('nuovo-linkedin')); ?>">
+					<a href="<?php echo esc_url(get_theme_mod('nuovo-linkedin')); ?>">
 						<img src="<?php echo get_template_directory_uri(); ?>/images/linkedin.png" alt="<?php echo bloginfo('name'); ?> on LinkedIn" />
 					</a>
 				</div>
@@ -107,42 +107,42 @@
 	</div>
 	<!--Begin Social Area-->
 	<div id="mobile-social-area" class="clearfix">
-		<?php if (esc_url(nuovo_options('nuovo-facebook'))) { ?>
+		<?php if (esc_url(get_theme_mod('nuovo-facebook'))) { ?>
 			<div class="mobile-social-icon">
-				<a href="<?php echo esc_url(nuovo_options('nuovo-facebook')); ?>">
+				<a href="<?php echo esc_url(get_theme_mod('nuovo-facebook')); ?>">
 					<img src="<?php echo get_template_directory_uri(); ?>/images/facebook.png" width="100%" alt="<?php echo bloginfo('name'); ?> on Facebook" />
 				</a>
 			</div>
 		<?php } ?>
-		<?php if (esc_url(nuovo_options('nuovo-twitter'))) {?>
+		<?php if (esc_url(get_theme_mod('nuovo-twitter'))) {?>
 			<div class="mobile-social-icon">
-				<a href="<?php echo esc_url(nuovo_options('nuovo-twitter')); ?>">
+				<a href="<?php echo esc_url(get_theme_mod('nuovo-twitter')); ?>">
 					<img src="<?php echo get_template_directory_uri(); ?>/images/twitter.png" width="100%" alt="<?php echo bloginfo('name'); ?> on Twitter" />
 				</a>
 			</div>
 		<?php } ?>
 		<div class="mobile-social-icon">
-		<a href="<?php if (esc_url(nuovo_options('nuovo-rss-feed'))) { echo esc_url(nuovo_options('nuovo-rss-feed')); } else { echo get_feed_link( 'rss' ); }?>">
+		<a href="<?php if (esc_url(get_theme_mod('nuovo-rss-feed'))) { echo esc_url(get_theme_mod('nuovo-rss-feed')); } else { echo get_feed_link( 'rss' ); }?>">
 			<img src="<?php echo get_template_directory_uri(); ?>/images/rss.png" width="100%" alt="<?php echo bloginfo('name'); ?>'s RSS Feed" />
 		</a>
 		</div>
-		<?php if (esc_url(nuovo_options('nuovo-youtube'))) { ?>
+		<?php if (esc_url(get_theme_mod('nuovo-youtube'))) { ?>
 			<div class="mobile-social-icon">
-				<a href="<?php echo esc_url(nuovo_options('nuovo-youtube')); ?>">
+				<a href="<?php echo esc_url(get_theme_mod('nuovo-youtube')); ?>">
 					<img src="<?php echo get_template_directory_uri(); ?>/images/youtube.PNG" width="100%" alt="<?php echo bloginfo('name'); ?> on Youtube" />
 				</a>
 			</div>
 		<?php } ?>
-		<?php if (esc_url(nuovo_options('nuovo-googleplus'))) { ?>
+		<?php if (esc_url(get_theme_mod('nuovo-googleplus'))) { ?>
 			<div class="mobile-social-icon">
-				<a href="<?php echo esc_url(nuovo_options('nuovo-googleplus')); ?>">
+				<a href="<?php echo esc_url(get_theme_mod('nuovo-googleplus')); ?>">
 					<img src="<?php echo get_template_directory_uri(); ?>/images/googleplus.png" width="100%" alt="<?php echo bloginfo('name'); ?> on Google+" />
 				</a>
 			</div>
 		<?php } ?>
-		<?php if (esc_url(nuovo_options('nuovo-linkedin'))) { ?>
+		<?php if (esc_url(get_theme_mod('nuovo-linkedin'))) { ?>
 			<div class="mobile-social-icon">
-				<a href="<?php echo esc_url(nuovo_options('nuovo-linkedin')); ?>">
+				<a href="<?php echo esc_url(get_theme_mod('nuovo-linkedin')); ?>">
 					<img src="<?php echo get_template_directory_uri(); ?>/images/linkedin.png" width="100%" alt="<?php echo bloginfo('name'); ?> on LinkedIn" />
 				</a>
 			</div>

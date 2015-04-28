@@ -4,7 +4,7 @@ Theme URI: http://www.jacobmartella.com/nuovo-wordpress-theme/
 Description: With today's technology, being able to have a website that looks good across desktop, tablet and mobile devices. Nuovo allows you to have just that with minimal work on your part. This theme is design to give your views a great experience no matter what device they use to access the internet. It also allows you to display your social media links. Finally, this theme is designed with photos in mind, maximizing the use of the featured photos. It is recommended that you try to use a featured photo for each of your posts. Finally, the theme allows easy customization with a theme options page that allows you to change the color theme, add links to you social media pages and to customize how your homepage looks. It also includes a user style sheets that overrides all of the other style sheets from the theme editor screen in the Wordpress admin.
 Author: Jacob Martella
 Author URI: http://www.jacobmartella.com/
-Version: 1.0.13
+Version: 1.0.14
 Tags: black,blue,green,orange,purple,red,yellow,dark,two-columns,right-sidebar,responsive-layout,custom-background,custom-header,featured-images,theme-options
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -63,7 +63,7 @@ a img{
 
 img {
 	max-width: 100%;
-	height: 100%;
+	height: auto;
 	-ms-interpolation-mode: bicubic;
 }
 
@@ -411,6 +411,7 @@ p.footer-text, p.footer-text a, p.footer-text a:link, p.footer-text a:hover, p.f
 	width: 570px;
 	height: 285px;
 	float: left;
+	overflow: hidden;
 	border-right: 5px solid #000000;
 	border-left: 1px solid #000000;
 }
@@ -460,6 +461,10 @@ p.slide-panel-meta{
 	position: absolute;
 	border: 1px solid #000000;
 	margin: 0px;
+}
+
+.next img, .prev img {
+	height: 100%;
 }
 
 /* Homepage Posts */
@@ -524,6 +529,7 @@ h3.home-title{
 	position: relative;
 	border: 5px solid #E0E0E0;
 	opacity: 1;
+	overflow: hidden;
 }
 
 .home-photo:hover{
@@ -712,6 +718,7 @@ h5.latest-posts-headline, h5.latest-posts-headline a, h5.latest-posts-headline a
 .single-featured-photo{
 	width: 630px;
 	height: 315px;
+	overflow: hidden;
 	border: 5px solid #E0E0E0;
 }
 
@@ -785,7 +792,6 @@ h1.archive-title{
 
 .archive-featured-photo-area{
 	width: 220px;
-	height: 100%;
 	float: left;
 	position: relative;
 	padding-top: 3px;
@@ -798,6 +804,7 @@ h1.archive-title{
 	border: 5px solid #E0E0E0;
 	position: relative;
 	opacity: 1;
+	overflow: hidden;
 }
 
 .archive-featured-photo:hover{
@@ -818,6 +825,11 @@ h1.archive-title{
 	bottom: 0px;
 	position: absolute;
 	display: block;
+}
+
+.archive-comments img{
+	width: 13px;
+	height: 13px;
 }
 
 .archive-comments, .archive-comments a, .archive-comments a:link, .archive-comments a:visited, .archive-comments a:hover{
@@ -1587,6 +1599,7 @@ p.slide-panel-meta {
 
 #single-post {
 	width: 300px !important;
+	float: none;
 	position: relative;
 	background-color: #FFFFFF;
 	margin: 25px auto 0px auto !important;
@@ -2223,6 +2236,7 @@ h1.single-title{
 /* Archive, Author, Category, Search & Tag Styles */
 #archive-post-area{
 	width: 300px !important;
+	float: none;
 	position: relative;
 	background-color: #FFFFFF;
 	margin: 25px auto 0px auto !important;
@@ -2252,7 +2266,6 @@ h1.archive-title{
 
 .archive-featured-photo-area{
 	width: 98%;
-	height: 100%;
 	float: left;
 	position: relative;
 	padding-top: 3px;
@@ -2496,6 +2509,7 @@ form#commentform textarea{width:98% !important;}
 
 #single-post {
 	width: 320px !important;
+	float: none;
 	position: relative;
 	background-color: #FFFFFF;
 	margin: 25px auto 0px auto !important;
@@ -3139,6 +3153,7 @@ h1.single-title{
 /* Archive, Author, Category, Search & Tag Styles */
 #archive-post-area{
 	width: 320px !important;
+	float: none;
 	position: relative;
 	background-color: #FFFFFF;
 	margin: 25px auto 0px auto !important;
@@ -3168,7 +3183,6 @@ h1.archive-title{
 
 .archive-featured-photo-area{
 	width: 98%;
-	height: 100%;
 	float: left;
 	position: relative;
 	padding-top: 3px;
@@ -3411,6 +3425,7 @@ form#commentform textarea{width:98% !important;}
 
 #single-post {
 	width: 340px !important;
+	float: none;
 	position: relative;
 	background-color: #FFFFFF;
 	margin: 25px auto 0px auto !important;
@@ -4040,6 +4055,7 @@ h1.single-title{
 /* Archive, Author, Category, Search & Tag Styles */
 #archive-post-area{
 	width: 340px !important;
+	float: none;
 	position: relative;
 	background-color: #FFFFFF;
 	margin: 25px auto 0px auto !important;
@@ -4069,7 +4085,6 @@ h1.archive-title{
 
 .archive-featured-photo-area{
 	width: 98%;
-	height: 100%;
 	float: left;
 	position: relative;
 	padding-top: 3px;
@@ -4312,6 +4327,7 @@ form#commentform textarea{width:98% !important;}
 
 #single-post {
 	width: 360px !important;
+	float: none;
 	position: relative;
 	background-color: #FFFFFF;
 	margin: 25px auto 0px auto !important;
@@ -4942,6 +4958,7 @@ h1.single-title{
 /* Archive, Author, Category, Search & Tag Styles */
 #archive-post-area{
 	width: 360px !important;
+	float: none;
 	position: relative;
 	background-color: #FFFFFF;
 	margin: 25px auto 0px auto !important;
@@ -4971,7 +4988,6 @@ h1.archive-title{
 
 .archive-featured-photo-area{
 	width: 98%;
-	height: 100%;
 	float: left;
 	position: relative;
 	padding-top: 3px;
@@ -5213,6 +5229,7 @@ form#commentform textarea{width:98% !important;}
 
 #single-post {
 	width: 380px !important;
+	float: none;
 	position: relative;
 	background-color: #FFFFFF;
 	margin: 25px auto 0px auto !important;
@@ -5843,6 +5860,7 @@ h1.single-title{
 /* Archive, Author, Category, Search & Tag Styles */
 #archive-post-area{
 	width: 380px !important;
+	float: none;
 	position: relative;
 	background-color: #FFFFFF;
 	margin: 25px auto 0px auto !important;
@@ -5872,7 +5890,6 @@ h1.archive-title{
 
 .archive-featured-photo-area{
 	width: 98%;
-	height: 100%;
 	float: left;
 	position: relative;
 	padding-top: 3px;
@@ -6115,6 +6132,7 @@ form#commentform textarea{width:98% !important;}
 
 #single-post {
 	width: 400px !important;
+	float: none;
 	position: relative;
 	background-color: #FFFFFF;
 	margin: 25px auto 0px auto !important;
@@ -6745,6 +6763,7 @@ h1.single-title{
 /* Archive, Author, Category, Search & Tag Styles */
 #archive-post-area{
 	width: 400px !important;
+	float: none;
 	position: relative;
 	background-color: #FFFFFF;
 	margin: 25px auto 0px auto !important;
@@ -6774,7 +6793,6 @@ h1.archive-title{
 
 .archive-featured-photo-area{
 	width: 98%;
-	height: 100%;
 	float: left;
 	position: relative;
 	padding-top: 3px;
@@ -7017,6 +7035,7 @@ form#commentform textarea{width:98% !important;}
 
 #single-post {
 	width: 420px !important;
+	float: none;
 	position: relative;
 	background-color: #FFFFFF;
 	margin: 25px auto 0px auto !important;
@@ -7647,6 +7666,7 @@ h1.single-title{
 /* Archive, Author, Category, Search & Tag Styles */
 #archive-post-area{
 	width: 420px !important;
+	float: none;
 	position: relative;
 	background-color: #FFFFFF;
 	margin: 25px auto 0px auto !important;
@@ -7676,7 +7696,6 @@ h1.archive-title{
 
 .archive-featured-photo-area{
 	width: 98%;
-	height: 100%;
 	float: left;
 	position: relative;
 	padding-top: 3px;
@@ -7919,6 +7938,7 @@ form#commentform textarea{width:98% !important;}
 
 #single-post {
 	width: 440px !important;
+	float: none;
 	position: relative;
 	background-color: #FFFFFF;
 	margin: 25px auto 0px auto !important;
@@ -8549,6 +8569,7 @@ h1.single-title{
 /* Archive, Author, Category, Search & Tag Styles */
 #archive-post-area{
 	width: 440px !important;
+	float: none;
 	position: relative;
 	background-color: #FFFFFF;
 	margin: 25px auto 0px auto !important;
@@ -8578,7 +8599,6 @@ h1.archive-title{
 
 .archive-featured-photo-area{
 	width: 98%;
-	height: 100%;
 	float: left;
 	position: relative;
 	padding-top: 3px;
@@ -8821,6 +8841,7 @@ form#commentform textarea{width:98% !important;}
 
 #single-post {
 	width: 460px !important;
+	float: none;
 	position: relative;
 	background-color: #FFFFFF;
 	margin: 25px auto 0px auto !important;
@@ -9451,6 +9472,7 @@ h1.single-title{
 /* Archive, Author, Category, Search & Tag Styles */
 #archive-post-area{
 	width: 460px !important;
+	float: none;
 	position: relative;
 	background-color: #FFFFFF;
 	margin: 25px auto 0px auto !important;
@@ -9480,7 +9502,6 @@ h1.archive-title{
 
 .archive-featured-photo-area{
 	width: 98%;
-	height: 100%;
 	float: left;
 	position: relative;
 	padding-top: 3px;
@@ -9723,6 +9744,7 @@ form#commentform textarea{width:98% !important;}
 
 #single-post {
 	width: 480px !important;
+	float: none;
 	position: relative;
 	background-color: #FFFFFF;
 	margin: 25px auto 0px auto !important;
@@ -10353,6 +10375,7 @@ h1.single-title{
 /* Archive, Author, Category, Search & Tag Styles */
 #archive-post-area{
 	width: 480px !important;
+	float: none;
 	position: relative;
 	background-color: #FFFFFF;
 	margin: 25px auto 0px auto !important;
@@ -10382,7 +10405,6 @@ h1.archive-title{
 
 .archive-featured-photo-area{
 	width: 98%;
-	height: 100%;
 	float: left;
 	position: relative;
 	padding-top: 3px;
@@ -10625,6 +10647,7 @@ form#commentform textarea{width:98% !important;}
 
 #single-post {
 	width: 500px !important;
+	float: none;
 	position: relative;
 	background-color: #FFFFFF;
 	margin: 25px auto 0px auto !important;
@@ -11255,6 +11278,7 @@ h1.single-title{
 /* Archive, Author, Category, Search & Tag Styles */
 #archive-post-area{
 	width: 500px !important;
+	float: none;
 	position: relative;
 	background-color: #FFFFFF;
 	margin: 25px auto 0px auto !important;
@@ -11284,7 +11308,6 @@ h1.archive-title{
 
 .archive-featured-photo-area{
 	width: 98%;
-	height: 100%;
 	float: left;
 	position: relative;
 	padding-top: 3px;
@@ -11527,6 +11550,7 @@ form#commentform textarea{width:98% !important;}
 
 #single-post {
 	width: 520px !important;
+	float: none;
 	position: relative;
 	background-color: #FFFFFF;
 	margin: 25px auto 0px auto !important;
@@ -12157,6 +12181,7 @@ h1.single-title{
 /* Archive, Author, Category, Search & Tag Styles */
 #archive-post-area{
 	width: 520px !important;
+	float: none;
 	position: relative;
 	background-color: #FFFFFF;
 	margin: 25px auto 0px auto !important;
@@ -12186,7 +12211,6 @@ h1.archive-title{
 
 .archive-featured-photo-area{
 	width: 98%;
-	height: 100%;
 	float: left;
 	position: relative;
 	padding-top: 3px;
@@ -12429,6 +12453,7 @@ form#commentform textarea{width:98% !important;}
 
 #single-post {
 	width: 540px !important;
+	float: none;
 	position: relative;
 	background-color: #FFFFFF;
 	margin: 25px auto 0px auto !important;
@@ -13059,6 +13084,7 @@ h1.single-title{
 /* Archive, Author, Category, Search & Tag Styles */
 #archive-post-area{
 	width: 540px !important;
+	float: none;
 	position: relative;
 	background-color: #FFFFFF;
 	margin: 25px auto 0px auto !important;
@@ -13088,7 +13114,6 @@ h1.archive-title{
 
 .archive-featured-photo-area{
 	width: 98%;
-	height: 100%;
 	float: left;
 	position: relative;
 	padding-top: 3px;
@@ -13331,6 +13356,7 @@ form#commentform textarea{width:98% !important;}
 
 #single-post {
 	width: 560px !important;
+	float: none;
 	position: relative;
 	background-color: #FFFFFF;
 	margin: 25px auto 0px auto !important;
@@ -13961,6 +13987,7 @@ h1.single-title{
 /* Archive, Author, Category, Search & Tag Styles */
 #archive-post-area{
 	width: 560px !important;
+	float: none;
 	position: relative;
 	background-color: #FFFFFF;
 	margin: 25px auto 0px auto !important;
@@ -13990,7 +14017,6 @@ h1.archive-title{
 
 .archive-featured-photo-area{
 	width: 98%;
-	height: 100%;
 	float: left;
 	position: relative;
 	padding-top: 3px;
@@ -14233,6 +14259,7 @@ form#commentform textarea{width:98% !important;}
 
 #single-post {
 	width: 580px !important;
+	float: none;
 	position: relative;
 	background-color: #FFFFFF;
 	margin: 25px auto 0px auto !important;
@@ -14873,6 +14900,7 @@ h1.single-title{
 /* Archive, Author, Category, Search & Tag Styles */
 #archive-post-area{
 	width: 580px !important;
+	float: none;
 	position: relative;
 	background-color: #FFFFFF;
 	margin: 25px auto 0px auto !important;
@@ -14902,7 +14930,6 @@ h1.archive-title{
 
 .archive-featured-photo-area{
 	width: 98%;
-	height: 100%;
 	float: left;
 	position: relative;
 	padding-top: 3px;
@@ -15145,6 +15172,7 @@ form#commentform textarea{width:98% !important;}
 
 #single-post {
 	width: 600px !important;
+	float: none;
 	position: relative;
 	background-color: #FFFFFF;
 	margin: 25px auto 0px auto !important;
@@ -15795,6 +15823,7 @@ h1.single-title{
 /* Archive, Author, Category, Search & Tag Styles */
 #archive-post-area{
 	width: 600px !important;
+	float: none;
 	position: relative;
 	background-color: #FFFFFF;
 	margin: 25px auto 0px auto !important;
@@ -15824,7 +15853,6 @@ h1.archive-title{
 
 .archive-featured-photo-area{
 	width: 98%;
-	height: 100%;
 	float: left;
 	position: relative;
 	padding-top: 3px;
@@ -16067,6 +16095,7 @@ form#commentform textarea{width:98% !important;}
 
 #single-post {
 	width: 620px !important;
+	float: none;
 	position: relative;
 	background-color: #FFFFFF;
 	margin: 25px auto 0px auto !important;
@@ -16702,6 +16731,7 @@ h1.single-title{
 /* Archive, Author, Category, Search & Tag Styles */
 #archive-post-area{
 	width: 620px !important;
+	float: none;
 	position: relative;
 	background-color: #FFFFFF;
 	margin: 25px auto 0px auto !important;
@@ -16731,7 +16761,6 @@ h1.archive-title{
 
 .archive-featured-photo-area{
 	width: 98%;
-	height: 100%;
 	float: left;
 	position: relative;
 	padding-top: 3px;

@@ -11,8 +11,8 @@
 	<div id="slideshow" class="clearfix">
 		<?php 
 			$slideshow_args = array(
-				'showposts' => esc_attr(nuovo_options('nuovo-slideshow-count')),
-				'category_name' => get_cat_name(esc_attr(nuovo_options('nuovo-slideshow-category'))),
+				'showposts' => esc_attr(get_theme_mod('nuovo-slideshow-count')),
+				'category_name' => get_cat_name(esc_attr(get_theme_mod('nuovo-slideshow-category'))),
 				'orderby' => 'date',
 				'order' => 'DES'
 			);
@@ -20,7 +20,7 @@
 			if ($slideshow->have_posts()) : while ($slideshow->have_posts()) : $slideshow->the_post(); ?>
 			<div class="slide">
 				<div class="slide-photo">
-					<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
+					<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('slideshow'); ?></a>
 				</div>
 				<div class="slide-panel">
 					<h3 class="slide-panel-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
@@ -41,12 +41,12 @@
 	<!-- Begin Catgeory One Posts-->
 	<div class="category-area-one clearfix">
 		<div class="home-title-bg">
-			<h3 class="home-title"><?php echo get_cat_name(esc_attr(nuovo_options('nuovo-category-one'))); ?></h3>
+			<h3 class="home-title"><?php echo get_cat_name(esc_attr(get_theme_mod('nuovo-category-one'))); ?></h3>
 		</div>
 		<?php 
 			$cat1_args = array(
-				'showposts' => esc_attr(nuovo_options('nuovo-category-one-count')),
-				'category_name' => get_cat_name(esc_attr(nuovo_options('nuovo-category-one'))),
+				'showposts' => esc_attr(get_theme_mod('nuovo-category-one-count'), 3) - 1,
+				'category_name' => get_cat_name(esc_attr(get_theme_mod('nuovo-category-one'))),
 				'orderby' => 'date',
 				'order' => 'DES'
 			);
@@ -69,9 +69,9 @@
 			</div>
 		<?php endwhile; ?>
 		<?php endif; ?>
-		<?php if (esc_attr(nuovo_options('nuovo-category-one'))) { ?>
+		<?php if (esc_attr(get_theme_mod('nuovo-category-one'))) { ?>
 			<div class="home-view-all">
-				<a href="index.php?cat=<?php echo esc_attr(nuovo_options('nuovo-category-one')); ?>">
+				<a href="index.php?cat=<?php echo esc_attr(get_theme_mod('nuovo-category-one')); ?>">
 					<?php _e('View All&rsaquo;&rsaquo;', 'nuovo'); ?>
 				</a>
 			</div>
@@ -79,15 +79,15 @@
 	</div>
 	<!--End Category One Posts-->
 	<!--Begin Category Two Posts-->
-	<?php if (esc_attr(nuovo_options('nuovo-category-two'))) { ?>
+	<?php if (esc_attr(get_theme_mod('nuovo-category-two'))) { ?>
 		<div class="category-area-two clearfix">
 			<div class="home-title-bg">
-				<h3 class="home-title"><?php echo get_cat_name(esc_attr(nuovo_options('nuovo-category-two'))); ?></h3>
+				<h3 class="home-title"><?php echo get_cat_name(esc_attr(get_theme_mod('nuovo-category-two'))); ?></h3>
 			</div>
 			<?php 
 				$cat2_args = array(
-					'showposts' => esc_attr(nuovo_options('nuovo-category-two-count')),
-					'category_name' => get_cat_name(esc_attr(nuovo_options('nuovo-category-two'))),
+					'showposts' => esc_attr(get_theme_mod('nuovo-category-two-count')) - 1,
+					'category_name' => get_cat_name(esc_attr(get_theme_mod('nuovo-category-two'))),
 					'orderby' => 'date',
 					'order' => 'DES'
 				);
@@ -110,7 +110,7 @@
 				<?php endwhile; ?>
 				<?php endif; ?>
 			<div class="home-view-all">
-				<a href="index.php?cat=<?php echo esc_attr(nuovo_options('nuovo-category-two')); ?>">
+				<a href="index.php?cat=<?php echo esc_attr(get_theme_mod('nuovo-category-two')); ?>">
 					<?php _e('View All&rsaquo;&rsaquo;', 'nuovo'); ?>
 				</a>
 			</div>
@@ -118,15 +118,15 @@
 	<?php } ?>
 	<!--End Category Two Posts-->
 	<!--Begin Category Three Posts-->
-	<?php if(esc_attr(nuovo_options('nuovo-category-three'))) { ?>
+	<?php if(esc_attr(get_theme_mod('nuovo-category-three'))) { ?>
 		<div class="category-area-three clearfix">
 			<div class="home-title-bg">
-				<h3 class="home-title"><?php echo get_cat_name(esc_attr(nuovo_options('nuovo-category-three'))); ?></h3>
+				<h3 class="home-title"><?php echo get_cat_name(esc_attr(get_theme_mod('nuovo-category-three'))); ?></h3>
 			</div>
 			<?php 
 			$cat3_args = array(
-				'showposts' => esc_attr(nuovo_options('nuovo-category-three-count')),
-				'category_name' => get_cat_name(esc_attr(nuovo_options('nuovo-category-three'))),
+				'showposts' => esc_attr(get_theme_mod('nuovo-category-three-count')) - 1,
+				'category_name' => get_cat_name(esc_attr(get_theme_mod('nuovo-category-three'))),
 				'orderby' => 'date',
 				'order' => 'DES'
 			);
@@ -149,23 +149,23 @@
 			<?php endwhile; ?>
 			<?php endif; ?>
 			<div class="home-view-all">
-				<a href="index.php?cat=<?php echo esc_attr(nuovo_options('nuovo-category-three')); ?>">
+				<a href="index.php?cat=<?php echo esc_attr(get_theme_mod('nuovo-category-three')); ?>">
 					<?php _e('View All&rsaquo;&rsaquo;', 'nuovo'); ?>
 				</a>
 			</div>
 		</div>
 	<?php } ?>
 	<!--End Category Three Posts-->
-	<?php if (esc_attr(nuovo_options('nuovo-category-four'))) { ?>
+	<?php if (esc_attr(get_theme_mod('nuovo-category-four'))) { ?>
 		<!--Begin Category Four Posts-->
 		<div class="category-area-four clearfix">
 			<div class="home-title-bg">
-				<h3 class="home-title"><?php echo get_cat_name(esc_attr(nuovo_options('nuovo-category-four'))); ?></h3>
+				<h3 class="home-title"><?php echo get_cat_name(esc_attr(get_theme_mod('nuovo-category-four'))); ?></h3>
 			</div>
 			<?php 
 				$cat4_args = array(
-					'showposts' => esc_attr(nuovo_options('nuovo-category-four-count')),
-					'category_name' => get_cat_name(esc_attr(nuovo_options('nuovo-category-four'))),
+					'showposts' => esc_attr(get_theme_mod('nuovo-category-four-count')) - 1,
+					'category_name' => get_cat_name(esc_attr(get_theme_mod('nuovo-category-four'))),
 					'orderby' => 'date',
 					'order' => 'DES'
 				);
@@ -188,7 +188,7 @@
 			<?php endwhile; ?>
 			<?php endif; ?>
 			<div class="home-view-all">
-				<a href="index.php?cat=<?php echo esc_attr(nuovo_options('nuovo-category-four')); ?>">
+				<a href="index.php?cat=<?php echo esc_attr(get_theme_mod('nuovo-category-four')); ?>">
 					<?php _e('View All&rsaquo;&rsaquo;', 'nuovo'); ?>
 				</a>
 			</div>
@@ -196,7 +196,7 @@
 		<!--End Category Four Posts-->
 	<?php } ?>
 	<?php wp_reset_query(); ?>
-	<?php if (esc_attr(nuovo_options('nuovo-latest-posts-count')) > 0) { ?>
+	<?php if (esc_attr(get_theme_mod('nuovo-latest-posts-count')) > 0) { ?>
 		<!--Begin Latest Posts-->
 		<div class="latest-posts-area clearfix">
 			<div class="latest-posts-title-bg">
@@ -204,7 +204,7 @@
 			</div>
 			<?php 
 				$latest_posts_args = array(
-					'showposts' => esc_attr(nuovo_options('nuovo-latest-posts-count')),
+					'showposts' => esc_attr(get_theme_mod('nuovo-latest-posts-count')) - 1,
 					'orderby' => 'date',
 					'order' => 'DES'
 				);
