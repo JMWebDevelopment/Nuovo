@@ -34,7 +34,7 @@
 					<div class="archive-separator"></div>
 					<div class="archive-featured-photo-area">
 						<div class="author-photo">
-							<?php echo get_avatar(get_the_author_email(), $size = '96'); ?>
+							<?php echo get_avatar(get_the_author_meta('email'), $size = '96'); ?>
 						</div>
 					</div>
 					<h1 class="archive-title"><?php _e('About', 'nuovo'); ?> <?php the_author_meta('display_name'); ?></h1>

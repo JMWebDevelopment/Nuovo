@@ -51,14 +51,6 @@ add_action('after_setup_theme', 'nuovo_setup');
 if ( ! isset( $content_width ) )
  $content_width = 640;
 
-//Create easy Function for Calling Theme Options
-function nuovo_options($opt) {
-	$option = get_option('nuovo_options');
-	if (isset($option[$opt])) {
-		return $option[$opt];
-	}
-}
-
 //Setup Function For Comments
 function nuovo_advanced_comment($comment, $args, $depth) {
    $GLOBALS['comment'] = $comment; ?>

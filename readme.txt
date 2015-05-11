@@ -2,7 +2,7 @@
 Contributers: Jacob Martella
 Tags: black, blue, green, orange, purple, red, yellow, dark, two-columns, right-sidebar, responsive-layout, custom-background, custom-header, custom-menus, featured-images, theme-options
 Requires at least: 3.9.1
-Tested up to: 4.1.1
+Tested up to: 4.2.2
 Stable tag: 0.1
 
 == Description ==
@@ -10,10 +10,10 @@ With today's technology, being able to have a website that looks good across des
 
 == License ==
 GNU General Public License
-http://www.gnu.org/licenses/gpl-2.0.html
+http://www.gnu.org/licenses/gpl.html
 
 = Photo License =
-Except where otherwise noted, all photos in the screenshot are licensed under a Creative Commons Attribution 3.0 Unported License. Copyright 2015 Jacob Martella
+Except where otherwise noted, all photos in the screenshot are also licensed under the GNU General Public License. Copyright 2015 Jacob Martella
 
 == Installation ==
 = Via WordPress Admin =
@@ -50,5 +50,5 @@ Nuovo also supports custom backgrounds as well. It can either be a photo backgro
 
 == Changelog ==
 
-= 1.0.14 =
+= 1.0.15 =
 Initial release to the WordPress theme directory.

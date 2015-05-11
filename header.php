@@ -28,7 +28,7 @@
 	<!--End Top Menu-->
 <?php } ?>
 <!--Begin Header Logo Area-->
-<div id="branding-background" class="clearfix" style="<?php if (esc_attr(nuovo_options('nuovo-top-menu')) == 1) { ?>padding-top:40px;<?php } else { ?>padding-top:0px; <?php } ?>">
+<div id="branding-background" class="clearfix" style="<?php if (esc_attr(get_theme_mod('nuovo-top-menu')) == 1) { ?>padding-top:40px;<?php } else { ?>padding-top:0px; <?php } ?>">
 	<div id="branding">
 			<?php if (get_header_image()) { ?>
 				<!--Logo Header-->
@@ -90,7 +90,7 @@
 </div>
 <!--End Header Logo Area-->
 <!--Begin Header Area-->
-<div id="mobile-branding-background" style="<?php if (esc_attr(nuovo_options('nuovo-top-menu')) == 1) { ?>padding-top:20px;<?php } else { ?>padding-top:0px; <?php } ?>" class="clearfix">
+<div id="mobile-branding-background" style="<?php if (esc_attr(get_theme_mod('nuovo-top-menu')) == 1) { ?>padding-top:20px;<?php } else { ?>padding-top:0px; <?php } ?>" class="clearfix">
 	<div id="mobile-branding">
 		<?php if (get_header_image()) { ?>
 			<!--Header Logo-->
