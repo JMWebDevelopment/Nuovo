@@ -50,5 +50,5 @@ Nuovo also supports custom backgrounds as well. It can either be a photo backgro
 
 == Changelog ==
 
-= 1.0.15 =
+= 1.0.16 =
 Initial release to the WordPress theme directory.

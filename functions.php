@@ -44,6 +44,9 @@ function nuovo_setup() {
 	// Add in the text domain
 	load_theme_textdomain('nuovo', get_template_directory() . '/languages');
 
+	// Add support for title tag
+	add_theme_support('title-tag');
+
 }
 add_action('after_setup_theme', 'nuovo_setup');
 
@@ -145,7 +148,7 @@ function nuovo_scripts() {
 	if (is_home()) {
 		wp_enqueue_script( 'nuovo-home-scripts', get_template_directory_uri() . '/js/nuovo-home-scripts.js' );
 	}
-	if (esc_attr(nuovo_options('general', 'top-menu')) == 1) {
+	if (esc_attr(get_theme_mod('top-menu')) == 1) {
 		wp_enqueue_script( 'nuovo-top-menu', get_template_directory_uri() . '/js/nuovo-top-menu.js' );
 	}
 	wp_enqueue_script( 'nuovo-main-menu', get_template_directory_uri() . '/js/nuovo-main-menu.js' );
