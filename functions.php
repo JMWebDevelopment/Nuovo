@@ -32,8 +32,9 @@ function nuovo_setup() {
 
 	//Add Image Sizes
 	add_image_size('single-post', 630, 315);
-	add_image_size('archive', 260, 132);
+	add_image_size('archive', 260, 130);
 	add_image_size('slideshow', 570, 289);
+	add_image_size('latest', 120, 60);
 
 	// Add support for editor styles
 	add_editor_style();

@@ -4,7 +4,7 @@ Theme URI: http://www.jacobmartella.com/nuovo-wordpress-theme/
 Description: With today's technology, being able to have a website that looks good across desktop, tablet and mobile devices. Nuovo allows you to have just that with minimal work on your part. This theme is design to give your views a great experience no matter what device they use to access the internet. It also allows you to display your social media links. Finally, this theme is designed with photos in mind, maximizing the use of the featured photos. It is recommended that you try to use a featured photo for each of your posts. Finally, the theme allows easy customization with a theme options page that allows you to change the color theme, add links to you social media pages and to customize how your homepage looks. It also includes a user style sheets that overrides all of the other style sheets from the theme editor screen in the Wordpress admin.
 Author: Jacob Martella
 Author URI: http://www.jacobmartella.com/
-Version: 1.0.16
+Version: 1.1.0
 Tags: black,blue,green,orange,purple,red,yellow,dark,two-columns,right-sidebar,responsive-layout,custom-background,custom-header,featured-images,theme-options
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
@@ -523,6 +523,10 @@ h3.home-title{
 	float: left;
 }
 
+.home-post:nth-child(3n+2) {
+	clear: left;
+}
+
 .home-photo{
 	width: 200px;
 	height: 100px;
@@ -697,6 +701,7 @@ h3.latest-posts-title{
 	margin-left: 3px;
 	margin-top: auto;
 	margin-bottom: auto;
+	overflow: hidden;
 }
 
 .latest-posts-headline-area{
@@ -1145,12 +1150,17 @@ p.widget-body, p.widget-body a, p.widget-body a:link, p.widget-body a:visited, p
 	position: relative;
 }
 
-#social-icon{
+.social-icon{
 	float: left !important;
 	position: relative;
 	padding: 0px;
 	width: 16% !important;
 	height: auto;
+}
+
+.social-icon img {
+	width: 100%;
+	height: 100%;
 }
 
 /* Top Menu */
@@ -1201,7 +1211,7 @@ p.widget-body, p.widget-body a, p.widget-body a:link, p.widget-body a:visited, p
 	width: 570px !important;
 	height: 285px !important;
 	border: 1px solid #000000 !important;
-	border-right: 1px solid #000000 !important;
+	border-right: 0px solid #000000 !important;
 }
 
 .slide-photo{
@@ -1211,16 +1221,18 @@ p.widget-body, p.widget-body a, p.widget-body a:link, p.widget-body a:visited, p
 }
 
 .slide-panel{
-	width: 568px !important;
+	width: 570px !important;
 	background-color: rgba(0,0,0,.85) !important;
 	bottom: 0px !important;
 	top: auto !important;
 	height: auto !important;
 	position: absolute !important;
-	border: none;
+	border-left: 0px !important;
+	border-right: 0px !important;
 	padding-left: 0px !important;
 	padding-right: 0px !important;
 	margin: 0px !important;
+	margin-right: -1px !important;
 	display: block !important;
 }
 
@@ -1365,12 +1377,17 @@ p.slide-panel-meta {
 	position: relative;
 }
 
-#social-icon{
+.social-icon{
 	float: left !important;
 	position: relative;
 	padding: 0px;
 	width: 16% !important;
 	height: auto;
+}
+
+.social-icon img {
+	width: 100%;
+	height: 100%;
 }
 
 /* Top Menu */
@@ -1420,27 +1437,30 @@ p.slide-panel-meta {
 .slide{
 	width: 540px !important;
 	height: 270px !important;
-	border: 1px solid #000000 !important;
-	border-right: 1px solid #000000 !important;
+	border: 0px solid #000000 !important;
+	border-right: 0px solid #000000 !important;
 }
 
 .slide-photo{
 	width: 540px !important;
 	height: 270px !important;
 	float: left !important;
+	border-right: 0px !important;
 }
 
 .slide-panel{
-	width: 538px !important;
+	width: 540px !important;
 	background-color: rgba(0,0,0,.85) !important;
 	bottom: 0px !important;
 	top: auto !important;
 	height: auto !important;
 	position: absolute !important;
-	border: none;
+	border-left: 0px !important;
+	border-right: 0px !important;
 	padding-left: 0px !important;
 	padding-right: 0px !important;
 	margin: 0px !important;
+	margin-right: -1px !important;
 	display: block !important;
 }
 

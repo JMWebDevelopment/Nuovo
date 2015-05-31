@@ -11,7 +11,7 @@
 	<div id="slideshow" class="clearfix">
 		<?php 
 			$slideshow_args = array(
-				'showposts' => esc_attr(get_theme_mod('nuovo-slideshow-count')),
+				'posts_per_page' => esc_attr(get_theme_mod('nuovo-slideshow-count')),
 				'category_name' => get_cat_name(esc_attr(get_theme_mod('nuovo-slideshow-category'))),
 				'orderby' => 'date',
 				'order' => 'DES'
@@ -45,7 +45,7 @@
 		</div>
 		<?php 
 			$cat1_args = array(
-				'showposts' => esc_attr(get_theme_mod('nuovo-category-one-count'), 3) - 1,
+				'posts_per_page' => esc_attr(get_theme_mod('nuovo-category-one-count'), 3),
 				'category_name' => get_cat_name(esc_attr(get_theme_mod('nuovo-category-one'))),
 				'orderby' => 'date',
 				'order' => 'DES'
@@ -57,7 +57,7 @@
 					<?php if (has_post_thumbnail()) { ?>
 						<div class="home-photo">
 							<a href="<?php the_permalink(); ?>">
-								<?php the_post_thumbnail(); ?>
+								<?php the_post_thumbnail('archive'); ?>
 							</a>
 							<span class="photo-post-details"><p class="photo-post-details-links"><?php echo the_time('M j, Y'); ?> &bull; <?php echo comments_popup_link('0', '1', '%', '', __('Off', 'nuovo')); ?><img src="<?php echo get_template_directory_uri(); ?>/images/comments.png" style="margin-top:3px; margin-left:3px;margin-bottom:-2px;" /></p></span>
 						</div>
@@ -86,7 +86,7 @@
 			</div>
 			<?php 
 				$cat2_args = array(
-					'showposts' => esc_attr(get_theme_mod('nuovo-category-two-count')) - 1,
+					'posts_per_page' => esc_attr(get_theme_mod('nuovo-category-two-count')),
 					'category_name' => get_cat_name(esc_attr(get_theme_mod('nuovo-category-two'))),
 					'orderby' => 'date',
 					'order' => 'DES'
@@ -97,7 +97,7 @@
 						<?php if (has_post_thumbnail()) { ?>
 							<div class="home-photo">
 								<a href="<?php the_permalink(); ?>">
-									<?php the_post_thumbnail(); ?>
+									<?php the_post_thumbnail('archive'); ?>
 								</a>
 								<span class="photo-post-details"><p class="photo-post-details-links"><?php echo the_time('M j, Y'); ?> &bull; <?php echo comments_popup_link('0', '1', '%', '', __('Off', 'nuovo')); ?><img src="<?php echo get_template_directory_uri(); ?>/images/comments.png" style="margin-top:3px; margin-left:3px;margin-bottom:-2px;" /></p></span>
 							</div>
@@ -125,7 +125,7 @@
 			</div>
 			<?php 
 			$cat3_args = array(
-				'showposts' => esc_attr(get_theme_mod('nuovo-category-three-count')) - 1,
+				'posts_per_page' => esc_attr(get_theme_mod('nuovo-category-three-count')),
 				'category_name' => get_cat_name(esc_attr(get_theme_mod('nuovo-category-three'))),
 				'orderby' => 'date',
 				'order' => 'DES'
@@ -136,7 +136,7 @@
 					<?php if (has_post_thumbnail()) { ?>
 						<div class="home-photo">
 							<a href="<?php the_permalink(); ?>">
-								<?php the_post_thumbnail(); ?>
+								<?php the_post_thumbnail('archive'); ?>
 							</a>
 							<span class="photo-post-details"><p class="photo-post-details-links"><?php echo the_time('M j, Y'); ?> &bull; <?php echo comments_popup_link('0', '1', '%', '', __('Off', 'nuovo')); ?><img src="<?php echo get_template_directory_uri(); ?>/images/comments.png" style="margin-top:3px; margin-left:3px;margin-bottom:-2px;" /></p></span>
 						</div>
@@ -164,7 +164,7 @@
 			</div>
 			<?php 
 				$cat4_args = array(
-					'showposts' => esc_attr(get_theme_mod('nuovo-category-four-count')) - 1,
+					'posts_per_page' => esc_attr(get_theme_mod('nuovo-category-four-count')),
 					'category_name' => get_cat_name(esc_attr(get_theme_mod('nuovo-category-four'))),
 					'orderby' => 'date',
 					'order' => 'DES'
@@ -175,7 +175,7 @@
 						<?php if (has_post_thumbnail()) { ?>
 							<div class="home-photo">
 								<a href="<?php the_permalink(); ?>">
-								<?php the_post_thumbnail(); ?>
+								<?php the_post_thumbnail('archive'); ?>
 							</a>
 							<span class="photo-post-details"><p class="photo-post-details-links"><?php echo the_time('M j, Y'); ?> &bull; <?php echo comments_popup_link('0', '1', '%', '', __('Off', 'nuovo')); ?><img src="<?php echo get_template_directory_uri(); ?>/images/comments.png" style="margin-top:3px; margin-left:3px;margin-bottom:-2px;" /></p></span>
 						</div>
@@ -204,7 +204,7 @@
 			</div>
 			<?php 
 				$latest_posts_args = array(
-					'showposts' => esc_attr(get_theme_mod('nuovo-latest-posts-count')) - 1,
+					'posts_per_page' => esc_attr(get_theme_mod('nuovo-latest-posts-count')),
 					'orderby' => 'date',
 					'order' => 'DES'
 				);
@@ -213,7 +213,7 @@
 			?>
 					<div class="latest-posts">
 						<?php if (has_post_thumbnail()) { ?>
-							<div class="latest-posts-photo"><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a></div>
+							<div class="latest-posts-photo"><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('latest'); ?></a></div>
 						<?php } ?>
 						<div class="latest-posts-headline-area">
 							<h5 class="latest-posts-headline"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> &bull; <?php _e('Written By: ', 'nuovo'); ?><?php the_author_posts_link(); ?> &bull; <?php the_time('F j, Y'); ?> &bull; <?php comments_popup_link(__('0 Comments', 'nuovo'), __('1 Comment', 'nuovo'), __('% Comments', 'nuovo'), '', __('Comments Closed', 'nuovo')); ?></h5>

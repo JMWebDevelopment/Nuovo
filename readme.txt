@@ -50,5 +50,15 @@ Nuovo also supports custom backgrounds as well. It can either be a photo backgro
 
 == Changelog ==
 
+= 1.1.0 =
+- Hid the overflow if images went outside of their containers.
+- Added image sizes for featured images on the home page.
+- Fixed an issue with the home posts sections where the incorrect number of posts showing up.
+- Made sure posts on the home page fit into equal rows.
+- Added 'clearfix' class to author bio.
+- Extended the slide panel width for the featured post slider for the tablet sizes.
+- Made social media images fit on one line in the tablet and mobile version.
+- Added vector social media images in the header.
+
 = 1.0.16 =
 Initial release to the WordPress theme directory.

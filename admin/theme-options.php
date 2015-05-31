@@ -279,7 +279,7 @@ function nuovo_homepage_customizer( $wp_customize ) {
     $wp_customize->add_setting(
         'nuovo-category-one-count',
         array(
-            'default' => '3',
+            'default' => 3,
             'sanitize_callback' => 'nuovo_sanitize_category',
         )
     );
@@ -316,7 +316,7 @@ function nuovo_homepage_customizer( $wp_customize ) {
     $wp_customize->add_setting(
         'nuovo-category-two-count',
         array(
-            'default' => '3',
+            'default' => 0,
             'sanitize_callback' => 'nuovo_sanitize_num',
         )
     );
@@ -353,7 +353,7 @@ function nuovo_homepage_customizer( $wp_customize ) {
     $wp_customize->add_setting(
         'nuovo-category-three-count',
         array(
-            'default' => '3',
+            'default' => 0,
             'sanitize_callback' => 'nuovo_sanitize_num',
         )
     );
@@ -390,7 +390,7 @@ function nuovo_homepage_customizer( $wp_customize ) {
     $wp_customize->add_setting(
         'nuovo-category-four-count',
         array(
-            'default' => '3',
+            'default' => 0,
             'sanitize_callback' => 'nuovo_sanitize_num',
         )
     );
@@ -408,7 +408,7 @@ function nuovo_homepage_customizer( $wp_customize ) {
     $wp_customize->add_setting(
         'nuovo-latest-posts-count',
         array(
-            'default' => '10',
+            'default' => 10,
             'sanitize_callback' => 'nuovo_sanitize_num',
         )
     );
