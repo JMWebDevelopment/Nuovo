@@ -149,7 +149,7 @@ function nuovo_scripts() {
 	if (is_home()) {
 		wp_enqueue_script( 'nuovo-home-scripts', get_template_directory_uri() . '/js/nuovo-home-scripts.js' );
 	}
-	if (esc_attr(get_theme_mod('top-menu')) == 1) {
+	if (esc_attr(get_theme_mod('nuovo-top-menu')) == 1) {
 		wp_enqueue_script( 'nuovo-top-menu', get_template_directory_uri() . '/js/nuovo-top-menu.js' );
 	}
 	wp_enqueue_script( 'nuovo-main-menu', get_template_directory_uri() . '/js/nuovo-main-menu.js' );

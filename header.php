@@ -86,6 +86,10 @@
 			<?php } ?>
 		</div>
 		<!--End Social Area-->
+	<?php
+if (function_exists('jm_breaking_news')) {
+ echo jm_breaking_news();
+} ?>
 	</div>
 </div>
 <!--End Header Logo Area-->

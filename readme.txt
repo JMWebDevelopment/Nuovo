@@ -3,7 +3,7 @@ Contributers: Jacob Martella
 Tags: black, blue, green, orange, purple, red, yellow, dark, two-columns, right-sidebar, responsive-layout, custom-background, custom-header, custom-menus, featured-images, theme-options
 Requires at least: 3.9.1
 Tested up to: 4.2.2
-Stable tag: 0.1
+Stable tag: 1.1.1
 
 == Description ==
 With today's technology, being able to have a website that looks good across desktop, tablet and mobile devices. Nuovo allows you to have just that with minimal work on your part. This theme is design to give your views a great experience no matter what device they use to access the internet. It also allows you to display your social media links as well as display your own customizable Twitter feed in the sidebar. Finally, this theme is designed with photos in mind, maximizing the use of the featured photos. It is recommended that you try to use a featured photo for each of your posts. Finally, the theme allows easy customization with a theme options page that allows you to change the color theme, add links to you social media pages and to customize how your homepage looks. It also includes a user style sheets that overrides all of the other style sheets from the theme editor screen in the Wordpress admin.
@@ -49,6 +49,10 @@ Nuovo supports custom headers the size of 530px by 150px. To upload your header,
 Nuovo also supports custom backgrounds as well. It can either be a photo background or color background. To upload or change the background, go to the header page of the Wordpress admin. Currently, backgrounds won't "scroll" with the page in the tablet or mobile versions.
 
 == Changelog ==
+
+= 1.1.1 =
+- Fixed: Issue with Top Menu always showing on mobile.
+- A new version to fix other styles and re-write some of the code is in the works.
 
 = 1.1.0 =
 - Hid the overflow if images went outside of their containers.
