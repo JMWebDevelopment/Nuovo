@@ -1,15 +1,24 @@
+<?php 
+/**
+* Page.php
+*
+* Page template file for Nuovo
+*
+* @author Jacob Martella
+* @package Nuovo
+* @version 2.0
+*/
+?>
 <?php get_header(); ?>
-	<div id="content">
+	<main class="page-single">
 		<?php while (have_posts()) : the_post(); ?>
-			<div id="post-area">
-				<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-					<h1 class="page-title"><?php the_title(); ?></h1>
-					<?php the_content(); ?>
-					<?php comments_template(); ?><!--Comments-->
-				</div><!--End Post Class-->
-				<?php wp_link_pages(); ?>
-			</div><!--End Post Area-->
+			<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+				<h1 class="title"><?php the_title(); ?></h1>
+				<?php the_content(); ?>
+				<?php comments_template(); ?>
+			</div>
+			<?php wp_link_pages(); ?>
 		<?php endwhile; ?>
-		<?php get_sidebar(); ?>
-	</div>
+	</main>
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>

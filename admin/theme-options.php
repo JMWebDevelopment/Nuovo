@@ -1,4 +1,13 @@
-<?php
+<?php 
+/**
+* Theme-options.php
+*
+* Theme options file for Nuovo
+*
+* @author Jacob Martella
+* @package Nuovo
+* @version 2.0
+*/
 /**
  * Add the general options to the theme customizer
  */
@@ -12,7 +21,7 @@ function nuovo_general_customizer( $wp_customize ) {
         )
     );
 
-    // Add in the RSS Feed Option
+    //* Add in the RSS Feed Option
     $wp_customize->add_setting(
    		'nuovo-rss-feed',
     	array(
@@ -30,7 +39,7 @@ function nuovo_general_customizer( $wp_customize ) {
     	)
 	);
 
-	// Add in the Color Theme Option
+	//* Add in the Color Theme Option
     $wp_customize->add_setting(
    		'nuovo-color-theme',
     	array(
@@ -57,7 +66,7 @@ function nuovo_general_customizer( $wp_customize ) {
     	)
 	);
 
-	// Add in the Top Menu Option
+	//* Add in the Top Menu Option
     $wp_customize->add_setting(
    		'nuovo-top-menu',
     	array(
@@ -75,7 +84,7 @@ function nuovo_general_customizer( $wp_customize ) {
     	)
 	);
 
-	// Add in the Author Bio Option
+	//* Add in the Author Bio Option
     $wp_customize->add_setting(
    		'nuovo-author-bio',
     	array(
@@ -108,7 +117,7 @@ function nuovo_social_customizer( $wp_customize ) {
         )
     );
 
-    // Add the Facebook Link Option
+    //* Add the Facebook Link Option
     $wp_customize->add_setting(
    		'nuovo-facebook',
     	array(
@@ -126,7 +135,7 @@ function nuovo_social_customizer( $wp_customize ) {
     	)
 	);
 
-	// Add the Twitter Link Option
+	//* Add the Twitter Link Option
     $wp_customize->add_setting(
    		'nuovo-twitter',
     	array(
@@ -144,7 +153,7 @@ function nuovo_social_customizer( $wp_customize ) {
     	)
 	);
 
-	// Add the YouTube Link Option
+	//* Add the YouTube Link Option
     $wp_customize->add_setting(
    		'nuovo-youtube',
     	array(
@@ -162,7 +171,7 @@ function nuovo_social_customizer( $wp_customize ) {
     	)
 	);
 
-	// Add the Google+ Link Option
+	//* Add the Google+ Link Option
     $wp_customize->add_setting(
    		'nuovo-googleplus',
     	array(
@@ -180,7 +189,7 @@ function nuovo_social_customizer( $wp_customize ) {
     	)
 	);
 
-	// Add the LinkedIn Link Option
+	//* Add the LinkedIn Link Option
     $wp_customize->add_setting(
    		'nuovo-linkedin',
     	array(
@@ -197,6 +206,60 @@ function nuovo_social_customizer( $wp_customize ) {
         	'type' => 'text',
     	)
 	);
+
+	//* Add the Instagram Link Option
+    $wp_customize->add_setting(
+   		'nuovo-instagram',
+    	array(
+        	'default' => '',
+        	'sanitize_callback' => 'nuovo_sanitize_link',
+    	)
+	);
+
+	$wp_customize->add_control(
+    	'nuovo-instagram',
+    	array(
+        	'label' => __('Instagram Link', 'nuovo'),
+        	'section' => 'social_media',
+        	'type' => 'text',
+    	)
+	);
+
+	//* Add the Tumblr Link Option
+    $wp_customize->add_setting(
+   		'nuovo-tumblr',
+    	array(
+        	'default' => '',
+        	'sanitize_callback' => 'nuovo_sanitize_link',
+    	)
+	);
+
+	$wp_customize->add_control(
+    	'nuovo-tumblr',
+    	array(
+        	'label' => __('Tumblr Link', 'nuovo'),
+        	'section' => 'social_media',
+        	'type' => 'text',
+    	)
+	);
+
+	//* Add the Pinterest Link Option
+    $wp_customize->add_setting(
+   		'nuovo-pinterest',
+    	array(
+        	'default' => '',
+        	'sanitize_callback' => 'nuovo_sanitize_link',
+    	)
+	);
+
+	$wp_customize->add_control(
+    	'nuovo-pinterest',
+    	array(
+        	'label' => __('Pinterest Link', 'nuovo'),
+        	'section' => 'social_media',
+        	'type' => 'text',
+    	)
+	);
 }
 add_action( 'customize_register', 'nuovo_social_customizer' );
 
@@ -206,6 +269,7 @@ add_action( 'customize_register', 'nuovo_social_customizer' );
 function nuovo_homepage_customizer( $wp_customize ) {
     
     $cats = get_categories();
+    $cat_args['none'] = __('None', 'nuovo');
     foreach($cats as $cat) {
           $cat_args[$cat->term_id] = $cat->name;
     }
@@ -219,7 +283,7 @@ function nuovo_homepage_customizer( $wp_customize ) {
         )
     );
 
-	// Add the Slideshow Category Option
+	//* Add the Slideshow Category Option
     $wp_customize->add_setting(
    		'nuovo-slideshow-category',
     	array(
@@ -231,14 +295,14 @@ function nuovo_homepage_customizer( $wp_customize ) {
 	$wp_customize->add_control(
         'nuovo-slideshow-category',
         array(
-            'label' => 'Slideshow Category',
+            'label' => __('Slideshow Category', 'nuovo'),
             'section' => 'homepage',
             'type' => 'select',
             'choices' => $cat_args
         )
     );
     
-    // Add the Slideshow Count Option
+    //* Add the Slideshow Count Option
     $wp_customize->add_setting(
         'nuovo-slideshow-count',
         array(
@@ -250,13 +314,13 @@ function nuovo_homepage_customizer( $wp_customize ) {
     $wp_customize->add_control(
         'nuovo-slideshow-count',
         array(
-            'label' => 'Number of Slideshow Posts',
+            'label' => __('Number of Slideshow Posts', 'nuovo'),
             'section' => 'homepage',
             'type' => 'text',
         )
     );
 
-    // Add the First Category Option
+    //* Add the First Category Option
     $wp_customize->add_setting(
         'nuovo-category-one',
         array(
@@ -268,14 +332,14 @@ function nuovo_homepage_customizer( $wp_customize ) {
     $wp_customize->add_control(
         'nuovo-category-one',
         array(
-            'label' => 'First Category',
+            'label' => __('First Category', 'nuovo'),
             'section' => 'homepage',
             'type' => 'select',
             'choices' => $cat_args,
         )
     );
 
-    // Add the First Category Option
+    //* Add the First Category Option
     $wp_customize->add_setting(
         'nuovo-category-one-count',
         array(
@@ -287,13 +351,13 @@ function nuovo_homepage_customizer( $wp_customize ) {
     $wp_customize->add_control(
         'nuovo-category-one-count',
         array(
-            'label' => 'Number of Posts in the First Section',
+            'label' => __('Number of Posts in the First Section', 'nuovo'),
             'section' => 'homepage',
             'type' => 'text',
         )
     );
 
-    // Add the Second Category Option
+    //* Add the Second Category Option
     $wp_customize->add_setting(
         'nuovo-category-two',
         array(
@@ -305,14 +369,14 @@ function nuovo_homepage_customizer( $wp_customize ) {
     $wp_customize->add_control(
         'nuovo-category-two',
         array(
-            'label' => 'Second Category',
+            'label' => __('Second Category', 'nuovo'),
             'section' => 'homepage',
             'type' => 'select',
             'choices' => $cat_args
         )
     );
 
-    // Add the Second Category Count Option
+    //* Add the Second Category Count Option
     $wp_customize->add_setting(
         'nuovo-category-two-count',
         array(
@@ -324,13 +388,13 @@ function nuovo_homepage_customizer( $wp_customize ) {
     $wp_customize->add_control(
         'nuovo-category-two-count',
         array(
-            'label' => 'Number of Posts in the Second Section',
+            'label' => __('Number of Posts in the Second Section', 'nuovo'),
             'section' => 'homepage',
             'type' => 'text',
         )
     );
 
-    // Add the Third Category Option
+    //* Add the Third Category Option
     $wp_customize->add_setting(
         'nuovo-category-three',
         array(
@@ -342,14 +406,14 @@ function nuovo_homepage_customizer( $wp_customize ) {
     $wp_customize->add_control(
         'nuovo-category-three',
         array(
-            'label' => 'Third Category',
+            'label' => __('Third Category', 'nuovo'),
             'section' => 'homepage',
             'type' => 'select',
             'choices' => $cat_args
         )
     );
 
-    // Add the Third Category Count Option
+    //* Add the Third Category Count Option
     $wp_customize->add_setting(
         'nuovo-category-three-count',
         array(
@@ -361,13 +425,13 @@ function nuovo_homepage_customizer( $wp_customize ) {
     $wp_customize->add_control(
         'nuovo-category-three-count',
         array(
-            'label' => 'Number of Posts in the Third Section',
+            'label' => __('Number of Posts in the Third Section', 'nuovo'),
             'section' => 'homepage',
             'type' => 'text',
         )
     );
 
-    // Add the Fourth Category Option
+    //* Add the Fourth Category Option
     $wp_customize->add_setting(
         'nuovo-category-four',
         array(
@@ -379,14 +443,14 @@ function nuovo_homepage_customizer( $wp_customize ) {
     $wp_customize->add_control(
         'nuovo-category-four',
         array(
-            'label' => 'Fourth Category',
+            'label' => __('Fourth Category', 'nuovo'),
             'section' => 'homepage',
             'type' => 'select',
             'choices' => $cat_args
         )
     );
 
-    // Add the Fourth Category Count Option
+    //* Add the Fourth Category Count Option
     $wp_customize->add_setting(
         'nuovo-category-four-count',
         array(
@@ -398,13 +462,13 @@ function nuovo_homepage_customizer( $wp_customize ) {
     $wp_customize->add_control(
         'nuovo-category-four-count',
         array(
-            'label' => 'Number of Posts in the Fourth Section',
+            'label' => __('Number of Posts in the Fourth Section', 'nuovo'),
             'section' => 'homepage',
             'type' => 'text',
         )
     );
 
-    // Add the Latest Post Count Option
+    //* Add the Latest Post Count Option
     $wp_customize->add_setting(
         'nuovo-latest-posts-count',
         array(
@@ -416,7 +480,7 @@ function nuovo_homepage_customizer( $wp_customize ) {
     $wp_customize->add_control(
         'nuovo-latest-posts-count',
         array(
-            'label' => 'Number of Latest Posts',
+            'label' => __('Number of Latest Posts', 'nuovo'),
             'section' => 'homepage',
             'type' => 'text',
         )
@@ -425,10 +489,16 @@ function nuovo_homepage_customizer( $wp_customize ) {
 }
 add_action( 'customize_register', 'nuovo_homepage_customizer' );
 
+/** 
+* Setup the sanitation functions
+*/
+
+//* Sanitze links
 function nuovo_sanitize_link($input) {
 	return wp_filter_nohtml_kses($input);
 }
 
+//* Sanitize the color select option
 function nuovo_sanitize_select( $input ) {
     $valid = array(
         'default' => __('Default', 'nuovo'),
@@ -447,6 +517,7 @@ function nuovo_sanitize_select( $input ) {
     }
 }
 
+//* Sanitize checkboxes
 function nuovo_sanitize_checkbox( $input ) {
     if ( $input == 1 ) {
         return 1;
@@ -455,8 +526,10 @@ function nuovo_sanitize_checkbox( $input ) {
     }
 }
 
+//* Sanitize the category select options
 function nuovo_sanitize_category( $input ) {
 	$cats = get_categories();
+	$cat_args['none'] = __('None', 'nuovo');
     foreach($cats as $cat) {
           $cat_args[$cat->term_id] = $cat->name;
     }
@@ -467,6 +540,7 @@ function nuovo_sanitize_category( $input ) {
 	}
 }
 
+//* Sanitize number options
 function nuovo_sanitize_num($input) {
     return intval($input);
 }

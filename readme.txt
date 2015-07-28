@@ -1,58 +1,85 @@
-=== Nuovo Wordpress Theme ===
-Contributers: Jacob Martella
-Tags: black, blue, green, orange, purple, red, yellow, dark, two-columns, right-sidebar, responsive-layout, custom-background, custom-header, custom-menus, featured-images, theme-options
-Requires at least: 3.9.1
-Tested up to: 4.2.2
-Stable tag: 1.1.1
+=== Nuovo WordPress Theme ===
+Contributors: Jacob Martella
+Tags: black,blue,green,orange,purple,red,yellow,dark,two-columns,right-sidebar,responsive-layout,custom-background,custom-header,featured-images,theme-options
+Requires at least: 4.0
+Tested up to: 4.2.3
+Stable tag: 2.0
 
 == Description ==
-With today's technology, being able to have a website that looks good across desktop, tablet and mobile devices. Nuovo allows you to have just that with minimal work on your part. This theme is design to give your views a great experience no matter what device they use to access the internet. It also allows you to display your social media links as well as display your own customizable Twitter feed in the sidebar. Finally, this theme is designed with photos in mind, maximizing the use of the featured photos. It is recommended that you try to use a featured photo for each of your posts. Finally, the theme allows easy customization with a theme options page that allows you to change the color theme, add links to you social media pages and to customize how your homepage looks. It also includes a user style sheets that overrides all of the other style sheets from the theme editor screen in the Wordpress admin.
-
-== License ==
-GNU General Public License
-http://www.gnu.org/licenses/gpl.html
-
-= Photo License =
-Except where otherwise noted, all photos in the screenshot are also licensed under the GNU General Public License. Copyright 2015 Jacob Martella
+Nuovo gives the user almost complete control over the look and feel of his or her website. Users can select the color theme they want, what posts they want to show up in the homepage slider as well as in four separate areas on the homepage and can display the social media links they want in the header — all from the Customizer. Nuovo is also responsive, making it look good on any device with no extra work required.
 
 == Installation ==
 = Via WordPress Admin =
-1. From your sites admin, go to Themes > Install Themes
-2. In the search box, type 'Nuovo' and press enter
-3. Locate the entry for 'Nuovo' (there should be only one) and click the 'Install' link
-4. When installation is finished, click the 'Activate' link
+- From your sites admin, go to Themes > Install Themes.
+- In the search box, type 'Nuovo' and press enter.
+- Locate the entry for 'Nuovo' (there should be only one) and click the 'Install' link.
+- When installation is finished, click the 'Activate' link.
 
 = Manual Install =
-1. Unzip this file.
-2. Using an FTP client (I recommend FireZilla), upload the 'nuovo' file to your Wordpress theme folder. Make sure the file you upload simply says 'Nuovo' with no numbers after it. Otherwise, it won't work.
-3. Go into your Wordpress Admin, navigate to 'Appearance > Themes'
-4. Find the Nuovo listing on this page and click 'Activate'
+- Download the file from the theme page.
+- Unzip the file.
+- Using an FTP client (I recommend FireZilla), upload the 'nuovo' file to your Wordpress theme folder. Make sure the file you upload simply says 'Nuovo' with no numbers after it. Otherwise, it won't work.
+- Go into your Wordpress Admin, navigate to 'Appearance > Themes'.
+- Find the Giornalismo listing on this page and click 'Activate'.
 
-== Features/How To ==
+== Features ==
+= Customizable Homepage =
+One of the biggest features that Nuovo has is a customizable homepage. Users can select what category shows up in the featured post slider as well as how many posts are shown. The recommended practice is to create a top story or featured category and use that to control which exact posts show up in the slider. Also, users can select up to four categories that show up on the homepage underneath the slider. The number of posts in each section can be any number, but for the best look, it's recommended that the number of posts be a multiple of three.
 
-= Homepage Setup =
-Setting up the homepage may look daunting, but it's not that bad. All you really need to do is define a category for the first three category post areas as well as how many posts per category area. It's recommended to have the posts per area a multiple of three so each row is full. You don't have to necessarily pick a category for the featured post slider; however, I recommend creating either a "featured" or "top stories" category to display the posts you want everyone to see. Also, you don't have to display a fourth category area or the latest posts, but if you do, make sure to define how many of each you wish to display.
+= Responsive =
+As with all modern themes these days, Nuovo is completely responsive. This means that the user's site will look good on all devices with no work from the user required.
 
-= Featured Photos =
-Nuovo has a lot of support for featured photos. The optimal size for all featured photos is 630 pixels by 315 pixels, or a 2:1 ratio, otherwise if the photo is too small, there will be white space inside of the frame or if the photo is too big, it will get cut off.
+= Editor Styles =
+Know how your post is going to look before you actually publish it with editor styles. In the post editor, all of the fonts, html tags and images will be styled exactly like they will on the website.
 
 = Photos =
-To look good in the mobile version, it's recommended to keep any photos in your posts to a maximum width of 280 pixels.
+Nuovo is very dependent on featured photos and it's recommended that every post have a featured photo. For the best results, featured photos need to be at least 630px by 315px. Even better are featured photos that are larger than that and maintain the 2:1 ratio.
+
+Normal photos that are in the body of the post need to be no bigger than 280px for best results on small screen sizes.
 
 = Menus =
-Nuovo comes with up to two customizable menus. The primary menu is the one listed as "Main Menu" and should be the first one used. If you need or want to use the secondary menu, "Top Menu", check that box off in the theme options and register that menu the way you would any other menu on the Menu page in the Wordpress admin. 
+Nuovo comes with two menu areas, plus a mobile menu on smaller screen sizes. The top menu is optional and can be either shown or hidden via the 'General Settings' area of the Customizer. When set to be displayed, the top menu shows right above the header, as the name implies. The main menu is always shown and is displayed between the header and the main area on the page. The mobile menu displays on screen sizes smaller than 700px and shows both menus (though it will not display the top menu if it's hidden).
 
-= Header =
-Nuovo supports custom headers the size of 530px by 150px. To upload your header, go to the header page of the Wordpress admin.
+= Custom Header =
+Nuovo also supports a custom header to be shown instead of the site title and description if the user wishes. The best size for the header is 530px by 150px.
 
-= Background =
-Nuovo also supports custom backgrounds as well. It can either be a photo background or color background. To upload or change the background, go to the header page of the Wordpress admin. Currently, backgrounds won't "scroll" with the page in the tablet or mobile versions.
+= Custom Background =
+Finally, Nuovo supports a custom background that can either be a photo or color background. Do note that backgrounds, particualry photo backgrounds do not scroll down the page on tablets or mobile devices as they do on a desktop browser.
+
+== How To's ==
+= Setting up a Child Theme =
+When customizing a theme, the best practice is to create a child theme. This way, when you update the parent theme, all of your changes will still remain intact. Creating a child theme is very simple if you use the steps below.
+- Using your preferred FTP client, navigate to the "themes" directy inside the "wp-content" directory and create a directory titled "nuovo-child".
+- Once there, create a style.css file and add the following lines of code in there and save.
+	`/*
+	Theme Name: Nuovo Child
+	Description: Child theme for Nuovo theme
+	Author: <Your Name>
+	Template: nuovo
+	*/`
+- Then create a functions.php file and add the following code and save.
+	`<?php function nuovo_child_theme_styles() {
+		wp_enqueue_style( 'child-theme-css', get_stylesheet_directory_uri() . '/style.css' );
+	}
+	add_action( 'wp_enqueue_scripts', 'nuovo_child_theme_styles' ); ?>`
+
+== Support ==
+If you have a question, need to report a bug to be fixed or have a feature request for a future version, email me at jacob.martella@att.net or fill out the form on the theme page (http://jacobmartella.com/nuovo-wordpress-theme).
 
 == Changelog ==
+= 2.0 =
+- Updated all of the HTML to be compatible with HTML5.
+- Added Pinterest, Instagram and Tumblr social media links.
+- Made all of the social media links square images.
+- Made numerous changes to the fonts to look a little bit more modern.
+- Organized the functions.php file to make it easier to read.
+- Moved the tablet and mobile style sheets to a separate file each and enqueued them in functions.php
+- Moved the menus into one menu when screen size drops to below 700px.
+- Simplified the each of the color style sheets.
 
 = 1.1.1 =
-- Fixed: Issue with Top Menu always showing on mobile.
-- A new version to fix other styles and re-write some of the code is in the works.
+- Fixed: Issue with top menu always showing in mobile version.
+- A new version to fix numerous styles and re-write code is in the works as well.
 
 = 1.1.0 =
 - Hid the overflow if images went outside of their containers.
@@ -65,4 +92,11 @@ Nuovo also supports custom backgrounds as well. It can either be a photo backgro
 - Added vector social media images in the header.
 
 = 1.0.16 =
-Initial release to the WordPress theme directory.
+- Initial release to the WordPress theme directory.
+
+== License ==
+GNU General Public License
+http://www.gnu.org/licenses/gpl.html
+
+= Photo License =
+Except where otherwise noted, all photos in the screenshot are also licensed under the GNU General Public License. Copyright 2015 Jacob Martella

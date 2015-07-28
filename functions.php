@@ -1,7 +1,28 @@
 <?php
-// Set up the features to initial after the theme setup
+/**
+* Functions.php
+*
+* This is the functions.php file. Custom functions referenced in the theme templates are defined here.
+*
+* @author Jacob Martella
+* @package Nuovo
+* @version 2.0
+*
+* Table of Contents
+* I. Theme Setup Functions
+* II. Header Functions
+* III. Single Post Functions
+* IV. Archive Functions
+* V. Comments Functions
+* VI. Author Functions
+* VII. Other Functions
+*/
+/**
+* I. Theme Setup Functions
+*/
+//* Setup the theme after installation and activation
 function nuovo_setup() {
-	//Add support and Register the Two Menus
+	//* Add support and Register the Two Menus
 	register_nav_menus(
 		array(
 			'top-menu' => __( 'Top Menu', 'nuovo' ),
@@ -9,13 +30,13 @@ function nuovo_setup() {
 		)
 	);
 
-	//Add Support for Custom Background
+	//* Add Support for Custom Background
 	$custom_background_args = array(
 		'default-color' => '000000',
 	);
 	add_theme_support( 'custom-background', $custom_background_args );
 
-	//Add Support for Custom Header
+	//* Add Support for Custom Header
 	$args = array(
 		'flex-width' 	=> true,
 		'width'	=> 530,
@@ -27,35 +48,316 @@ function nuovo_setup() {
 	);
 	add_theme_support('custom-header', $args);
 
-	//Add Support for Featured Images
+	//* Add Support for Featured Images
 	add_theme_support( 'post-thumbnails', array( 'post' ) );
 
-	//Add Image Sizes
+	//* Add Image Sizes
 	add_image_size('single-post', 630, 315);
-	add_image_size('archive', 260, 130);
-	add_image_size('slideshow', 570, 289);
+	add_image_size('archive', 630, 315);
+	add_image_size('slideshow', 630, 315);
 	add_image_size('latest', 120, 60);
 
-	// Add support for editor styles
+	//* Add support for editor styles
 	add_editor_style();
 
-	// Add Support for Automatic Feed Links
+	//* Add Support for Automatic Feed Links
 	add_theme_support( 'automatic-feed-links' );
 
-	// Add in the text domain
+	//* Add in the text domain
 	load_theme_textdomain('nuovo', get_template_directory() . '/languages');
 
-	// Add support for title tag
+	//* Add support for title tag
 	add_theme_support('title-tag');
 
 }
 add_action('after_setup_theme', 'nuovo_setup');
 
-// Set the Maximum Content Width
+//* Set the Maximum Content Width
 if ( ! isset( $content_width ) )
  $content_width = 640;
 
-//Setup Function For Comments
+//* Register the sidebar
+function nuovo_sidebar() {
+	register_sidebar(array(
+		'name'=> __('Sidebar', 'nuovo'),
+		'id' => 'sidebar-1',
+		'before_widget' => '<div class="widget-wrap">',
+		'after_widget' => '</p> </div>',
+		'before_title' => '<div class="widget-title-bg"><h3 class="widget-title">',
+		'after_title' => '</h3></div><p class="widget-body">'
+	));
+}
+add_action('widgets_init', 'nuovo_sidebar');
+
+//* Load the theme options
+require_once(get_template_directory() . '/admin/theme-options.php');
+
+/**
+* Returns a custom read more link when the_excerpt() is used. This function is used in conjunction with the excerpt_more WordPress hook.
+*
+* @return string, the text to be displayed for the read more link
+*/
+function giornalismo_read_more($more) {
+	return '...<div class="read-more"><a href="' . get_the_permalink(get_the_ID()) . '">' . __('Continue Reading&rsaquo;&rsaquo;', 'giornalismo') . '</a></div>';
+}
+add_action('excerpt_more', 'giornalismo_read_more');
+
+/**
+* Returns a custom length for the post excerpt
+*
+* @return int, length of excerpt
+*/
+function nuovo_custom_excerpt_length( $length ) {
+	return 30;
+}
+add_filter( 'excerpt_length', 'nuovo_custom_excerpt_length', 999 );
+
+//* Enqueue the scripts for the theme
+function nuovo_scripts() {
+	wp_enqueue_script('jquery-ui-core');
+	wp_enqueue_script('nuovo-cycle', get_template_directory_uri() . '/js/nuovo-cycle.js');
+	if (is_home()) {
+		wp_enqueue_script( 'nuovo-home-scripts', get_template_directory_uri() . '/js/nuovo-slider.js' );
+	}
+	wp_enqueue_script( 'nuovo-main-menu', get_template_directory_uri() . '/js/nuovo-menu.js' );
+	wp_enqueue_style( 'nuovo-styesheet', get_template_directory_uri() . '/style.css' );
+	wp_enqueue_style( 'nuovo-tablet-styesheet', get_template_directory_uri() . '/css/tablet.css' );
+	wp_enqueue_style( 'nuovo-mobile-styesheet', get_template_directory_uri() . '/css/mobile.css' );
+	$color = esc_attr(get_theme_mod('nuovo-color-theme'));
+	if ($color != '') { 
+		if (get_theme_mod('nuovo-color-theme') != 'default') {
+			wp_enqueue_style('nuovo-'. $color, get_template_directory_uri() . '/css/nuovo-' . $color . '.css');
+		}
+	}
+	if ( is_singular() ) {
+		wp_enqueue_script( 'comment-reply' );
+	}
+	wp_register_style('nuovo-pt-sans-narrow', 'http://fonts.googleapis.com/css?family=PT+Sans+Narrow:700&subset=cyrillic,latin');
+	wp_enqueue_style('nuovo-pt-sans-narrow');
+	wp_register_style('nuovo-lato', 'http://fonts.googleapis.com/css?family=Lato:100,300,400,700');
+  	wp_enqueue_style('nuovo-lato');
+  	wp_register_style('nuovo-oswald', 'http://fonts.googleapis.com/css?family=Oswald:400,700,300');
+  	wp_enqueue_style('nuovo-oswald');
+  	wp_register_style('nuovo-roboto', 'http://fonts.googleapis.com/css?family=Roboto:400,300,700');
+  	wp_enqueue_style('nuovo-roboto');
+  	wp_register_style('nuovo-source-sans', 'http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700');
+  	wp_enqueue_style('nuovo-source-sans-sans');
+}
+add_action( 'wp_enqueue_scripts', 'nuovo_scripts' );
+
+/**
+* Returns the slug for a given category
+*
+* @param int, category id
+* @return string, category slug
+*/
+function get_cat_slug($cat_id) {
+    $cat_id = (int)$cat_id;
+    $category = get_category($cat_id);
+    return $category->slug;
+}
+/**
+* II. Header Functions
+*/
+/**
+* Returns the HTML to make sure the menu containers display correctly.
+*
+* @return string, HTML to control the menu containers
+*/
+function nuovo_menu_containers() {
+  $menus = wp_get_nav_menus();
+  $output = '';
+  foreach ($menus as $menu){
+    $name = strtolower($menu->name);
+    $name = str_replace(" ", "-", $name);
+    $output .= '<style type="text/css">.top-menu .menu-' . $name . '-container, .main-menu .menu-' . $name . '-container{width: 980px;margin: auto;} @media only screen and (max-width: 979px) and (min-width: 700px) {.top-menu .menu-' . $name . '-container, .main-menu .menu-' . $name . '-container{width: 700px;margin: auto;min-height:39px;max-height:78px;}} @media only screen and (max-width: 699px) and (min-width: 650px) {.top-menu .menu-' . $name . '-container, .main-menu .menu-' . $name . '-container{width: 650px;margin: auto;clear:both;}} @media only screen and (max-width: 320px) { mobile-main-menu .menu-' . $name . '-container{width: 100%;margin: auto;min-height:39px;max-height:78px;}}</style>';
+  }
+  return $output;
+}
+
+/**
+* Returns the HTML for the masthead
+*
+* @return string, HTML for the masthead
+*/
+function nuovo_header() {
+	$html = '<section class="header">';
+	$html .= '<div class="masthead">';
+	if(get_header_image()) { 
+		$html .= '<a href="' . esc_url(get_home_url()) . '"><img src="' . get_header_image() . '" height="' .   get_custom_header()->height . '" width="' . get_custom_header()->width . '" alt="" /></a>';
+	} else {
+		$html .= '<h1 class="site-title"><a href="' . esc_url(get_home_url()) . '">' . get_bloginfo('name') . '</a></h1>';
+		$html .= '<h2 class="site-description"><a href="' . esc_url(get_home_url()) . '">' .  get_bloginfo('description') . '</a></h2>';
+	}
+	$html .= '</div>';
+	$html .= nuovo_social_media_links();
+  	$html .= '</section>';
+	return $html;
+}
+
+/**
+* Returns a special class to break the linke
+* 
+* @param int, the count of how many links are active
+* @return string, the break-line class if needed
+*/
+function nuovo_social_next_line($count) {
+	$links = array('nuovo-facebook', 'nuovo-twitter', 'nuovo-googleplus', 'nuovo-youtube', 'nuovo-linkedin', 'nuovo-instagram', 'nuovo-tumblr', 'nuovo-pinterest');
+	$num_links = 1;
+	foreach ($links as $link) {
+		if (esc_attr(get_theme_mod($link)) != '') {
+			$num_links = $num_links + 1;
+		}
+	}
+	if ($count == (intval($num_links / 2)) + 1) {
+		$class = 'social-break';
+	} else {
+		$class = '';
+	}
+	return $class;
+}
+
+/**
+* Returns social links and images based on theme options
+* 
+* Goes through the social media theme options and adds an image and a link to that social media site if there is an option value for it
+* @return string, the images and links for each social media site
+*/
+function nuovo_social_media_links() {
+  $html = '';
+  $count = 0;
+  $html = '<div class="social-links">';
+  if (esc_attr(get_theme_mod('nuovo-facebook')) != '') {
+  	$count = $count + 1;
+  	$html .= '<div class="facebook-social nuovo-social-link ' . nuovo_social_next_line($count) . '"><a href="' . esc_attr(get_theme_mod('nuovo-facebook')) . '" target="_blank"><img src="/wp-content/themes/nuovo/images/facebook.png" width="60px" /></a></div>';
+  }
+  if (esc_attr(get_theme_mod('nuovo-twitter')) != '') {
+  	$count = $count + 1;
+  	$html .= '<div class="twitter-social nuovo-social-link ' . nuovo_social_next_line($count) . '"><a href="' . esc_attr(get_theme_mod('nuovo-twitter')) . '" target="_blank"><img src="/wp-content/themes/nuovo/images/twitter.png" width="60" /></a></div>';
+  }
+  if (esc_attr(get_theme_mod('nuovo-googleplus')) != '') {
+  	$count = $count + 1;
+  	$html .= '<div class="google-plus-social nuovo-social-link ' . nuovo_social_next_line($count) . '"><a href="' . esc_attr(get_theme_mod('nuovo-googleplus')) . '" target="_blank"><img src="/wp-content/themes/nuovo/images/googleplus.png" width="60" /></a></div>';
+  }
+  if (esc_attr(get_theme_mod('nuovo-youtube')) != '') {
+  	$count = $count + 1;
+  	$html .= '<div class="youtube-social nuovo-social-link ' . nuovo_social_next_line($count) . '"><a href="' . esc_attr(get_theme_mod('nuovo-youtube')) . '" target="_blank"><img src="/wp-content/themes/nuovo/images/youtube.png" width="60" /></a></div>';
+  }
+  if (esc_attr(get_theme_mod('nuovo-linkedin')) != '') {
+  	$count = $count + 1;
+  	$html .= '<div class="linkedin-social nuovo-social-link ' . nuovo_social_next_line($count) . '"><a href="' . esc_attr(get_theme_mod('nuovo-linkedin')) . '" target="_blank"><img src="/wp-content/themes/nuovo/images/linkedin.png" width="60" /></a></div>';
+  }
+  if (esc_attr(get_theme_mod('nuovo-instagram')) != '') {
+  	$count = $count + 1;
+  	$html .= '<div class="instagram-social nuovo-social-link ' . nuovo_social_next_line($count) . '"><a href="' . esc_attr(get_theme_mod('nuovo-instagram')) . '" target="_blank"><img src="/wp-content/themes/nuovo/images/instagram.png" width="60" /></a></div>';
+  }
+  if (esc_attr(get_theme_mod('nuovo-tumblr')) != '') {
+  	$count = $count + 1;
+  	$html .= '<div class="tumblr-social nuovo-social-link ' . nuovo_social_next_line($count) . '"><a href="' . esc_attr(get_theme_mod('nuovo-tumblr')) . '" target="_blank"><img src="/wp-content/themes/nuovo/images/tumblr.png" width="60" /></a></div>';
+  }
+  if (esc_attr(get_theme_mod('nuovo-pinterest')) != '') {
+  	$count = $count + 1;
+  	$html .= '<div class="pinterest-social nuovo-social-link ' . nuovo_social_next_line($count) . '"><a href="' . esc_attr(get_theme_mod('nuovo-pinterest')) . '" target="_blank"><img src="/wp-content/themes/nuovo/images/pinterest.png" width="60" /></a></div>';
+  }
+  if (esc_attr(get_theme_mod('nuovo-rss-feed')) != '') {
+  	$count = $count + 1;
+  	$html .= '<div class="rss-social nuovo-social-link ' . nuovo_social_next_line($count) . '"><a href="' . esc_attr(get_theme_mod('nuovo-rss-feed')) . '" target="_blank"><img src="/wp-content/themes/nuovo/images/rss.png" width="60" /></a></div>';
+  } else {
+  	$count = $count + 1;
+    $html .= '<div class="rss-social nuovo-social-link ' . nuovo_social_next_line($count) . '"><a href="' . get_feed_link( 'rss' ) . '" target="_blank"><img src="/wp-content/themes/nuovo/images/rss.png" width="60" /></a></div>';
+  }
+  $html .= '</div>';
+  return $html;
+}
+/**
+* III. Single Post Functions
+*/
+/**
+* Returns the HTML string for the story details based off of the parameter for normal style or mobile
+*
+* @param boolean, true if normal, false if mobile
+* @return string, HTML for the post details
+*/
+function nuovo_post_details($placement) {
+	$html = '';
+	//* Check to see if the it's the normal details section or the mobile section
+	if ($placement == true) {
+		$class = 'post-meta clearfix';
+	} else {
+		$class = 'mobile-post-meta clearfix';
+	}
+	//* Get the number of comments
+	$num_comments = get_comments_number(get_the_ID());
+	if ($num_comments == 0) {
+		$comments = __('0 Comments', 'nuovo');
+	} elseif ($num_comments == 1) {
+		$comments = __('1 Comment', 'nuovo');
+	} else {
+		$comments = $num_comments . __(' Comments', 'nuovo');
+	}
+	if (comments_open() == false) {
+		$comments = __('Comments Off', 'nuovo');
+	}
+	//* Get the tags
+	$tags = get_the_tags();
+	$tags_section = '';
+	if ($tags) {
+		foreach($tags as $tag) {
+			$tags_section .= $tag->name . '<br />';
+		}
+	}
+	rtrim($tags_section, '<br />');
+	//* Put the HTML string together
+	$html .= '<aside class=' . $class . '>';
+	$html .= '<div class="row"><h5 class="text">' . get_the_time('M j, Y') . '</h5></div>';
+	$html .= '<div class="row"><h5 class="text">' . __('Written By: ', 'nuovo') . get_the_author_link() . '</h5></div>';
+	$html .= '<div class="row"><h5 class="text">' . $comments . '</h5></div>';
+	$html .= '<div class="row"><h5 class="text"> ' . get_the_category_list(', ') . '</h5></div>';
+	$html .= '<div class="row"><h5 class="text">' . __('Tags: ', 'nuovo') . '<br />' . $tags_section . '</h5></div>';
+	$html .= '</aside>';
+
+	return $html;
+}
+/**
+* IV. Archive Functions
+*/
+/**
+* Returns the custom output for the archive page titles using the get_the_archive_title filter.
+*
+* @return string, HTML for archive page title
+*/
+function nuovo_archive_title($title) {
+  if (is_day()) {
+    $title = __('Archives for ', 'nuovo') . get_the_time('F j, Y');
+  }
+  else if (is_month()) {
+    $title = __('Archives for ', 'nuovo') . get_the_time('F Y');
+  }
+  else if (is_year()) {
+    $title = __('Archives for ', 'nuovo') . get_the_time('Y');
+  } 
+  else if (is_category()) {
+    $title = single_cat_title('', false);
+  }
+  else if (is_search()) {
+    $title = __('Search results for ', 'nuovo') . get_search_query();
+  }
+  else if (is_tag()) {
+    $title = single_tag_title('', false);
+  }
+  else {
+    $page = get_query_var('paged');
+    $title = __('Page ', 'nuovo') . $page;
+  }
+  return $title;
+}
+add_filter( 'get_the_archive_title', 'nuovo_archive_title');
+/**
+* V. Comments Functions
+*/
+/**
+* Sets up the custom comments template
+*/
 function nuovo_advanced_comment($comment, $args, $depth) {
    $GLOBALS['comment'] = $comment; ?>
  
@@ -81,6 +383,7 @@ function nuovo_advanced_comment($comment, $args, $depth) {
 	   <?php nuovo_delete_comment_link(get_comment_ID()); ?>
    </div>
    <div class="clear"></div>
+</li>
 <?php }
 function nuovo_delete_comment_link($id) {
   if (current_user_can('edit_posts')) {
@@ -88,107 +391,37 @@ function nuovo_delete_comment_link($id) {
     echo '<a href="'.admin_url("comment.php?action=cdc&dt=spam&c=$id").'">' . __('spam', 'nuovo') . '</a>';
   }
 }
-
-//Register Sidebars
-function nuovo_sidebar() {
-	register_sidebar(array(
-		'name'=> __('Sidebar', 'nuovo'),
-		'id' => 'sidebar-1',
-		'before_widget' => '<div class="widget-wrap">',
-		'after_widget' => '</p> </div>',
-		'before_title' => '<div class="widget-title-bg"><h3 class="widget-title">',
-		'after_title' => '</h3></div><p class="widget-body">'
-	));
-}
-add_action('widgets_init', 'nuovo_sidebar');
-
-//Theme Options
-require_once(get_template_directory() . '/admin/theme-options.php');
-
-//Change Menu Container CSS Based on Menu Names
-function nuovo_menu_container() {
-	$menus = wp_get_nav_menus();
-	foreach ($menus as $menu){
-		$name = strtolower($menu->name);
-		$name = str_replace(" ", "-", $name);
-		echo '<style type="text/css">#top-menu .menu-'.$name.'-container, #main-menu .menu-'.$name.'-container{width: 980px;margin: auto;} @media only screen and (max-width: 979px) and (min-width: 700px) {#top-menu .menu-'.$name.'-container, #main-menu .menu-'.$name.'-container{width: 700px;margin: auto;min-height:39px;max-height:78px;}} @media only screen and (max-width: 699px) and (min-width: 650px) {#top-menu .menu-'.$name.'-container, #main-menu .menu-'.$name.'-container{width: 650px;margin: auto;clear:both;}}</style>';
+/**
+* VI. Author Functions
+*/
+/**
+* Returns the HTML for the author bio area
+*
+* @return string, HTML for the author bio area
+*/
+function nuovo_author_bio() {
+	$html = '<section class="author-bio clearfix">';
+	if (get_avatar(get_the_author_meta('email'))) {
+		$html .= '<div class="mug-shot">' . get_avatar(get_the_author_meta('email'), $size = 96) . '</div>';
 	}
+	$html .= '<h3 class="title">' . __('About ', 'nuovo') . get_the_author_meta('display_name') . '</h3>';
+	$html .= '<p class="bio">' . get_the_author_meta('description') . '</p>';
+	$html .= '</section>';
+	return $html;
 }
-
-//Add Support for Different Page 2 Template
-add_action('template_include','nuovo_change_page_two');
+/**
+* VII. Other Functions
+*/
+/**
+* Returns the location of the custom index template
+*
+* @return string, path to custom index template
+*/
 function nuovo_change_page_two( $template ){
     if( is_front_page() && is_paged() ){
         $template = locate_template(array('index.php'));
     }
     return $template;
 }
-
-//Change the "Read More" For Posts on Home Page
-function nuovo_new_excerpt_more( $more ) {
-		return '... <span class="home-read-more"><a href="'. get_the_permalink( get_the_ID() ) .'">' . __('Continue Reading&rsaquo;&rsaquo;', 'nuovo') . '</a></span>';
-}
-add_filter('excerpt_more', 'nuovo_new_excerpt_more');
-
-//Change the length of excerpt
-function nuovo_custom_excerpt_length( $length ) {
-	return 40;
-}
-add_filter( 'excerpt_length', 'nuovo_custom_excerpt_length', 999 );
-
-//Enqueue Scripts
-function nuovo_scripts() {
-	wp_enqueue_script('jquery-ui-core');
-	$scripts = array(
-					'nuovo-cycle' => '/js/nuovo-cycle.js',
-					'nuovo-swiper' => '/js/nuovo-idangerous.swiper-2.3.min.js'
-	);
-	foreach ($scripts as $key=>$location) {
-		wp_enqueue_script( $key, get_template_directory_uri() . $location );
-	}
-	if (is_home()) {
-		wp_enqueue_script( 'nuovo-home-scripts', get_template_directory_uri() . '/js/nuovo-home-scripts.js' );
-	}
-	if (esc_attr(get_theme_mod('nuovo-top-menu')) == 1) {
-		wp_enqueue_script( 'nuovo-top-menu', get_template_directory_uri() . '/js/nuovo-top-menu.js' );
-	}
-	wp_enqueue_script( 'nuovo-main-menu', get_template_directory_uri() . '/js/nuovo-main-menu.js' );
-	wp_enqueue_style( 'nuovo-styesheet', get_template_directory_uri() . '/style.css' );
-	$color = esc_attr(get_theme_mod('nuovo-color-theme'));
-	if ($color != '') { 
-		if (get_theme_mod('nuovo-color-theme') != 'default') {
-			wp_enqueue_style('nuovo-'. $color . '-css', get_template_directory_uri() . '/css/nuovo-' . $color . '.css');
-		}
-	}
-	if (get_header_image()== '') {
-		wp_enqueue_style('nuovo-header-css', get_template_directory_uri() . '/css/nuovo-header.css');
-	}
-	if ( is_singular() ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
-}
-add_action( 'wp_enqueue_scripts', 'nuovo_scripts' );
-
-// Add function to display the page title
-function nuovo_wp_title( $title, $sep ) {
-	global $paged, $page;
-
-	if ( is_feed() )
-		return $title;
-
-	// Add the site name.
-	$title .= get_bloginfo( 'name' );
-
-	// Add the site description for the home/front page.
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) )
-		$title = "$title $sep $site_description";
-
-	// Add a page number if necessary.
-	if ( $paged >= 2 || $page >= 2 )
-		$title = "$title $sep " . sprintf( __( 'Page %s', 'twentytwelve' ), max( $paged, $page ) );
-
-	return $title;
-}
-add_filter( 'wp_title', 'nuovo_wp_title', 10, 2);
+add_action('template_include','nuovo_change_page_two');
 ?>

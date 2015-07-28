@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Nuovo ReadMe</title>
+</head>
+<body>
+	<h1>Nuovo ReadMe</h1>
+	<strong>Contributors:</strong> Jacob Martella<br />
+	<strong>Tags:</strong> black,blue,green,orange,purple,red,yellow,dark,two-columns,right-sidebar,responsive-layout,custom-background,custom-header,featured-images,theme-options<br />
+	<strong>Requires at least:</strong> 4.0<br />
+	<strong>Tested up to:</strong> 4.2.3<br />
+	<strong>Stable tag:</strong> 2.0<br />
+	<h2>Description</h2>
+		<p>Nuovo gives the user almost complete control over the look and feel of his or her website. Users can select the color theme they want, what posts they want to show up in the homepage slider as well as in four separate areas on the homepage and can display the social media links they want in the header — all from the Customizer. Nuovo is also responsive, making it look good on any device with no extra work required.</p>
+	<h2>Installation</h2>
+		<h3>Via WordPress Admin</h3>
+			<ul>
+				<li>From your sites admin, go to Themes > Install Themes.</li>
+				<li>In the search box, type 'Nuovo' and press enter.</li>
+				<li>Locate the entry for 'Nuovo' (there should be only one) and click the 'Install' link.</li>
+				<li>When installation is finished, click the 'Activate' link.</li>
+			</ul>
+		<h3>Manual Install</h3>
+			<ul>
+				<li>Download the file from the theme page.</li>
+				<li>Unzip the file.</li>
+				<li>Using an FTP client (I recommend FireZilla), upload the 'nuovo' file to your Wordpress theme folder. Make sure the file you upload simply says 'Nuovo' with no numbers after it. Otherwise, it won't work.</li>
+				<li>Go into your Wordpress Admin, navigate to 'Appearance > Themes'.</li>
+				<li>Find the Giornalismo listing on this page and click 'Activate'.</li>
+			</ul>
+	<h2>Features</h2>
+		<h3>Customizable Homepage</h3>
+			<p>One of the biggest features that Nuovo has is a customizable homepage. Users can select what category shows up in the featured post slider as well as how many posts are shown. The recommended practice is to create a top story or featured category and use that to control which exact posts show up in the slider. Also, users can select up to four categories that show up on the homepage underneath the slider. The number of posts in each section can be any number, but for the best look, it's recommended that the number of posts be a multiple of three.</p>
+		<h3>Responsive</h3>
+			<p>As with all modern themes these days, Nuovo is completely responsive. This means that the user's site will look good on all devices with no work from the user required.</p>
+		<h3>Editor Styles</h3>
+			<p>Know how your post is going to look before you actually publish it with editor styles. In the post editor, all of the fonts, html tags and images will be styled exactly like they will on the website.</p>.
+		<h3>Photos</h3>
+			<p>Nuovo is very dependent on featured photos and it's recommended that every post have a featured photo. For the best results, featured photos need to be at least 630px by 315px. Even better are featured photos that are larger than that and maintain the 2:1 ratio.</p>
+			<p>Normal photos that are in the body of the post need to be no bigger than 280px for best results on small screen sizes.</p>
+		<h3>Menus</h3>
+			<p>Nuovo comes with two menu areas, plus a mobile menu on smaller screen sizes. The top menu is optional and can be either shown or hidden via the 'General Settings' area of the Customizer. When set to be displayed, the top menu shows right above the header, as the name implies. The main menu is always shown and is displayed between the header and the main area on the page. The mobile menu displays on screen sizes smaller than 700px and shows both menus (though it will not display the top menu if it's hidden).</p>
+		<h3>Custom Header</h3>
+			<p>Nuovo also supports a custom header to be shown instead of the site title and description if the user wishes. The best size for the header is 530px by 150px.</p>
+		<h3>Custom Background</h3>
+			<p>Finally, Nuovo supports a custom background that can either be a photo or color background. Do note that backgrounds, particualry photo backgrounds do not scroll down the page on tablets or mobile devices as they do on a desktop browser.</p>
+	<h2>How To's</h2>
+		<h3>Setting up a Child Theme</h3>
+		<p>When customizing a theme, the best practice is to create a child theme. This way, when you update the parent theme, all of your changes will still remain intact. Creating a child theme is very simple if you use the steps below.</p>
+		<ul>
+			<li>Using your preferred FTP client, navigate to the "themes" directy inside the "wp-content" directory and create a directory titled "nuovo-child".</li>
+			<li>Once there, create a style.css file and add the following lines of code in there and save.<br />
+				<code>/*<br />
+				Theme Name: Nuovo Child<br />
+				Description: Child theme for Nuovo theme<br />
+				Author: <Your Name><br />
+				Template: nuovo<br />
+				*/</code></li>
+			<li>Then create a functions.php file and add the following code and save.<br />
+				<code>&lt;?php function nuovo_child_theme_styles() {<br />
+				wp_enqueue_style( 'child-theme-css', get_stylesheet_directory_uri() . '/style.css' );<br />
+				}<br />
+				add_action( 'wp_enqueue_scripts', 'nuovo_child_theme_styles' ); ?&gt;</code></li>
+		</ul>
+	<h2>Support</h2>
+		<p>If you have a question, need to report a bug to be fixed or have a feature request for a future version, email me at jacob.martella@att.net or <a href="http://jacobmartella.com/nuovo-wordpress-theme" target="_blank">fill out the form on the theme page.</a></p>
+	<h2>Changelog</h2>
+		<h3>2.0</h3>
+			<ul>
+				<li>Updated all of the HTML to be compatible with HTML5.</li>
+				<li>Added Pinterest, Instagram and Tumblr social media links.</li>
+				<li>Made all of the social media links square images.</li>
+				<li>Made numerous changes to the fonts to look a little bit more modern.</li>
+				<li>Organized the functions.php file to make it easier to read.</li>
+				<li>Moved the tablet and mobile style sheets to a separate file each and enqueued them in functions.php</li>
+				<li>Moved the menus into one menu when screen size drops to below 700px.</li>
+				<li>Simplified the each of the color style sheets.</li>
+			</ul>
+		<h3>1.1.1</h3>
+			<ul>
+				<li>Fixed: Issue with top menu always showing in mobile version.</li>
+				<li>A new version to fix numerous styles and re-write code is in the works as well.</li>
+			</ul>
+		<h3>1.1.0</h3>
+			<ul>
+				<li>Hid the overflow if images went outside of their containers.</li>
+				<li>Added image sizes for featured images on the home page.</li>
+				<li>Fixed an issue with the home posts sections where the incorrect number of posts showing up.</li>
+				<li>Made sure posts on the home page fit into equal rows.</li>
+				<li>Added 'clearfix' class to author bio.</li>
+				<li>Extended the slide panel width for the featured post slider for the tablet sizes.</li>
+				<li>Made social media images fit on one line in the tablet and mobile version.</li>
+				<li>Added vector social media images in the header.</li>
+			</ul>
+		<h3>1.0.16</h3>
+			<ul>
+				<li>Initial release to the WordPress theme directory.</li>
+			</ul>
+	<h2>License</h2>
+		<p>GNU General Public License<br />
+		http://www.gnu.org/licenses/gpl.html</p>
+	<h2>Photo License</h2>
+		<p>Except where otherwise noted, all photos in the screenshot are also licensed under the GNU General Public License. Copyright 2015 Jacob Martella</p>
+</body>
+</html>
