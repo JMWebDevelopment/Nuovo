@@ -48,7 +48,7 @@
 	<!--Begin First Post Section-->
 	<?php if ((esc_attr(get_theme_mod('nuovo-category-one')) != '') and (esc_attr(get_theme_mod('nuovo-category-one')) != 'none')) { $cat_one = esc_attr(get_theme_mod('nuovo-category-one')); } else { $cat_one = ''; }
 	if (esc_attr(get_theme_mod('nuovo-category-one-count'))) { $cat_one_count = esc_attr(get_theme_mod('nuovo-category-one-count')); } else { $cat_one_count = 3; } ?>
-	<section class="first-section home-section <?php if ((esc_attr(get_theme_mod('nuovo-category-one')) != '') and (esc_attr(get_theme_mod('nuovo-category-one')) != 'none')) { echo 'category-' . get_cat_slug($cat_one); } ?>">
+	<section class="first-section home-section <?php if ((esc_attr(get_theme_mod('nuovo-category-one')) != '') and (esc_attr(get_theme_mod('nuovo-category-one')) != 'none')) { echo 'category-' . nuovo_get_cat_slug($cat_one); } ?>">
 		<h3 class="section-head"><?php if ((esc_attr(get_theme_mod('nuovo-category-one')) != '') and (esc_attr(get_theme_mod('nuovo-category-one')) != 'none')) { echo get_cat_name($cat_one); } ?></h3>
 		<div class="section-wrap">
 			<?php 
@@ -83,7 +83,7 @@
 	<?php if ((esc_attr(get_theme_mod('nuovo-category-two')) != '') and (esc_attr(get_theme_mod('nuovo-category-two')) != 'none')) { ?>
 		<?php if ((esc_attr(get_theme_mod('nuovo-category-two')) != '') and (esc_attr(get_theme_mod('nuovo-category-two')) != 'none')) { $cat_two = esc_attr(get_theme_mod('nuovo-category-two')); } else { $cat_two = ''; }
 		if (esc_attr(get_theme_mod('nuovo-category-two-count'))) { $cat_two_count = esc_attr(get_theme_mod('nuovo-category-two-count')); } else { $cat_two_count = 3; } ?>
-		<section class="second-section home-section <?php echo 'category-' . get_cat_slug($cat_two); ?>">
+		<section class="second-section home-section <?php echo 'category-' . nuovo_get_cat_slug($cat_two); ?>">
 			<h3 class="section-head"><?php echo get_cat_name($cat_two); ?></h3>
 			<div class="section-wrap">
 				<?php 
@@ -119,7 +119,7 @@
 	<?php if ((esc_attr(get_theme_mod('nuovo-category-three')) != '') and (esc_attr(get_theme_mod('nuovo-category-three')) != 'none')) { ?>
 		<?php if ((esc_attr(get_theme_mod('nuovo-category-three')) != '') and (esc_attr(get_theme_mod('nuovo-category-three')) != 'none')) { $cat_three = esc_attr(get_theme_mod('nuovo-category-three')); } else { $cat_three = ''; }
 		if (esc_attr(get_theme_mod('nuovo-category-three-count'))) { $cat_three_count = esc_attr(get_theme_mod('nuovo-category-three-count')); } else { $cat_three_count = 3; } ?>
-		<section class="third-section home-section <?php echo 'category-' . get_cat_slug($cat_three); ?>">
+		<section class="third-section home-section <?php echo 'category-' . nuovo_get_cat_slug($cat_three); ?>">
 			<h3 class="section-head"><?php echo get_cat_name($cat_three); ?></h3>
 			<div class="section-wrap">
 				<?php 
@@ -155,7 +155,7 @@
 	<?php if ((esc_attr(get_theme_mod('nuovo-category-four')) != '') and (esc_attr(get_theme_mod('nuovo-category-four')) != 'none')) { ?>
 		<?php if ((esc_attr(get_theme_mod('nuovo-category-four')) != '') and (esc_attr(get_theme_mod('nuovo-category-four')) != 'none')) { $cat_four = esc_attr(get_theme_mod('nuovo-category-four')); } else { $cat_four = ''; }
 		if (esc_attr(get_theme_mod('nuovo-category-four-count'))) { $cat_four_count = esc_attr(get_theme_mod('nuovo-category-four-count')); } else { $cat_four_count = 3; } ?>
-		<section class="fourth-section home-section <?php echo 'category-' . get_cat_slug($cat_four); ?>">
+		<section class="fourth-section home-section <?php echo 'category-' . nuovo_get_cat_slug($cat_four); ?>">
 			<h3 class="section-head"><?php echo get_cat_name($cat_four); ?></h3>
 			<div class="section-wrap">
 				<?php 

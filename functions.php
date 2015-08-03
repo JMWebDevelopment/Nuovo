@@ -97,10 +97,10 @@ require_once(get_template_directory() . '/admin/theme-options.php');
 *
 * @return string, the text to be displayed for the read more link
 */
-function giornalismo_read_more($more) {
+function nuovo_read_more($more) {
 	return '...<div class="read-more"><a href="' . get_the_permalink(get_the_ID()) . '">' . __('Continue Reading&rsaquo;&rsaquo;', 'giornalismo') . '</a></div>';
 }
-add_action('excerpt_more', 'giornalismo_read_more');
+add_action('excerpt_more', 'nuovo_read_more');
 
 /**
 * Returns a custom length for the post excerpt
@@ -132,16 +132,11 @@ function nuovo_scripts() {
 	if ( is_singular() ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
-	wp_register_style('nuovo-pt-sans-narrow', 'http://fonts.googleapis.com/css?family=PT+Sans+Narrow:700&subset=cyrillic,latin');
-	wp_enqueue_style('nuovo-pt-sans-narrow');
-	wp_register_style('nuovo-lato', 'http://fonts.googleapis.com/css?family=Lato:100,300,400,700');
-  	wp_enqueue_style('nuovo-lato');
-  	wp_register_style('nuovo-oswald', 'http://fonts.googleapis.com/css?family=Oswald:400,700,300');
-  	wp_enqueue_style('nuovo-oswald');
-  	wp_register_style('nuovo-roboto', 'http://fonts.googleapis.com/css?family=Roboto:400,300,700');
-  	wp_enqueue_style('nuovo-roboto');
-  	wp_register_style('nuovo-source-sans', 'http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700');
-  	wp_enqueue_style('nuovo-source-sans-sans');
+	wp_enqueue_style('nuovo-pt-sans-narrow', '//fonts.googleapis.com/css?family=PT+Sans+Narrow:700&subset=cyrillic,latin');
+	wp_enqueue_style('nuovo-lato', '//fonts.googleapis.com/css?family=Lato:100,300,400,700');
+  	wp_enqueue_style('nuovo-oswald', '//fonts.googleapis.com/css?family=Oswald:400,700,300');
+  	wp_enqueue_style('nuovo-roboto', '//fonts.googleapis.com/css?family=Roboto:400,300,700');
+  	wp_enqueue_style('nuovo-source-sans', '//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700');
 }
 add_action( 'wp_enqueue_scripts', 'nuovo_scripts' );
 
@@ -151,7 +146,7 @@ add_action( 'wp_enqueue_scripts', 'nuovo_scripts' );
 * @param int, category id
 * @return string, category slug
 */
-function get_cat_slug($cat_id) {
+function nuovo_get_cat_slug($cat_id) {
     $cat_id = (int)$cat_id;
     $category = get_category($cat_id);
     return $category->slug;
@@ -229,42 +224,42 @@ function nuovo_social_media_links() {
   $html = '<div class="social-links">';
   if (esc_attr(get_theme_mod('nuovo-facebook')) != '') {
   	$count = $count + 1;
-  	$html .= '<div class="facebook-social nuovo-social-link ' . nuovo_social_next_line($count) . '"><a href="' . esc_attr(get_theme_mod('nuovo-facebook')) . '" target="_blank"><img src="/wp-content/themes/nuovo/images/facebook.png" width="60px" /></a></div>';
+  	$html .= '<div class="facebook-social nuovo-social-link ' . nuovo_social_next_line($count) . '"><a href="' . esc_attr(get_theme_mod('nuovo-facebook')) . '" target="_blank"><img src="' . get_template_directory_uri() . '/images/facebook.png" width="60px" /></a></div>';
   }
   if (esc_attr(get_theme_mod('nuovo-twitter')) != '') {
   	$count = $count + 1;
-  	$html .= '<div class="twitter-social nuovo-social-link ' . nuovo_social_next_line($count) . '"><a href="' . esc_attr(get_theme_mod('nuovo-twitter')) . '" target="_blank"><img src="/wp-content/themes/nuovo/images/twitter.png" width="60" /></a></div>';
+  	$html .= '<div class="twitter-social nuovo-social-link ' . nuovo_social_next_line($count) . '"><a href="' . esc_attr(get_theme_mod('nuovo-twitter')) . '" target="_blank"><img src="' . get_template_directory_uri() . '/images/twitter.png" width="60" /></a></div>';
   }
   if (esc_attr(get_theme_mod('nuovo-googleplus')) != '') {
   	$count = $count + 1;
-  	$html .= '<div class="google-plus-social nuovo-social-link ' . nuovo_social_next_line($count) . '"><a href="' . esc_attr(get_theme_mod('nuovo-googleplus')) . '" target="_blank"><img src="/wp-content/themes/nuovo/images/googleplus.png" width="60" /></a></div>';
+  	$html .= '<div class="google-plus-social nuovo-social-link ' . nuovo_social_next_line($count) . '"><a href="' . esc_attr(get_theme_mod('nuovo-googleplus')) . '" target="_blank"><img src="' . get_template_directory_uri() . '/images/googleplus.png" width="60" /></a></div>';
   }
   if (esc_attr(get_theme_mod('nuovo-youtube')) != '') {
   	$count = $count + 1;
-  	$html .= '<div class="youtube-social nuovo-social-link ' . nuovo_social_next_line($count) . '"><a href="' . esc_attr(get_theme_mod('nuovo-youtube')) . '" target="_blank"><img src="/wp-content/themes/nuovo/images/youtube.png" width="60" /></a></div>';
+  	$html .= '<div class="youtube-social nuovo-social-link ' . nuovo_social_next_line($count) . '"><a href="' . esc_attr(get_theme_mod('nuovo-youtube')) . '" target="_blank"><img src="' . get_template_directory_uri() . '/images/youtube.png" width="60" /></a></div>';
   }
   if (esc_attr(get_theme_mod('nuovo-linkedin')) != '') {
   	$count = $count + 1;
-  	$html .= '<div class="linkedin-social nuovo-social-link ' . nuovo_social_next_line($count) . '"><a href="' . esc_attr(get_theme_mod('nuovo-linkedin')) . '" target="_blank"><img src="/wp-content/themes/nuovo/images/linkedin.png" width="60" /></a></div>';
+  	$html .= '<div class="linkedin-social nuovo-social-link ' . nuovo_social_next_line($count) . '"><a href="' . esc_attr(get_theme_mod('nuovo-linkedin')) . '" target="_blank"><img src="' . get_template_directory_uri() . '/images/linkedin.png" width="60" /></a></div>';
   }
   if (esc_attr(get_theme_mod('nuovo-instagram')) != '') {
   	$count = $count + 1;
-  	$html .= '<div class="instagram-social nuovo-social-link ' . nuovo_social_next_line($count) . '"><a href="' . esc_attr(get_theme_mod('nuovo-instagram')) . '" target="_blank"><img src="/wp-content/themes/nuovo/images/instagram.png" width="60" /></a></div>';
+  	$html .= '<div class="instagram-social nuovo-social-link ' . nuovo_social_next_line($count) . '"><a href="' . esc_attr(get_theme_mod('nuovo-instagram')) . '" target="_blank"><img src="' . get_template_directory_uri() . '/images/instagram.png" width="60" /></a></div>';
   }
   if (esc_attr(get_theme_mod('nuovo-tumblr')) != '') {
   	$count = $count + 1;
-  	$html .= '<div class="tumblr-social nuovo-social-link ' . nuovo_social_next_line($count) . '"><a href="' . esc_attr(get_theme_mod('nuovo-tumblr')) . '" target="_blank"><img src="/wp-content/themes/nuovo/images/tumblr.png" width="60" /></a></div>';
+  	$html .= '<div class="tumblr-social nuovo-social-link ' . nuovo_social_next_line($count) . '"><a href="' . esc_attr(get_theme_mod('nuovo-tumblr')) . '" target="_blank"><img src="' . get_template_directory_uri() . '/images/tumblr.png" width="60" /></a></div>';
   }
   if (esc_attr(get_theme_mod('nuovo-pinterest')) != '') {
   	$count = $count + 1;
-  	$html .= '<div class="pinterest-social nuovo-social-link ' . nuovo_social_next_line($count) . '"><a href="' . esc_attr(get_theme_mod('nuovo-pinterest')) . '" target="_blank"><img src="/wp-content/themes/nuovo/images/pinterest.png" width="60" /></a></div>';
+  	$html .= '<div class="pinterest-social nuovo-social-link ' . nuovo_social_next_line($count) . '"><a href="' . esc_attr(get_theme_mod('nuovo-pinterest')) . '" target="_blank"><img src="' . get_template_directory_uri() . '/images/pinterest.png" width="60" /></a></div>';
   }
   if (esc_attr(get_theme_mod('nuovo-rss-feed')) != '') {
   	$count = $count + 1;
-  	$html .= '<div class="rss-social nuovo-social-link ' . nuovo_social_next_line($count) . '"><a href="' . esc_attr(get_theme_mod('nuovo-rss-feed')) . '" target="_blank"><img src="/wp-content/themes/nuovo/images/rss.png" width="60" /></a></div>';
+  	$html .= '<div class="rss-social nuovo-social-link ' . nuovo_social_next_line($count) . '"><a href="' . esc_attr(get_theme_mod('nuovo-rss-feed')) . '" target="_blank"><img src="' . get_template_directory_uri() . '/images/rss.png" width="60" /></a></div>';
   } else {
   	$count = $count + 1;
-    $html .= '<div class="rss-social nuovo-social-link ' . nuovo_social_next_line($count) . '"><a href="' . get_feed_link( 'rss' ) . '" target="_blank"><img src="/wp-content/themes/nuovo/images/rss.png" width="60" /></a></div>';
+    $html .= '<div class="rss-social nuovo-social-link ' . nuovo_social_next_line($count) . '"><a href="' . get_feed_link( 'rss' ) . '" target="_blank"><img src="' . get_template_directory_uri() . '/images/rss.png" width="60" /></a></div>';
   }
   $html .= '</div>';
   return $html;

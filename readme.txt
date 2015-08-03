@@ -3,7 +3,7 @@ Contributors: Jacob Martella
 Tags: black,blue,green,orange,purple,red,yellow,dark,two-columns,right-sidebar,responsive-layout,custom-background,custom-header,featured-images,theme-options
 Requires at least: 4.0
 Tested up to: 4.2.3
-Stable tag: 2.0
+Stable tag: 2.0.1
 
 == Description ==
 Nuovo gives the user almost complete control over the look and feel of his or her website. Users can select the color theme they want, what posts they want to show up in the homepage slider as well as in four separate areas on the homepage and can display the social media links they want in the header — all from the Customizer. Nuovo is also responsive, making it look good on any device with no extra work required.
@@ -67,7 +67,7 @@ When customizing a theme, the best practice is to create a child theme. This way
 If you have a question, need to report a bug to be fixed or have a feature request for a future version, email me at jacob.martella@att.net or fill out the form on the theme page (http://jacobmartella.com/nuovo-wordpress-theme).
 
 == Changelog ==
-= 2.0 =
+= 2.0.1 =
 - Updated all of the HTML to be compatible with HTML5.
 - Added Pinterest, Instagram and Tumblr social media links.
 - Made all of the social media links square images.
@@ -100,3 +100,22 @@ http://www.gnu.org/licenses/gpl.html
 
 = Photo License =
 Except where otherwise noted, all photos in the screenshot are also licensed under the GNU General Public License. Copyright 2015 Jacob Martella
+
+= jQuery Cycle License =
+The jQuery Cycle plugin used in this theme was created by Mike Alsup and is dual licensed under the MIT and GPL licenses.
+http://jquery.malsup.com/license.html
+
+= Google Fonts License =
+Lato-Light.ttf: Copyright (c) 2010-2011 by tyPoland Lukasz Dziedzic (team@latofonts.com) with Reserved Font Name "Lato". Licensed under the SIL Open Font License, Version 1.1.
+Lato-Regular.ttf: Copyright (c) 2010-2011 by tyPoland Lukasz Dziedzic (team@latofonts.com) with Reserved Font Name "Lato". Licensed under the SIL Open Font License, Version 1.1.
+Lato-Bold.ttf: Copyright (c) 2010-2011 by tyPoland Lukasz Dziedzic (team@latofonts.com) with Reserved Font Name "Lato". Licensed under the SIL Open Font License, Version 1.1.
+Oswald-Regular.ttf: Copyright (c) 2011-2012, Vernon Adams (vern@newtypography.co.uk), with Reserved Font Names 'Oswald'
+Oswald-Bold.ttf: Copyright (c) 2011-2012, Vernon Adams (vern@newtypography.co.uk), with Reserved Font Names 'Oswald'
+PT_Sans-Narrow-Web-Regular.ttf: Copyright © 2009 ParaType Ltd. All rights reserved.
+PT_Sans-Narrow-Web-Bold.ttf: Copyright © 2009 ParaType Ltd. All rights reserved.
+Roboto-Light.ttf: Copyright 2011 Google Inc. All Rights Reserved.
+Roboto-Regular.ttf: Copyright 2011 Google Inc. All Rights Reserved.
+Roboto-Bold.ttf: Copyright 2011 Google Inc. All Rights Reserved.
+SourceSansPro-Regular.ttf: Copyright 2010, 2012 Adobe Systems Incorporated (http://www.adobe.com/), with Reserved Font Name 'Source'. All Rights Reserved. Source is a trademark of Adobe Systems Incorporated in the United States and/or other countries.
+SourceSansPro-Semibold.ttf: Copyright 2010, 2012 Adobe Systems Incorporated (http://www.adobe.com/), with Reserved Font Name 'Source'. All Rights Reserved. Source is a trademark of Adobe Systems Incorporated in the United States and/or other countries.
+SourceSansPro-Bold.ttf: Copyright 2010, 2012 Adobe Systems Incorporated (http://www.adobe.com/), with Reserved Font Name 'Source'. All Rights Reserved. Source is a trademark of Adobe Systems Incorporated in the United States and/or other countries.
