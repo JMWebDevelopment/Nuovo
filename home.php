@@ -6,7 +6,7 @@
 *
 * @author Jacob Martella
 * @package Nuovo
-* @version 2.0
+* @version 2.0.2
 */
 ?>
 <?php get_header(); ?>
@@ -51,6 +51,7 @@
 	<section class="first-section home-section <?php if ((esc_attr(get_theme_mod('nuovo-category-one')) != '') and (esc_attr(get_theme_mod('nuovo-category-one')) != 'none')) { echo 'category-' . nuovo_get_cat_slug($cat_one); } ?>">
 		<h3 class="section-head"><?php if ((esc_attr(get_theme_mod('nuovo-category-one')) != '') and (esc_attr(get_theme_mod('nuovo-category-one')) != 'none')) { echo get_cat_name($cat_one); } ?></h3>
 		<div class="section-wrap">
+			<?php echo $cat_one_count; ?>
 			<?php 
 				$section_one_args = array(
 					'posts_per_page' => $cat_one_count,

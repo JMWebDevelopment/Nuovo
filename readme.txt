@@ -3,7 +3,7 @@ Contributors: Jacob Martella
 Tags: black,blue,green,orange,purple,red,yellow,dark,two-columns,right-sidebar,responsive-layout,custom-background,custom-header,featured-images,theme-options
 Requires at least: 4.0
 Tested up to: 4.2.3
-Stable tag: 2.0.1
+Stable tag: 2.0.2
 
 == Description ==
 Nuovo gives the user almost complete control over the look and feel of his or her website. Users can select the color theme they want, what posts they want to show up in the homepage slider as well as in four separate areas on the homepage and can display the social media links they want in the header — all from the Customizer. Nuovo is also responsive, making it look good on any device with no extra work required.
@@ -67,6 +67,9 @@ When customizing a theme, the best practice is to create a child theme. This way
 If you have a question, need to report a bug to be fixed or have a feature request for a future version, email me at jacob.martella@att.net or fill out the form on the theme page (http://jacobmartella.com/nuovo-wordpress-theme).
 
 == Changelog ==
+= 2.0.2 =
+- Fixed: Issue with the first category number of posts option calling the wrong sanitation function.
+
 = 2.0.1 =
 - Updated all of the HTML to be compatible with HTML5.
 - Added Pinterest, Instagram and Tumblr social media links.

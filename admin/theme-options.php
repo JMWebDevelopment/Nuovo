@@ -6,7 +6,7 @@
 *
 * @author Jacob Martella
 * @package Nuovo
-* @version 2.0
+* @version 2.0.2
 */
 /**
  * Add the general options to the theme customizer
@@ -344,7 +344,7 @@ function nuovo_homepage_customizer( $wp_customize ) {
         'nuovo-category-one-count',
         array(
             'default' => 3,
-            'sanitize_callback' => 'nuovo_sanitize_category',
+            'sanitize_callback' => 'nuovo_sanitize_num',
         )
     );
 
