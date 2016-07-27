@@ -6,7 +6,7 @@
 *
 * @author Jacob Martella
 * @package Nuovo
-* @version 2.0.2
+* @version 2.2
 */
 ?>
 <?php get_header(); ?>
@@ -27,12 +27,12 @@
 				if ($slideshow->have_posts()) : while ($slideshow->have_posts()) : $slideshow->the_post(); ?>
 				<article class="slide">
 					<div class="slide-photo">
-						<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('slideshow'); ?></a>
+						<a href="<?php the_permalink(); ?>"><?php echo nuovo_get_featured_area( $post->ID, 'slideshow' ); ?></a>
 					</div>
 					<div class="slide-panel">
 						<h3 class="slide-panel-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 						<p class="slide-panel-meta"><?php _e('Written By: ', 'nuovo'); ?><?php the_author_posts_link(); ?><br />
-						<?php _e('Posted in: ', 'nuovo'); ?><?php _e('Posted in: ', 'nuovo'); ?><?php single_cat_title(); ?> &bull; <?php the_time('F j, Y'); ?> &bull; <?php comments_popup_link(__('0 Comments', 'nuovo'), __('1 Comment', 'nuovo'), __('% Comments', 'nuovo'), '', __('Comments Off', 'nuovo')); ?></p>
+						<?php _e('Posted in: ', 'nuovo'); ?><?php _e('Posted in: ', 'nuovo'); ?><?php single_cat_title(); ?> &bull; <?php echo date_i18n( get_option( 'date_format' ), strtotime(get_the_date())); ?> &bull; <?php comments_popup_link(__('0 Comments', 'nuovo'), __('1 Comment', 'nuovo'), __('% Comments', 'nuovo'), '', __('Comments Off', 'nuovo')); ?></p>
 						<hr />
 						<?php the_excerpt(); ?>
 					</div>
@@ -51,7 +51,6 @@
 	<section class="first-section home-section <?php if ((esc_attr(get_theme_mod('nuovo-category-one')) != '') and (esc_attr(get_theme_mod('nuovo-category-one')) != 'none')) { echo 'category-' . nuovo_get_cat_slug($cat_one); } ?>">
 		<h3 class="section-head"><?php if ((esc_attr(get_theme_mod('nuovo-category-one')) != '') and (esc_attr(get_theme_mod('nuovo-category-one')) != 'none')) { echo get_cat_name($cat_one); } ?></h3>
 		<div class="section-wrap">
-			<?php echo $cat_one_count; ?>
 			<?php 
 				$section_one_args = array(
 					'posts_per_page' => $cat_one_count,
@@ -64,10 +63,10 @@
 			?>
 				<article <?php post_class('home-post'); ?>>
 					<header class="post-header">
-						<?php if (has_post_thumbnail()) { ?>
+						<?php if ( nuovo_get_featured_area( $post->ID, 'archive' ) ) { ?>
 							<div class="home-photo">
-								<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('archive'); ?></a>
-								<span class="comments"><p class="photo-post-details-links"><?php echo the_time('M j, Y'); ?> &bull; <?php echo comments_popup_link('0', '1', '%', '', __('Off', 'nuovo')); ?><img src="<?php echo get_template_directory_uri(); ?>/images/comments.png" style="margin-top:3px; margin-left:3px;margin-bottom:-2px;" /></p></span>
+								<a href="<?php the_permalink(); ?>"><?php echo nuovo_get_featured_area( $post->ID, 'archive' ); ?></a>
+								<span class="comments"><p class="photo-post-details-links"><?php echo date_i18n( get_option( 'date_format' ), strtotime(get_the_date())); ?> &bull; <?php echo comments_popup_link('0', '1', '%', '', __('Off', 'nuovo')); ?><img src="<?php echo get_template_directory_uri(); ?>/images/comments.png" style="margin-top:3px; margin-left:3px;margin-bottom:-2px;" /></p></span>
 							</div>
 						<?php } ?>
 						<h3 class="headline"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
@@ -99,10 +98,10 @@
 				?>
 					<article <?php post_class('home-post'); ?>>
 						<header class="post-header">
-							<?php if (has_post_thumbnail()) { ?>
+							<?php if ( nuovo_get_featured_area( $post->ID, 'archive' ) ) { ?>
 								<div class="home-photo">
-									<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('archive'); ?></a>
-									<span class="comments"><p class="photo-post-details-links"><?php echo the_time('M j, Y'); ?> &bull; <?php echo comments_popup_link('0', '1', '%', '', __('Off', 'nuovo')); ?><img src="<?php echo get_template_directory_uri(); ?>/images/comments.png" style="margin-top:3px; margin-left:3px;margin-bottom:-2px;" /></p></span>
+									<a href="<?php the_permalink(); ?>"><?php echo nuovo_get_featured_area( $post->ID, 'archive' ); ?></a>
+									<span class="comments"><p class="photo-post-details-links"><?php echo date_i18n( get_option( 'date_format' ), strtotime(get_the_date())); ?> &bull; <?php echo comments_popup_link('0', '1', '%', '', __('Off', 'nuovo')); ?><img src="<?php echo get_template_directory_uri(); ?>/images/comments.png" style="margin-top:3px; margin-left:3px;margin-bottom:-2px;" /></p></span>
 								</div>
 							<?php } ?>
 							<h3 class="headline"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
@@ -135,10 +134,10 @@
 				?>
 					<article <?php post_class('home-post'); ?>>
 						<header class="post-header">
-							<?php if (has_post_thumbnail()) { ?>
+							<?php if ( nuovo_get_featured_area( $post->ID, 'archive' ) ) { ?>
 								<div class="home-photo">
-									<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('archive'); ?></a>
-									<span class="comments"><p class="photo-post-details-links"><?php echo the_time('M j, Y'); ?> &bull; <?php echo comments_popup_link('0', '1', '%', '', __('Off', 'nuovo')); ?><img src="<?php echo get_template_directory_uri(); ?>/images/comments.png" style="margin-top:3px; margin-left:3px;margin-bottom:-2px;" /></p></span>
+									<a href="<?php the_permalink(); ?>"><?php echo nuovo_get_featured_area( $post->ID, 'archive' ); ?></a>
+									<span class="comments"><p class="photo-post-details-links"><?php echo date_i18n( get_option( 'date_format' ), strtotime(get_the_date())); ?> &bull; <?php echo comments_popup_link('0', '1', '%', '', __('Off', 'nuovo')); ?><img src="<?php echo get_template_directory_uri(); ?>/images/comments.png" style="margin-top:3px; margin-left:3px;margin-bottom:-2px;" /></p></span>
 								</div>
 							<?php } ?>
 							<h3 class="headline"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
@@ -171,10 +170,10 @@
 				?>
 					<article <?php post_class('home-post'); ?>>
 						<header class="post-header">
-							<?php if (has_post_thumbnail()) { ?>
+							<?php if ( nuovo_get_featured_area( $post->ID, 'archive' ) ) { ?>
 								<div class="home-photo">
-									<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('archive'); ?></a>
-									<span class="comments"><p class="photo-post-details-links"><?php echo the_time('M j, Y'); ?> &bull; <?php echo comments_popup_link('0', '1', '%', '', __('Off', 'nuovo')); ?><img src="<?php echo get_template_directory_uri(); ?>/images/comments.png" style="margin-top:3px; margin-left:3px;margin-bottom:-2px;" /></p></span>
+									<a href="<?php the_permalink(); ?>"><?php echo nuovo_get_featured_area( $post->ID, 'archive' ); ?></a>
+									<span class="comments"><p class="photo-post-details-links"><?php echo date_i18n( get_option( 'date_format' ), strtotime(get_the_date())); ?> &bull; <?php echo comments_popup_link('0', '1', '%', '', __('Off', 'nuovo')); ?><img src="<?php echo get_template_directory_uri(); ?>/images/comments.png" style="margin-top:3px; margin-left:3px;margin-bottom:-2px;" /></p></span>
 								</div>
 							<?php } ?>
 							<h3 class="headline"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
@@ -203,16 +202,16 @@
 					if ($latest_posts->have_posts()) : while ($latest_posts->have_posts()) : $latest_posts->the_post(); 
 				?>
 					<article class="latest-posts clearfix">
-						<?php if (has_post_thumbnail()) { ?>
-							<div class="latest-posts-photo"><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('latest'); ?></a></div>
+						<?php if ( nuovo_get_featured_area( $post->ID, 'latest' ) ) { ?>
+							<div class="latest-posts-photo"><a href="<?php the_permalink(); ?>"><?php echo nuovo_get_featured_area( $post->ID, 'archive' ); ?></a></div>
 						<?php } ?>
 						<div class="latest-posts-headline-area">
-							<h5 class="headline"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> &bull; <?php _e('Written By: ', 'nuovo'); ?><?php the_author_posts_link(); ?> &bull; <?php the_time('F j, Y'); ?> &bull; <?php comments_popup_link(__('0 Comments', 'nuovo'), __('1 Comment', 'nuovo'), __('% Comments', 'nuovo'), '', __('Comments Closed', 'nuovo')); ?></h5>
+							<h5 class="headline"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> &bull; <?php _e('Written By: ', 'nuovo'); ?><?php the_author_posts_link(); ?> &bull; <?php echo date_i18n( get_option( 'date_format' ), strtotime(get_the_date())); ?> &bull; <?php comments_popup_link(__('0 Comments', 'nuovo'), __('1 Comment', 'nuovo'), __('% Comments', 'nuovo'), '', __('Comments Closed', 'nuovo')); ?></h5>
 						</div>
 					</article>
 				<?php endwhile; ?>
 				<?php global $wp_query; $total_pages = $wp_query->max_num_pages; if ( $total_pages > 1 ) { ?>
-					<?php next_posts_link(__('<span class="next-posts">Next Posts&rsaquo;&rsaquo;</span>', 'nuovo')); ?>
+					<?php next_posts_link('<span class="next-posts">' . __('Next Posts&rsaquo;&rsaquo;', 'nuovo') . '</span>'); ?>
 				<?php } ?>
 				<?php endif; ?>	
 			</div>

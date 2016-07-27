@@ -4,10 +4,11 @@ Theme URI: http://www.jacobmartella.com/nuovo-wordpress-theme/
 Description: Nuovo gives the user almost complete control over the look and feel of his or her website. Users can select the color theme they want, what posts they want to show up in the homepage slider as well as in four separate areas on the homepage and can display the social media links they want in the header — all from the Customizer. Nuovo is also responsive, making it look good on any device with no extra work required.
 Author: Jacob Martella
 Author URI: http://www.jacobmartella.com/
-Version: 2.0.2
+Version: 2.2
 Tags: black,blue,green,orange,purple,red,yellow,dark,two-columns,right-sidebar,responsive-layout,custom-background,custom-header,featured-images,theme-options
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
+Text Domain: nuovo
 */
 
 /*
@@ -29,6 +30,7 @@ II. WordPress Classes
      B. Sticky
      C. Photos
      D. Gallery
+     E. Screen Reader Text
 III. Header
      A. Top Menu
      B. Masthead
@@ -516,6 +518,36 @@ D. Gallery
 .gallery-item  { float: left; margin-right: 10px; width: 31%; text-align: center; }
 .gallery-icon img  { padding: 4px; }
 .gallery-caption  { font-size: 12px; }
+/*
+E. Screen Reader Text
+------------------------------------------- */
+.screen-reader-text {
+     clip: rect(1px, 1px, 1px, 1px);
+     position: absolute !important;
+     height: 1px;
+     width: 1px;
+     overflow: hidden;
+}
+
+.screen-reader-text:focus {
+     background-color: #f1f1f1;
+     border-radius: 3px;
+     box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+     clip: auto !important;
+     color: #21759b;
+     display: block;
+     font-size: 14px;
+     font-size: 0.875rem;
+     font-weight: bold;
+     height: auto;
+     left: 5px;
+     line-height: normal;
+     padding: 15px 23px 14px;
+     text-decoration: none;
+     top: 5px;
+     width: auto;
+     z-index: 100000; /* Above WP toolbar. */
+}
 /*
 III. Header
 ------------------------------------------- */
@@ -1140,6 +1172,10 @@ B. Author Bio
      float: left;
      position: relative;
 }
+.post-single .author-bio .mug-shot img {
+     width: 86px;
+     height: 86px;
+}
 .post-single .author-bio .title {
      font-family: 'Lato', sans-serif;
      color: #ffffff;
@@ -1149,6 +1185,35 @@ B. Author Bio
 .post-single .author-bio .bio {
      font-family: 'Source Sans Pro', sans-serif;
      font-size: 14px;
+}
+/*
+C. Pagination
+------------------------------------------- */
+.post-pagination {
+     width: 100%;
+     position: relative;
+     clear: both;
+}
+.previous-post, .next-post {
+     width: 40%;
+     position: relative
+}
+.previous-post img, .next-post img {
+     border: 5px solid #E0E0E0;
+     width: 100%;
+     height: auto;
+}
+.previous-post {
+     float: left;
+}
+.next-post {
+     float: right;
+}
+/*
+D. Post Formats
+------------------------------------------- */
+.post-single .format-image .featured-photo, .archive .format-image .featured-photo, .home .home-posts-area .format-image .featured-photo {
+     height: auto;
 }
 /*
 VII. Comments
@@ -1193,7 +1258,7 @@ li.odd{background:#C0C0C0}
 .authorcomment{background:#deebf9} 
 ul.children ul{margin-left:20px} 
 ul.children li{border-right:none} 
-.vcard img{float:left;background:#c4c4c4} 
+.vcard img{float:left;background:#c4c4c4;width:75px;height:75px;}
 .vcard img,.comment-navigation .newer a,.comment-navigation .older a{padding:5px} 
 .comment-meta,ol.commentlist li small,p.subscribe-to-comments label{position:relative} 
 .comment-meta,ol.commentlist li small{top:10px;left:10px} 
@@ -1383,6 +1448,10 @@ B. Author
      border: 5px solid #E0E0E0;
      float: left;
      position: relative;
+}
+.index .author-bio .mug-shot img {
+     width: 86px;
+     height: 86px;
 }
 .index .author-bio .title {
      font-family: 'Lato', sans-serif;

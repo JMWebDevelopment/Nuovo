@@ -6,7 +6,7 @@
 *
 * @author Jacob Martella
 * @package Nuovo
-* @version 2.0.2
+* @version 2.2
 *
 * Table of Contents
 * I. Theme Setup Functions
@@ -69,6 +69,14 @@ function nuovo_setup() {
 	//* Add support for title tag
 	add_theme_support('title-tag');
 
+	//* Add Support for Post Formats
+	add_theme_support(
+		'post-formats', array(
+			'image',
+			'video'
+		)
+	);
+
 }
 add_action('after_setup_theme', 'nuovo_setup');
 
@@ -98,7 +106,7 @@ require_once(get_template_directory() . '/admin/theme-options.php');
 * @return string, the text to be displayed for the read more link
 */
 function nuovo_read_more($more) {
-	return '...<div class="read-more"><a href="' . get_the_permalink(get_the_ID()) . '">' . __('Continue Reading&rsaquo;&rsaquo;', 'giornalismo') . '</a></div>';
+	return '...<div class="read-more"><a href="' . get_the_permalink(get_the_ID()) . '">' . __('Continue Reading&rsaquo;&rsaquo;', 'nuovo') . '</a></div>';
 }
 add_action('excerpt_more', 'nuovo_read_more');
 
@@ -304,7 +312,7 @@ function nuovo_post_details($placement) {
 	rtrim($tags_section, '<br />');
 	//* Put the HTML string together
 	$html .= '<aside class=' . $class . '>';
-	$html .= '<div class="row"><h5 class="text">' . get_the_time('M j, Y') . '</h5></div>';
+	$html .= '<div class="row"><h5 class="text">' . date_i18n( get_option( 'date_format' ), strtotime(get_the_date())) . '</h5></div>';
 	$html .= '<div class="row"><h5 class="text">' . __('Written By: ', 'nuovo') . get_the_author_link() . '</h5></div>';
 	$html .= '<div class="row"><h5 class="text">' . $comments . '</h5></div>';
 	$html .= '<div class="row"><h5 class="text"> ' . get_the_category_list(', ') . '</h5></div>';
@@ -348,6 +356,89 @@ function nuovo_archive_title($title) {
 }
 add_filter( 'get_the_archive_title', 'nuovo_archive_title');
 /**
+ * Returns the text of the post without the first embedded video, which has already been pulled out for display.
+ *
+ * @param $post_id
+ * @return string, the content without the first embedded video
+ */
+function nuovo_get_content($post_id) {
+
+	$post = get_post($post_id);
+	$content = do_shortcode( apply_filters( 'the_content', $post->post_content ) );
+	$embeds = get_media_embedded_in_content( $content );
+
+	if ( has_post_format( 'image' ) ) {
+		$content = preg_replace( "/<img[^>]+\>/i", "", $content, 1 );
+		return $content;
+	} elseif ( has_post_format( 'video' ) ) {
+		if ( ! empty( $embeds ) ) {
+			//check what is the first embed containg video tag, youtube or vimeo
+			foreach ( $embeds as $embed ) {
+				if ( strpos( $embed, 'video' ) || strpos( $embed, 'youtube' ) || strpos( $embed, 'vimeo' ) ) {
+					$content = str_replace( $embed, "", $content );
+					return $content;
+				}
+			}
+
+		} else {
+			//No video embedded found
+			return $content;
+		}
+	} else {
+		return $content;
+	}
+
+}
+/**
+ * Returns the first video embed in a post for display
+ *
+ * @param int, post id
+ * @return string, link for first embeded video
+ */
+function nuovo_get_first_embed_media($post_id) {
+
+	$post = get_post($post_id);
+	$content = do_shortcode( apply_filters( 'the_content', $post->post_content ) );
+	$embeds = get_media_embedded_in_content( $content );
+
+	if( !empty($embeds) ) {
+		//check what is the first embed containg video tag, youtube or vimeo
+		foreach( $embeds as $embed ) {
+			if( strpos( $embed, 'video' ) || strpos( $embed, 'youtube' ) || strpos( $embed, 'vimeo' ) ) {
+				return $embed;
+			}
+		}
+
+	} else {
+		//No video embedded found
+		return false;
+	}
+
+}
+function nuovo_get_featured_area( $post_id, $size ) {
+	$html = '';
+
+	if ( has_post_format( 'image' ) ) {
+		if ( has_post_thumbnail() ) {
+			$html .= get_the_post_thumbnail( get_the_ID(), $size );
+		} else {
+			$media = get_attached_media( 'image', get_the_ID() );
+			foreach ( $media as $image ) {
+				$html .= '<img src="' . esc_url( $image->guid ) . '" />';
+				break;
+			}
+		}
+	} elseif ( has_post_format( 'video' ) ) {
+		$html .= nuovo_get_first_embed_media( get_the_ID() );
+	} else {
+		if ( has_post_thumbnail() ) {
+			$html .= get_the_post_thumbnail( get_the_ID(), $size );
+		}
+	}
+
+	return $html;
+}
+/**
 * V. Comments Functions
 */
 /**
@@ -358,7 +449,7 @@ function nuovo_advanced_comment($comment, $args, $depth) {
  
 <li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
    <div class="comment-author vcard">
-     <?php echo get_avatar($comment,$size='48'); ?>
+     <?php echo get_avatar($comment,$size='75'); ?>
        <div class="comment-meta"<a href="<?php the_author_meta( 'user_url'); ?>"><?php printf(__('%s', 'nuovo'), get_comment_author_link()) ?></a></div>
        <small><?php printf(__('%1$s at %2$s', 'nuovo'), get_comment_date(),  get_comment_time()) ?><?php edit_comment_link(__('(Edit)', 'nuovo'),'  ','') ?></small>
      </div>

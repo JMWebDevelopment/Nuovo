@@ -6,7 +6,7 @@
 *
 * @author Jacob Martella
 * @package Nuovo
-* @version 2.0.2
+* @version 2.2
 */
 ?>
 <?php get_header(); ?>
@@ -21,7 +21,7 @@
 				<div class="featured-photo-area">
 					<div class="featured-photo">
 						<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('archive'); ?></a>
-						<span class="comments"><span class="photo-post-details-links"><?php echo the_time('M j, Y'); ?> &bull; <?php echo comments_popup_link('0', '1', '%', '', __('Off', 'nuovo')); ?><img src="<?php echo get_template_directory_uri(); ?>/images/comments.png" style="margin-top:3px; margin-left:3px;margin-bottom:-2px;" alt="comments" /></span></span>
+						<span class="comments"><span class="photo-post-details-links"><?php echo date_i18n( get_option( 'date_format' ), strtotime(get_the_date())); ?> &bull; <?php echo comments_popup_link('0', '1', '%', '', __('Off', 'nuovo')); ?><img src="<?php echo get_template_directory_uri(); ?>/images/comments.png" style="margin-top:3px; margin-left:3px;margin-bottom:-2px;" alt="comments" /></span></span>
 					</div>
 				</div>
 			<?php } ?>
@@ -37,8 +37,8 @@
 		</article>
 	<?php endwhile; ?>
 	<?php global $wp_query; $total_pages = $wp_query->max_num_pages; if ( $total_pages > 1 ) { ?>
-		<?php next_posts_link(__('<div class="next-posts">Older Posts&rsaquo;&rsaquo;</div>', 'nuovo')); ?>
-		<?php previous_posts_link(__('<div class="previous-posts">&lsaquo;&lsaquo;Newer Posts</div>', 'nuovo')); ?>
+		<?php next_posts_link('<div class="next-posts">' . __('Older Posts&rsaquo;&rsaquo;', 'nuovo') . '</div>'); ?>
+		<?php previous_posts_link('<div class="previous-posts">' . __('&lsaquo;&lsaquo;Newer Posts', 'nuovo') . '</div>'); ?>
 	<?php } ?>
 </main>
 <?php get_sidebar(); ?>
