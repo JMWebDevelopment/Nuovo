@@ -6,7 +6,7 @@
 *
 * @author Jacob Martella
 * @package Nuovo
-* @version 2.0.2
+* @version 2.4
 */
 ?>
 <?php get_header(); ?>

@@ -6,7 +6,7 @@
 *
 * @author Jacob Martella
 * @package Nuovo
-* @version 2.2
+* @version 2.4
 */
 ?>
 <?php get_header(); ?>
@@ -20,15 +20,15 @@
 				<div class="featured-photo-area">
 					<div class="featured-photo">
 						<a href="<?php the_permalink(); ?>"><?php echo nuovo_get_featured_area( $post->ID, 'archive' ); ?></a>
-						<span class="comments"><span class="photo-post-details-links"><?php echo date_i18n( get_option( 'date_format' ), strtotime(get_the_date())); ?> &bull; <?php echo comments_popup_link('0', '1', '%', '', __('Off', 'nuovo')); ?><img src="<?php echo get_template_directory_uri(); ?>/images/comments.png" style="margin-top:3px; margin-left:3px;margin-bottom:-2px;" alt="comments" /></span></span>
+						<span class="comments"><span class="photo-post-details-links"><?php the_date( get_option( 'date_format' ) ); ?> &bull; <?php echo comments_popup_link( '0', '1', '%', '', __( 'Off', 'nuovo' ) ); ?><img src="<?php echo get_template_directory_uri(); ?>/images/comments.png" style="margin-top:3px; margin-left:3px;margin-bottom:-2px;" alt="comments" /></span></span>
 					</div>
 				</div>
 			<?php } ?>
 			<header class="entry-header">
 				<h3 class="headline"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-				<h5 class="meta"><?php _e('Written By: ', 'nuovo'); ?><?php the_author_posts_link(); ?> <?php _e('on', 'nuovo');?> <?php the_time('F j, Y'); ?>
-				<?php if (is_category() == false) { ?> 
-					<br /><?php _e('Posted in: ', 'nuovo'); ?><?php the_category(', '); ?>
+				<h5 class="meta"><?php _e( 'Written By: ', 'nuovo' ); ?><?php the_author_posts_link(); ?> <?php _e( 'on', 'nuovo' );?> <?php the_date( get_option( 'date_format' ) ); ?>
+				<?php if ( is_category() == false ) { ?>
+					<br /><?php _e( 'Posted in: ', 'nuovo' ); ?><?php the_category( ', ' ); ?>
 				<?php } ?>
 				</h5>
 			</header>
@@ -36,8 +36,8 @@
 		</article>
 	<?php endwhile; ?>
 	<?php global $wp_query; $total_pages = $wp_query->max_num_pages; if ( $total_pages > 1 ) { ?>
-		<?php next_posts_link('<div class="next-posts">' . __('Older Posts&rsaquo;&rsaquo;', 'nuovo') . '</div>'); ?>
-		<?php previous_posts_link('<div class="previous-posts">' . __('&lsaquo;&lsaquo;Newer Posts', 'nuovo') . '</div>'); ?>
+		<?php next_posts_link( '<div class="next-posts">' . __( 'Older Posts&rsaquo;&rsaquo;', 'nuovo' ) . '</div>' ); ?>
+		<?php previous_posts_link( '<div class="previous-posts">' . __( '&lsaquo;&lsaquo;Newer Posts', 'nuovo' ) . '</div>' ); ?>
 	<?php } ?>
 </main>
 <?php get_sidebar(); ?>

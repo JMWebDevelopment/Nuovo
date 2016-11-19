@@ -6,25 +6,25 @@
 *
 * @author Jacob Martella
 * @package Nuovo
-* @version 2.0.2
+* @version 2.4
 */
 ?>
 <!DOCTYPE html <?php language_attributes(); ?>>
 <html>
 <head>
-	<meta http-equiv="content-type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
+	<meta http-equiv="content-type" content="<?php bloginfo( 'html_type' ); ?>; charset=<?php bloginfo( 'charset' ); ?>" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<?php echo nuovo_menu_containers(); ?>
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-	<?php if (esc_attr(get_theme_mod('nuovo-top-menu')) == 1) { ?>
+	<?php if ( esc_attr( get_theme_mod( 'nuovo-top-menu' ) ) == 1 ) { ?>
 		<!--Begin Top Menu-->
 		<nav class="top-menu nuovo-menu clearfix" role="navigation">
 			<?php wp_nav_menu(
 				array(
-					'sort_column' => 'menu_order',
-					'theme_location' => 'top-menu'
+					'sort_column' 		=> 'menu_order',
+					'theme_location' 	=> 'top-menu'
 				)
 			); ?>
 		</nav>
@@ -40,8 +40,8 @@
 	<nav class="main-menu nuovo-menu clearfix" role="navigation">
 		<?php wp_nav_menu(
 			array(
-				'sort_column' => 'menu_order',
-				'theme_location' => 'main-menu'
+				'sort_column' 		=> 'menu_order',
+				'theme_location' 	=> 'main-menu'
 			)
 		); ?>
 	</nav>
@@ -49,16 +49,16 @@
 		<a href="#" class="hide-show-mobile-nav">
 			<div class="mobile-nav-bar">
 				<div class="mobile-nav-icon"><img src="<?php echo get_template_directory_uri() . '/images/mobile-nav-icon.png'; ?>" /></div>
-				<h5><?php _e('Go to...', 'nuovo'); ?></h5>
+				<h5><?php _e( 'Go to...', 'nuovo' ); ?></h5>
 			</div>
 		</a>
 		<nav class="mobile-nav clearfix" role="navigation">
-			<?php if (esc_attr(get_theme_mod('nuovo-top-menu')) == 1) { ?>
+			<?php if ( esc_attr( get_theme_mod( 'nuovo-top-menu' ) ) == 1 ) { ?>
 				<div class="mobile-nav-left">
 					<?php wp_nav_menu(
 						array(
-							'sort_column' => 'menu_order',
-							'theme_location' => 'top-menu'
+							'sort_column' 		=> 'menu_order',
+							'theme_location' 	=> 'top-menu'
 						)
 					); ?>
 				</div>
@@ -66,8 +66,8 @@
 			<div class="mobile-nav-right">
 				<?php wp_nav_menu(
 					array(
-						'sort_column' => 'menu_order',
-						'theme_location' => 'main-menu'
+						'sort_column' 		=> 'menu_order',
+						'theme_location' 	=> 'main-menu'
 					)
 				); ?>
 			</div>

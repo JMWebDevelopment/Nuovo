@@ -6,7 +6,7 @@
 *
 * @author Jacob Martella
 * @package Nuovo
-* @version 2.0.2
+* @version 2.4
 */
 /**
  * Add the general options to the theme customizer
@@ -15,9 +15,9 @@ function nuovo_general_customizer( $wp_customize ) {
     $wp_customize->add_section(
         'general',
         array(
-            'title' => __('General Settings', 'nuovo'),
-            'description' => __('This is the general settings section.', 'nuovo'),
-            'priority' => 35,
+            'title'         => __( 'General Settings', 'nuovo' ),
+            'description'   => __( 'This is the general settings section.', 'nuovo' ),
+            'priority'      => 35,
         )
     );
 
@@ -25,7 +25,7 @@ function nuovo_general_customizer( $wp_customize ) {
     $wp_customize->add_setting(
    		'nuovo-rss-feed',
     	array(
-        	'default' => '',
+        	'default'           => '',
         	'sanitize_callback' => 'nuovo_sanitize_link',
     	)
 	);
@@ -33,9 +33,9 @@ function nuovo_general_customizer( $wp_customize ) {
 	$wp_customize->add_control(
     	'nuovo-rss-feed',
     	array(
-        	'label' => __('Custom RSS Feed', 'nuovo'),
-        	'section' => 'general',
-        	'type' => 'text',
+        	'label'     => __( 'Custom RSS Feed', 'nuovo' ),
+        	'section'   => 'general',
+        	'type'      => 'text',
     	)
 	);
 
@@ -43,7 +43,7 @@ function nuovo_general_customizer( $wp_customize ) {
     $wp_customize->add_setting(
    		'nuovo-color-theme',
     	array(
-        	'default' => 'default',
+        	'default'           => 'default',
         	'sanitize_callback' => 'nuovo_sanitize_select',
     	)
 	);
@@ -51,17 +51,17 @@ function nuovo_general_customizer( $wp_customize ) {
 	$wp_customize->add_control(
     	'nuovo-color-theme',
     	array(
-        	'label' => __('Color Theme', 'nuovo'),
-        	'section' => 'general',
-        	'type' => 'select',
-        	'choices' => array(
-        		'default' => __('Default', 'nuovo'),
-        		'blue' => __('Blue', 'nuovo'),
-        		'green' => __('Green', 'nuovo'),
-        		'orange' => __('Orange', 'nuovo'),
-        		'purple' => __('Purple', 'nuovo'),
-        		'red' => __('Red', 'nuovo'),
-        		'yellow' => __('Yellow', 'nuovo')
+        	'label'     => __( 'Color Theme', 'nuovo' ),
+        	'section'   => 'general',
+        	'type'      => 'select',
+        	'choices'   => array(
+        		'default'   => __( 'Default', 'nuovo' ),
+        		'blue'      => __( 'Blue', 'nuovo' ),
+        		'green'     => __( 'Green', 'nuovo' ),
+        		'orange'    => __( 'Orange', 'nuovo' ),
+        		'purple'    => __( 'Purple', 'nuovo' ),
+        		'red'       => __( 'Red', 'nuovo' ),
+        		'yellow'    => __( 'Yellow', 'nuovo' )
         	)
     	)
 	);
@@ -70,7 +70,7 @@ function nuovo_general_customizer( $wp_customize ) {
     $wp_customize->add_setting(
    		'nuovo-top-menu',
     	array(
-        	'default' => '',
+        	'default'           => '',
         	'sanitize_callback' => 'nuovo_sanitize_checkbox',
     	)
 	);
@@ -78,9 +78,9 @@ function nuovo_general_customizer( $wp_customize ) {
 	$wp_customize->add_control(
     	'nuovo-top-menu',
     	array(
-        	'label' => __('Top Menu', 'nuovo'),
-        	'section' => 'general',
-        	'type' => 'checkbox',
+        	'label'     => __( 'Top Menu', 'nuovo' ),
+        	'section'   => 'general',
+        	'type'      => 'checkbox',
     	)
 	);
 
@@ -88,7 +88,7 @@ function nuovo_general_customizer( $wp_customize ) {
     $wp_customize->add_setting(
    		'nuovo-author-bio',
     	array(
-        	'default' => '',
+        	'default'           => '',
         	'sanitize_callback' => 'nuovo_sanitize_checkbox',
     	)
 	);
@@ -96,10 +96,28 @@ function nuovo_general_customizer( $wp_customize ) {
 	$wp_customize->add_control(
     	'nuovo-author-bio',
     	array(
-        	'label' => __('Author Bio', 'nuovo'),
-        	'section' => 'general',
-        	'type' => 'checkbox',
+        	'label'     => __( 'Author Bio', 'nuovo' ),
+        	'section'   => 'general',
+        	'type'      => 'checkbox',
     	)
+	);
+
+	//* Add in the Author Bio Option
+	$wp_customize->add_setting(
+			'nuovo-post-navigation',
+			array(
+					'default'           => '',
+					'sanitize_callback' => 'nuovo_sanitize_checkbox',
+			)
+	);
+
+	$wp_customize->add_control(
+			'nuovo-post-navigation',
+			array(
+					'label'     => __( 'Show Single Post Navigation', 'nuovo' ),
+					'section'   => 'general',
+					'type'      => 'checkbox',
+			)
 	);
 }
 add_action( 'customize_register', 'nuovo_general_customizer' );
@@ -111,9 +129,9 @@ function nuovo_social_customizer( $wp_customize ) {
     $wp_customize->add_section(
         'social_media',
         array(
-            'title' => __('Social Media Settings', 'nuovo'),
-            'description' => __('This is the social media settings section.', 'nuovo'),
-            'priority' => 35,
+            'title'         => __( 'Social Media Settings', 'nuovo' ),
+            'description'   => __( 'This is the social media settings section.', 'nuovo' ),
+            'priority'      => 35,
         )
     );
 
@@ -121,7 +139,7 @@ function nuovo_social_customizer( $wp_customize ) {
     $wp_customize->add_setting(
    		'nuovo-facebook',
     	array(
-        	'default' => '',
+        	'default'           => '',
         	'sanitize_callback' => 'nuovo_sanitize_link',
     	)
 	);
@@ -129,9 +147,9 @@ function nuovo_social_customizer( $wp_customize ) {
 	$wp_customize->add_control(
     	'nuovo-facebook',
     	array(
-        	'label' => __('Facebook Link', 'nuovo'),
-        	'section' => 'social_media',
-        	'type' => 'text',
+        	'label'     => __( 'Facebook Link', 'nuovo' ),
+        	'section'   => 'social_media',
+        	'type'      => 'text',
     	)
 	);
 
@@ -139,7 +157,7 @@ function nuovo_social_customizer( $wp_customize ) {
     $wp_customize->add_setting(
    		'nuovo-twitter',
     	array(
-        	'default' => '',
+        	'default'           => '',
         	'sanitize_callback' => 'nuovo_sanitize_link',
     	)
 	);
@@ -147,9 +165,9 @@ function nuovo_social_customizer( $wp_customize ) {
 	$wp_customize->add_control(
     	'nuovo-twitter',
     	array(
-        	'label' => __('Twitter Link', 'nuovo'),
-        	'section' => 'social_media',
-        	'type' => 'text',
+        	'label'     => __( 'Twitter Link', 'nuovo' ),
+        	'section'   => 'social_media',
+        	'type'      => 'text',
     	)
 	);
 
@@ -157,7 +175,7 @@ function nuovo_social_customizer( $wp_customize ) {
     $wp_customize->add_setting(
    		'nuovo-youtube',
     	array(
-        	'default' => '',
+        	'default'           => '',
         	'sanitize_callback' => 'nuovo_sanitize_link',
     	)
 	);
@@ -165,9 +183,9 @@ function nuovo_social_customizer( $wp_customize ) {
 	$wp_customize->add_control(
     	'nuovo-youtube',
     	array(
-        	'label' => __('YouTube Link', 'nuovo'),
-        	'section' => 'social_media',
-        	'type' => 'text',
+        	'label'     => __( 'YouTube Link', 'nuovo' ),
+        	'section'   => 'social_media',
+        	'type'      => 'text',
     	)
 	);
 
@@ -175,7 +193,7 @@ function nuovo_social_customizer( $wp_customize ) {
     $wp_customize->add_setting(
    		'nuovo-googleplus',
     	array(
-        	'default' => '',
+        	'default'           => '',
         	'sanitize_callback' => 'nuovo_sanitize_link',
     	)
 	);
@@ -183,9 +201,9 @@ function nuovo_social_customizer( $wp_customize ) {
 	$wp_customize->add_control(
     	'nuovo-googleplus',
     	array(
-        	'label' => __('Google+ Link', 'nuovo'),
-        	'section' => 'social_media',
-        	'type' => 'text',
+        	'label'     => __('Google+ Link', 'nuovo'),
+        	'section'   => 'social_media',
+        	'type'      => 'text',
     	)
 	);
 
@@ -193,7 +211,7 @@ function nuovo_social_customizer( $wp_customize ) {
     $wp_customize->add_setting(
    		'nuovo-linkedin',
     	array(
-        	'default' => '',
+        	'default'           => '',
         	'sanitize_callback' => 'nuovo_sanitize_link',
     	)
 	);
@@ -201,9 +219,9 @@ function nuovo_social_customizer( $wp_customize ) {
 	$wp_customize->add_control(
     	'nuovo-linkedin',
     	array(
-        	'label' => __('LinkedIn Link', 'nuovo'),
-        	'section' => 'social_media',
-        	'type' => 'text',
+        	'label'     => __( 'LinkedIn Link', 'nuovo' ),
+        	'section'   => 'social_media',
+        	'type'      => 'text',
     	)
 	);
 
@@ -211,7 +229,7 @@ function nuovo_social_customizer( $wp_customize ) {
     $wp_customize->add_setting(
    		'nuovo-instagram',
     	array(
-        	'default' => '',
+        	'default'           => '',
         	'sanitize_callback' => 'nuovo_sanitize_link',
     	)
 	);
@@ -219,9 +237,9 @@ function nuovo_social_customizer( $wp_customize ) {
 	$wp_customize->add_control(
     	'nuovo-instagram',
     	array(
-        	'label' => __('Instagram Link', 'nuovo'),
-        	'section' => 'social_media',
-        	'type' => 'text',
+        	'label'     => __( 'Instagram Link', 'nuovo' ),
+        	'section'   => 'social_media',
+        	'type'      => 'text',
     	)
 	);
 
@@ -229,7 +247,7 @@ function nuovo_social_customizer( $wp_customize ) {
     $wp_customize->add_setting(
    		'nuovo-tumblr',
     	array(
-        	'default' => '',
+        	'default'           => '',
         	'sanitize_callback' => 'nuovo_sanitize_link',
     	)
 	);
@@ -237,9 +255,9 @@ function nuovo_social_customizer( $wp_customize ) {
 	$wp_customize->add_control(
     	'nuovo-tumblr',
     	array(
-        	'label' => __('Tumblr Link', 'nuovo'),
-        	'section' => 'social_media',
-        	'type' => 'text',
+        	'label'     => __( 'Tumblr Link', 'nuovo' ),
+        	'section'   => 'social_media',
+        	'type'      => 'text',
     	)
 	);
 
@@ -247,7 +265,7 @@ function nuovo_social_customizer( $wp_customize ) {
     $wp_customize->add_setting(
    		'nuovo-pinterest',
     	array(
-        	'default' => '',
+        	'default'           => '',
         	'sanitize_callback' => 'nuovo_sanitize_link',
     	)
 	);
@@ -255,9 +273,9 @@ function nuovo_social_customizer( $wp_customize ) {
 	$wp_customize->add_control(
     	'nuovo-pinterest',
     	array(
-        	'label' => __('Pinterest Link', 'nuovo'),
-        	'section' => 'social_media',
-        	'type' => 'text',
+        	'label'     => __( 'Pinterest Link', 'nuovo' ),
+        	'section'   => 'social_media',
+        	'type'      => 'text',
     	)
 	);
 }
@@ -269,17 +287,17 @@ add_action( 'customize_register', 'nuovo_social_customizer' );
 function nuovo_homepage_customizer( $wp_customize ) {
     
     $cats = get_categories();
-    $cat_args['none'] = __('None', 'nuovo');
+    $cat_args[ 'none' ] = __( 'None', 'nuovo' );
     foreach($cats as $cat) {
-          $cat_args[$cat->term_id] = $cat->name;
+          $cat_args[ $cat->term_id ] = $cat->name;
     }
 
 	$wp_customize->add_section(
         'homepage',
         array(
-            'title' => __('Homepage Options', 'nuovo'),
-            'description' => __('This is the homepage settings section.', 'nuovo'),
-            'priority' => 35,
+            'title'         => __( 'Homepage Options', 'nuovo' ),
+            'description'   => __( 'This is the homepage settings section.', 'nuovo' ),
+            'priority'      => 35,
         )
     );
 
@@ -287,7 +305,7 @@ function nuovo_homepage_customizer( $wp_customize ) {
     $wp_customize->add_setting(
    		'nuovo-slideshow-category',
     	array(
-        	'default' => '',
+        	'default'           => '',
         	'sanitize_callback' => 'nuovo_sanitize_category',
     	)
 	);
@@ -295,10 +313,10 @@ function nuovo_homepage_customizer( $wp_customize ) {
 	$wp_customize->add_control(
         'nuovo-slideshow-category',
         array(
-            'label' => __('Slideshow Category', 'nuovo'),
-            'section' => 'homepage',
-            'type' => 'select',
-            'choices' => $cat_args
+            'label'     => __( 'Slideshow Category', 'nuovo' ),
+            'section'   => 'homepage',
+            'type'      => 'select',
+            'choices'   => $cat_args
         )
     );
     
@@ -306,7 +324,7 @@ function nuovo_homepage_customizer( $wp_customize ) {
     $wp_customize->add_setting(
         'nuovo-slideshow-count',
         array(
-            'default' => '4',
+            'default'           => '4',
             'sanitize_callback' => 'nuovo_sanitize_num',
         )
     );
@@ -314,9 +332,9 @@ function nuovo_homepage_customizer( $wp_customize ) {
     $wp_customize->add_control(
         'nuovo-slideshow-count',
         array(
-            'label' => __('Number of Slideshow Posts', 'nuovo'),
-            'section' => 'homepage',
-            'type' => 'text',
+            'label'     => __( 'Number of Slideshow Posts', 'nuovo' ),
+            'section'   => 'homepage',
+            'type'      => 'text',
         )
     );
 
@@ -324,7 +342,7 @@ function nuovo_homepage_customizer( $wp_customize ) {
     $wp_customize->add_setting(
         'nuovo-category-one',
         array(
-            'default' => '',
+            'default'           => '',
             'sanitize_callback' => 'nuovo_sanitize_category',
         )
     );
@@ -332,10 +350,10 @@ function nuovo_homepage_customizer( $wp_customize ) {
     $wp_customize->add_control(
         'nuovo-category-one',
         array(
-            'label' => __('First Category', 'nuovo'),
-            'section' => 'homepage',
-            'type' => 'select',
-            'choices' => $cat_args,
+            'label'     => __( 'First Category', 'nuovo' ),
+            'section'   => 'homepage',
+            'type'      => 'select',
+            'choices'   => $cat_args,
         )
     );
 
@@ -343,7 +361,7 @@ function nuovo_homepage_customizer( $wp_customize ) {
     $wp_customize->add_setting(
         'nuovo-category-one-count',
         array(
-            'default' => 3,
+            'default'           => 3,
             'sanitize_callback' => 'nuovo_sanitize_num',
         )
     );
@@ -351,9 +369,9 @@ function nuovo_homepage_customizer( $wp_customize ) {
     $wp_customize->add_control(
         'nuovo-category-one-count',
         array(
-            'label' => __('Number of Posts in the First Section', 'nuovo'),
-            'section' => 'homepage',
-            'type' => 'text',
+            'label'     => __( 'Number of Posts in the First Section', 'nuovo' ),
+            'section'   => 'homepage',
+            'type'      => 'text',
         )
     );
 
@@ -361,7 +379,7 @@ function nuovo_homepage_customizer( $wp_customize ) {
     $wp_customize->add_setting(
         'nuovo-category-two',
         array(
-            'default' => '',
+            'default'           => '',
             'sanitize_callback' => 'nuovo_sanitize_category',
         )
     );
@@ -369,10 +387,10 @@ function nuovo_homepage_customizer( $wp_customize ) {
     $wp_customize->add_control(
         'nuovo-category-two',
         array(
-            'label' => __('Second Category', 'nuovo'),
-            'section' => 'homepage',
-            'type' => 'select',
-            'choices' => $cat_args
+            'label'     => __( 'Second Category', 'nuovo' ),
+            'section'   => 'homepage',
+            'type'      => 'select',
+            'choices'   => $cat_args
         )
     );
 
@@ -380,7 +398,7 @@ function nuovo_homepage_customizer( $wp_customize ) {
     $wp_customize->add_setting(
         'nuovo-category-two-count',
         array(
-            'default' => 0,
+            'default'           => 0,
             'sanitize_callback' => 'nuovo_sanitize_num',
         )
     );
@@ -388,9 +406,9 @@ function nuovo_homepage_customizer( $wp_customize ) {
     $wp_customize->add_control(
         'nuovo-category-two-count',
         array(
-            'label' => __('Number of Posts in the Second Section', 'nuovo'),
-            'section' => 'homepage',
-            'type' => 'text',
+            'label'     => __( 'Number of Posts in the Second Section', 'nuovo' ),
+            'section'   => 'homepage',
+            'type'      => 'text',
         )
     );
 
@@ -398,7 +416,7 @@ function nuovo_homepage_customizer( $wp_customize ) {
     $wp_customize->add_setting(
         'nuovo-category-three',
         array(
-            'default' => '',
+            'default'           => '',
             'sanitize_callback' => 'nuovo_sanitize_category',
         )
     );
@@ -406,10 +424,10 @@ function nuovo_homepage_customizer( $wp_customize ) {
     $wp_customize->add_control(
         'nuovo-category-three',
         array(
-            'label' => __('Third Category', 'nuovo'),
-            'section' => 'homepage',
-            'type' => 'select',
-            'choices' => $cat_args
+            'label'     => __( 'Third Category', 'nuovo' ),
+            'section'   => 'homepage',
+            'type'      => 'select',
+            'choices'   => $cat_args
         )
     );
 
@@ -417,7 +435,7 @@ function nuovo_homepage_customizer( $wp_customize ) {
     $wp_customize->add_setting(
         'nuovo-category-three-count',
         array(
-            'default' => 0,
+            'default'           => 0,
             'sanitize_callback' => 'nuovo_sanitize_num',
         )
     );
@@ -425,9 +443,9 @@ function nuovo_homepage_customizer( $wp_customize ) {
     $wp_customize->add_control(
         'nuovo-category-three-count',
         array(
-            'label' => __('Number of Posts in the Third Section', 'nuovo'),
-            'section' => 'homepage',
-            'type' => 'text',
+            'label'     => __( 'Number of Posts in the Third Section', 'nuovo' ),
+            'section'   => 'homepage',
+            'type'      => 'text',
         )
     );
 
@@ -435,7 +453,7 @@ function nuovo_homepage_customizer( $wp_customize ) {
     $wp_customize->add_setting(
         'nuovo-category-four',
         array(
-            'default' => '',
+            'default'           => '',
             'sanitize_callback' => 'nuovo_sanitize_category',
         )
     );
@@ -443,10 +461,10 @@ function nuovo_homepage_customizer( $wp_customize ) {
     $wp_customize->add_control(
         'nuovo-category-four',
         array(
-            'label' => __('Fourth Category', 'nuovo'),
-            'section' => 'homepage',
-            'type' => 'select',
-            'choices' => $cat_args
+            'label'     => __( 'Fourth Category', 'nuovo' ),
+            'section'   => 'homepage',
+            'type'      => 'select',
+            'choices'   => $cat_args
         )
     );
 
@@ -454,7 +472,7 @@ function nuovo_homepage_customizer( $wp_customize ) {
     $wp_customize->add_setting(
         'nuovo-category-four-count',
         array(
-            'default' => 0,
+            'default'           => 0,
             'sanitize_callback' => 'nuovo_sanitize_num',
         )
     );
@@ -462,9 +480,9 @@ function nuovo_homepage_customizer( $wp_customize ) {
     $wp_customize->add_control(
         'nuovo-category-four-count',
         array(
-            'label' => __('Number of Posts in the Fourth Section', 'nuovo'),
-            'section' => 'homepage',
-            'type' => 'text',
+            'label'     => __( 'Number of Posts in the Fourth Section', 'nuovo' ),
+            'section'   => 'homepage',
+            'type'      => 'text',
         )
     );
 
@@ -472,7 +490,7 @@ function nuovo_homepage_customizer( $wp_customize ) {
     $wp_customize->add_setting(
         'nuovo-latest-posts-count',
         array(
-            'default' => 10,
+            'default'           => 10,
             'sanitize_callback' => 'nuovo_sanitize_num',
         )
     );
@@ -480,9 +498,9 @@ function nuovo_homepage_customizer( $wp_customize ) {
     $wp_customize->add_control(
         'nuovo-latest-posts-count',
         array(
-            'label' => __('Number of Latest Posts', 'nuovo'),
-            'section' => 'homepage',
-            'type' => 'text',
+            'label'     => __( 'Number of Latest Posts', 'nuovo' ),
+            'section'   => 'homepage',
+            'type'      => 'text',
         )
     );
 
@@ -501,13 +519,13 @@ function nuovo_sanitize_link($input) {
 //* Sanitize the color select option
 function nuovo_sanitize_select( $input ) {
     $valid = array(
-        'default' => __('Default', 'nuovo'),
-        'blue' => __('Blue', 'nuovo'),
-        'green' => __('Green', 'nuovo'),
-        'orange' => __('Orange', 'nuovo'),
-        'purple' => __('Purple', 'nuovo'),
-        'red' => __('Red', 'nuovo'),
-        'yellow' => __('Yellow', 'nuovo')
+        'default'   => __( 'Default', 'nuovo' ),
+        'blue'      => __( 'Blue', 'nuovo' ),
+        'green'     => __( 'Green', 'nuovo' ),
+        'orange'    => __( 'Orange', 'nuovo' ),
+        'purple'    => __( 'Purple', 'nuovo' ),
+        'red'       => __( 'Red', 'nuovo' ),
+        'yellow'    => __( 'Yellow', 'nuovo' )
     );
  
     if ( array_key_exists( $input, $valid ) ) {
@@ -529,9 +547,9 @@ function nuovo_sanitize_checkbox( $input ) {
 //* Sanitize the category select options
 function nuovo_sanitize_category( $input ) {
 	$cats = get_categories();
-	$cat_args['none'] = __('None', 'nuovo');
+	$cat_args[ 'none' ] = __( 'None', 'nuovo' );
     foreach($cats as $cat) {
-          $cat_args[$cat->term_id] = $cat->name;
+          $cat_args[ $cat->term_id ] = $cat->name;
     }
 	if ( array_key_exists( $input, $cat_args ) ){
 		return $input;
@@ -541,7 +559,7 @@ function nuovo_sanitize_category( $input ) {
 }
 
 //* Sanitize number options
-function nuovo_sanitize_num($input) {
-    return intval($input);
+function nuovo_sanitize_num( $input ) {
+    return intval( $input );
 }
 ?>

@@ -6,10 +6,10 @@
 *
 * @author Jacob Martella
 * @package Nuovo
-* @version 2.0.2
+* @version 2.4
 */
 ?>
 <section class="sidebar">
-	<?php if ( function_exists('dynamic_sidebar') && dynamic_sidebar('Sidebar') ) : else : ?>
+	<?php if ( function_exists( 'dynamic_sidebar' ) && dynamic_sidebar( 'Sidebar' ) ) : else : ?>
 	<?php endif; ?>
 </section>

@@ -1,9 +1,9 @@
 === Nuovo WordPress Theme ===
 Contributors: Jacob Martella
-Tags: black,blue,green,orange,purple,red,yellow,dark,two-columns,right-sidebar,responsive-layout,custom-background,custom-header,featured-images,theme-options
+Tags: two-columns,right-sidebar,custom-background,custom-header,featured-images,theme-options
 Requires at least: 4.0
-Tested up to: 4.2.3
-Stable tag: 2.0.2
+Tested up to: 4.7
+Stable tag: 2.4
 
 == Description ==
 Nuovo gives the user almost complete control over the look and feel of his or her website. Users can select the color theme they want, what posts they want to show up in the homepage slider as well as in four separate areas on the homepage and can display the social media links they want in the header — all from the Customizer. Nuovo is also responsive, making it look good on any device with no extra work required.
@@ -46,6 +46,9 @@ Nuovo also supports a custom header to be shown instead of the site title and de
 = Custom Background =
 Finally, Nuovo supports a custom background that can either be a photo or color background. Do note that backgrounds, particualry photo backgrounds do not scroll down the page on tablets or mobile devices as they do on a desktop browser.
 
+= Single Post Navigation =
+It's now easier for your readers to move between posts with single post navigation beneath each post.
+
 == How To's ==
 = Setting up a Child Theme =
 When customizing a theme, the best practice is to create a child theme. This way, when you update the parent theme, all of your changes will still remain intact. Creating a child theme is very simple if you use the steps below.
@@ -67,6 +70,25 @@ When customizing a theme, the best practice is to create a child theme. This way
 If you have a question, need to report a bug to be fixed or have a feature request for a future version, email me at jacob.martella@att.net or fill out the form on the theme page (http://jacobmartella.com/nuovo-wordpress-theme).
 
 == Changelog ==
+= 2.4 =
+- Tested for WordPress 4.7.
+
+= 2.3 =
+- Added support for image and video post formats.
+- Tested for WordPress 4.6.
+
+= 2.2 =
+- Eliminated the hard coded date format to allow users to pick how the date is displayed and made sure that the date translates.
+- Wrapped custom functions in 'if(functions_exists())' statement to make it easier to customize with a child theme.
+- Tested for WordPress 4.5.
+
+= 2.1 =
+- Remove the <hr> tags in the archive pages.
+- Added screen reader text classes.
+- Added single post navigation.
+- Fixed issue with translations and HTML tags.
+- Tested to make sure it works with WordPress 4.4.
+
 = 2.0.2 =
 - Fixed: Issue with the first category number of posts option calling the wrong sanitation function.
 
