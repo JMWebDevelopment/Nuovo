@@ -21,7 +21,7 @@
 				<div class="featured-photo-area">
 					<div class="featured-photo">
 						<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'archive' ); ?></a>
-						<span class="comments"><span class="photo-post-details-links"><?php the_date( get_option( 'date_format' ) ); ?> &bull; <?php echo comments_popup_link( '0', '1', '%', '', __( 'Off', 'nuovo' ) ); ?><img src="<?php echo get_template_directory_uri(); ?>/images/comments.png" style="margin-top:3px; margin-left:3px;margin-bottom:-2px;" alt="comments" /></span></span>
+						<span class="comments"><span class="photo-post-details-links"><?php echo get_the_date( get_option( 'date_format' ) ); ?> &bull; <?php echo comments_popup_link( '0', '1', '%', '', __( 'Off', 'nuovo' ) ); ?><img src="<?php echo get_template_directory_uri(); ?>/images/comments.png" style="margin-top:3px; margin-left:3px;margin-bottom:-2px;" alt="comments" /></span></span>
 					</div>
 				</div>
 			<?php } ?>
