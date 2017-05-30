@@ -2,7 +2,7 @@
 Contributors: Jacob Martella
 Tags: two-columns,right-sidebar,custom-background,custom-header,featured-images,theme-options
 Requires at least: 4.0
-Tested up to: 4.7
+Tested up to: 4.8
 Stable tag: 2.4
 
 == Description ==
@@ -70,6 +70,11 @@ When customizing a theme, the best practice is to create a child theme. This way
 If you have a question, need to report a bug to be fixed or have a feature request for a future version, email me at jacob.martella@att.net or fill out the form on the theme page (http://jacobmartella.com/nuovo-wordpress-theme).
 
 == Changelog ==
+= 2.5 =
+- Fixed issue with date not showing up for posts on the same date on index and archive pages.
+- Aligned the post title to the right for the next post in the post pagination section.
+- Tested for WordPress 4.8.
+
 = 2.4 =
 - Tested for WordPress 4.7.
 
