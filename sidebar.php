@@ -6,7 +6,7 @@
 *
 * @author Jacob Martella
 * @package Nuovo
-* @version 2.4
+* @version 2.5
 */
 ?>
 <section class="sidebar">

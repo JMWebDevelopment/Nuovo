@@ -3,7 +3,7 @@ Contributors: Jacob Martella
 Tags: two-columns,right-sidebar,custom-background,custom-header,featured-images,theme-options
 Requires at least: 4.0
 Tested up to: 4.8
-Stable tag: 2.4
+Stable tag: 2.5
 
 == Description ==
 Nuovo gives the user almost complete control over the look and feel of his or her website. Users can select the color theme they want, what posts they want to show up in the homepage slider as well as in four separate areas on the homepage and can display the social media links they want in the header — all from the Customizer. Nuovo is also responsive, making it look good on any device with no extra work required.
