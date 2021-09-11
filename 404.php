@@ -1,27 +1,21 @@
-<?php 
+<?php
 /**
-* 404.php
-*
-* 404 template file for Nuovo
-*
-* @author Jacob Martella
-* @package Nuovo
-* @version 2.5
-*/
+ * The template for displaying 404 pages (not found)
+ *
+ * @link https://codex.wordpress.org/Creating_an_Error_404_Page
+ *
+ * @package wp_rig
+ */
+
+namespace WP_Rig\WP_Rig;
+
+get_header();
+
+wp_rig()->print_styles( 'wp-rig-content' );
+
 ?>
-<?php get_header(); ?>
-	<main class="post-404">
-		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-			<div class="not-found">
-				<img src="<?php echo get_template_directory_uri(); ?>/images/not-found.png" width="400">
-			</div>
-			<div class="mobile-not-found">
-				<img src="<?php echo get_template_directory_uri(); ?>/images/not-found.png" width="250">
-			</div>
-			<p><?php echo __( 'We\'re sorry, but the post or page you are looking for is not here. It may have been removed before you got here or you have a bad link. You can either go back to the ', 'nuovo' ) . '<a href="' . esc_url( home_url() ) . '">' . __ ('homepage', 'nuovo' ) . '</a> ' . __( ' or use the search form below to find another post.', 'nuovo' ); ?></p>
-			<?php get_search_form(); ?>
-		</div><!--End Post Class-->
-		<?php wp_link_pages(); ?>
-	</main>
-<?php get_sidebar(); ?>
-<?php get_footer(); ?>
+	<main id="primary" class="site-main">
+		<?php get_template_part( 'template-parts/content/error', '404' ); ?>
+	</main><!-- #primary -->
+<?php
+get_footer();

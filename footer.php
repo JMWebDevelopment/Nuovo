@@ -1,19 +1,24 @@
-<?php 
+<?php
 /**
-* Footer.php
-*
-* Footer file for Nuovo
-*
-* @author Jacob Martella
-* @package Nuovo
-* @version 2.4
-*/
+ * The template for displaying the footer
+ *
+ * Contains the closing of the #content div and all content after.
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package wp_rig
+ */
+
+namespace WP_Rig\WP_Rig;
+
 ?>
-</div><!--End Wrap-->
-<footer class="footer">
-	<?php wp_reset_query(); ?>
-	<p class="footer-text"><?php _e( 'Copyright', 'nuovo' ); ?> &copy; <?php echo date( 'Y' ); ?> &bull; <a href="<?php echo esc_url( home_url() ); ?>"><?php bloginfo( 'name' ); ?></a> &bull; <a href="https://jacobmartella.com/wordpress/wordpress-themes/nuovo-wordpress-theme/" rel="nofollow">Nuovo</a> &bull; <?php wp_loginout(); ?><?php wp_register( ' &bull; ', '' ); ?></p>
-</footer>
+
+	<footer id="colophon" class="site-footer">
+		<?php get_template_part( 'template-parts/footer/info' ); ?>
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
 <?php wp_footer(); ?>
+
 </body>
 </html>
