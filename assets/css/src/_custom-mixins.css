@@ -1,0 +1,16 @@
+/* stylelint-disable */
+@define-mixin ptSans $fontSize, $color, $fontWeight, $text-transform: none {
+	font-family: 'PT Sans Narrow', sans-serif;
+	font-size: $fontSize;
+	font-weight: $fontWeight;
+	color: $color;
+	text-transform: $text-transform;
+}
+@define-mixin SourceSans $fontSize, $color, $fontWeight, $text-transform: none {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: $fontSize;
+	font-weight: $fontWeight;
+	color: $color;
+	text-transform: $text-transform;
+}
+/* stylelint-enable */

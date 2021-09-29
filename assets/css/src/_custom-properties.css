@@ -10,10 +10,10 @@
 	--dropdown-symbol-width: 0.7em;
 
 	/* Typography */
-	--global-font-family: "Crimson Text", serif;
-	--highlight-font-family: "Roboto Condensed", "Helvetica Neue", "Arial Narrow", sans-serif;
-	--global-font-size: 20;
-	--global-font-line-height: 1.4;
+	--global-font-family: "Source Sans Pro", serif;
+	--highlight-font-family: "PT Sans Narrow", "Helvetica Neue", "Arial Narrow", sans-serif;
+	--global-font-size: 16;
+	--global-font-line-height: 1.2;
 
 	/* Custom editor font sizes */
 	--font-size-small: calc(16 / var(--global-font-size) * 1rem);
