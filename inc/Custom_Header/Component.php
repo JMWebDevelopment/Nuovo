@@ -50,8 +50,9 @@ class Component implements Component_Interface {
 				array(
 					'default-image'      => '',
 					'default-text-color' => '000000',
-					'width'              => 1600,
-					'height'             => 250,
+					'width'              => 530,
+					'height'             => 150,
+					'flex-width'         => true,
 					'flex-height'        => true,
 					'wp-head-callback'   => array( $this, 'wp_head_callback' ),
 				)

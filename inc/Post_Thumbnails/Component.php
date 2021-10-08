@@ -47,6 +47,9 @@ class Component implements Component_Interface {
 	 * Adds custom image sizes.
 	 */
 	public function action_add_image_sizes() {
-		add_image_size( 'wp-rig-featured', 720, 480, true );
+		add_image_size( 'single-post', 630, 315 );
+		add_image_size( 'archive', 630, 315 );
+		add_image_size( 'slideshow', 630, 315 );
+		add_image_size( 'latest', 120, 60 );
 	}
 }
