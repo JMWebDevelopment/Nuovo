@@ -1,3 +1,6 @@
+@import "_custom-properties.css";
+@import "_custom-mixins.css";
+
 /*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
@@ -10,6 +13,8 @@
 .widget {
 	margin-top: 0;
 	margin-bottom: 1.5em;
+	background-color: var(--color-white);
+	padding: 5px;
 }
 
 .widget-area .widget {
@@ -59,9 +64,11 @@
 .widget_pages a,
 .widget_nav_menu a {
 	display: block;
-	padding: 0.6em 0;
+	padding: 7px 0;
 	text-decoration: none;
 	border-bottom: 1px dashed #808080;
+	line-height: 1.1;
+	font-size: 18px;
 }
 
 .widget_pages a:hover,
@@ -126,28 +133,9 @@
 .widget_search input[type="search"] {
 	box-sizing: border-box;
 	width: 100%;
-	color: var(--color-off-black);
-	border: 1px solid var(--color-off-black);
-	border-radius: 3px;
-	padding: 7px;
-	background-color: var(--color-light-grey);
-}
-
-.wp-block-search .wp-block-search__button {
-	border: 1px solid var(--color-off-black);
-	border-radius: 3px;
-	background: var(--color-off-black);
-	color: #fff;
-	ont-size: 1rem;
-	line-height: 1;
-	padding: .6em 1em .6em;
-
-	&:hover,
-	&:focus {
-		border-color: var(--color-off-black);
-		color: var(--color-off-black);
-		background-color: var(--color-off-white);
-	}
+	padding: 0.5em 1em;
+	border: 1px solid var(--border-color-light);
+	border-radius: 0;
 }
 
 /* Calendar widget */
@@ -199,4 +187,70 @@
 .textwidget {
 	font-size: 80%;
 	line-height: 1.3;
+}
+
+.widget-title,
+.widget h2 {
+	text-align: center;
+	@mixin SourceSans 24px, var(--color-white), 700, none;
+	line-height: 1;
+	padding: 5px;
+	margin: 0 0 0.5rem;
+	background-color: var(--color-off-black);
+}
+
+.widget_calendar {
+
+	& .wp-calendar-table {
+		margin-bottom: 1rem;
+
+		& thead {
+			border: 0;
+
+			& tr {
+				background-color: var(--color-off-black);
+
+				& th,
+				& td {
+					background-color: var(--color-off-black);
+					color: var(--color-white);
+				}
+			}
+		}
+
+		& tbody {
+
+			& tr {
+
+				& .pad {
+					background-color: var(--color-off-black);
+				}
+
+				& td {
+					color: var(--color-black);
+					border-color: var(--color-black);
+
+					& a {
+						color: var(--color-black);
+					}
+				}
+			}
+		}
+	}
+}
+
+.widget_tag_cloud a,
+.tagcloud a {
+	font-size: 16px !important;
+	font-family: 'PT Sans Narrow', sans-serif;
+	background-color: var(--color-off-black);
+	margin: 1px;
+	padding: 5px;
+	display: inline-block;
+	color: var(--color-white);
+
+	&:hover {
+		background-color: var(--color-off-white);
+		color: var(--color-off-black);
+	}
 }

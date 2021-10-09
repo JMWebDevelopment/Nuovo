@@ -70,7 +70,6 @@
 	margin-left: auto;
 	padding-right: 1.5rem;
 	padding-left: 1.5rem;
-	max-width: var(--content-width);
 }
 
 .page-header,
@@ -98,7 +97,6 @@
 	margin-right: auto;
 	padding-right: 1.5rem;
 	padding-left: 1.5rem;
-	max-width: var(--content-width);
 }
 
 @media (--content-query) {
@@ -178,33 +176,50 @@
 	margin-right: 1.5rem;
 }
 
-@media (--content-query) {
+.site-container {
 
-	.page-content > .alignleft,
-	.entry-content > .alignleft,
-	.entry-summary > .alignleft {
-		margin-left: calc((100vw - var(--content-width)) / 2);
-	}
+	& .site-main {
 
-	.page-content > .alignright,
-	.entry-content > .alignright,
-	.entry-summary > .alignright {
-		margin-right: calc((100vw - var(--content-width)) / 2);
+		& .entry-content {
+
+			& .alignwide {
+				margin-left: calc(25% - 25vw);
+				margin-right: calc(25% - 25vw);
+				max-width: 1000%;
+				width: auto;
+			}
+
+			& .alignfull {
+				margin-left: calc(50% - 50vw);
+				margin-right: calc(50% - 50vw);
+				max-width: 1000%;
+				width: auto;
+			}
+		}
 	}
 }
 
-@media (--sidebar-query) {
+@media (--large-up) {
 
-	.has-sidebar .page-content > .alignleft,
-	.has-sidebar .entry-content > .alignleft,
-	.has-sidebar .entry-summary > .alignleft {
-		margin-left: calc((75vw - 2rem - var(--content-width)) / 2);
-	}
+	.site-container {
 
-	.has-sidebar .page-content > .alignright,
-	.has-sidebar .entry-content > .alignright,
-	.has-sidebar .entry-summary > .alignright {
-		margin-right: calc((75vw - 2rem - var(--content-width)) / 2);
+		& .site-main {
+
+			& .entry-content {
+
+				& .alignwide {
+					margin-left: calc(105% - 61vw);
+					margin-right: 0;
+					max-width: 1000%;
+				}
+
+				& .alignfull {
+					margin-left: calc(84% - 63vw);
+					margin-right: 0;
+					max-width: 1000%;
+				}
+			}
+		}
 	}
 }
 
@@ -298,6 +313,23 @@
 
 .has-custom-sun-background-color {
 	background-color: var(--color-custom-sun);
+}
+
+.wp-block-cover-image h1:not(.has-text-color),
+.wp-block-cover-image h2:not(.has-text-color),
+.wp-block-cover-image h3:not(.has-text-color),
+.wp-block-cover-image h4:not(.has-text-color),
+.wp-block-cover-image h5:not(.has-text-color),
+.wp-block-cover-image h6:not(.has-text-color),
+.wp-block-cover-image p:not(.has-text-color),
+.wp-block-cover h1:not(.has-text-color),
+.wp-block-cover h2:not(.has-text-color),
+.wp-block-cover h3:not(.has-text-color),
+.wp-block-cover h4:not(.has-text-color),
+.wp-block-cover h5:not(.has-text-color),
+.wp-block-cover h6:not(.has-text-color),
+.wp-block-cover p:not(.has-text-color) {
+	color: var(--color-white);
 }
 
 /*--------------------------------------------------------------

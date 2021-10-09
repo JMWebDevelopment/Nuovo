@@ -21,6 +21,7 @@
 # Imports
 --------------------------------------------------------------*/
 @import "_custom-properties.css";
+@import "_custom-mixins.css";
 @import "_reset.css";
 @import "_typography.css";
 @import "_elements.css";
@@ -79,29 +80,59 @@
 	max-width: 100%;
 }
 
-@media (--sidebar-query) {
+.site-container {
+	max-width: 75rem;
+	margin: 0 auto;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 3rem 0;
 
-	.has-sidebar .site {
-		margin: 0;
+	@supports ( grid-area: auto ) {
 		display: grid;
-		grid-template-columns: 3fr 1fr;
-		grid-gap: 2rem;
-		justify-content: center;
+		grid-template-columns: 1fr;
+		grid-column-gap: 0;
+		grid-row-gap: 0;
+		grid-template-areas:
+			"main"
+			"right";
 	}
 
-	.site-header,
-	.site-footer {
-		grid-column: 1 / -1;
+	& .site-main {
+		flex-basis: 100%;
+		padding: 0 10px;
+		background-color: var(--color-white);
+
+		@supports ( grid-area: auto ) {
+			grid-area: main;
+		}
 	}
 
-	.site-main {
-		grid-column: 1;
-		min-width: 0;
-	}
+	& .primary-sidebar {
+		flex-basis: 100%;
+		padding: 0 10px;
 
-	.primary-sidebar {
-		grid-column: 2;
-		min-width: 0;
+		@supports ( grid-area: auto ) {
+			grid-area: right;
+		}
+	}
+}
+
+@media (--large-up) {
+
+	.site-container {
+
+		@supports ( grid-area: auto ) {
+			grid-template-columns: 3fr 1fr;
+			grid-template-areas: "main right";
+		}
+
+		& .site-main {
+			flex-basis: 75%;
+		}
+
+		& .primary-sidebar {
+			flex-basis: 25%;
+		}
 	}
 }
 
