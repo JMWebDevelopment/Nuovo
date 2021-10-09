@@ -188,7 +188,7 @@ class Component implements Component_Interface {
 			'nuovo-facebook',
 			array(
 				'label'     => esc_html__( 'Facebook Link', 'wp-rig' ),
-				'section'   => 'social_media',
+				'section'   => 'nuovo_social_media_options',
 				'type'      => 'text',
 			)
 		);
@@ -205,7 +205,7 @@ class Component implements Component_Interface {
 			'nuovo-twitter',
 			array(
 				'label'     => esc_html__( 'Twitter Link', 'wp-rig' ),
-				'section'   => 'social_media',
+				'section'   => 'nuovo_social_media_options',
 				'type'      => 'text',
 			)
 		);
@@ -222,7 +222,7 @@ class Component implements Component_Interface {
 			'nuovo-youtube',
 			array(
 				'label'     => esc_html__( 'YouTube Link', 'wp-rig' ),
-				'section'   => 'social_media',
+				'section'   => 'nuovo_social_media_options',
 				'type'      => 'text',
 			)
 		);
@@ -239,7 +239,7 @@ class Component implements Component_Interface {
 			'nuovo-linkedin',
 			array(
 				'label'     => esc_html__( 'LinkedIn Link', 'wp-rig' ),
-				'section'   => 'social_media',
+				'section'   => 'nuovo_social_media_options',
 				'type'      => 'text',
 			)
 		);
@@ -256,7 +256,7 @@ class Component implements Component_Interface {
 			'nuovo-instagram',
 			array(
 				'label'     => esc_html__( 'Instagram Link', 'wp-rig' ),
-				'section'   => 'social_media',
+				'section'   => 'nuovo_social_media_options',
 				'type'      => 'text',
 			)
 		);
@@ -273,7 +273,7 @@ class Component implements Component_Interface {
 			'nuovo-tumblr',
 			array(
 				'label'     => esc_html__( 'Tumblr Link', 'wp-rig' ),
-				'section'   => 'social_media',
+				'section'   => 'nuovo_social_media_options',
 				'type'      => 'text',
 			)
 		);
@@ -290,7 +290,7 @@ class Component implements Component_Interface {
 			'nuovo-pinterest',
 			array(
 				'label'     => esc_html__( 'Pinterest Link', 'wp-rig' ),
-				'section'   => 'social_media',
+				'section'   => 'nuovo_social_media_options',
 				'type'      => 'text',
 			)
 		);
@@ -313,7 +313,7 @@ class Component implements Component_Interface {
 			'nuovo-slideshow-category',
 			array(
 				'label'     => esc_html__( 'Slideshow Category', 'wp-rig' ),
-				'section'   => 'homepage',
+				'section'   => 'nuovo_homepage_options',
 				'type'      => 'select',
 				'choices'   => $cat_args,
 			)
@@ -331,7 +331,7 @@ class Component implements Component_Interface {
 			'nuovo-slideshow-count',
 			array(
 				'label'     => esc_html__( 'Number of Slideshow Posts', 'wp-rig' ),
-				'section'   => 'homepage',
+				'section'   => 'nuovo_homepage_options',
 				'type'      => 'text',
 			)
 		);
@@ -348,7 +348,7 @@ class Component implements Component_Interface {
 			'nuovo-category-one',
 			array(
 				'label'     => esc_html__( 'First Category', 'wp-rig' ),
-				'section'   => 'homepage',
+				'section'   => 'nuovo_homepage_options',
 				'type'      => 'select',
 				'choices'   => $cat_args,
 			)
@@ -366,7 +366,7 @@ class Component implements Component_Interface {
 			'nuovo-category-one-count',
 			array(
 				'label'     => esc_html__( 'Number of Posts in the First Section', 'wp-rig' ),
-				'section'   => 'homepage',
+				'section'   => 'nuovo_homepage_options',
 				'type'      => 'text',
 			)
 		);
@@ -383,7 +383,7 @@ class Component implements Component_Interface {
 			'nuovo-category-two',
 			array(
 				'label'     => esc_html__( 'Second Category', 'wp-rig' ),
-				'section'   => 'homepage',
+				'section'   => 'nuovo_homepage_options',
 				'type'      => 'select',
 				'choices'   => $cat_args,
 			)
@@ -401,7 +401,7 @@ class Component implements Component_Interface {
 			'nuovo-category-two-count',
 			array(
 				'label'     => esc_html__( 'Number of Posts in the Second Section', 'wp-rig' ),
-				'section'   => 'homepage',
+				'section'   => 'nuovo_homepage_options',
 				'type'      => 'text',
 			)
 		);
@@ -418,7 +418,7 @@ class Component implements Component_Interface {
 			'nuovo-category-three',
 			array(
 				'label'     => esc_html__( 'Third Category', 'wp-rig' ),
-				'section'   => 'homepage',
+				'section'   => 'nuovo_homepage_options',
 				'type'      => 'select',
 				'choices'   => $cat_args,
 			)
@@ -436,7 +436,7 @@ class Component implements Component_Interface {
 			'nuovo-category-three-count',
 			array(
 				'label'     => esc_html__( 'Number of Posts in the Third Section', 'wp-rig' ),
-				'section'   => 'homepage',
+				'section'   => 'nuovo_homepage_options',
 				'type'      => 'text',
 			)
 		);
@@ -453,7 +453,7 @@ class Component implements Component_Interface {
 			'nuovo-category-four',
 			array(
 				'label'     => esc_html__( 'Fourth Category', 'wp-rig' ),
-				'section'   => 'homepage',
+				'section'   => 'nuovo_homepage_options',
 				'type'      => 'select',
 				'choices'   => $cat_args,
 			)
@@ -471,7 +471,7 @@ class Component implements Component_Interface {
 			'nuovo-category-four-count',
 			array(
 				'label'     => esc_html__( 'Number of Posts in the Fourth Section', 'wp-rig' ),
-				'section'   => 'homepage',
+				'section'   => 'nuovo_homepage_options',
 				'type'      => 'text',
 			)
 		);
@@ -488,7 +488,7 @@ class Component implements Component_Interface {
 			'nuovo-latest-posts-count',
 			array(
 				'label'     => esc_html__( 'Number of Latest Posts', 'wp-rig' ),
-				'section'   => 'homepage',
+				'section'   => 'nuovo_homepage_options',
 				'type'      => 'text',
 			)
 		);
