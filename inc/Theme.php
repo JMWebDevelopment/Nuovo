@@ -153,6 +153,7 @@ class Theme {
 			new Styles\Component(),
 			new Excerpts\Component(),
 			new Social_Media\Component(),
+			new Home\Component(),
 		);
 
 		if ( defined( 'JETPACK__VERSION' ) ) {

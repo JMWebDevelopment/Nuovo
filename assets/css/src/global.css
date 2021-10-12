@@ -366,3 +366,9 @@ were hidden (via .neverending) before. */
 .infinity-end.neverending .site-footer {
 	display: block;
 }
+
+.clearfix::after {
+	content: "";
+	clear: both;
+	display: table;
+}
