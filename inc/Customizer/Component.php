@@ -517,11 +517,7 @@ class Component implements Component_Interface {
 	}
 
 	public function sanitize_checkbox( $input ) {
-		if ( '1' === $input ) {
-			return '1';
-		} else {
-			return '';
-		}
+		return ( ( isset( $input ) && true == $input ) ? 1 : 0 );
 	}
 
 	public function sanitize_category( $input ) {

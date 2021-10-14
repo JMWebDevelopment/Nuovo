@@ -13,7 +13,7 @@
 .comments-title,
 .comment-reply-title {
 	margin-bottom: 1em;
-	font-size: 2em;
+	font-size: 30px;
 	font-weight: 900;
 }
 
@@ -49,7 +49,7 @@
 	margin-left: 70px;
 	font-family: var(--highlight-font-family);
 	font-stretch: condensed;
-	font-size: 80%;
+	font-size: 18px;
 }
 
 .comment-meta a,
@@ -70,23 +70,23 @@
 	left: -70px;
 	width: 50px;
 	height: 50px;
-	border-radius: 50px;
+	border-radius: 10px;
 }
 
 .bypostauthor .avatar {
 	box-sizing: content-box;
-	border: 5px solid var(--border-color-light);
+	border: 2px solid var(--color-dark-grey);
 	margin-top: -5px;
 	margin-left: -5px;
 }
 
 .comment-author {
-	font-size: 1.4em;
+	font-size: 24px;
 	line-height: 1.3;
 }
 
 .says {
-	font-size: 80%;
+	font-size: 22px;
 }
 
 .comment-metadata {
@@ -127,12 +127,12 @@
 
 .comment-content blockquote {
 	margin-bottom: 0.75em;
-	font-size: 1.6em;
+	font-size: 24px;
 	line-height: 1.25;
 }
 
 .comment-content cite {
-	font-size: 1.2em;
+	font-size: 20px;
 }
 
 .reply {
@@ -141,17 +141,18 @@
 }
 
 .comment-reply-link,
+.comment-reply-link:visited,
 .comment-form .form-submit input {
 	display: inline-block;
 	padding: 0.5em 1.4em;
 	font-family: var(--highlight-font-family);
 	font-stretch: condensed;
-	font-size: 85%;
-	color: var(--global-font-color);
+	font-size: 18px;
+	color: var(--color-white);
 	line-height: 1.3;
 	text-decoration: none;
-	background: transparent;
-	border: 1px solid var(--border-color-light);
+	background: var(--color-off-black);
+	border: 1px solid var(--color-off-black);
 	border-radius: 0;
 }
 
@@ -159,7 +160,8 @@
 .comment-reply-link:focus,
 .comment-form .form-submit input:hover,
 .comment-form .form-submit input:focus {
-	border-color: var(--border-color-dark);
+	background-color: var(--color-off-white);
+	color: var(--color-black);
 	cursor: pointer;
 }
 
@@ -172,7 +174,7 @@
 	margin-top: -1em;
 	font-family: var(--highlight-font-family);
 	font-stretch: condensed;
-	font-size: 0.9em;
+	font-size: 16px;
 	font-style: italic;
 	background: hsl(0, 0%, 95%);
 }
@@ -186,10 +188,16 @@
 .comment-form label {
 	width: 13em;
 	display: block;
-	font-size: 0.9em;
+	font-size: 18px;
 	font-family: var(--highlight-font-family);
 	font-stretch: condensed;
 	padding-bottom: 0.4em;
+}
+
+.comment-form [type="text"],
+.comment-form [type="email"],
+.comment-form [type="url"] {
+	width: 100%;
 }
 
 .comment-form-cookies-consent {
