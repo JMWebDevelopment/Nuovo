@@ -154,6 +154,7 @@ class Theme {
 			new Excerpts\Component(),
 			new Social_Media\Component(),
 			new Home\Component(),
+			new Archive\Component(),
 		);
 
 		if ( defined( 'JETPACK__VERSION' ) ) {

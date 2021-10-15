@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying archive pages
+ * The template for displaying author archive pages
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
@@ -20,6 +20,7 @@ wp_rig()->print_styles( 'wp-rig-archive' );
 		<main id="primary" class="site-main">
 			<div class="entry-header">
 				<h1><?php the_archive_title(); ?></h1>
+				<?php get_template_part( 'template-parts/archive/author' ); ?>
 			</div>
 			<div class="archive-posts">
 				<?php

@@ -305,6 +305,13 @@ class Component implements Component_Interface, Templating_Component_Interface {
 					return wp_rig()->is_primary_sidebar_active();
 				},
 			),
+			'wp-rig-archive'    => array(
+				'file'             => 'archive.min.css',
+				'preload_callback' => function() {
+					global $template;
+					return 'index.php' === basename( $template ) || is_archive() || is_search();
+				},
+			),
 			'wp-rig-single'    => array(
 				'file'             => 'single.min.css',
 				'preload_callback' => function() {
