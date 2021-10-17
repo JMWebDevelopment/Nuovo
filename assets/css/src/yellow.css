@@ -1,0 +1,347 @@
+@import "_custom-properties.css";
+@import "_custom-mixins.css";
+
+:root {
+	--yellow-theme-color: #bcab10;
+	--dark-yellow-theme-color: #6e6300;
+}
+
+body.has-yellow-theme {
+
+	& a,
+	& a:link,
+
+	& a:visited {
+		color: var(--yellow-theme-color);
+	}
+
+	& a:hover,
+	& a:focus {
+		color: var(--dark-yellow-theme-color);
+	}
+
+	& .button,
+	& .button:visited,
+	& .button:link,
+	& button,
+	& input[type="button"],
+	& input[type="reset"],
+	& input[type="submit"] {
+		color: var(--color-white);
+		border: 1px solid var(--dark-yellow-theme-color);
+		background: var(--dark-yellow-theme-color);
+	}
+
+	& .button:hover,
+	& .button:visited:hover,
+	& .button:link:hover,
+	& button:hover,
+	& input[type="button"]:hover,
+	& input[type="reset"]:hover,
+	& input[type="submit"]:hover {
+		border-color: var(--dark-yellow-theme-color);
+		color: var(--dark-yellow-theme-color);
+		background-color: var(--color-off-white);
+	}
+
+	& .button:active,
+	& .button:focus,
+	& .button:visited:active,
+	& .button:visited:focus,
+	& .button:link:active,
+	& .button:link:focus,
+	& button:active,
+	& button:focus,
+	& input[type="button"]:active,
+	& input[type="button"]:focus,
+	& input[type="reset"]:active,
+	& input[type="reset"]:focus,
+	& input[type="submit"]:active,
+	& input[type="submit"]:focus {
+		border-color: var(--dark-yellow-theme-color);
+		color: var(--dark-yellow-theme-color);
+		background-color: var(--color-off-white);
+	}
+
+	& table,
+	& .wp-block-table table {
+
+		& thead {
+
+			& th {
+				background-color: var(--yellow-theme-color);
+			}
+		}
+	}
+
+	& .main-navigation {
+		background-color: var(--yellow-theme-color);
+
+		& .menu {
+
+			& li {
+
+				& a {
+					color: var(--color-white);
+				}
+
+				& .sub-menu {
+					background-color: var(--yellow-theme-color);
+				}
+			}
+		}
+	}
+
+	& .social-area a {
+		color: var(--color-white);
+	}
+
+	& .top-navigation {
+		background-color: var(--dark-yellow-theme-color);
+
+		& .menu {
+
+			& li {
+
+				& a {
+					color: var(--color-white);
+				}
+
+				& .sub-menu {
+					background-color: var(--dark-yellow-theme-color);
+				}
+			}
+		}
+	}
+
+	& .site-title {
+		color: var(--color-white);
+
+		& a {
+			color: var(--color-white);
+
+			&:hover,
+			&:focus {
+				color: var(--color-light-grey);
+			}
+		}
+	}
+
+	& .site-footer {
+		background-color: var(--dark-yellow-theme-color);
+
+		& p {
+			color: var(--color-white);
+
+			& a {
+				color: var(--color-white);
+
+				&:hover,
+				&:focus {
+					color: var(--color-off-white);
+				}
+			}
+		}
+	}
+
+	& .widget-title {
+		background-color: var(--yellow-theme-color);
+	}
+
+	& .widget-title,
+	& .widget h2 {
+		background-color: var(--dark-yellow-theme-color);
+	}
+
+	& .widget_calendar {
+
+		& .wp-calendar-table {
+
+			& thead {
+
+				& tr {
+					background-color: var(--dark-yellow-theme-color);
+
+					& th,
+					& td {
+						background-color: var(--dark-yellow-theme-color);
+					}
+				}
+			}
+
+			& tbody {
+
+				& tr {
+
+					& .pad {
+						background-color: var(--dark-yellow-theme-color);
+					}
+
+					& td {
+						border-color: var(--dark-yellow-theme-color);
+
+						& a {
+							color: var(--dark-yellow-theme-color);
+						}
+					}
+				}
+			}
+		}
+	}
+
+	& .tagcloud a,
+	& .widget_tag_cloud a {
+		background-color: var(--dark-yellow-theme-color);
+		color: var(--color-white);
+
+		&:hover {
+			background-color: var(--color-off-white);
+			color: var(--dark-yellow-theme-color);
+		}
+	}
+
+	&.home {
+
+		& .site-container {
+
+			& .top-posts-slider #carousel .btn-next,
+			& .top-posts-slider #carousel .btn-prev {
+				background-color: var(--dark-yellow-theme-color);
+
+				&:hover,
+				&:focus {
+					background-color: var(--color-off-white);
+					color: var(--dark-yellow-theme-color);
+				}
+			}
+
+			& .top-posts-slider #carousel ul .slide .slide-container .slide-info,
+			& .top-posts-slider #carousel ul .slide .slide-container .slide-photo {
+				border-color: var(--dark-yellow-theme-color);
+			}
+
+			& .top-posts-slider #carousel ul .slide .slide-container .slide-info p {
+				color: var(--dark-yellow-theme-color);
+			}
+		}
+
+		& .site-main {
+
+			& .home-posts-section h2,
+			& .home-latest-posts h2 {
+				background-color: var(--dark-yellow-theme-color);
+			}
+
+			& .home-posts-section .view-all,
+			& .home-latest-posts .posts-section + a {
+				background-color: var(--dark-yellow-theme-color);
+				border-color: var(--dark-yellow-theme-color);
+
+				&:hover,
+				&:focus {
+					background-color: var(--color-light-grey);
+					color: var(--dark-yellow-theme-color);
+				}
+			}
+
+			& .home-posts-section .posts-section .home-section-post .featured-photo .comments {
+				background-color: var(--dark-yellow-theme-color);
+			}
+
+		}
+	}
+
+	&.single {
+
+		& .site-main {
+
+			& .entry-content .post-details {
+				background-color: var(--dark-yellow-theme-color);
+			}
+
+			& .entry-content .post-details .row {
+				background-color: var(--dark-yellow-theme-color);
+
+				&:nth-child(even) {
+					background-color: var(--yellow-theme-color);
+				}
+			}
+
+			& .entry-footer {
+
+				& .post-navigation {
+
+					& .previous-post,
+					& .next-post {
+
+						& h2 {
+							color: var(--dark-yellow-theme-color);
+
+							& a {
+								color: var(--dark-yellow-theme-color);
+							}
+						}
+					}
+				}
+
+				& .comment-form .form-submit input,
+				& .comment-reply-link,
+				& .comment-reply-link:visited {
+					color: var(--color-white);
+					background: var(--dark-yellow-theme-color);
+					border: 1px solid var(--dark-yellow-theme-color);
+
+					&:hover,
+					&:focus {
+						color: var(--dark-yellow-theme-color);
+						background: var(--color-white);
+					}
+				}
+
+				& .related-stories,
+				& .latest-category {
+
+					& h2 {
+						background-color: var(--dark-yellow-theme-color);
+					}
+
+					& .stories-container {
+
+						& .story {
+
+							& p {
+								color: var(--dark-yellow-theme-color);
+
+								& a {
+									color: var(--dark-yellow-theme-color);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&.archive,
+	&.blog,
+	&.search {
+
+		& .site-main {
+
+			& .archive-posts {
+
+				& .story-article h2 {
+					color: var(--dark-yellow-theme-color);
+				}
+
+				& .story-article {
+
+					&.has-post-thumbnail .featured-photo .featured-photo-container .comments {
+						background-color: var(--dark-yellow-theme-color);
+					}
+				}
+			}
+		}
+	}
+}

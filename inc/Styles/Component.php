@@ -332,6 +332,48 @@ class Component implements Component_Interface, Templating_Component_Interface {
 					return 'page.php' === basename( $template );
 				},
 			),
+			'wp-rig-red' => array(
+				'file'             => 'red.min.css',
+				'preload_callback' => function() {
+					global $template;
+					return 'red' === get_theme_mod( 'nuovo-color-theme' );
+				},
+			),
+			'wp-rig-orange' => array(
+				'file'             => 'orange.min.css',
+				'preload_callback' => function() {
+					global $template;
+					return 'orange' === get_theme_mod( 'nuovo-color-theme' );
+				},
+			),
+			'wp-rig-yellow' => array(
+				'file'             => 'yellow.min.css',
+				'preload_callback' => function() {
+					global $template;
+					return 'yellow' === get_theme_mod( 'nuovo-color-theme' );
+				},
+			),
+			'wp-rig-green' => array(
+				'file'             => 'green.min.css',
+				'preload_callback' => function() {
+					global $template;
+					return 'green' === get_theme_mod( 'nuovo-color-theme' );
+				},
+			),
+			'wp-rig-blue' => array(
+				'file'             => 'blue.min.css',
+				'preload_callback' => function() {
+					global $template;
+					return 'blue' === get_theme_mod( 'nuovo-color-theme' );
+				},
+			),
+			'wp-rig-purple' => array(
+				'file'             => 'purple.min.css',
+				'preload_callback' => function() {
+					global $template;
+					return 'purple' === get_theme_mod( 'nuovo-color-theme' );
+				},
+			),
 		);
 
 		/**

@@ -155,6 +155,7 @@ class Theme {
 			new Social_Media\Component(),
 			new Home\Component(),
 			new Archive\Component(),
+			new Colors\Component(),
 		);
 
 		if ( defined( 'JETPACK__VERSION' ) ) {

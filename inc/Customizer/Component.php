@@ -120,7 +120,7 @@ class Component implements Component_Interface {
 					'orange'    => esc_html__( 'Orange', 'wp-rig' ),
 					'purple'    => esc_html__( 'Purple', 'wp-rig' ),
 					'red'       => esc_html__( 'Red', 'wp-rig' ),
-					'yellow'    => esc_html__( 'Yellow', 'wp-rig' )
+					'yellow'    => esc_html__( 'Yellow', 'wp-rig' ),
 				),
 			)
 		);
