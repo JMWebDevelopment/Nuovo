@@ -1,161 +1,93 @@
-<img align="right" width="90" height="90"
-     src="https://avatars1.githubusercontent.com/u/38340689"
-     title="WP Rig logo by Morten Rand-Hendriksen">
-# WP Rig: WordPress Theme Boilerplate
-[![Build Status](https://travis-ci.com/wprig/wprig.svg?branch=master)](https://travis-ci.com/github/wprig/wprig)
-[![License: GPL](https://img.shields.io/github/license/wprig/wprig)](/LICENSE)
-[![GitHub release](https://img.shields.io/github/v/release/wprig/wprig?include_prereleases)](https://github.com/wprig/wprig/releases)
+# Nuovo
+Contributors: Jacob Martella
+Tags: two-columns,right-sidebar,custom-background,custom-header,featured-images,theme-options
+Requires at least: 4.0
+Tested up to: 4.8
+Stable tag: 3.0
+Requires PHP: 7.3
+License: GNU General Public License v3.0 (or later)
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
-## Your Performance-Focused Development Rig
-A progressive theme development rig for WordPress, WP Rig is built to promote the latest best practices for progressive web content and optimization. Building a theme from WP Rig means adopting this approach and the core principles it is built on:
-- Accessibility
-- Mobile-first
-- Progressive enhancement
-- [Resilient Web Design](https://resilientwebdesign.com/)
-- Progressive Web App enabled
-- AMP-ready
-
-We are trying to be the starter theme for design-focused devs. If you have any ideas, questions, or suggestions for this project, or are seeking to get involved in contributing or maintaining, please check out
-our [discussion board on Github](https://github.com/wprig/wprig/discussions) and read [our contribute page](https://wprig.io/contribute/) on our website.
-
-## Documentation
-We have a new Documentation area that can be found on the [WP Rig website](https://wprig.io/documentation/).
-If you would like to contribute to our documentation efforts, please submit a request on our [contribute page](https://wprig.io/contribute/) on our website.
+## Description
+Nuovo gives the user almost complete control over the look and feel of his or her website. Users can select the color theme they want, what posts they want to show up in the homepage slider as well as in four separate areas on the homepage and can display the social media links they want in the header — all from the Customizer. Nuovo is also responsive, making it look good on any device with no extra work required.
 
 ## Installation
-WP Rig has been tested on Linux, Mac, and Windows.
+### Via WordPress Admin
+- From your sites admin, go to Themes > Install Themes.
+- In the search box, type 'Nuovo' and press enter.
+- Locate the entry for 'Nuovo' (there should be only one) and click the 'Install' link.
+- When installation is finished, click the 'Activate' link.
 
-### Requirements
-WP Rig requires the following dependencies. Full installation instructions are provided at their respective websites.
+### Manual Install
+- Download the file from the theme page.
+- In the WordPress Admin area, go to Appearance > Themes > Add Themes > Upload Themes.
+- Upload the theme zip file that you've downloaded.
+- Once the theme is uploaded, click the 'Activate' link.
 
-- [PHP](http://php.net/) 7.0
-- [npm](https://www.npmjs.com/)
-- [Composer](https://getcomposer.org/) (installed globally)
+## Features
+### Customizable Homepage
+One of the biggest features that Nuovo has is a customizable homepage. Users can select what category shows up in the featured post slider as well as how many posts are shown. The recommended practice is to create a top story or featured category and use that to control which exact posts show up in the slider. Also, users can select up to four categories that show up on the homepage underneath the slider. The number of posts in each section can be any number, but for the best look, it's recommended that the number of posts be a multiple of three.
 
-### WP Rig and child themes
-WP Rig is built to lay a solid theme foundation, which is great for a parent theme, but not for a child theme. A child theme is meant to only add on or modify the foundation. As such, WP Rig is not intended for making child themes to extend any themes, whether they were originally built with WP Rig or not.
+### Responsive
+As with all modern themes these days, Nuovo is completely responsive. This means that the user's site will look good on all devices with no work from the user required.
 
-### How to install WP Rig:
-1. Clone or download this repository to the themes folder of a WordPress site on your development environment.
-      - DO NOT give the WP Rig theme directory the same name as your eventual production theme. Suggested directory names are `wprig` or `wprig-themeslug`.  For instance if your theme will eventually be named “Excalibur” your development directory could be named `wprig-excalibur`. The `excalibur` directory will be automatically created during the production process and should not exist beforehand.
-2. Configure theme settings, including the theme slug and name.
-    - View `./config/config.default.json` for the default settings.
-    - Place custom theme settings in `./config/config.json` to override default settings.
-		- You do not have to include all settings from config.default.json. Just the settings you want to override.
-    - Place local-only theme settings in `./config/config.local.json`, e.g. potentially sensitive info like the path to your BrowserSync certificate.
-		- Again, only include the settings you want to override.
-3. In command line, run `npm run rig-init` to install necessary node and Composer dependencies.
-4. In command line, run `npm run dev` to process source files, build the development theme, and watch files for subsequent changes.
-	- `npm run build` can be used to process the source files and build the development theme without watching files afterwards.
-5. In WordPress admin, activate the WP Rig development theme.
+### Editor Styles
+Know how your post is going to look before you actually publish it with editor styles. In the post editor, all of the fonts, html tags and images will be styled exactly like they will on the website.
 
-#### Defining custom settings for the project
+### Photos
+Nuovo is very dependent on featured photos and it's recommended that every post have a featured photo. For the best results, featured photos need to be at least 630px by 315px. Even better are featured photos that are larger than that and maintain the 2:1 ratio.
 
-Here is an example of creating a custom theme config file for the project. In this example, we want a custom slug, name, and author.
+Normal photos that are in the body of the post need to be no bigger than 280px for best results on small screen sizes.
 
-Place the following in your `./config/config.json` file. This config will be versioned in your repo so all developers use the same settings.
+### Menus
+Nuovo comes with two menu areas, plus a mobile menu on smaller screen sizes. The top menu is optional and can be either shown or hidden via the 'General Settings' area of the Customizer. When set to be displayed, the top menu shows right above the header, as the name implies. The main menu is always shown and is displayed between the header and the main area on the page. The mobile menu displays on screen sizes smaller than 700px and shows both menus (though it will not display the top menu if it's hidden).
 
-```
-{
-  "theme": {
-    "slug": "newthemeslug",
-    "name": "New Theme Name",
-    "author": "Name of the theme author"
-  }
-}
-```
+### Custom Header
+Nuovo also supports a custom header to be shown instead of the site title and description if the user wishes. The best size for the header is 530px by 150px.
 
-#### Defining custom settings for your local environment
+### Custom Background
+Finally, Nuovo supports a custom background that can either be a photo or color background. Do note that backgrounds, particualry photo backgrounds do not scroll down the page on tablets or mobile devices as they do on a desktop browser.
 
-Some theme settings should only be set for your local environment. For example, if you want to set local information for BrowserSync.
+### Single Post Navigation
+It's now easier for your readers to move between posts with single post navigation beneath each post.
 
-Place the following in your `./config/config.local.json` file. This config will not be tracked in your repo and will only be executed in your local development environment.
+## Support
+If you have a question, need to report a bug to be fixed or have a feature request for a future version,fill out the form on the theme page (http://jacobmartella.com/nuovo-wordpress-theme).
 
-```
-{
-  "browserSync": {
-    "live": true,
-    "proxyURL": "localwprigenv.test",
-    "https": true,
-    "keyPath": "/path/to/my/browsersync/key",
-    "certPath": "/path/to/my/browsersync/certificate"
-  }
-}
-```
+## Changelog
+[View Changelog](CHANGELOG.md)
 
-If your local environment uses a specific port number, for example `8888`, add it to the `proxyURL` setting as follows:
-
-```
-"proxyURL": "localwprigenv.test:8888"
-```
-
-## How to build WP Rig for production:
-1. Follow the steps above to install WP Rig.
-2. Run `npm run bundle` from inside the `wp-rig` development theme.
-3. A new, production ready theme will be generated in `wp-content/themes`.
-4. The production theme can be activated or uploaded to a production environment.
-
-### Wiki: Recommended code editor extensions
-To take full advantage of the features in WP Rig, visit the [Recommended code editor extensions Wiki page](https://github.com/wprig/wprig/wiki/Recommended-code-editor-extensions).
-
-## Working with WP Rig
-WP Rig can be used in any development environment. It does not require any specific platform or server setup. It also does not have an opinion about what local or virtual server solution the developer uses.
-
-Before first run, visit the [BrowserSync wiki page](https://github.com/wprig/wprig/wiki/BrowserSync).
-
-### Available Processes
-
-#### `dev watch` process
-`npm run dev` will run the default development task that processes source files. While this process is running, source files will be watched for changes and the BrowserSync server will run. This process is optimized for speed so you can iterate quickly.
-
-#### `dev build` process
-`npm run build` processes source files one-time. It does not watch for changes nor start the BrowserSync server.
-
-#### `translate` process
-The translation process generates a `.pot` file for the theme in the `./languages/` directory.
-
-The translation process will run automatically during production builds unless the `export:generatePotFile` configuration value in `./config/config.json` is set to `false`.
-
-The translation process can also be run manaually with `npm run translate`. However, unless `NODE_ENV` is defined as `production` the `.pot` file will be generated against the source files, not the production files.
-
-#### `production bundle` process
-`npm run bundle` generates a production ready theme as a new theme directory and, optionally, a `.zip` archive. This builds all source files, optimizes the built files for production, does a string replacement and runs translations. Non-essential files from the `wp-rig` development theme are not copied to the production theme.
-
-To bundle the theme without creating a zip archive, define the `export:compress` setting in `./config/config.json` to `false`:
-
-```javascript
-export: {
-	compress: false
-}
-```
-
-### Gulp process
-WP Rig uses a [Gulp 4](https://gulpjs.com/) build process to generate and optimize the code for the theme. All development is done in the `wp-rig` development theme. Feel free to edit any `.php` files. Asset files (CSS, JavaScript and images) are processed by gulp. You should only edit the source asset files in the following locations:
-- CSS: `assets/css/src`
-- JavaScript: `assets/js/src`
-- images: `assets/images/src`
-
-For more information about the Gulp processes, what processes are available, and how to run them individually, visit the [Gulp Wiki page](https://github.com/wprig/wprig/wiki/Gulp).
-
-
-### Browser Support
-As WP Rig processes CSS and JavaScript it will support the browsers listed in `.browserslistrc`. Note that WP Rig will **not** add polyfills for missing browser support. WP Rig **will** add CSS prefixes and transpile JavaScript.
-
-## Advanced Features
-WP Rig gives the developer an out of the box environment with support for modern technologies including ES2015, CSS grid, CSS custom properties (variables), CSS nesting and more, without making any configurations. Just write code and WP Rig handles the heavy lifting for you.
-
-Configuring the behavior of WP Rig is done by editing `./config/config.json`. Here the developer can set the theme name and theme author name (for translation files), and local server settings for BrowserSync. Additionally, compression of JavaScript and CSS files can be turned off for debugging purposes.
-
-Place your custom theme settings in `./config/config.json` to override default settings, located in `./config/config.default.json`. Place local-only/untracked theme settings in `./config/config.local.json`. For example, if you want to set local information for BrowserSync.
-
-WP Rig ships with advanced features including:
-- Lazy-loading images
-- Built-in support for the [official AMP plugin](https://wordpress.org/plugins/amp/)
-- Progressive loading of CSS
-- Modern CSS, custom properties (variables), autoprefixing, etc
-- Modern layouts through CSS grid, flex, and float
-
-For more information about the advanced features in WP Rig and how to use them, visit the [Advanced Features Wiki page](https://github.com/wprig/wprig/wiki/Advanced-Features-(and-how-to-use-them)).
+## Contributing
+[Learn how to contribute](CONTRIBUTING.md)
 
 ## License
-WP Rig is released under [GNU General Public License v3.0 (or later)](https://github.com/wprig/wprig/blob/master/LICENSE).
+GNU General Public License
+http://www.gnu.org/licenses/gpl.html
+
+### Photo License
+Except where otherwise noted, all photos in the screenshot are also licensed under the GNU General Public License. Copyright 2015 Jacob Martella
+
+### Social Media Icons License
+All of the social media icons are from https://dribbble.com/shots/1094936-Free-Flat-Social-Media-Icon-Set and licensed under the GNU General Public License (http://www.gnu.org/licenses/gpl.html).
+
+### Scripts License
+All of the scripts used in this theme are licensed under the GNU General Public License (http://www.gnu.org/licenses/gpl.html).
+
+### TGM Plugin Activation License
+The TGM Plugin Activation file used in this theme is used under the GNU General Public License version 2 (http://opensource.org/licenses/gpl-2.0.php). You can find out more about this here: https://github.com/thomasgriffin/TGM-Plugin-Activation.
+
+### Fonts License
+Lato-Light.ttf: Copyright (c) 2010-2011 by tyPoland Lukasz Dziedzic (team@latofonts.com) with Reserved Font Name "Lato". Licensed under the SIL Open Font License, Version 1.1.
+Lato-Regular.ttf: Copyright (c) 2010-2011 by tyPoland Lukasz Dziedzic (team@latofonts.com) with Reserved Font Name "Lato". Licensed under the SIL Open Font License, Version 1.1.
+Lato-Bold.ttf: Copyright (c) 2010-2011 by tyPoland Lukasz Dziedzic (team@latofonts.com) with Reserved Font Name "Lato". Licensed under the SIL Open Font License, Version 1.1.
+Oswald-Regular.ttf: Copyright (c) 2011-2012, Vernon Adams (vern@newtypography.co.uk), with Reserved Font Names 'Oswald'
+Oswald-Bold.ttf: Copyright (c) 2011-2012, Vernon Adams (vern@newtypography.co.uk), with Reserved Font Names 'Oswald'
+Roboto-Light.ttf: Copyright 2011 Google Inc. All Rights Reserved.
+Roboto-Regular.ttf: Copyright 2011 Google Inc. All Rights Reserved.
+Roboto-Bold.ttf: Copyright 2011 Google Inc. All Rights Reserved.
+SourceSansPro-Regular.ttf: Copyright 2010, 2012 Adobe Systems Incorporated (http://www.adobe.com/), with Reserved Font Name 'Source'. All Rights Reserved. Source is a trademark of Adobe Systems Incorporated in the United States and/or other countries.
+SourceSansPro-Semibold.ttf: Copyright 2010, 2012 Adobe Systems Incorporated (http://www.adobe.com/), with Reserved Font Name 'Source'. All Rights Reserved. Source is a trademark of Adobe Systems Incorporated in the United States and/or other countries.
+SourceSansPro-Bold.ttf: Copyright 2010, 2012 Adobe Systems Incorporated (http://www.adobe.com/), with Reserved Font Name 'Source'. All Rights Reserved. Source is a trademark of Adobe Systems Incorporated in the United States and/or other countries.
+Canterbury was created by Dieter Steffmann and is used under a "free" license. You can find more of his work here: http://moorstation.org/typoasis/designers/steffmann/index.htm.
+Quattrocento-Bold.ttf: Copyright (c) 2011, Pablo Impallari (www.impallari.com|impallari@gmail.com), Copyright (c) 2011, Igino Marini. (www.ikern.com|mail@iginomarini.com), Copyright (c) 2011, Brenda Gallo. (gbrenda1987@gmail.com), with Reserved Font Name Quattrocento.
+Font Awesome: SIL OFL 1.1 (Font), MIT License (Code)
