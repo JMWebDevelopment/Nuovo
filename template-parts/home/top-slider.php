@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying a post
+ * Template part for displaying the top slider section of the homepage.
  *
  * @package wp_rig
  */

@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying the header branding
+ * Template part for displaying the navigation for a single post.
  *
  * @package wp_rig
  */
