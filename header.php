@@ -1,78 +1,48 @@
-<?php 
+<?php
 /**
-* Header.php
-*
-* Header file for Nuovo
-*
-* @author Jacob Martella
-* @package Nuovo
-* @version 2.5
-*/
+ * The header for our theme
+ *
+ * This is the template that displays all of the <head> section and everything up until <div id="content">
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package wp_rig
+ */
+
+namespace WP_Rig\WP_Rig;
+
 ?>
-<!DOCTYPE html <?php language_attributes(); ?>>
-<html>
+<!doctype html>
+<html <?php language_attributes(); ?> class="no-js">
 <head>
-	<meta http-equiv="content-type" content="<?php bloginfo( 'html_type' ); ?>; charset=<?php bloginfo( 'charset' ); ?>" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<?php echo nuovo_menu_containers(); ?>
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+
 	<?php wp_head(); ?>
 </head>
+
 <body <?php body_class(); ?>>
-	<?php if ( esc_attr( get_theme_mod( 'nuovo-top-menu' ) ) == 1 ) { ?>
-		<!--Begin Top Menu-->
-		<nav class="top-menu nuovo-menu clearfix" role="navigation">
-			<?php wp_nav_menu(
-				array(
-					'sort_column' 		=> 'menu_order',
-					'theme_location' 	=> 'top-menu'
-				)
-			); ?>
-		</nav>
-		<!--End Top Menu-->
-	<?php } ?>
-	<!--Begin Header-->
-	<header class="header-area clearfix">
-		<!--Begin Masthead-->
-		<?php echo nuovo_header(); ?>
-		<!--End Masthead-->
-	</header>
-	<!--Begin Main Menu-->
-	<nav class="main-menu nuovo-menu clearfix" role="navigation">
-		<?php wp_nav_menu(
-			array(
-				'sort_column' 		=> 'menu_order',
-				'theme_location' 	=> 'main-menu'
-			)
-		); ?>
-	</nav>
-	<div class="mobile-nav-area">
-		<a href="#" class="hide-show-mobile-nav">
-			<div class="mobile-nav-bar">
-				<div class="mobile-nav-icon"><img src="<?php echo get_template_directory_uri() . '/images/mobile-nav-icon.png'; ?>" /></div>
-				<h5><?php _e( 'Go to...', 'nuovo' ); ?></h5>
+<?php wp_body_open(); ?>
+<div id="page" class="site">
+	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'wp-rig' ); ?></a>
+
+	<header id="masthead" class="site-header">
+		<?php get_template_part( 'template-parts/header/top', 'navigation' ); ?>
+
+		<div class="wrap">
+
+			<div class="header-main">
+
+				<?php get_template_part( 'template-parts/header/custom_header' ); ?>
+
+				<?php get_template_part( 'template-parts/header/branding' ); ?>
+
 			</div>
-		</a>
-		<nav class="mobile-nav clearfix" role="navigation">
-			<?php if ( esc_attr( get_theme_mod( 'nuovo-top-menu' ) ) == 1 ) { ?>
-				<div class="mobile-nav-left">
-					<?php wp_nav_menu(
-						array(
-							'sort_column' 		=> 'menu_order',
-							'theme_location' 	=> 'top-menu'
-						)
-					); ?>
-				</div>
-			<?php } ?>
-			<div class="mobile-nav-right">
-				<?php wp_nav_menu(
-					array(
-						'sort_column' 		=> 'menu_order',
-						'theme_location' 	=> 'main-menu'
-					)
-				); ?>
-			</div>
-		</nav>
-	</div>
-	<!--End Main Menu-->
-	<!--Begin Wrap-->
-	<div class="wrap clearfix">
+
+			<?php get_template_part( 'template-parts/header/social' ); ?>
+
+		</div>
+
+		<?php get_template_part( 'template-parts/header/navigation' ); ?>
+	</header><!-- #masthead -->

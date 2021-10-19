@@ -1,45 +1,67 @@
-<?php 
-/**
-* Comments.php
-*
-* Comments file for Nuovo
-*
-* @author Jacob Martella
-* @package Nuovo
-* @version 2.5
-*/
-?>
 <?php
-	if ( ! empty( $_SERVER[ 'SCRIPT_FILENAME' ] ) && 'comments.php' == basename( $_SERVER[ 'SCRIPT_FILENAME' ] ) )
-		die ( 'Please do not load this page directly. Thanks!' );
- 
-	if ( post_password_required() ) { ?>
-		<p class="nocomments"><?php _e( 'This post is password protected. Enter the password to view comments.', 'nuovo' ); ?></p>
-	<?php
-		return;
-	}
+/**
+ * The template for displaying comments
+ *
+ * This is the template that displays the area of the page that contains both the current comments
+ * and the comment form.
+ *
+ * @link https://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package wp_rig
+ */
+
+namespace WP_Rig\WP_Rig;
+
+/*
+ * If the current post is protected by a password and
+ * the visitor has not yet entered the password we will
+ * return early without loading the comments.
+ */
+if ( post_password_required() ) {
+	return;
+}
+
+wp_rig()->print_styles( 'wp-rig-comments' );
+
 ?>
-<?php if ( have_comments() ) : ?>
-	<h3 id="comments"><?php comments_number( __( 'No Responses', 'nuovo' ), __( 'One Response', 'nuovo' ), __( '% Responses', 'nuovo' ) );?> <?php _e( 'to', 'nuovo' ); ?> &#8220;<?php the_title(); ?>&#8221;</h3>
-	<ol class="commentlist">
-		<?php wp_list_comments( 'type=comment&callback=nuovo_advanced_comment' );
-                ?>
-	</ol>
-	<div class="clear"></div>
-	<div class="comment-navigation">
-		<div class="older"><?php previous_comments_link() ?></div>
-		<div class="newer"><?php next_comments_link() ?></div>
-	</div>
- <?php else : ?>
-	<?php if ( comments_open() ) : ?>
-		<!-- If comments are open, but there are no comments. -->
-	 <?php else :?>
-		<!-- If comments are closed. -->
-		<p class="nocomments"><?php __( 'Comments are closed.', 'nuovo' ); ?></p>
-	<?php endif; ?>
-<?php endif; ?>
-<?php if ( comments_open() ) : ?>
-<div id="respond" class="clearfix">
-<?php comment_form(); ?>
-</div>
-<?php endif; ?>
+<div id="comments" class="comments-area">
+	<?php
+	// You can start editing here -- including this comment!
+	if ( have_comments() ) {
+		?>
+		<h2 class="comments-title">
+			<?php
+			$comment_count = get_comments_number();
+			if ( 1 === $comment_count ) {
+				printf(
+					/* translators: 1: title. */
+					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'wp-rig' ),
+					'<span>' . get_the_title() . '</span>' // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				);
+			} else {
+				printf(
+					/* translators: 1: comment count number, 2: title. */
+					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $comment_count, 'comments title', 'wp-rig' ) ),
+					// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					number_format_i18n( $comment_count ),
+					'<span>' . get_the_title() . '</span>' // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				);
+			}
+			?>
+		</h2><!-- .comments-title -->
+
+		<?php the_comments_navigation(); ?>
+
+		<?php wp_rig()->the_comments(); ?>
+
+		<?php
+		if ( ! comments_open() ) {
+			?>
+			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'wp-rig' ); ?></p>
+			<?php
+		}
+	}
+
+	comment_form();
+	?>
+</div><!-- #comments -->

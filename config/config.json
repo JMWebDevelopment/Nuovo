@@ -1,0 +1,25 @@
+{
+  "theme": {
+    "slug": "nuovo",
+    "name": "Nuovo",
+    "author": "Jacob Martella Web Development",
+    "PHPNamespace": "JM_Web_Development\\Nuovo",
+    "underscoreCase": "nuovo",
+    "constant": "NUOVO",
+    "camelCase": "Nuovo",
+    "camelCaseVar": "nuovo"
+  },
+  "dev": {
+    "browserSync": {
+      "live": true,
+      "proxyURL": "wordpressdev.dev.cc:3000",
+      "bypassPort": "3000",
+      "https": false
+    },
+    "styles": {
+      "autoprefixer": {
+        "grid": true
+      }
+    }
+  }
+}

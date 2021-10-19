@@ -1,27 +1,38 @@
-<?php 
+<?php
 /**
-* 404.php
-*
-* 404 template file for Nuovo
-*
-* @author Jacob Martella
-* @package Nuovo
-* @version 2.5
-*/
+ * The template for displaying 404 pages (not found)
+ *
+ * @link https://codex.wordpress.org/Creating_an_Error_404_Page
+ *
+ * @package wp_rig
+ */
+
+namespace WP_Rig\WP_Rig;
+
+get_header();
+
+wp_rig()->print_styles( 'wp-rig-page' );
+wp_rig()->print_styles( 'wp-rig-content' );
+// wp_rig()->load_color_stylesheet();
+
 ?>
-<?php get_header(); ?>
-	<main class="post-404">
-		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-			<div class="not-found">
-				<img src="<?php echo get_template_directory_uri(); ?>/images/not-found.png" width="400">
-			</div>
-			<div class="mobile-not-found">
-				<img src="<?php echo get_template_directory_uri(); ?>/images/not-found.png" width="250">
-			</div>
-			<p><?php echo __( 'We\'re sorry, but the post or page you are looking for is not here. It may have been removed before you got here or you have a bad link. You can either go back to the ', 'nuovo' ) . '<a href="' . esc_url( home_url() ) . '">' . __ ('homepage', 'nuovo' ) . '</a> ' . __( ' or use the search form below to find another post.', 'nuovo' ); ?></p>
-			<?php get_search_form(); ?>
-		</div><!--End Post Class-->
-		<?php wp_link_pages(); ?>
-	</main>
-<?php get_sidebar(); ?>
-<?php get_footer(); ?>
+	<div class="site-container">
+		<main id="primary" class="site-main">
+			<article id="<?php the_ID(); ?>" <?php post_class(); ?>>
+				<header class="entry-header">
+					<h1 class="single-title"><?php esc_html_e( '404 - Article Not Found', 'wp-rig' ); ?></h1>
+				</header>
+
+				<div class="entry-content">
+					<p class="single-meta"><?php esc_html_e( 'The article you were looking for was not found.', 'wp-rig' ); ?></p>
+					<p><?php esc_html_e( 'Please use the search bar below to search for the content you\'re looking for.', 'wp-rig' ); ?></p>
+					<?php get_search_form(); ?>
+				</div>
+			</article>
+		</main><!-- #primary -->
+		<?php
+		get_sidebar();
+		?>
+	</div>
+<?php
+get_footer();

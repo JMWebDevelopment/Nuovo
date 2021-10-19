@@ -1,0 +1,164 @@
+@import "_custom-properties.css";
+@import "_custom-mixins.css";
+
+.archive,
+.blog,
+.search {
+
+	& .site-main {
+
+		& .entry-header {
+			margin-top: 0;
+			padding: 0;
+
+			& .author-bio {
+				background-color: var(--color-off-white);
+				padding: 0.5rem;
+
+				& .mug-shot {
+					float: left;
+					margin-right: 5px;
+					margin-bottom: 5px;
+
+					& img {
+						border: 5px solid var(--color-light-grey);
+					}
+				}
+
+				& h2 {
+					margin: 0 0 1rem;
+					clear: none;
+				}
+
+				& p {
+					margin: 0;
+				}
+			}
+		}
+
+		& .archive-posts {
+
+			& .story-article {
+				margin-bottom: 1rem;
+				padding-bottom: 1rem;
+				border-bottom: 1px solid var(--color-black);
+
+				&.has-post-thumbnail {
+					display: flex;
+					flex-wrap: wrap;
+
+					@supports ( grid-area: auto ) {
+						display: grid;
+						grid-template-columns: 1fr;
+						grid-column-gap: 0;
+						grid-row-gap: 0;
+					}
+
+					& .featured-photo {
+						flex-basis: 100%;
+
+						& .featured-photo-container {
+							position: relative;
+							margin: 0 0 10px;
+							border: 5px solid var(--color-light-grey);
+
+							& .comments {
+								position: absolute;
+								bottom: 0;
+								left: 0;
+								width: 100%;
+								height: auto;
+								background-color: var(--color-black);
+
+								& p {
+									font-size: 14px;
+									color: var(--color-white);
+									margin: 0;
+									padding: 2px;
+								}
+							}
+						}
+					}
+
+					& .post-info {
+						flex-basis: 100%;
+						padding: 0 10px;
+					}
+				}
+
+				& h2 {
+					margin: 0 0 1rem;
+				}
+			}
+
+			& .navigation {
+				border-bottom: 0;
+				margin-bottom: 1rem;
+			}
+		}
+	}
+}
+
+@media (--medium-up) {
+
+	.archive,
+	.blog,
+	.search {
+
+		& .site-main {
+
+			& .entry-header {
+
+				& .author-bio {
+
+					@supports ( grid-area: auto ) {
+						grid-template-columns: 15fr 85fr;
+					}
+
+					& .mugshot {
+						flex-basis: 15%;
+					}
+
+					& .author-info {
+						flex-basis: 85%;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (--large-up) {
+
+	.archive,
+	.blog,
+	.search {
+
+		& .site-main {
+
+			& .archive-posts {
+
+				& .story-article {
+
+					&.has-post-thumbnail {
+
+						@supports ( grid-area: auto ) {
+							grid-template-columns: 1fr 2fr;
+						}
+
+						& .featured-photo {
+							flex-basis: 33.3%;
+							padding: 0 10px;
+							margin-bottom: 0;
+						}
+
+						& .post-info {
+							flex-basis: 66.7%;
+							padding: 0 10px;
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,41 +1,58 @@
-<?php 
+<?php
 /**
-* Single.php
-*
-* Single post file for Nuovo
-*
-* @author Jacob Martella
-* @package Nuovo
-* @version 2.5
-*/
+ * The template for displaying single posts
+ *
+ * @link https://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package wp_rig
+ */
+
+namespace WP_Rig\WP_Rig;
+
+get_header();
+
+wp_rig()->print_styles( 'wp-rig-single' );
+wp_rig()->print_styles( 'wp-rig-content' );
+wp_rig()->load_color_stylesheet();
+
 ?>
-<?php get_header(); ?>
-<main class="post-single">
-	<?php while(have_posts()) : the_post(); ?>
-		<article id="post-<?php the_ID(); ?>" <?php post_class( 'single-story' ); ?>>
-			<header class="entry-header">
-				<?php if ( nuovo_get_featured_area( $post->ID, 'single-post' ) ) { ?>
-					<div class="featured-photo">
-						<?php echo nuovo_get_featured_area( $post->ID, 'single-post' ); ?>
+	<div class="site-container">
+		<main id="primary" class="site-main">
+			<?php
+
+			while ( have_posts() ) {
+				the_post();
+				?>
+				<article id="<?php the_ID(); ?>" <?php post_class(); ?>>
+
+					<?php get_template_part( '/template-parts/single/header' ); ?>
+
+					<div class="entry-content">
+						<?php get_template_part( '/template-parts/single/details' ); ?>
+						<?php the_content(); ?>
 					</div>
-				<?php } ?>
-				<h3 class="headline"><?php the_title(); ?></h3>
-			</header>
-			<?php echo nuovo_post_details( true ); ?>
-			<?php echo nuovo_get_content( $post->ID ); ?>
-			<?php echo nuovo_post_details( false ); ?>
-			<?php if ( esc_attr( get_theme_mod( 'nuovo-post-navigation' ) ) ) { ?>
-				<?php $prevPost = get_previous_post();?>
-				<?php $nextPost = get_next_post();?>
-				<div class="post-pagination clearfix">
-					<?php if ( $prevPost ) { previous_post_link( '<div class="previous-post">' . get_the_post_thumbnail( $prevPost->ID ) . '<h3 class="paginate-title">&laquo;&laquo; %link</h3></div>', '%title' ); } ?>
-					<?php if ( $nextPost ) { next_post_link( '<div class="next-post">' . get_the_post_thumbnail( $nextPost->ID ) . '<h3 class="paginate-title">%link &raquo;&raquo;</h3></div>', '%title' ); } ?>
-				</div>
-			<?php } ?>
-			<?php echo nuovo_author_bio(); ?>
-			<?php comments_template(); ?>
-		</article>
-	<?php endwhile; ?>
-</main>
-<?php get_sidebar(); ?>
-<?php get_footer(); ?>
+
+					<footer class="entry-footer">
+						<?php get_template_part( '/template-parts/single/navigation' ); ?>
+
+						<?php get_template_part( '/template-parts/single/bio' ); ?>
+
+						<?php
+						if ( post_type_supports( get_post_type(), 'comments' ) && ( comments_open() || get_comments_number() ) ) {
+							comments_template();
+						}
+						?>
+						<?php wp_link_pages(); ?>
+					</footer>
+				</article>
+				<?php
+			}
+			?>
+		</main><!-- #primary -->
+
+		<?php
+		get_sidebar();
+		?>
+	</div>
+<?php
+get_footer();
