@@ -215,6 +215,10 @@ body.has-blue-theme {
 				}
 			}
 
+			& .top-posts-slider #carousel ul .slide .slide-container {
+				background-color: var(--dark-blue-theme-color);
+			}
+
 			& .top-posts-slider #carousel ul .slide .slide-container .slide-info,
 			& .top-posts-slider #carousel ul .slide .slide-container .slide-photo {
 				border-color: var(--dark-blue-theme-color);

@@ -63,6 +63,7 @@
 						& .slide-container {
 							display: flex;
 							flex-wrap: wrap;
+							background-color: var(--color-dark-grey);
 
 							@supports ( grid-area: auto ) {
 								display: grid;
