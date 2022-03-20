@@ -341,8 +341,8 @@
 									overflow: hidden;
 
 									& img {
-										height: 100%;
-										width: auto;
+										height: auto;
+										width: 100%;
 										max-width: none;
 									}
 								}
