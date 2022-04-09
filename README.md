@@ -3,7 +3,7 @@ Contributors: Jacob Martella
 Tags: two-columns,right-sidebar,custom-background,custom-header,featured-images,theme-options
 Requires at least: 4.0
 Tested up to: 4.8
-Stable tag: 3.0
+Stable tag: 3.0.1
 Requires PHP: 7.3
 License: GNU General Public License v3.0 (or later)
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
