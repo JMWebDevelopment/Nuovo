@@ -63,6 +63,7 @@
 						& .slide-container {
 							display: flex;
 							flex-wrap: wrap;
+							background-color: var(--color-dark-grey);
 
 							@supports ( grid-area: auto ) {
 								display: grid;
@@ -340,8 +341,8 @@
 									overflow: hidden;
 
 									& img {
-										height: 100%;
-										width: auto;
+										height: auto;
+										width: 100%;
 										max-width: none;
 									}
 								}

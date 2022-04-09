@@ -214,6 +214,10 @@ body.has-red-theme {
 				}
 			}
 
+			& .top-posts-slider #carousel ul .slide .slide-container {
+				background-color: var(--dark-red-theme-color);
+			}
+
 			& .top-posts-slider #carousel ul .slide .slide-container .slide-info,
 			& .top-posts-slider #carousel ul .slide .slide-container .slide-photo {
 				border-color: var(--dark-red-theme-color);
