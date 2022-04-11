@@ -215,6 +215,10 @@ body.has-yellow-theme {
 				}
 			}
 
+			& .top-posts-slider #carousel ul .slide .slide-container {
+				background-color: var(--dark-yellow-theme-color);
+			}
+
 			& .top-posts-slider #carousel ul .slide .slide-container .slide-info,
 			& .top-posts-slider #carousel ul .slide .slide-container .slide-photo {
 				border-color: var(--dark-yellow-theme-color);

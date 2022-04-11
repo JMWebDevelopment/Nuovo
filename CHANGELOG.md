@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.0.1
+- Fixed the height of the homepage slider.
+- Added a background for the image section of the slider if there is no photo.
+
 ## 3.0
 - Redeveloped the theme using WP Rig as a starter theme.
 - Tested with WordPress 5.8.1.

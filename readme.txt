@@ -3,7 +3,7 @@ Contributors: Jacob Martella
 Tags: two-columns,right-sidebar,custom-background,custom-header,featured-images,theme-options
 Requires at least: 4.0
 Tested up to: 4.8
-Stable tag: 3.0
+Stable tag: 3.0.1
 
 == Description ==
 Nuovo gives the user almost complete control over the look and feel of his or her website. Users can select the color theme they want, what posts they want to show up in the homepage slider as well as in four separate areas on the homepage and can display the social media links they want in the header — all from the Customizer. Nuovo is also responsive, making it look good on any device with no extra work required.
@@ -70,6 +70,10 @@ When customizing a theme, the best practice is to create a child theme. This way
 If you have a question, need to report a bug to be fixed or have a feature request for a future version, email me at jacob.martella@att.net or fill out the form on the theme page (http://jacobmartella.com/nuovo-wordpress-theme).
 
 == Changelog ==
+= 3.0.1 =
+- Fixed the height of the homepage slider.
+- Added a background for the image section of the slider if there is no photo.
+
 = 3.0 =
 - Redeveloped the theme using WP Rig as a starter theme.
 - Tested with WordPress 5.8.1.

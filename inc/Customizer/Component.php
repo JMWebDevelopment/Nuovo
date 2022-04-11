@@ -305,7 +305,7 @@ class Component implements Component_Interface {
 			'nuovo-slideshow-category',
 			array(
 				'default'           => '',
-				'sanitize_callback' => 'nuovo_sanitize_category',
+				'sanitize_callback' => array( $this, 'sanitize_category' ),
 			)
 		);
 
